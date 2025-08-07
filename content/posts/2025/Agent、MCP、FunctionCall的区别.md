@@ -1,9 +1,10 @@
 ---
-title: "Agent、MCP、FunctionCall的区别"
+title: Agent、MCP、FunctionCall的区别
 date: 2025-04-08
 categories:
   - AI
   - 技术
+avatar: /img/personal/avatar.png
 ---
 
 

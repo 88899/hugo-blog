@@ -1,10 +1,11 @@
 ---
-title: "分享几个热度较高的MCP服务聚合平台"
+title: 分享几个热度较高的MCP服务聚合平台
 date: 2025-02-20
 author: Xiao Mi
 categories:
   - AI
   - 技术
+avatar: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170937500.png
 ---
 
 
