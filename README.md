@@ -1,12 +1,14 @@
-## 模仿Webstack风格的导航
+## 简洁风格的个人博客模版
 * 无需VPS
 * 无需数据库
 * 无需懂代码
 
 ## 只需修改三处
-* 全局站点配置：修改根目录下的config.toml文件
-* 图片（logo等)：替换/docs/assets/images下的同名文件
-* 站点内容修改：修改/data/目录下的yml文件
+* 全局站点配置：修改根目录下的hugo.toml文件
+* 图片（logo等)：替换/public/img/和/public/images/下的同名文件
+* 站点内容修改：修改/content/目录下的文章文件
+
+注意：如果你本地有hugo环境，建议替换static下的相关资源，替换完成后记得执行hugo
 
 ### 如果觉得好用，就给个star吧
 
