@@ -62,14 +62,14 @@ apt upgrade -y
 
 如果对版本没有要求，建议直接使用apt无脑安装(这个默认安装版本是20.0的)
 
-```rust
+```shell
 apt install docker.io
 
 apt install docker-compose
 ```
 
 如果想安装最新版本，使用以下命令(每次复制一行，在vps执行一次，不要一次全部执行)
-```rust
+```python
 apt install curl vim wget gnupg dpkg apt-transport-https lsb-release ca-certificates
 
 curl -sSL https://download.docker.com/linux/debian/gpg | gpg --dearmor > /usr/share/keyrings/docker-ce.gpg

@@ -519,9 +519,9 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>apt install docker.io
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>apt install docker.io
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>apt install docker<span style="color:#ff79c6">-</span>compose
+</span></span><span style="display:flex;"><span>apt install docker-compose
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>如果想安装最新版本，使用以下命令(每次复制一行，在vps执行一次，不要一次全部执行)</p>
@@ -546,23 +546,23 @@
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>apt install curl vim wget gnupg dpkg apt<span style="color:#ff79c6">-</span>transport<span style="color:#ff79c6">-</span>https lsb<span style="color:#ff79c6">-</span>release ca<span style="color:#ff79c6">-</span>certificates
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>apt install curl vim wget gnupg dpkg apt<span style="color:#ff79c6">-</span>transport<span style="color:#ff79c6">-</span>https lsb<span style="color:#ff79c6">-</span>release ca<span style="color:#ff79c6">-</span>certificates
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>curl <span style="color:#ff79c6">-</span>sSL https:<span style="color:#6272a4">//download.docker.com/linux/debian/gpg | gpg --dearmor &gt; /usr/share/keyrings/docker-ce.gpg
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#f1fa8c">&#34;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://download.docker.com/linux/debian $(lsb_release -sc) stable&#34;</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>etc<span style="color:#ff79c6">/</span>apt<span style="color:#ff79c6">/</span>sources.list.d<span style="color:#ff79c6">/</span>docker.list
+</span></span><span style="display:flex;"><span>curl <span style="color:#ff79c6">-</span>sSL https:<span style="color:#ff79c6">//</span>download<span style="color:#ff79c6">.</span>docker<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>linux<span style="color:#ff79c6">/</span>debian<span style="color:#ff79c6">/</span>gpg <span style="color:#ff79c6">|</span> gpg <span style="color:#ff79c6">--</span>dearmor <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span>share<span style="color:#ff79c6">/</span>keyrings<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>ce<span style="color:#ff79c6">.</span>gpg
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>curl <span style="color:#ff79c6">-</span>sS https:<span style="color:#6272a4">//download.docker.com/linux/debian/gpg | gpg --dearmor &gt; /usr/share/keyrings/docker-ce.gpg
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
-</span></span><span style="display:flex;"><span>echo <span style="color:#f1fa8c">&#34;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(lsb_release -sc) stable&#34;</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>etc<span style="color:#ff79c6">/</span>apt<span style="color:#ff79c6">/</span>sources.list.d<span style="color:#ff79c6">/</span>docker.list
+</span></span><span style="display:flex;"><span>echo <span style="color:#f1fa8c">&#34;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://download.docker.com/linux/debian $(lsb_release -sc) stable&#34;</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>etc<span style="color:#ff79c6">/</span>apt<span style="color:#ff79c6">/</span>sources<span style="color:#ff79c6">.</span>list<span style="color:#ff79c6">.</span>d<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">.</span>list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl <span style="color:#ff79c6">-</span>sS https:<span style="color:#ff79c6">//</span>download<span style="color:#ff79c6">.</span>docker<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>linux<span style="color:#ff79c6">/</span>debian<span style="color:#ff79c6">/</span>gpg <span style="color:#ff79c6">|</span> gpg <span style="color:#ff79c6">--</span>dearmor <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span>share<span style="color:#ff79c6">/</span>keyrings<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>ce<span style="color:#ff79c6">.</span>gpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#f1fa8c">&#34;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(lsb_release -sc) stable&#34;</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>etc<span style="color:#ff79c6">/</span>apt<span style="color:#ff79c6">/</span>sources<span style="color:#ff79c6">.</span>list<span style="color:#ff79c6">.</span>d<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">.</span>list
 </span></span><span style="display:flex;"><span>
 </span></span><span style="display:flex;"><span>apt update
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>apt install docker<span style="color:#ff79c6">-</span>ce docker<span style="color:#ff79c6">-</span>ce<span style="color:#ff79c6">-</span>cli containerd.io docker<span style="color:#ff79c6">-</span>compose<span style="color:#ff79c6">-</span>plugin
+</span></span><span style="display:flex;"><span>apt install docker<span style="color:#ff79c6">-</span>ce docker<span style="color:#ff79c6">-</span>ce<span style="color:#ff79c6">-</span>cli containerd<span style="color:#ff79c6">.</span>io docker<span style="color:#ff79c6">-</span>compose<span style="color:#ff79c6">-</span>plugin
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span>curl <span style="color:#ff79c6">-</span>L https:<span style="color:#6272a4">//github.com/docker/compose/releases/latest/download/docker-compose-Linux-x86_64 &gt; /usr/local/bin/docker-compose
-</span></span></span><span style="display:flex;"><span><span style="color:#6272a4"></span>
-</span></span><span style="display:flex;"><span>chmod <span style="color:#ff79c6">+</span>x <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span>local<span style="color:#ff79c6">/</span>bin<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>compose
+</span></span><span style="display:flex;"><span>curl <span style="color:#ff79c6">-</span>L https:<span style="color:#ff79c6">//</span>github<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">/</span>compose<span style="color:#ff79c6">/</span>releases<span style="color:#ff79c6">/</span>latest<span style="color:#ff79c6">/</span>download<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>compose<span style="color:#ff79c6">-</span>Linux<span style="color:#ff79c6">-</span>x86_64 <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span>local<span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">bin</span><span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>compose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ff79c6">+</span>x <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span>local<span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">bin</span><span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>compose
 </span></span></code></pre></td></tr></table>
 </div>
 </div><p>以上在Debian12下验证过。</p>
