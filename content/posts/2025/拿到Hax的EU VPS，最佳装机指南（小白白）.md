@@ -6,7 +6,7 @@ categories:
   - 技术
 avatar: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170400658.png
 author: Sherry
-cover: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807110653103.png
+cover: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807174155122.png
 ---
 
 
