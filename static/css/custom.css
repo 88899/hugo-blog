@@ -15,3 +15,58 @@
 [data-theme="forest"] #disqus_thread a {
   color: #cbc9ca;
 }
+
+
+/* 自定义 */
+
+/* 针对大屏幕调整网格容器 */
+.lg\:grid-cols-4 {
+  max-width: 1400px; /* 限制页面最大宽度，避免过宽 */
+  margin: 0 auto;    /* 让整个网格容器居中 */
+  padding: 0 20px;   /* 左右留白 */
+}
+
+/* 让文章内容区域占据更多列数（3列）并居中 */
+.lg\:grid-cols-4 > div.lg\:col-span-2 {
+  grid-column: span 3 !important; /* 覆盖原有2列，改为3列 */
+  max-width: 900px;               /* 限制内容最大宽度，提升阅读体验 */
+  margin: 0 auto;                 /* 内容区域自身居中 */
+  padding: 0 15px;
+}
+
+/* 调整目录区域（右侧）的显示，使其不影响内容居中 */
+.lg\:grid-cols-4 > div.hidden.lg\:flex {
+  grid-column: span 1; /* 目录仍占1列 */
+  position: sticky;    /* 保持目录固定 */
+  top: 20px;
+  max-height: calc(100vh - 40px); /* 限制目录高度 */
+  overflow-y: auto;    /* 目录过长时可滚动 */
+}
+
+/* 确保文章内的元素正常显示 */
+#dream-single-post-content {
+  margin: 0 auto;
+  text-align: left; /* 保持文字左对齐（阅读更舒适） */
+}
+
+/* 代码块适配 */
+.highlight {
+  max-width: 100%;
+  margin: 1em auto;
+}
+
+/* 代码块自动换行 */
+pre {
+  white-space: pre-wrap; /* 允许长单词换行 */
+  word-wrap: break-word; /* 强制换行 */
+  overflow-x: auto; /* 横向溢出时显示滚动条 */
+  max-width: 100%; /* 限制最大宽度为父容器 */
+  padding: 15px; /* 增加内边距 */
+  border-radius: 4px; /* 圆角边框（可选） */
+  background-color: #f5f5f5; /* 背景色（可选） */
+}
+
+/* 针对代码块内的代码元素 */
+code {
+  white-space: inherit; /* 继承pre的换行设置 */
+}
