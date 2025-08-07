@@ -1,117 +1,131 @@
+/* Disqus 评论区主题适配 */
 [data-theme="emerald"] #disqus_thread {
   color-scheme: none;
   background-color: #fff;
 }
-
 [data-theme="emerald"] #disqus_thread a {
   color: #333c4d;
 }
-
 [data-theme="forest"] #disqus_thread {
   color-scheme: none;
   background-color: #171213;
 }
-
 [data-theme="forest"] #disqus_thread a {
   color: #cbc9ca;
 }
 
 
-/* 自定义 */
-
-/* 针对大屏幕调整网格容器 */
+/* 全局布局样式 */
 .lg\:grid-cols-4 {
   max-width: 1400px;
   margin: 0 auto;
   padding: 0 20px;
+  box-sizing: border-box; /* 统一盒模型 */
 }
 
-/* 让文章内容区域占据更多列数（3列）并居中 */
+/* 文章内容区域 */
 .lg\:grid-cols-4 > div.lg\:col-span-2 {
-  grid-column: span 3 !important;
+  grid-column: span 3;
   max-width: 900px;
   margin: 0 auto;
   padding: 0 15px;
+  box-sizing: border-box;
 }
 
-/* 调整目录区域（右侧）的显示 */
+/* 目录区域 */
 .lg\:grid-cols-4 > div.hidden.lg\:flex {
   grid-column: span 1;
   position: sticky;
   top: 20px;
   max-height: calc(100vh - 40px);
   overflow-y: auto;
+  box-sizing: border-box;
 }
 
-/* 确保文章内的元素正常显示 */
+/* 文章内容容器 */
 #dream-single-post-content {
   margin: 0 auto;
   text-align: left;
 }
 
-/* 代码块核心样式（固定宽度不随内容自适应） */
+
+/* 代码块核心样式（重点优化） */
 .highlight {
-  width: 100% !important; /* 强制占满父容器宽度 */
-  max-width: 100% !important; /* 禁止超过父容器 */
-  margin: 1em 0 !important; /* 取消自动居中，避免溢出 */
-  box-sizing: border-box !important; /* 确保padding不增加总宽度 */
-  padding: 0 !important; /* 去除额外内边距 */
+  width: 100%;
+  max-width: 100%;
+  margin: 1em 0;
+  padding: 0;
+  box-sizing: border-box; /* 确保宽度计算包含内边距 */
+  overflow: hidden; /* 防止内部元素溢出容器 */
 }
 
 pre {
-  width: 100% !important; /* 固定宽度为父容器100% */
-  max-width: 100% !important; /* 禁止随内容扩张 */
-  white-space: pre-wrap !important; /* 长内容强制换行 */
-  word-break: break-all !important; /* 强制长单词/代码换行 */
-  overflow-x: auto !important; /* 极端情况显示滚动条 */
-  padding: 15px !important;
+  /* 固定宽度：与父容器一致 */
+  width: 100%;
+  max-width: 100%;
+  /* 换行规则：优先自动换行，无法换行则显示滚动条 */
+  white-space: pre-wrap; /* 保留换行符，长句自动换行 */
+  word-wrap: break-word; /* 长单词拆分换行 */
+  word-break: normal; /* 避免非英文单词被强制拆分（优化可读性） */
+  overflow-x: auto; /* 极端长内容显示横向滚动条 */
+  /* 样式优化 */
+  padding: 15px;
   border-radius: 4px;
   background-color: #f5f5f5;
-  box-sizing: border-box !important; /* 核心：宽度计算包含padding */
+  box-sizing: border-box; /* 核心：padding不增加总宽度 */
+  font-size: 0.95em;
+  line-height: 1.5; /* 提高可读性 */
 }
 
-/* 深色模式代码块适配 */
+/* 深色模式适配 */
 [data-theme="forest"] pre {
   background-color: #282a36;
+  color: #f8f8f2; /* 确保深色模式文字可见 */
 }
 
 code {
   white-space: inherit;
+  font-family: monospace; /* 统一代码字体 */
 }
 
 
-/* 移动端适配（屏幕宽度 < 1024px） */
+/* 移动端适配（屏幕 < 1024px） */
 @media (max-width: 1023px) {
   .lg\:grid-cols-4 {
     display: block;
     padding: 0 10px;
     max-width: 100vw;
-    overflow-x: hidden;
+    overflow-x: hidden; /* 禁止页面整体横向滚动 */
   }
 
   .lg\:grid-cols-4 > div.lg\:col-span-2 {
-    grid-column: span 1 !important;
-    max-width: 100% !important;
+    grid-column: span 1;
+    max-width: 100%;
     padding: 0 10px;
   }
 
-  /* 移动端代码块强制固定宽度 */
+  /* 移动端代码块适配 */
   .highlight {
-    width: calc(100vw - 20px) !important; /* 减去父容器左右padding */
-    margin: 1em -10px !important; /* 负边距抵消父容器padding，避免左右留白 */
+    width: 100%;
+    margin: 1em 0; /* 移除负边距，避免超出屏幕 */
   }
 
   pre {
-    padding: 12px !important;
-    font-size: 0.9em; /* 缩小字体减少换行压力 */
+    padding: 12px;
+    font-size: 0.9em; /* 缩小字体，减少换行压力 */
+    overflow-x: auto; /* 强制显示滚动条（长内容时） */
+    -webkit-overflow-scrolling: touch; /* 优化iOS滚动体验 */
   }
 
+  /* 媒体元素适配 */
   img, video, iframe {
     max-width: 100%;
     height: auto;
+    box-sizing: border-box;
   }
 
+  /* 隐藏目录 */
   .lg\:grid-cols-4 > div.hidden.lg\:flex {
-    display: none !important;
+    display: none;
   }
 }
