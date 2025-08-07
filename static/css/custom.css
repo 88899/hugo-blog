@@ -1,3 +1,4 @@
+/* Disqus 评论区主题适配 */
 [data-theme="emerald"] #disqus_thread {
   color-scheme: none;
   background-color: #fff;
@@ -17,94 +18,110 @@
 }
 
 
-/* 自定义 */
+/* 全局自定义样式 */
 
-/* 针对大屏幕调整网格容器 */
-.lg\:grid-cols-4 {
-  max-width: 1400px; /* 限制页面最大宽度，避免过宽 */
-  margin: 0 auto;    /* 让整个网格容器居中 */
-  padding: 0 20px;   /* 左右留白 */
+/* 大屏幕网格布局调整 */
+.lg:grid-cols-4 {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0 20px;
 }
 
-/* 让文章内容区域占据更多列数（3列）并居中 */
-.lg\:grid-cols-4 > div.lg\:col-span-2 {
-  grid-column: span 3 !important; /* 覆盖原有2列，改为3列 */
-  max-width: 900px;               /* 限制内容最大宽度，提升阅读体验 */
-  margin: 0 auto;                 /* 内容区域自身居中 */
+/* 文章内容区域布局 */
+.lg:grid-cols-4 > div.lg:col-span-2 {
+  grid-column: span 3 !important;
+  max-width: 900px;
+  margin: 0 auto;
   padding: 0 15px;
 }
 
-/* 调整目录区域（右侧）的显示，使其不影响内容居中 */
-.lg\:grid-cols-4 > div.hidden.lg\:flex {
-  grid-column: span 1; /* 目录仍占1列 */
-  position: sticky;    /* 保持目录固定 */
+/* 目录区域布局 */
+.lg:grid-cols-4 > div.hidden.lg:flex {
+  grid-column: span 1;
+  position: sticky;
   top: 20px;
-  max-height: calc(100vh - 40px); /* 限制目录高度 */
-  overflow-y: auto;    /* 目录过长时可滚动 */
+  max-height: calc(100vh - 40px);
+  overflow-y: auto;
 }
 
-/* 确保文章内的元素正常显示 */
+/* 文章内容容器 */
 #dream-single-post-content {
   margin: 0 auto;
-  text-align: left; /* 保持文字左对齐（阅读更舒适） */
+  text-align: left;
 }
 
-/* 代码块适配 */
+/* 代码块基础样式 */
 .highlight {
   max-width: 100%;
   margin: 1em auto;
+  box-sizing: border-box; /* 确保内边距不影响宽度计算 */
 }
 
-/* 代码块自动换行 */
 pre {
-  white-space: pre-wrap; /* 允许长单词换行 */
-  word-wrap: break-word; /* 强制换行 */
-  overflow-x: auto; /* 横向溢出时显示滚动条 */
-  max-width: 100%; /* 限制最大宽度为父容器 */
-  padding: 15px; /* 增加内边距 */
-  border-radius: 4px; /* 圆角边框（可选） */
-  background-color: #f5f5f5; /* 背景色（可选） */
+  white-space: pre-wrap;
+  word-wrap: break-word;
+  overflow-x: auto; /* 横向溢出时显示滚动条（替代换行的备选方案） */
+  max-width: 100%;
+  padding: 15px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  box-sizing: border-box; /* 核心：让padding和border不增加总宽度 */
 }
 
-/* 针对代码块内的代码元素 */
+/* 深色模式代码块适配 */
+[data-theme="forest"] pre {
+  background-color: #282a36;
+}
+
 code {
-  white-space: inherit; /* 继承pre的换行设置 */
+  white-space: inherit;
 }
-
 
 
 /* 移动端适配（屏幕宽度 < 1024px） */
 @media (max-width: 1023px) {
-  /* 取消网格布局，改用块级布局 */
-  .lg\:grid-cols-4 {
-    display: block; /* 覆盖大屏幕的grid布局 */
-    padding: 0 10px; /* 减小左右内边距，避免内容挤压 */
-    max-width: 100vw; /* 限制最大宽度为屏幕宽度 */
-    overflow-x: hidden; /* 禁止横向滚动 */
+  /* 重置网格布局为块级 */
+  .lg:grid-cols-4 {
+    display: block;
+    padding: 0 8px; /* 进一步减小边距，避免内容挤压 */
+    max-width: 100vw;
+    overflow-x: hidden;
   }
 
-  /* 内容区在移动端占满宽度 */
-  .lg\:grid-cols-4 > div.lg\:col-span-2 {
-    grid-column: span 1 !important; /* 重置网格列，避免宽度异常 */
-    max-width: 100% !important; /* 占满屏幕宽度 */
-    padding: 0 10px; /* 适当留白，避免贴边 */
+  /* 内容区占满宽度 */
+  .lg:grid-cols-4 > div.lg:col-span-2 {
+    grid-column: span 1 !important;
+    max-width: 100% !important;
+    padding: 0 8px; /* 与父容器边距保持一致 */
   }
 
-  /* 代码块在移动端强制适应屏幕 */
+  /* 代码块强制适配移动端 */
   .highlight {
-    margin: 1em 0; /* 去除自动居中的margin，避免溢出 */
-    width: 100%; /* 强制占满父容器宽度 */
-    box-sizing: border-box; /* 确保padding不会导致宽度溢出 */
+    margin: 1em 0;
+    width: 100%;
+    padding: 0 4px; /* 去除额外内边距，避免溢出 */
   }
 
-  /* 修复可能导致溢出的元素 */
+  pre {
+    padding: 12px; /* 减小内边距，节省空间 */
+    font-size: 0.9em; /* 缩小字体，减少换行压力 */
+    word-break: break-all; /* 强制长单词/命令换行（关键优化） */
+  }
+
+  /* 媒体元素适配 */
   img, video, iframe {
-    max-width: 100%; /* 媒体元素不超出屏幕 */
-    height: auto; /* 保持宽高比 */
+    max-width: 100%;
+    height: auto;
+    border-radius: 2px;
   }
 
-  /* 目录在移动端隐藏（避免挤压内容） */
-  .lg\:grid-cols-4 > div.hidden.lg\:flex {
+  /* 隐藏目录 */
+  .lg:grid-cols-4 > div.hidden.lg:flex {
     display: none !important;
+  }
+
+  /* 修复可能的溢出元素 */
+  table, pre, code, div {
+    box-sizing: border-box; /* 确保所有元素遵循边框盒模型 */
   }
 }
