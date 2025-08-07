@@ -70,3 +70,41 @@ pre {
 code {
   white-space: inherit; /* 继承pre的换行设置 */
 }
+
+
+
+/* 移动端适配（屏幕宽度 < 1024px） */
+@media (max-width: 1023px) {
+  /* 取消网格布局，改用块级布局 */
+  .lg\:grid-cols-4 {
+    display: block; /* 覆盖大屏幕的grid布局 */
+    padding: 0 10px; /* 减小左右内边距，避免内容挤压 */
+    max-width: 100vw; /* 限制最大宽度为屏幕宽度 */
+    overflow-x: hidden; /* 禁止横向滚动 */
+  }
+
+  /* 内容区在移动端占满宽度 */
+  .lg\:grid-cols-4 > div.lg\:col-span-2 {
+    grid-column: span 1 !important; /* 重置网格列，避免宽度异常 */
+    max-width: 100% !important; /* 占满屏幕宽度 */
+    padding: 0 10px; /* 适当留白，避免贴边 */
+  }
+
+  /* 代码块在移动端强制适应屏幕 */
+  .highlight {
+    margin: 1em 0; /* 去除自动居中的margin，避免溢出 */
+    width: 100%; /* 强制占满父容器宽度 */
+    box-sizing: border-box; /* 确保padding不会导致宽度溢出 */
+  }
+
+  /* 修复可能导致溢出的元素 */
+  img, video, iframe {
+    max-width: 100%; /* 媒体元素不超出屏幕 */
+    height: auto; /* 保持宽高比 */
+  }
+
+  /* 目录在移动端隐藏（避免挤压内容） */
+  .lg\:grid-cols-4 > div.hidden.lg\:flex {
+    display: none !important;
+  }
+}
