@@ -54,7 +54,7 @@ images = ["img/global-background.jpg"]
 
 author = "AiEDU"
 description = "Just do it!"
-avatar = "img/personal/avatar.png"
+avatar = "/img/personal/avatar.png"
 headerTitle = "AiEDU | BLOG"
 motto = "知识改变命运，AI改变知识。"
 
