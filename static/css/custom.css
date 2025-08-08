@@ -36,7 +36,7 @@
 .lg\:grid-cols-4 > div.hidden.lg\:flex {
   grid-column: span 1;
   position: sticky;
-  top: 20px;
+  top: 80px;
   max-height: calc(100vh - 40px);
   overflow-y: auto;
   box-sizing: border-box;
