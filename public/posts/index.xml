@@ -8,6 +8,13 @@
     <language>zh-Hans</language>
     <atom:link href="https://googhub.nyc.mn/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>Docker 与 Podman 深度对比：容器化工具的全方位解析</title>
+      <link>https://googhub.nyc.mn/posts/2025/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/</guid>
+      <description>&lt;p&gt;容器技术已成为现代软件开发和部署的基石，而 Docker 和 Podman 作为两款主流的容器化工具，常常被拿来比较。本文将从功能特性、使用场景、优缺点等多个维度对两者进行深度对比，帮助你在实际应用中做出更合适的选择。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>我让扣子空间，帮我预测沪深300的明日购买策略</title>
       <link>https://googhub.nyc.mn/posts/2025/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/</link>
       <pubDate>Wed, 18 Jun 2025 00:00:00 +0000</pubDate>
