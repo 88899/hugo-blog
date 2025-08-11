@@ -3,7 +3,6 @@ title: Agent、MCP、FunctionCall的区别
 date: 2025-04-08
 categories:
   - AI
-  - 技术
 avatar: /img/personal/avatar.png
 cover: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807174231535.png
 ---

@@ -4,8 +4,7 @@ date: 2025-01-20
 author: Flio Niu
 avatar: /img/personal/avatar.png
 categories:
-  - AI
-  - 技术
+  - VPS
 ---
 
 ### 初衷

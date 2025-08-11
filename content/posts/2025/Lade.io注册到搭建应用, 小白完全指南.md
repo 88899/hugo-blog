@@ -3,8 +3,7 @@ title: Lade.io注册到搭建应用, 小白完全指南
 date: 2025-05-03
 author: Sherry
 categories:
-  - AI
-  - 技术
+  - VPS
 avatar: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170937500.png
 ---
 
