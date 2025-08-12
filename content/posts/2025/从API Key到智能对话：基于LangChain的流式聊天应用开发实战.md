@@ -5,7 +5,6 @@ author: Wang Wei
 categories:
   - AI
 avatar: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170905751.png
-cover: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807174024116.png
 ---
 
 

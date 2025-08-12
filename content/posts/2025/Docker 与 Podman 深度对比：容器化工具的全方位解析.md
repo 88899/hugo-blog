@@ -3,7 +3,6 @@ title: Docker 与 Podman 深度对比：容器化工具的全方位解析
 date: 2025-08-11
 author: AiEDU
 avatar: /img/personal/avatar.png
-cover: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250811121011583.png
 categories:
   - OPS
 ---
