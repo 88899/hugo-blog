@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OPS on AiEDU | Blog</title>
+    <link>https://googhub.nyc.mn/categories/ops/</link>
+    <description>Recent content in OPS on AiEDU | Blog</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Mon, 11 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://googhub.nyc.mn/categories/ops/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Docker 与 Podman 深度对比：容器化工具的全方位解析</title>
+      <link>https://googhub.nyc.mn/posts/2025/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Mon, 11 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/</guid>
+      <description>&lt;p&gt;容器技术已成为现代软件开发和部署的基石，而 Docker 和 Podman 作为两款主流的容器化工具，常常被拿来比较。本文将从功能特性、使用场景、优缺点等多个维度对两者进行深度对比，帮助你在实际应用中做出更合适的选择。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

@@ -81,10 +81,18 @@ favicon = 'img/personal/avatar.png'
 customSyntaxHighlighting = true
 
 # options
+# 导航栏吸顶开关
 stickyNav = true
-reorderNavItems = ["about", "search", "github", "posts", "categories", "tags", "rss"]
-collapseNavItems = ["posts", "categories", "tags", "rss"]
+
+# 导航菜单选项
+reorderNavItems = [ "categories", "posts", "search", "tags", "tools", "rss", "github", "about"]
+
+# 是否折叠显示导航菜单
+#collapseNavItems = ["posts", "categories", "tags", "rss"]
+# 是否显示默认的封面图
 # noDefaultSummaryCover = true
+
+# 是否显示文章目录
 showTableOfContents = true
 showSummaryCoverInPost = true
 imageZoomableInPost = true
@@ -97,6 +105,7 @@ twitter = "dgdghub"
 
 [params.navItems]
 github = { href = "https://github.com/88899", target = "_blank", icon = "logo-github", title = "GitHub" }
+tools = { href = "https://www.518855.xyz", target = "_blank", icon = "rocket-outline", title = "Tools" }
 
 [params.advanced]
 customCSS = ["css/custom.css"]

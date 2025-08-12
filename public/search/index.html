@@ -112,17 +112,22 @@
 
 
 
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
 
 
 
 
 <li>
-  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
-    <ion-icon name="information-circle"></ion-icon>关于</div>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
 </li>
-
-
-
 
 
 
@@ -131,6 +136,39 @@
   <a class="group inline-flex items-center p-2 cursor-pointer" href="/search" title="搜索">
     <ion-icon name="search"></ion-icon>
     搜索
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://www.518855.xyz" target="_blank" title="Tools">
+    
+    <ion-icon name="rocket-outline"></ion-icon>
+    
+    Tools
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
+    <ion-icon name="logo-rss"></ion-icon>
+    RSS
   </a>
 </li>
 
@@ -153,39 +191,19 @@
 
 
 
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
-    <ion-icon name="archive"></ion-icon>
-    归档
-  </a>
-</li>
 
 
 
 
 <li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
-    <ion-icon name="grid"></ion-icon>
-    所有分类
-  </a>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
 </li>
 
 
 
 
 
-
-
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
-    <ion-icon name="logo-rss"></ion-icon>
-    RSS
-  </a>
-</li>
 
 
 
@@ -211,22 +229,49 @@
 
       
       
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
       
       
-
-
-
-
-<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
-
-
-
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
 
 
       
       
 <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/search" title="搜索">
   <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.518855.xyz" target="_blank" title="Tools">
+    <ion-icon class="group-hover:text-primary-content" name="rocket-outline"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
+  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
 </a>
 
 
@@ -244,53 +289,21 @@
 
 
       
-
-      <div class="dropdown dropdown-end dropdown-hover">
-        <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
-          <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
-        </div>
-        <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-xl">
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
-    <ion-icon name="archive"></ion-icon>
-    归档
-  </a>
-</li>
+      
 
 
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
-    <ion-icon name="grid"></ion-icon>
-    所有分类
-  </a>
-</li>
 
 
-          
-          
+<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
 
 
 
 
 
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
-    <ion-icon name="logo-rss"></ion-icon>
-    RSS
-  </a>
-</li>
+      
 
-
-          
-
-          
-          
+      
+      
 
 
 
@@ -301,9 +314,10 @@
 
 
 
-          
-        </ul>
-      </div>
+
+
+      
+
       
     </section>
   </div>
@@ -606,7 +620,7 @@ x-data="{
 
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" integrity="sha256-42IbU8t3tOwwbexB7ZVRHm3YDRf65aBPPjRtIUufj5I=" crossorigin="anonymous"></script>
 <script>
-  var fuseData = [{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":null,"description":"\u003cp\u003e容器技术已成为现代软件开发和部署的基石，而 Docker 和 Podman 作为两款主流的容器化工具，常常被拿来比较。本文将从功能特性、使用场景、优缺点等多个维度对两者进行深度对比，帮助你在实际应用中做出更合适的选择。\u003c/p\u003e","readingTime":4,"tags":null,"title":"Docker 与 Podman 深度对比：容器化工具的全方位解析","url":"/posts/2025/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/"},{"author":null,"avatar":"/img/personal/avatar.png","categories":["AI","技术"],"description":"\u003cimg src=\"https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250428163609964.png\" alt=\"\"\u003e","readingTime":1,"tags":null,"title":"我让扣子空间，帮我预测沪深300的明日购买策略","url":"/posts/2025/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/"},{"author":"Sherry","avatar":"https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170400658.png","categories":["AI","技术"],"description":"\u003ch2 id=\"概要\"\u003e概要\u003c/h2\u003e\n\u003cp\u003e最近Hax EU区域的Vps更换硬盘，导致坚持一年多的EU终究是下线了，需要重新蹲抢，不过很辛运，作为老用户，很快就拿到一台。于是又开始重复多次的开机\u0026ndash;\u0026gt; 装系统\u0026ndash;\u0026gt;配置环境\u0026ndash;\u0026gt;搭建点；经历多了自然有一些自己的小心得，顺便记录下来作为以后的操作指南。\u003c/p\u003e","readingTime":3,"tags":null,"title":"拿到Hax的EU VPS，最佳装机指南（小白白）","url":"/posts/2025/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/"},{"author":"Sherry","avatar":"https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170937500.png","categories":["AI","技术"],"description":"\u003ch2 id=\"说明\"\u003e说明\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e我尽量简化，所以尽量用图说话：红色线代表需要要操作的, 所以你可以按着红色标识操作\u003c/li\u003e\n\u003cli\u003e如果你已经有账号，可以直接跳转到第二节\u003c/li\u003e\n\u003cli\u003e目前作者增加了github账号验证，所以你得有一个注册时间大于6个月的github账号\u003c/li\u003e\n\u003cli\u003e所用到的代码（https://github.com/eooce/Sing-box/tree/main）\u003c/li\u003e\n\u003cli\u003e我是小白，所以写作水平有限，请大家多多包涵\u003c/li\u003e\n\u003c/ul\u003e","readingTime":3,"tags":null,"title":"Lade.io注册到搭建应用, 小白完全指南","url":"/posts/2025/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/"},{"author":null,"avatar":"/img/personal/avatar.png","categories":["AI","技术"],"description":"\u003ch2 id=\"一agent是自主决策的ai应用\"\u003e一、Agent是自主决策的AI应用\u003c/h2\u003e\n\u003cp\u003eAgent是一种AI应用，能感知环境，能规划任务并调用外部工具完成任务。\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e具备自主决策\u003c/li\u003e\n\u003cli\u003e能够完成复杂任务\u003c/li\u003e\n\u003cli\u003e可以调用外部工具\u003c/li\u003e\n\u003cli\u003e可以调用MCP、Function Call等\u003c/li\u003e\n\u003c/ul\u003e","readingTime":3,"tags":null,"title":"Agent、MCP、FunctionCall的区别","url":"/posts/2025/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/"},{"author":"Wang Wei","avatar":"https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170905751.png","categories":["AI","技术"],"description":"\u003ch2 id=\"一引言解锁gpt能力的钥匙\"\u003e一、引言：解锁GPT能力的钥匙\u003c/h2\u003e\n\u003cp\u003e当开发者获得OpenAI API Key时，就像拿到了一把打开智能对话宇宙的钥匙。本文将结合\u003ccode\u003elangchain\u003c/code\u003e框架，通过一个完整的流式聊天Demo，演示如何将API Key转化为具有上下文记忆、多会话管理和流式输出能力的智能对话系统。\u003c/p\u003e","readingTime":3,"tags":null,"title":"从API Key到智能对话：基于LangChain的流式聊天应用开发实战","url":"/posts/2025/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/"},{"author":"Xiao Mi","avatar":"https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170937500.png","categories":["AI","技术"],"description":"\u003ch3 id=\"mcp官方资源\"\u003eMCP官方资源：\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"https://github.com/modelcontextprotocol/servers\" target=\"_blank\"\u003ehttps://github.com/modelcontextprotocol/servers\u003c/a\u003e\n\u003c/p\u003e\n\u003ch3 id=\"awesome\"\u003eAwesome:\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"https://github.com/punkpeye/awesome-mcp-servers\" target=\"_blank\"\u003ehttps://github.com/punkpeye/awesome-mcp-servers\u003c/a\u003e\n\u003c/p\u003e","readingTime":1,"tags":null,"title":"分享几个热度较高的MCP服务聚合平台","url":"/posts/2025/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/"},{"author":"Flio Niu","avatar":"/img/personal/avatar.png","categories":["AI","技术"],"description":"\u003ch3 id=\"初衷\"\u003e初衷\u003c/h3\u003e\n\u003cp\u003e我非常喜欢Nl论坛，喜欢它的界面局和功能，符合我的体验和习惯。于是我想有没有办法自建一个学习学习，于是有了这篇文章。\u003c/p\u003e","readingTime":2,"tags":null,"title":"复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化","url":"/posts/2025/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/"}];
+  var fuseData = [{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["OPS"],"description":"\u003cp\u003e容器技术已成为现代软件开发和部署的基石，而 Docker 和 Podman 作为两款主流的容器化工具，常常被拿来比较。本文将从功能特性、使用场景、优缺点等多个维度对两者进行深度对比，帮助你在实际应用中做出更合适的选择。\u003c/p\u003e","readingTime":4,"tags":null,"title":"Docker 与 Podman 深度对比：容器化工具的全方位解析","url":"/posts/2025/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/"},{"author":null,"avatar":"/img/personal/avatar.png","categories":["AI"],"description":"\u003cimg src=\"https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250428163609964.png\" alt=\"\"\u003e","readingTime":1,"tags":null,"title":"我让扣子空间，帮我预测沪深300的明日购买策略","url":"/posts/2025/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/"},{"author":"Sherry","avatar":"https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170400658.png","categories":["VPS"],"description":"\u003ch2 id=\"概要\"\u003e概要\u003c/h2\u003e\n\u003cp\u003e最近Hax EU区域的Vps更换硬盘，导致坚持一年多的EU终究是下线了，需要重新蹲抢，不过很辛运，作为老用户，很快就拿到一台。于是又开始重复多次的开机\u0026ndash;\u0026gt; 装系统\u0026ndash;\u0026gt;配置环境\u0026ndash;\u0026gt;搭建点；经历多了自然有一些自己的小心得，顺便记录下来作为以后的操作指南。\u003c/p\u003e","readingTime":3,"tags":null,"title":"拿到Hax的EU VPS，最佳装机指南（小白白）","url":"/posts/2025/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/"},{"author":"Sherry","avatar":"https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170937500.png","categories":["VPS"],"description":"\u003ch2 id=\"说明\"\u003e说明\u003c/h2\u003e\n\u003cul\u003e\n\u003cli\u003e我尽量简化，所以尽量用图说话：红色线代表需要要操作的, 所以你可以按着红色标识操作\u003c/li\u003e\n\u003cli\u003e如果你已经有账号，可以直接跳转到第二节\u003c/li\u003e\n\u003cli\u003e目前作者增加了github账号验证，所以你得有一个注册时间大于6个月的github账号\u003c/li\u003e\n\u003cli\u003e所用到的代码（https://github.com/eooce/Sing-box/tree/main）\u003c/li\u003e\n\u003cli\u003e我是小白，所以写作水平有限，请大家多多包涵\u003c/li\u003e\n\u003c/ul\u003e","readingTime":3,"tags":null,"title":"Lade.io注册到搭建应用, 小白完全指南","url":"/posts/2025/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/"},{"author":null,"avatar":"/img/personal/avatar.png","categories":["AI"],"description":"\u003ch2 id=\"一agent是自主决策的ai应用\"\u003e一、Agent是自主决策的AI应用\u003c/h2\u003e\n\u003cp\u003eAgent是一种AI应用，能感知环境，能规划任务并调用外部工具完成任务。\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e具备自主决策\u003c/li\u003e\n\u003cli\u003e能够完成复杂任务\u003c/li\u003e\n\u003cli\u003e可以调用外部工具\u003c/li\u003e\n\u003cli\u003e可以调用MCP、Function Call等\u003c/li\u003e\n\u003c/ul\u003e","readingTime":3,"tags":null,"title":"Agent、MCP、FunctionCall的区别","url":"/posts/2025/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/"},{"author":"Wang Wei","avatar":"https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170905751.png","categories":["AI"],"description":"\u003ch2 id=\"一引言解锁gpt能力的钥匙\"\u003e一、引言：解锁GPT能力的钥匙\u003c/h2\u003e\n\u003cp\u003e当开发者获得OpenAI API Key时，就像拿到了一把打开智能对话宇宙的钥匙。本文将结合\u003ccode\u003elangchain\u003c/code\u003e框架，通过一个完整的流式聊天Demo，演示如何将API Key转化为具有上下文记忆、多会话管理和流式输出能力的智能对话系统。\u003c/p\u003e","readingTime":3,"tags":null,"title":"从API Key到智能对话：基于LangChain的流式聊天应用开发实战","url":"/posts/2025/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/"},{"author":"Xiao Mi","avatar":"https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170937500.png","categories":["AI"],"description":"\u003ch3 id=\"mcp官方资源\"\u003eMCP官方资源：\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"https://github.com/modelcontextprotocol/servers\" target=\"_blank\"\u003ehttps://github.com/modelcontextprotocol/servers\u003c/a\u003e\n\u003c/p\u003e\n\u003ch3 id=\"awesome\"\u003eAwesome:\u003c/h3\u003e\n\u003cp\u003e\u003ca href=\"https://github.com/punkpeye/awesome-mcp-servers\" target=\"_blank\"\u003ehttps://github.com/punkpeye/awesome-mcp-servers\u003c/a\u003e\n\u003c/p\u003e","readingTime":1,"tags":null,"title":"分享几个热度较高的MCP服务聚合平台","url":"/posts/2025/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/"},{"author":"Flio Niu","avatar":"/img/personal/avatar.png","categories":["VPS"],"description":"\u003ch3 id=\"初衷\"\u003e初衷\u003c/h3\u003e\n\u003cp\u003e我非常喜欢Nl论坛，喜欢它的界面局和功能，符合我的体验和习惯。于是我想有没有办法自建一个学习学习，于是有了这篇文章。\u003c/p\u003e","readingTime":2,"tags":null,"title":"复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化","url":"/posts/2025/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/"}];
   var fuseOptions = {
     keys: [
       "title",

@@ -23,7 +23,7 @@
 具备自主决策 能够完成复杂任务 可以调用外部工具 可以调用MCP、Function Call等 " />
 
 
-<meta name="keywords" content="AI,技术">
+<meta name="keywords" content="AI">
 
 
 
@@ -144,17 +144,22 @@
 
 
 
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
 
 
 
 
 <li>
-  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
-    <ion-icon name="information-circle"></ion-icon>关于</div>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
 </li>
-
-
-
 
 
 
@@ -163,6 +168,39 @@
   <a class="group inline-flex items-center p-2 cursor-pointer" href="/search" title="搜索">
     <ion-icon name="search"></ion-icon>
     搜索
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://www.518855.xyz" target="_blank" title="Tools">
+    
+    <ion-icon name="rocket-outline"></ion-icon>
+    
+    Tools
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
+    <ion-icon name="logo-rss"></ion-icon>
+    RSS
   </a>
 </li>
 
@@ -185,39 +223,19 @@
 
 
 
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
-    <ion-icon name="archive"></ion-icon>
-    归档
-  </a>
-</li>
 
 
 
 
 <li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
-    <ion-icon name="grid"></ion-icon>
-    所有分类
-  </a>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
 </li>
 
 
 
 
 
-
-
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
-    <ion-icon name="logo-rss"></ion-icon>
-    RSS
-  </a>
-</li>
 
 
 
@@ -243,22 +261,49 @@
 
       
       
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
       
       
-
-
-
-
-<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
-
-
-
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
 
 
       
       
 <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/search" title="搜索">
   <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.518855.xyz" target="_blank" title="Tools">
+    <ion-icon class="group-hover:text-primary-content" name="rocket-outline"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
+  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
 </a>
 
 
@@ -276,53 +321,21 @@
 
 
       
-
-      <div class="dropdown dropdown-end dropdown-hover">
-        <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
-          <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
-        </div>
-        <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-xl">
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
-    <ion-icon name="archive"></ion-icon>
-    归档
-  </a>
-</li>
+      
 
 
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
-    <ion-icon name="grid"></ion-icon>
-    所有分类
-  </a>
-</li>
 
 
-          
-          
+<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
 
 
 
 
 
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
-    <ion-icon name="logo-rss"></ion-icon>
-    RSS
-  </a>
-</li>
+      
 
-
-          
-
-          
-          
+      
+      
 
 
 
@@ -333,9 +346,10 @@
 
 
 
-          
-        </ul>
-      </div>
+
+
+      
+
       
     </section>
   </div>
@@ -360,7 +374,7 @@
   <meta itemprop="dateModified" content="2025-04-08T00:00:00+00:00">
   <meta itemprop="wordCount" content="1005">
   <meta itemprop="image" content="https://googhub.nyc.mn/img/global-background.jpg">
-  <meta itemprop="keywords" content="AI,技术">
+  <meta itemprop="keywords" content="AI">
 
       <header>
         <h1 itemprop="headline">Agent、MCP、FunctionCall的区别</h1>

@@ -115,17 +115,22 @@
 
 
 
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
 
 
 
 
 <li>
-  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
-    <ion-icon name="information-circle"></ion-icon>关于</div>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
 </li>
-
-
-
 
 
 
@@ -134,6 +139,39 @@
   <a class="group inline-flex items-center p-2 cursor-pointer" href="/search" title="搜索">
     <ion-icon name="search"></ion-icon>
     搜索
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://www.518855.xyz" target="_blank" title="Tools">
+    
+    <ion-icon name="rocket-outline"></ion-icon>
+    
+    Tools
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
+    <ion-icon name="logo-rss"></ion-icon>
+    RSS
   </a>
 </li>
 
@@ -156,39 +194,19 @@
 
 
 
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
-    <ion-icon name="archive"></ion-icon>
-    归档
-  </a>
-</li>
 
 
 
 
 <li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
-    <ion-icon name="grid"></ion-icon>
-    所有分类
-  </a>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
 </li>
 
 
 
 
 
-
-
-
-
-
-
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
-    <ion-icon name="logo-rss"></ion-icon>
-    RSS
-  </a>
-</li>
 
 
 
@@ -214,22 +232,49 @@
 
       
       
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
       
       
-
-
-
-
-<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
-
-
-
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
 
 
       
       
 <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/search" title="搜索">
   <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.518855.xyz" target="_blank" title="Tools">
+    <ion-icon class="group-hover:text-primary-content" name="rocket-outline"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
+  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
 </a>
 
 
@@ -247,53 +292,21 @@
 
 
       
-
-      <div class="dropdown dropdown-end dropdown-hover">
-        <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
-          <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
-        </div>
-        <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-xl">
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
-    <ion-icon name="archive"></ion-icon>
-    归档
-  </a>
-</li>
+      
 
 
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
-    <ion-icon name="grid"></ion-icon>
-    所有分类
-  </a>
-</li>
 
 
-          
-          
+<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
 
 
 
 
 
-          
-          
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
-    <ion-icon name="logo-rss"></ion-icon>
-    RSS
-  </a>
-</li>
+      
 
-
-          
-
-          
-          
+      
+      
 
 
 
@@ -304,9 +317,10 @@
 
 
 
-          
-        </ul>
-      </div>
+
+
+      
+
       
     </section>
   </div>
@@ -324,15 +338,19 @@
 
   <div class="md:basis-[200px] lg:basis-[300px] p-4 prose dark:prose-invert">
     <h1 class="text-2xl">所有分类</h1>
-    <p class="text-sm">2分类</p>
+    <p class="text-sm">3分类</p>
     <div class="flex flex-wrap gap-4 mt-6">
       
       <a href="/categories/ai/" class="badge h-6 no-underline hover:badge-primary">
         AI
       </a>
       
-      <a href="/categories/%E6%8A%80%E6%9C%AF/" class="badge h-6 no-underline hover:badge-primary">
-        技术
+      <a href="/categories/ops/" class="badge h-6 no-underline hover:badge-primary">
+        OPS
+      </a>
+      
+      <a href="/categories/vps/" class="badge h-6 no-underline hover:badge-primary">
+        VPS
       </a>
       
     </div>
@@ -347,14 +365,68 @@
     <div class="dream-grid">
       
         <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+          <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/">
+  
+  <figure>
+    
+    <img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250811121011583.png" alt="Docker 与 Podman 深度对比：容器化工具的全方位解析" />
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">Docker 与 Podman 深度对比：容器化工具的全方位解析</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2025-08-11T00:00:00Z</span>
+    
+    </p>
+
+    <p>容器技术已成为现代软件开发和部署的基石，而 Docker 和 Podman 作为两款主流的容器化工具，常常被拿来比较。本文将从功能特性、使用场景、优缺点等多个维度对两者进行深度对比，帮助你在实际应用中做出更合适的选择。</p>
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="/img/personal/avatar.png" alt="AiEDU" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">AiEDU</span>
+    
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>4分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+        </div>
+      
+        <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
           <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/">
   
   <figure>
     
     
     <picture>
-      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
-      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
+      <source srcset="/images/default3_hu_599e07ea93afc07d.webp" type="image/webp" />
+      <img src="/images/default3.jpg" alt="/images/default3.jpg" />
     </picture>
     
   </figure>
@@ -702,8 +774,8 @@
     
     
     <picture>
-      <source srcset="/images/default4_hu_ae815e0f1649c253.webp" type="image/webp" />
-      <img src="/images/default4.jpg" alt="/images/default4.jpg" />
+      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
+      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
     </picture>
     
   </figure>
