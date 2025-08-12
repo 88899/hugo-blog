@@ -5,9 +5,8 @@ categories:
   - VPS
 avatar: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170400658.png
 author: Sherry
+series: mjj
 ---
-
-
 
 ## 概要
 

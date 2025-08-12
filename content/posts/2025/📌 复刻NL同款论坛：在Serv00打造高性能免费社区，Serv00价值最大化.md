@@ -5,6 +5,9 @@ author: Flio Niu
 avatar: /img/personal/avatar.png
 categories:
   - VPS
+tags:
+  - serv00
+series: mjj
 ---
 
 ### 初衷

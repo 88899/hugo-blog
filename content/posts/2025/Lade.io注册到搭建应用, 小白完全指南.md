@@ -5,6 +5,9 @@ author: Sherry
 categories:
   - VPS
 avatar: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170937500.png
+tags:
+  - lade
+series: mjj
 ---
 
 

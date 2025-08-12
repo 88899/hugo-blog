@@ -5,6 +5,8 @@ author: AiEDU
 avatar: /img/personal/avatar.png
 categories:
   - OPS
+tags:
+  - docker
 ---
 
 容器技术已成为现代软件开发和部署的基石，而 Docker 和 Podman 作为两款主流的容器化工具，常常被拿来比较。本文将从功能特性、使用场景、优缺点等多个维度对两者进行深度对比，帮助你在实际应用中做出更合适的选择。

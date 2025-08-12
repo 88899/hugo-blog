@@ -36,12 +36,13 @@ lineNos = true
 lineNumbersInTable = true
 tabWidth = 4
 
-# [taxonomies]
-# category = "categories"
-# tag = "tags"
-# series = "series"
+[taxonomies]
+category = "categories"
+tag = "tags"
+series = "series"
 
 [params]
+# 布局改为横栏模式，图在右面
 # zenMode = true
 
 lightTheme = "emerald"
@@ -85,7 +86,7 @@ customSyntaxHighlighting = true
 stickyNav = true
 
 # 导航菜单选项
-reorderNavItems = [ "categories", "posts", "search", "tags", "tools", "rss", "github", "about"]
+reorderNavItems = [ "categories", "posts", "tags", "search", "tools", "rss", "github", "about"]
 
 # 是否折叠显示导航菜单
 #collapseNavItems = ["posts", "categories", "tags", "rss"]
