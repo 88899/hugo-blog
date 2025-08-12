@@ -86,7 +86,7 @@ customSyntaxHighlighting = true
 stickyNav = true
 
 # 导航菜单选项
-reorderNavItems = [ "categories", "posts", "tags", "search", "tools", "rss", "github", "about"]
+reorderNavItems = [ "categories", "tags", "posts", "search", "tools", "rss", "github", "about"]
 
 # 是否折叠显示导航菜单
 #collapseNavItems = ["posts", "categories", "tags", "rss"]
