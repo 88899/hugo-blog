@@ -7,6 +7,7 @@ categories:
 avatar: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170905751.png
 tags:
   - 技术
+cover: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250815174145021.png
 ---
 
 

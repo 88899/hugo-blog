@@ -8,6 +8,7 @@ categories:
 tags:
   - serv00
 series: mjj
+cover: https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250815174321236.png
 ---
 
 ### 初衷
