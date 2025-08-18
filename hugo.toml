@@ -86,7 +86,7 @@ customSyntaxHighlighting = true
 stickyNav = true
 
 # 导航菜单选项
-reorderNavItems = [ "categories", "tags", "posts", "search", "tools", "rss", "github", "about"]
+reorderNavItems = ["home", "categories", "tags", "posts", "tools", "search", "rss", "github", "about"]
 
 # 是否折叠显示导航菜单
 #collapseNavItems = ["posts", "categories", "tags", "rss"]
@@ -105,8 +105,9 @@ showPrevNextPost = true
 twitter = "dgdghub"
 
 [params.navItems]
+home = { href = "/", target = "_blank", icon = "home", title = "首页" }
 github = { href = "https://github.com/88899", target = "_blank", icon = "logo-github", title = "GitHub" }
-tools = { href = "https://www.518855.xyz", target = "_blank", icon = "rocket-outline", title = "导航" }
+tools = { href = "https://www.518855.xyz", target = "_blank", icon = "rocket", title = "导航" }
 
 [params.advanced]
 customCSS = ["css/custom.css"]
