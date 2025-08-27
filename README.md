@@ -34,8 +34,12 @@ categories:
 cover: 封面图片，可以是网络链接，也可以是项目中的图片地址
 ---
 ```
+## github submodule
 
 ## vercel配置
-* 增加子模块
+* vercel.json
 * git submodule update --remote --merge && hugo --gc --minify
-*
+
+## Cloudflare Pages配置
+* Build command: git submodule update --remote --merge && hugo --gc --minify
+* Build output: public
