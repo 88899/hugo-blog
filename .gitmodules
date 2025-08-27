@@ -1,6 +1,6 @@
-[submodule "themes/dream"]
-	path = themes/dream
-	url = https://github.com/g1eny0ung/hugo-theme-dream.git
+# [submodule "themes/dream"]
+# 	path = themes/dream
+# 	url = https://github.com/g1eny0ung/hugo-theme-dream.git
 [submodule "content"]
 	path = content
 	url = https://github.com/88899/notes.git
