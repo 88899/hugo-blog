@@ -4,3 +4,4 @@
 [submodule "content"]
 	path = content
 	url = https://github.com/88899/notes.git
+    branch = main
