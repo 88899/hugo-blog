@@ -1,0 +1,3 @@
+{
+  "buildCommand": "git submodule update --init --recursive && hugo --gc --minify"
+}
