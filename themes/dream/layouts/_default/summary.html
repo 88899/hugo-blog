@@ -39,7 +39,7 @@
     </p>
 <!--
     {{ or .Description (.Summary | emojify | safeHTML) }} -->
-    {{ or (.Description | truncate 150 "…") (.Summary | emojify | safeHTML | truncate 150 "…") }}
+    {{ or (.Description | truncate 100 "…") (.Summary | emojify | safeHTML | truncate 100 "…") }}
 
     {{ $hasAuthor := or .Params.author site.Params.author }}
     <div class="card-actions justify-between items-center mt-4">
