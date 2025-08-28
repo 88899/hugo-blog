@@ -52,6 +52,7 @@ git submodule add https://github.com/88899/notes.git content
 * Build output: public
 
 ## 修订日志
+* 2025-08-28 release v1.0.1 增加每页记录数的配置参数
 * 2025-08-28 release v1.0.0
 * 2022-05-03：增加vercel和Cloudflare Pages配置
 * 2022-05-02：增加github submodule配置
