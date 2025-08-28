@@ -46,7 +46,7 @@ series = "series"
 # zenMode = true
 
 # 配置每页记录数
-paginate = 10
+paginate = 12
 
 lightTheme = "emerald"
 darkTheme = "forest"
