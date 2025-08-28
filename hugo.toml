@@ -44,7 +44,9 @@ series = "series"
 [params]
 # 布局改为横栏模式，图在右面
 # zenMode = true
-paginate = 12
+
+# 配置每页记录数
+paginate = 10
 
 lightTheme = "emerald"
 darkTheme = "forest"

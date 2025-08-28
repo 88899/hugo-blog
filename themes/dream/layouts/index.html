@@ -1,6 +1,6 @@
 {{ define "main"}}
 
-{{ $paginator := .Paginate (where site.RegularPages "Type" "posts") site.Params.paginate }}
+{{ $paginator := .Paginate (where site.RegularPages "Type" "posts") site.Params.paginate | default 10 }}
 
 {{ if site.Params.zenMode }}
 <div class="dream-zen-posts max-w-[65ch] mt-8 mx-auto px-4 space-y-8">
