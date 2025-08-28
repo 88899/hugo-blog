@@ -50,3 +50,9 @@ git submodule add https://github.com/88899/notes.git content
 ## Cloudflare Pages配置
 * Build command: git submodule update --remote --merge && hugo --gc --minify
 * Build output: public
+
+## 修订日志
+* 2025-08-28 release v1.0.0
+* 2022-05-03：增加vercel和Cloudflare Pages配置
+* 2022-05-02：增加github submodule配置
+* 2022-05-01：增加文章头部配置样例
