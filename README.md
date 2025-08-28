@@ -28,9 +28,9 @@ title: 文章名称，大标题
 date: 2025-05-03
 author: 作者名称
 avatar: 作者头像，可以是网络链接，也可以是项目中的图片地址
-categories:
-  - AI
-  - 技术
+categories: 分类名称
+tags: 标签1, 标签2
+series: 系列名称
 cover: 封面图片，可以是网络链接，也可以是项目中的图片地址
 ---
 ```
@@ -40,10 +40,11 @@ git submodule add https://github.com/88899/notes.git content
 ```
 
 ## vercel配置
-```shell
-# vercel.json
-git submodule update --remote --merge && hugo --gc --minify
-
+```python
+# vercel.json中增加以下配置
+{
+  "buildCommand": "git submodule update --remote --merge && hugo --gc --minify"
+}
 ```
 
 ## Cloudflare Pages配置
