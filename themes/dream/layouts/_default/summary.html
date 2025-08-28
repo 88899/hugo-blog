@@ -37,8 +37,9 @@
       {{ .Date | time.Format "Monday, Jan 2, 2006" }}
     {{ end }}
     </p>
-
-    {{ or .Description (.Summary | emojify | safeHTML) }}
+<!--
+    {{ or .Description (.Summary | emojify | safeHTML) }} -->
+    {{ or (.Description | truncate 150 "…") (.Summary | emojify | safeHTML | truncate 150 "…") }}
 
     {{ $hasAuthor := or .Params.author site.Params.author }}
     <div class="card-actions justify-between items-center mt-4">
