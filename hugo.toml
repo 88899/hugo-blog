@@ -9,6 +9,8 @@ enableRobotsTXT = true
 
 hasCJKLanguage = true
 
+paginate = 12
+
 [markup]
 [markup.goldmark.parser]
 wrapStandAloneImageWithinParagraph = false
