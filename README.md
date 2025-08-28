@@ -35,10 +35,16 @@ cover: 封面图片，可以是网络链接，也可以是项目中的图片地�
 ---
 ```
 ## github submodule
+```shell
+git submodule add https://github.com/88899/notes.git content
+```
 
 ## vercel配置
-* vercel.json
-* git submodule update --remote --merge && hugo --gc --minify
+```shell
+# vercel.json
+git submodule update --remote --merge && hugo --gc --minify
+
+```
 
 ## Cloudflare Pages配置
 * Build command: git submodule update --remote --merge && hugo --gc --minify
