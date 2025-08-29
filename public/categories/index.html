@@ -595,7 +595,7 @@
     },
     userVariables: {
       avatar_url: 'https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250829110345042.png',
-      name: 'EDU',
+      name: 'AiEDU',
     },
   }
 </script>
@@ -611,20 +611,52 @@
   #dify-chatbot-bubble-button {
     background-color: #1C64F2 !important;
     position: fixed !important;
-    bottom: 2rem !important;  
-    right: 2rem !important;   
-    z-index: 9999 !important;  
+    bottom: 30px !important;  
+    right: 30px !important;
+    z-index: 9999 !important;
+    width: 60px !important;
+    height: 60px !important;
+    box-shadow: 0 4px 12px rgba(28, 100, 242, 0.3) !important;
   }
 
    
   #dify-chatbot-bubble-window {
     width: 24rem !important;
-    height: 40rem !important;
+     
+    height: 70vh !important;
+    max-height: 600px !important;  
+    min-height: 400px !important;  
     position: fixed !important;
-    bottom: 8rem !important;  
-    right: 2rem !important;
+     
+    bottom: 100px !important;
+    right: 30px !important;
+    top: auto !important;  
+    left: auto !important;  
     z-index: 9998 !important;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important;  
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+    transform: none !important;
+    margin: 0 !important;  
+    padding: 0 !important;  
+  }
+
+   
+  @media (max-width: 768px) {
+    #dify-chatbot-bubble-window {
+      width: calc(100vw - 30px) !important;
+      height: 75vh !important;
+      bottom: 90px !important;
+      right: 15px !important;
+    }
+  }
+
+   
+  @supports (padding: env(safe-area-inset-bottom)) {
+    #dify-chatbot-bubble-button {
+      bottom: calc(30px + env(safe-area-inset-bottom)) !important;
+    }
+    #dify-chatbot-bubble-window {
+      bottom: calc(100px + env(safe-area-inset-bottom)) !important;
+    }
   }
 </style>
 
