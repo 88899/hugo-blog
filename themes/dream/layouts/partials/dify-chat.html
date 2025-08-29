@@ -1,0 +1,46 @@
+<script>
+  // Dify 聊天窗口配置
+  window.difyChatbotConfig = {
+    token: 'h2hkg50dPRmb7SaR',
+    inputs: {
+      // 可在这里添加 Start 节点需要的输入参数
+      // 例如: name: "访客"
+    },
+    systemVariables: {
+      // 可选：设置用户 ID 或会话 ID
+      // user_id: 'unique-user-id',
+    },
+    userVariables: {
+      avatar_url: 'https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250829110345042.png',
+      name: 'EDU',
+    },
+  }
+</script>
+<!-- 加载 Dify 嵌入脚本 -->
+<script
+  src="https://udify.app/embed.min.js"
+  id="h2hkg50dPRmb7SaR"
+  defer>
+</script>
+<!-- 固定定位样式 -->
+<style>
+  /* 聊天按钮固定在右下角 */
+  #dify-chatbot-bubble-button {
+    background-color: #1C64F2 !important;
+    position: fixed !important;
+    bottom: 2rem !important; /* 距离底部 2rem */
+    right: 2rem !important;  /* 距离右侧 2rem */
+    z-index: 9999 !important; /* 确保在最上层 */
+  }
+
+  /* 聊天窗口固定定位 */
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 40rem !important;
+    position: fixed !important;
+    bottom: 8rem !important; /* 位于按钮上方 */
+    right: 2rem !important;
+    z-index: 9998 !important;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.15) !important; /* 增加阴影更美观 */
+  }
+</style>
