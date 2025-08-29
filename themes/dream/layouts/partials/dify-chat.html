@@ -24,11 +24,11 @@
 </script>
 <!-- 优化后的固定定位样式 -->
 <style>
-  /* 聊天按钮固定在右下角 */
+  /* 聊天按钮固定在右下角 - 通用样式 */
   #dify-chatbot-bubble-button {
     background-color: #1C64F2 !important;
     position: fixed !important;
-    bottom: 30px !important; /* 使用像素单位确保一致性 */
+    bottom: 30px !important;
     right: 30px !important;
     z-index: 9999 !important;
     width: 60px !important;
@@ -36,43 +36,58 @@
     box-shadow: 0 4px 12px rgba(28, 100, 242, 0.3) !important;
   }
 
-  /* 聊天窗口固定定位 - 重点优化避免遮挡 */
+  /* 聊天窗口固定定位 - PC端样式 */
   #dify-chatbot-bubble-window {
     width: 24rem !important;
-    /* 调整高度为视口的70%，更灵活适配不同屏幕 */
     height: 70vh !important;
-    max-height: 600px !important; /* 最大高度限制 */
-    min-height: 400px !important; /* 最小高度限制 */
+    max-height: 600px !important;
+    min-height: 400px !important;
     position: fixed !important;
-    /* 增加底部距离，确保不被浏览器菜单遮挡 */
-    bottom: 100px !important;
+    bottom: 100px !important; /* PC端底部距离 */
     right: 30px !important;
-    top: auto !important; /* 强制取消顶部定位 */
-    left: auto !important; /* 强制取消左侧定位 */
+    top: auto !important;
+    left: auto !important;
     z-index: 9998 !important;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
     transform: none !important;
-    margin: 0 !important; /* 清除可能的默认外边距 */
-    padding: 0 !important; /* 清除可能的默认内边距 */
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
-  /* 针对移动设备的特殊优化 */
+  /* 移动端特殊优化 - 重点调整位置 */
   @media (max-width: 768px) {
     #dify-chatbot-bubble-window {
-      width: calc(100vw - 30px) !important;
-      height: 75vh !important;
-      bottom: 90px !important;
+      width: calc(100vw - 30px) !important; /* 几乎全屏宽度 */
+      height: 65vh !important; /* 适当降低高度，留出更多底部空间 */
+      bottom: 120px !important; /* 大幅增加底部距离，解决靠上问题 */
       right: 15px !important;
+      left: 15px !important; /* 左右居中 */
+    }
+
+    /* 移动端按钮位置调整 */
+    #dify-chatbot-bubble-button {
+      bottom: 30px !important;
+      right: 20px !important;
+      width: 65px !important;
+      height: 65px !important; /* 增大按钮方便触摸 */
     }
   }
 
-  /* 针对iOS设备的安全区域优化 */
+  /* 安全区域适配 - 针对iOS等带底部导航栏的设备 */
   @supports (padding: env(safe-area-inset-bottom)) {
     #dify-chatbot-bubble-button {
       bottom: calc(30px + env(safe-area-inset-bottom)) !important;
     }
+
     #dify-chatbot-bubble-window {
       bottom: calc(100px + env(safe-area-inset-bottom)) !important;
+    }
+
+    /* 移动端安全区域额外适配 */
+    @media (max-width: 768px) {
+      #dify-chatbot-bubble-window {
+        bottom: calc(120px + env(safe-area-inset-bottom)) !important;
+      }
     }
   }
 </style>
