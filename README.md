@@ -51,7 +51,6 @@ git submodule add https://github.com/88899/notes.git content
 * Build command: git submodule update --remote --merge && hugo --gc --minify
 * Build output: public
 
-
 ## 修订日志
 * 2025-08-28 release v1.0.1 增加每页记录数的配置参数
 * 2025-08-28 release v1.0.0
