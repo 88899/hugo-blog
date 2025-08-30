@@ -39,6 +39,8 @@ series: 系列名称
 cover: 封面图片，可以是网络链接，也可以是项目中的图片地址
 # 如果需要数学公式，请将此字段设置为true
 math: true
+# 如果需要渲染流程图，请将此字段设置为true
+mermaid: true
 ---
 ```
 ## github submodule
