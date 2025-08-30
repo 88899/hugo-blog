@@ -27,11 +27,18 @@
 title: 文章名称，大标题
 date: 2025-05-03
 author: 作者名称
+# 作者头像，可以是网络链接，也可以是项目中的图片地址
 avatar: 作者头像，可以是网络链接，也可以是项目中的图片地址
+# 分类名称，展示在分类列表中
 categories: 分类名称
+# 标签名称, 展示在tag列表中
 tags: 标签1, 标签2
+# 系列名称
 series: 系列名称
+# 封面图片，可以是网络链接，也可以是项目中的图片地址
 cover: 封面图片，可以是网络链接，也可以是项目中的图片地址
+# 如果需要数学公式，请将此字段设置为true
+math: true
 ---
 ```
 ## github submodule
@@ -57,4 +64,5 @@ git submodule add https://github.com/88899/notes.git content
 * 2022-05-03：增加vercel和Cloudflare Pages配置
 * 2022-05-02：增加github submodule配置
 * 2022-05-01：增加文章头部配置样例
+
 ## 联系作者
