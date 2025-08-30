@@ -56,18 +56,19 @@
   margin: 1em 0;
   padding: 0;
   box-sizing: border-box; /* 确保宽度计算包含内边距 */
-  overflow: hidden; /* 防止内部元素溢出容器 */
+  /* 移除overflow: hidden，避免截断滚动区域 */
 }
 
 pre {
   /* 固定宽度：与父容器一致 */
   width: 100%;
   max-width: 100%;
-  /* 换行规则：优先自动换行，无法换行则显示滚动条 */
-  white-space: pre-wrap; /* 保留换行符，长句自动换行 */
-  word-wrap: break-word; /* 长单词拆分换行 */
-  word-break: normal; /* 避免非英文单词被强制拆分（优化可读性） */
-  overflow-x: auto; /* 极端长内容显示横向滚动条 */
+  /* 关键调整：保留代码原始格式，不自动换行 */
+  white-space: pre; /* 保留所有空白，不自动换行 */
+  word-wrap: normal; /* 禁用长单词拆分 */
+  word-break: normal; /* 保持单词完整性 */
+  overflow-x: auto; /* 内容过长时显示横向滚动条 */
+  -webkit-overflow-scrolling: touch; /* 优化移动端滚动体验 */
   /* 样式优化 */
   padding: 15px;
   border-radius: 4px;
@@ -84,7 +85,7 @@ pre {
 }
 
 code {
-  white-space: inherit;
+  white-space: inherit; /* 继承pre的空白处理规则 */
   font-family: monospace; /* 统一代码字体 */
 }
 
@@ -107,14 +108,20 @@ code {
   /* 移动端代码块适配 */
   .highlight {
     width: 100%;
-    margin: 1em 0; /* 移除负边距，避免超出屏幕 */
+    margin: 1em 0;
+    /* 添加滚动提示阴影 */
+    box-shadow:
+      inset 15px 0 15px -15px rgba(0,0,0,0.1),
+      inset -15px 0 15px -15px rgba(0,0,0,0.1);
   }
 
   pre {
     padding: 12px;
-    font-size: 0.9em; /* 缩小字体，减少换行压力 */
-    overflow-x: auto; /* 强制显示滚动条（长内容时） */
-    -webkit-overflow-scrolling: touch; /* 优化iOS滚动体验 */
+    font-size: 0.85em; /* 进一步缩小字体，减少滚动需求 */
+    overflow-x: auto; /* 强制启用横向滚动 */
+    -webkit-overflow-scrolling: touch; /* 使iOS滚动更流畅 */
+    /* 增加底部内边距，避免滚动条被遮挡 */
+    padding-bottom: 20px;
   }
 
   /* 媒体元素适配 */
