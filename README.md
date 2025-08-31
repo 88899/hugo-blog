@@ -20,6 +20,9 @@
 
 ## 项目介绍
 - 基于Hugo框架搭建
+- 知识库管理在submodule中
+- 支持数学公式、流程图、mermaid图表、代码高亮、图片懒加载、SEO优化等
+- 已开启google analytics
 
 ## markdown头部配置样例
 ```
