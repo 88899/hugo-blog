@@ -126,5 +126,9 @@ jsDateFormat = "yyyy年MM月dd日"
 #name = "AiEDU"
 #avatar = "img/personal/avatar.png"
 
+[services]
 [services.googleAnalytics]
 ID = "G-7QPNK9FQQL"
+
+[services.disqus]
+shortname = "aiedu-1"
