@@ -125,3 +125,6 @@ jsDateFormat = "yyyy年MM月dd日"
 #[params.Author]
 #name = "AiEDU"
 #avatar = "img/personal/avatar.png"
+
+[services.googleAnalytics]
+ID = "G-7QPNK9FQQL"
