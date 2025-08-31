@@ -107,6 +107,15 @@
       </div>
       {{ end }}
 
+      <!-- 评论-->
+       {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine site.Params.waline site.Params.twikoo.enabled }}
+      <div class="divider"></div>
+
+      <section class="space-y-4">
+        {{ partialCached "commentSystems.html" . .RelPermalink }}
+      </section>
+      {{ end }}
+
     </article>
   </div>
 
