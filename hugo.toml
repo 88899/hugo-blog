@@ -130,5 +130,5 @@ jsDateFormat = "yyyy年MM月dd日"
 [services.googleAnalytics]
 ID = "G-7QPNK9FQQL"
 
-[services.disqus]
-shortname = "aiedu-1"
+# [services.disqus]
+# shortname = "aiedu-1"
