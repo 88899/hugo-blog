@@ -48,7 +48,11 @@ series = "series"
 # 配置每页记录数
 paginate = 12
 
+# 默认亮色主题
+defaultTheme = "light"
+# 当亮色时候，选择翡翠绿配色
 lightTheme = "emerald"
+# 当暗色时候，选择森林配色
 darkTheme = "forest"
 
 # backgroundImage = "img/global-background.jpg"
