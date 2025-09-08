@@ -25,10 +25,5 @@
   </div>
   {{ end }}
 
-  {{ if and site.Config.Services.Disqus.Shortname .IsHome }}
-  <div class="divider divider-vertical"></div>
-  <div class="pb-4">
-    {{ partial "disqus.html" (dict "Context" . "Identifier" "/") }}
-  </div>
-  {{ end }}
+
 </div>
