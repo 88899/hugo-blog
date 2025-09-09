@@ -69,5 +69,4 @@ git submodule add https://github.com/88899/notes.git content
 * 2022-05-03：增加vercel和Cloudflare Pages配置
 * 2022-05-02：增加github submodule配置
 * 2022-05-01：增加文章头部配置样例
-
 ## 联系作者
