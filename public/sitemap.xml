@@ -2,12 +2,12 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://googhub.nyc.mn/</loc>
-  </url><url>
     <loc>https://googhub.nyc.mn/categories/</loc>
   </url><url>
     <loc>https://googhub.nyc.mn/series/</loc>
   </url><url>
     <loc>https://googhub.nyc.mn/tags/</loc>
+  </url><url>
+    <loc>https://googhub.nyc.mn/</loc>
   </url>
 </urlset>

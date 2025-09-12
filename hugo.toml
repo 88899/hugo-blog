@@ -1,8 +1,8 @@
 baseURL = 'https://googhub.nyc.mn/'
 defaultContentLanguage = "zh"
 languageCode = "zh-Hans"
-title = 'AiEDU | Blog'
-description = "分享 Hugo 建站技巧、静态站点 SEO 优化、前端开发经验，帮助开发者打造高性能博客。"
+title = '编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源'
+description = "分享编程技术 Hugo 建站技巧、静态站点 SEO 优化、前端开发经验，帮助开发者打造高性能博客，免费资源。"
 theme = 'dream'
 
 enableGitInfo = true
