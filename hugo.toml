@@ -104,7 +104,7 @@ showTableOfContents = true
 showSummaryCoverInPost = true
 imageZoomableInPost = true
 showPrevNextPost = true
-reorderShares = ["x", "facebook", "whatsapp", "WeChat"]
+reorderShares = ["WeChat", "x", "facebook", "whatsapp", "telegram", "email", "copylink","friendly"]
 
 # https://gohugo.io/templates/embedded/#configure-x-twitter-cards
 [params.social]
