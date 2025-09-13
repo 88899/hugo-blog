@@ -6,14 +6,18 @@
 
   {{ $shares := slice "x" "facebook" "whatsapp" }}
   {{ $shareTitles := dict
+    "wechat" "WeChat"
     "x" "X"
     "facebook" "Facebook"
     "whatsapp" "WhatsApp"
+    "outline" "CopyLink"
   }}
   {{ $shareLinks := dict
+    "wechat" (print "wait me" .Permalink)
     "x" (print "https://x.com/intent/post?text=" .Title "&url=" .Permalink)
     "facebook" (print "https://facebook.com/sharer/sharer.php?u=" .Permalink)
     "whatsapp" (print "https://wa.me/?text=" .Title " " .Permalink)
+    "outline" (print "wait me" .Permalink)
   }}
   {{ if site.Params.reorderShares }}
     {{ $shares = site.Params.reorderShares }}
