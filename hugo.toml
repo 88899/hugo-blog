@@ -115,7 +115,7 @@ twitter = "dgdghub"
 home = { href = "/", icon = "home", title = "首页" }
 github = { href = "https://github.com/88899", icon = "logo-github", title = "GitHub" }
 tools = { href = "https://www.518855.xyz", icon = "rocket", title = "导航" }
-docs = { href = "https://aiedu.pp.ua", icon = "document-text", title = "文档" }
+docs = { href = "https://aiedu.pp.ua", icon = "documents", title = "文档" }
 # me = { href = "https://985188.xyz", icon = "person", title = "About" }
 
 [params.advanced]
