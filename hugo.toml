@@ -92,7 +92,8 @@ customSyntaxHighlighting = true
 stickyNav = true
 
 # 导航菜单选项
-reorderNavItems = ["home", "categories", "tags", "posts", "tools", "search", "rss", "github", "about"]
+# remove rss
+reorderNavItems = ["home", "categories", "tags", "posts", "tools", "docs", "search", "github", "about"]
 
 # 是否折叠显示导航菜单
 #collapseNavItems = ["posts", "categories", "tags", "rss"]
@@ -114,6 +115,7 @@ twitter = "dgdghub"
 home = { href = "/", icon = "home", title = "首页" }
 github = { href = "https://github.com/88899", icon = "logo-github", title = "GitHub" }
 tools = { href = "https://www.518855.xyz", icon = "rocket", title = "导航" }
+docs = { href = "https://aiedu.pp.ua", icon = "document-text", title = "文档" }
 # me = { href = "https://985188.xyz", icon = "person", title = "About" }
 
 [params.advanced]
