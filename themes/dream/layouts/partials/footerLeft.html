@@ -2,10 +2,10 @@
   {{ if site.Params.siteStartYear }}
   <p>
     © {{ if eq now.Year site.Params.siteStartYear }}{{ now.Year }}{{ else }}{{ site.Params.siteStartYear }} - {{
-    now.Year }}{{ end }} {{ site.Title }}
+    now.Year }}{{ end }}  -  {{site.Params.headerTitle}}
   </p>
   {{ else }}
-  <p>© {{ now.Year }} {{ site.Title }}</p>
+  <p>© {{ now.Year }}  -  {{site.Params.headerTitle}}</p>
   {{ end }}
 
   {{ if site.Params.footerBottomText }}

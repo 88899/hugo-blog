@@ -65,7 +65,7 @@ avatar = "img/personal/avatar.png"
 headerTitle = "AiEDU | BLOG"
 motto = "知识改变命运，AI改变知识。"
 
-# footerBottomText = ""
+footerBottomText = "知识改变命运，AI改变知识"
 
 rss = true
 
