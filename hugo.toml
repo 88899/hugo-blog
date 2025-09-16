@@ -43,6 +43,11 @@ tag = "tags"
 series = "series"
 
 [params]
+# 网站完全打开前预加载动画
+enablePreLoad = true
+# 预加载的动画文字, 只有当enablePreLoad=true时生效
+textPreLoad   = "AiEDU"
+
 # 布局改为横栏模式，图在右面
 # zenMode = true
 

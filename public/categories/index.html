@@ -56,6 +56,89 @@
 
 
 
+    <div id="loading">
+        <style>
+            .loader {
+                width: 250px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: helvetica, arial, sans-serif;
+                text-transform: uppercase;
+                font-weight: 900;
+                color: #00a96e;
+                letter-spacing: 0.2em
+            }
+
+            .loader::before,
+            .loader::after {
+                content: "";
+                display: block;
+                width: 15px;
+                height: 15px;
+                background: #00a96e;
+                position: absolute;
+                animation: load .7s infinite alternate ease-in-out
+            }
+
+            .loader::before {
+                top: 0
+            }
+
+            .loader::after {
+                bottom: 0
+            }
+
+            @keyframes load {
+                0% {
+                    left: 0;
+                    height: 30px;
+                    width: 15px
+                }
+
+                50% {
+                    height: 8px;
+                    width: 40px
+                }
+
+                100% {
+                    left: 235px;
+                    height: 30px;
+                    width: 15px
+                }
+            }
+        </style>
+        <div class="loader">AiEDU</div>
+    </div>
+    
+<script>
+  var ioadindex = 0;
+  function loadingShow(parent = "body"){
+      if($('.load-loading')[0]){
+          ioadindex ++;
+          return $('.load-loading');
+      }
+      var load = $('<div class="load-loading" style="display:none"><div class="bg"></div><div class="rounded-lg bg-light" style="z-index:1"><div class="spinner-border m-4" role="status"><span class="sr-only">Loading...</span></div></div></div>');
+      $(parent).prepend(load);
+      load.fadeIn(200);
+      return load;
+  }
+  function loadingHid(load){
+      if(ioadindex>0)
+          ioadindex--;
+      else{
+          ioadindex = 0;
+          load.fadeOut(300,function(){ load.remove() });
+      }
+  }
+</script>
+
+
+
      
 
     
