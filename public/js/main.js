@@ -11,13 +11,13 @@ document.addEventListener('alpine:init', function () {
         this.mql.addEventListener('change', function (event) {
           _this.on = event.matches ? 'y' : 'n';
         });
-        this.on = 'auto';
+        this.on = 'n';
       }
       setTimeout(function () {
         _this.setThemeForUtterances();
       }, 6000);
     },
-    mql: window.matchMedia('(prefers-color-scheme: light)'),
+    mql: window.matchMedia('(prefers-color-scheme: dark)'),
     on: 'n',
     isDark: function isDark() {
       return this.on === 'auto' ? this.mql.matches : this.on === 'y';

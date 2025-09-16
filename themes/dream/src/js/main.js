@@ -10,7 +10,7 @@ document.addEventListener('alpine:init', () => {
           this.on = event.matches ? 'y' : 'n'
         })
 
-        this.on = 'auto'
+        this.on = 'n'
       }
 
       setTimeout(() => {
@@ -18,7 +18,7 @@ document.addEventListener('alpine:init', () => {
       }, 6000) // Set a bigger timeout to make sure the utterances iframe is loaded.
     },
 
-    mql: window.matchMedia('(prefers-color-scheme: light)'),
+    mql: window.matchMedia('(prefers-color-scheme: dark)'),
     on: 'n',
 
     isDark() {
