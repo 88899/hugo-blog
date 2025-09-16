@@ -18,7 +18,7 @@ document.addEventListener('alpine:init', () => {
       }, 6000) // Set a bigger timeout to make sure the utterances iframe is loaded.
     },
 
-    mql: window.matchMedia('(prefers-color-scheme: dark)'),
+    mql: window.matchMedia('(prefers-color-scheme: light)'),
     on: 'n',
 
     isDark() {
