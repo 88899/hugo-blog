@@ -54,28 +54,102 @@
                     width: 15px
                 }
             }
+
+            /* 加载动画容器样式 */
+            #loading, #load-loading, .load-loading {
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                display: -webkit-box;
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 9999999;
+                background: #fff;
+                -webkit-transition: ease-in-out .5s;
+                transition: ease-in-out .5s
+            }
+
+            .load-loading {
+                position: absolute;
+                background: transparent
+            }
+
+            .load-loading .bg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #000;
+                opacity: .2
+            }
+
+            #load-loading {
+                opacity: 0
+            }
+
+            #loading.close {
+                opacity: 0;
+                visibility: hidden
+            }
+
+            .io-black-mode #loading,
+            .io-black-mode #load-loading {
+                background: #111;
+            }
         </style>
         <div class="loader">{{ $.Site.Params.textPreLoad }}</div>
     </div>
-    {{ end }}
-<script>
-  var ioadindex = 0;
-  function loadingShow(parent = "body"){
-      if($('.load-loading')[0]){
-          ioadindex ++;
-          return $('.load-loading');
-      }
-      var load = $('<div class="load-loading" style="display:none"><div class="bg"></div><div class="rounded-lg bg-light" style="z-index:1"><div class="spinner-border m-4" role="status"><span class="sr-only">Loading...</span></div></div></div>');
-      $(parent).prepend(load);
-      load.fadeIn(200);
-      return load;
-  }
-  function loadingHid(load){
-      if(ioadindex>0)
-          ioadindex--;
-      else{
-          ioadindex = 0;
-          load.fadeOut(300,function(){ load.remove() });
-      }
-  }
-</script>
+
+    <script>
+        // 等待DOM加载完成
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingScreen = document.getElementById('loading');
+
+            // 定义隐藏加载动画的函数
+            function hideLoadingScreen() {
+                // 添加关闭类以触发过渡动画
+                loadingScreen.classList.add('close');
+
+                // 动画完成后完全移除元素（可选）
+                setTimeout(() => {
+                    if (loadingScreen.parentNode) {
+                        loadingScreen.parentNode.removeChild(loadingScreen);
+                    }
+                }, 500); // 与CSS过渡时间保持一致
+            }
+
+            // 页面所有资源加载完成后隐藏加载动画
+            window.addEventListener('load', function() {
+                // 稍微延迟，确保动画能被用户看到
+                setTimeout(hideLoadingScreen, 300);
+            });
+
+            // 处理页面刷新和前进/后退时的加载动画
+            window.addEventListener('beforeunload', function() {
+                // 如果用户刷新页面或导航离开，重新显示加载动画
+                if (loadingScreen && loadingScreen.parentNode) {
+                    loadingScreen.classList.remove('close');
+                }
+            });
+
+            // 针对使用Pjax的主题（无刷新导航）
+            if (window.pjax) {
+                // 当Pjax开始加载新内容时显示加载动画
+                document.addEventListener('pjax:send', function() {
+                    if (loadingScreen && loadingScreen.parentNode) {
+                        loadingScreen.classList.remove('close');
+                    }
+                });
+
+                // 当Pjax完成加载新内容时隐藏加载动画
+                document.addEventListener('pjax:complete', function() {
+                    setTimeout(hideLoadingScreen, 300);
+                });
+            }
+        });
+    </script>
+{{ end }}

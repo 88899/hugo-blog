@@ -53,6 +53,163 @@
 
 
 
+    <div id="loading">
+        <style>
+            .loader {
+                width: 250px;
+                height: 50px;
+                line-height: 50px;
+                text-align: center;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                font-family: helvetica, arial, sans-serif;
+                text-transform: uppercase;
+                font-weight: 900;
+                color: #00a96e;
+                letter-spacing: 0.2em
+            }
+
+            .loader::before,
+            .loader::after {
+                content: "";
+                display: block;
+                width: 15px;
+                height: 15px;
+                background: #00a96e;
+                position: absolute;
+                animation: load .7s infinite alternate ease-in-out
+            }
+
+            .loader::before {
+                top: 0
+            }
+
+            .loader::after {
+                bottom: 0
+            }
+
+            @keyframes load {
+                0% {
+                    left: 0;
+                    height: 30px;
+                    width: 15px
+                }
+
+                50% {
+                    height: 8px;
+                    width: 40px
+                }
+
+                100% {
+                    left: 235px;
+                    height: 30px;
+                    width: 15px
+                }
+            }
+
+             
+            #loading, #load-loading, .load-loading {
+                -webkit-box-pack: center;
+                justify-content: center;
+                -webkit-box-align: center;
+                align-items: center;
+                display: -webkit-box;
+                display: flex;
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 9999999;
+                background: #fff;
+                -webkit-transition: ease-in-out .5s;
+                transition: ease-in-out .5s
+            }
+
+            .load-loading {
+                position: absolute;
+                background: transparent
+            }
+
+            .load-loading .bg {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                background: #000;
+                opacity: .2
+            }
+
+            #load-loading {
+                opacity: 0
+            }
+
+            #loading.close {
+                opacity: 0;
+                visibility: hidden
+            }
+
+            .io-black-mode #loading,
+            .io-black-mode #load-loading {
+                background: #111;
+            }
+        </style>
+        <div class="loader">AiEDU</div>
+    </div>
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            const loadingScreen = document.getElementById('loading');
+
+            
+            function hideLoadingScreen() {
+                
+                loadingScreen.classList.add('close');
+
+                
+                setTimeout(() => {
+                    if (loadingScreen.parentNode) {
+                        loadingScreen.parentNode.removeChild(loadingScreen);
+                    }
+                }, 500); 
+            }
+
+            
+            window.addEventListener('load', function() {
+                
+                setTimeout(hideLoadingScreen, 300);
+            });
+
+            
+            window.addEventListener('beforeunload', function() {
+                
+                if (loadingScreen && loadingScreen.parentNode) {
+                    loadingScreen.classList.remove('close');
+                }
+            });
+
+            
+            if (window.pjax) {
+                
+                document.addEventListener('pjax:send', function() {
+                    if (loadingScreen && loadingScreen.parentNode) {
+                        loadingScreen.classList.remove('close');
+                    }
+                });
+
+                
+                document.addEventListener('pjax:complete', function() {
+                    setTimeout(hideLoadingScreen, 300);
+                });
+            }
+        });
+    </script>
+
+
+
+
      
 
     
