@@ -17,7 +17,7 @@ document.addEventListener('alpine:init', function () {
         _this.setThemeForUtterances();
       }, 6000);
     },
-    mql: window.matchMedia('(prefers-color-scheme: light)'),
+    mql: window.matchMedia('(prefers-color-scheme: dark)'),
     on: 'n',
 
     isDark: function isDark() {
