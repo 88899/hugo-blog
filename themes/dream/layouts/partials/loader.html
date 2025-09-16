@@ -1,155 +1,180 @@
 {{ if $.Site.Params.enablePreLoad }}
-    <div id="loading">
-        <style>
-            .loader {
-                width: 250px;
-                height: 50px;
-                line-height: 50px;
-                text-align: center;
-                position: absolute;
-                top: 50%;
-                left: 50%;
-                transform: translate(-50%, -50%);
-                font-family: helvetica, arial, sans-serif;
-                text-transform: uppercase;
-                font-weight: 900;
-                color: #00a96e;
-                letter-spacing: 0.2em
+    <!-- 优先加载动画样式，放在<head>附近 -->
+    <style>
+        /* 关键：确保加载动画优先显示，覆盖页面内容 */
+        #loading {
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .loader {
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #00a96e;
+            letter-spacing: 0.2em;
+            user-select: none;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #00a96e;
+            position: absolute;
+            animation: load .7s infinite alternate ease-in-out;
+            will-change: left, height, width;
+        }
+
+        .loader::before {
+            top: 0
+        }
+
+        .loader::after {
+            bottom: 0
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px
             }
 
+            50% {
+                height: 8px;
+                width: 40px
+            }
+
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px
+            }
+        }
+
+        /* 加载动画容器样式 */
+        #loading, #load-loading, .load-loading {
+            justify-content: center;
+            align-items: center;
+            display: -webkit-box;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999999;
+            background: #fff;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            pointer-events: auto;
+        }
+
+        .load-loading {
+            position: absolute;
+            background: transparent
+        }
+
+        .load-loading .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.2
+        }
+
+        #load-loading {
+            opacity: 0
+        }
+
+        #loading.close {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none;
+        }
+
+        .io-black-mode #loading,
+        .io-black-mode #load-loading {
+            background: #111;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
             .loader::before,
             .loader::after {
-                content: "";
-                display: block;
-                width: 15px;
-                height: 15px;
-                background: #00a96e;
-                position: absolute;
-                animation: load .7s infinite alternate ease-in-out
+                animation: none;
             }
 
-            .loader::before {
-                top: 0
-            }
-
-            .loader::after {
-                bottom: 0
-            }
-
-            @keyframes load {
-                0% {
-                    left: 0;
-                    height: 30px;
-                    width: 15px
-                }
-
-                50% {
-                    height: 8px;
-                    width: 40px
-                }
-
-                100% {
-                    left: 235px;
-                    height: 30px;
-                    width: 15px
-                }
-            }
-
-            /* 加载动画容器样式 */
             #loading, #load-loading, .load-loading {
-                -webkit-box-pack: center;
-                justify-content: center;
-                -webkit-box-align: center;
-                align-items: center;
-                display: -webkit-box;
-                display: flex;
-                position: fixed;
-                top: 0;
-                left: 0;
-                width: 100%;
-                height: 100%;
-                z-index: 9999999;
-                background: #fff;
-                -webkit-transition: ease-in-out .5s;
-                transition: ease-in-out .5s
+                transition: none;
             }
+        }
+    </style>
 
-            .load-loading {
-                position: absolute;
-                background: transparent
-            }
-
-            .load-loading .bg {
-                position: absolute;
-                width: 100%;
-                height: 100%;
-                background: #000;
-                opacity: .2
-            }
-
-            #load-loading {
-                opacity: 0
-            }
-
-            #loading.close {
-                opacity: 0;
-                visibility: hidden
-            }
-
-            .io-black-mode #loading,
-            .io-black-mode #load-loading {
-                background: #111;
-            }
-        </style>
-        <div class="loader">{{ $.Site.Params.textPreLoad }}</div>
+    <!-- 加载动画HTML结构 - 放在<body>最开始位置 -->
+    <div id="loading" role="progressbar" aria-label="页面加载中">
+        <div class="loader">
+            {{- with $.Site.Params.textPreLoad | default "Loading" -}}
+                {{- . | htmlEscape -}}
+            {{- end -}}
+        </div>
     </div>
 
     <script>
-        // 等待DOM加载完成
-        document.addEventListener('DOMContentLoaded', function() {
+        // 立即执行脚本，不等待DOMContentLoaded
+        (function() {
             const loadingScreen = document.getElementById('loading');
+            if (!loadingScreen) return;
 
-            // 定义隐藏加载动画的函数
             function hideLoadingScreen() {
-                // 添加关闭类以触发过渡动画
-                loadingScreen.classList.add('close');
+                if (!loadingScreen.classList.contains('close')) {
+                    loadingScreen.classList.add('close');
 
-                // 动画完成后完全移除元素（可选）
-                setTimeout(() => {
-                    if (loadingScreen.parentNode) {
-                        loadingScreen.parentNode.removeChild(loadingScreen);
-                    }
-                }, 500); // 与CSS过渡时间保持一致
-            }
-
-            // 页面所有资源加载完成后隐藏加载动画
-            window.addEventListener('load', function() {
-                // 稍微延迟，确保动画能被用户看到
-                setTimeout(hideLoadingScreen, 300);
-            });
-
-            // 处理页面刷新和前进/后退时的加载动画
-            window.addEventListener('beforeunload', function() {
-                // 如果用户刷新页面或导航离开，重新显示加载动画
-                if (loadingScreen && loadingScreen.parentNode) {
-                    loadingScreen.classList.remove('close');
+                    // 动画完成后移除元素
+                    setTimeout(() => {
+                        if (loadingScreen.parentNode) {
+                            loadingScreen.parentNode.removeChild(loadingScreen);
+                        }
+                    }, 500);
                 }
+            }
+
+            // 页面加载完成后隐藏
+            window.addEventListener('load', function() {
+                const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                setTimeout(hideLoadingScreen, delay);
             });
 
-            // 针对使用Pjax的主题（无刷新导航）
+            // 处理页面刷新
+            window.addEventListener('beforeunload', function() {
+                loadingScreen.classList.remove('close');
+            });
+
+            // Pjax支持
             if (window.pjax) {
-                // 当Pjax开始加载新内容时显示加载动画
                 document.addEventListener('pjax:send', function() {
-                    if (loadingScreen && loadingScreen.parentNode) {
-                        loadingScreen.classList.remove('close');
-                    }
+                    loadingScreen.classList.remove('close');
                 });
 
-                // 当Pjax完成加载新内容时隐藏加载动画
                 document.addEventListener('pjax:complete', function() {
-                    setTimeout(hideLoadingScreen, 300);
+                    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                    setTimeout(hideLoadingScreen, delay);
                 });
             }
-        });
+
+            // 安全超时机制
+            setTimeout(hideLoadingScreen, 8000);
+        })();
     </script>
 {{ end }}
+
