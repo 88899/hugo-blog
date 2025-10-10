@@ -5,6 +5,9 @@ title = '编程技术｜运维技术｜建站技巧｜后端开发｜前端开�
 description = "分享编程技术 Hugo 建站技巧、静态站点 SEO 优化、前端开发经验，帮助开发者打造高性能博客，免费资源。"
 theme = 'dream'
 
+# 内容目录配置
+# contentDir="content"
+
 enableGitInfo = true
 enableRobotsTXT = true
 
@@ -143,3 +146,13 @@ ID = "G-7QPNK9FQQL"
 
 [services.disqus]
 shortname = "aiedu-1"
+
+# 多个内容目录映射
+[module]
+[[module.mounts]]
+    source = "content"       # 实际目录：原 content 目录
+    target = "content"       # 映射到虚拟 content 目录（保持原路径）
+
+[[module.mounts]]
+    source = "global"        # 实际目录：根目录下的 global 目录
+    target = "content" # 映射到虚拟 content
