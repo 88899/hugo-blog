@@ -65,7 +65,7 @@ collections:
         widget: 'markdown'
   - name: 'about'
     label: 'About'
-    folder: 'content/about'
+    folder: 'about'
     create: true
     slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
     fields:
