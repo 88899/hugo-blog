@@ -36,7 +36,7 @@ collections:
         widget: 'string'
         required: false
       - label: 'Cover'
-        name: 'cover'
+        name: 'image'
         widget: 'image'
         required: false
       - label: 'Categories'
