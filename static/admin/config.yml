@@ -35,7 +35,7 @@ collections:
         name: 'authorlink'
         widget: 'string'
         required: false
-      - label: 'Cover'
+      - label: 'Image'
         name: 'image'
         widget: 'image'
         required: false
