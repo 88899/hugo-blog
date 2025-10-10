@@ -10,9 +10,9 @@
     </span>
   </div>
 
-  {{ if .Params.cover }}
+  {{ if .Params.image }}
   <figure>
-    {{ with .Resources.Get .Params.cover }}
+    {{ with .Resources.Get .Params.image }}
     {{ if eq .MediaType.SubType "svg" }}
       <img class="w-24 max-w-none rounded-lg" src="{{ .RelPermalink }}" alt="{{ .Title }}" />
     {{ else }}
@@ -23,7 +23,7 @@
       </picture>
     {{ end }}
     {{ else }}
-    <img class="w-24 max-w-none rounded-lg" src="{{ .Params.cover }}" alt="{{ .Title }}" />
+    <img class="w-24 max-w-none rounded-lg" src="{{ .Params.image }}" alt="{{ .Title }}" />
     {{ end }}
   </figure>
   {{ else if not site.Params.noDefaultSummaryCover }}

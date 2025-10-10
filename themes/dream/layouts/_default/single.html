@@ -69,8 +69,8 @@
       </header>
 
       <section id="dream-single-post-content" itemprop="articleBody">
-        {{ if and .Params.Cover site.Params.showSummaryCoverInPost }}
-          <img class="w-full z-30" src="{{ .Params.Cover }}" alt="{{ .Title }}" />
+        {{ if and .Params.image site.Params.showSummaryCoverInPost }}
+          <img class="w-full z-30" src="{{ .Params.image }}" alt="{{ .Title }}" />
         {{ end }}
 
         {{ .Content | emojify }}
