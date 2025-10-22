@@ -71,5 +71,4 @@ git submodule add https://github.com/88899/notes.git content
 * 2022-05-01：增加文章头部配置样例
 ## 联系作者
 * 邮箱：<mjjboxhub@gmail.com>
-
 ## SEO优化
