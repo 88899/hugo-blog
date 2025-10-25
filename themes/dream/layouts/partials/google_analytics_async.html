@@ -1,0 +1,10 @@
+{{ if .Site.Config.Services.GoogleAnalytics.ID }}
+<!-- 异步加载 GA4 脚本 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ .Site.Config.Services.GoogleAnalytics.ID }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ .Site.Config.Services.GoogleAnalytics.ID }}');
+</script>
+{{ end }}

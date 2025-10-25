@@ -73,7 +73,8 @@
     {{ end }}
 
     {{ if site.Config.Services.GoogleAnalytics.ID }}
-    {{ template "_internal/google_analytics.html" . }}
+    <!-- {{ template "_internal/google_analytics.html" . }} -->
+      {{ partial "google_analytics_async.html" . }}
     {{ end }}
 
     {{ partial "dify-chat.html" . }}
