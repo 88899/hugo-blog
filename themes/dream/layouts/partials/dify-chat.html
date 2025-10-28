@@ -24,16 +24,16 @@
 </script>
 <!-- 优化后的固定定位样式 -->
 <style>
-  /* 聊天按钮固定在右下角 - 通用样式 */
+  /* 聊天按钮固定在右下角 - 通用样式（与滚动按钮大小一致） */
   #dify-chatbot-bubble-button {
     background-color: #28a745 !important;
     position: fixed !important;
     bottom: 30px !important;
     right: 30px !important;
     z-index: 9999 !important;
-    width: 60px !important;
-    height: 60px !important;
-    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4) !important;
+    width: 3rem !important; /* 与滚动按钮一致 */
+    height: 3rem !important; /* 与滚动按钮一致 */
+    box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important; /* 与滚动按钮阴影匹配 */
   }
 
   /* 聊天窗口固定定位 - PC端样式 */
@@ -43,7 +43,7 @@
     max-height: 600px !important;
     min-height: 400px !important;
     position: fixed !important;
-    bottom: 100px !important; /* PC端底部距离 */
+    bottom: 100px !important;
     right: 30px !important;
     top: auto !important;
     left: auto !important;
@@ -55,27 +55,27 @@
     background-color: rgba(255, 255, 255, 0.9) !important;
   }
 
-  /* 移动端特殊优化 - 重点调整位置 */
+  /* 移动端特殊优化 - 按钮大小与滚动按钮一致 */
   @media (max-width: 768px) {
     #dify-chatbot-bubble-window {
-      width: calc(100vw - 30px) !important; /* 几乎全屏宽度 */
-      height: 65vh !important; /* 适当降低高度，留出更多底部空间 */
-      bottom: 120px !important; /* 大幅增加底部距离，解决靠上问题 */
+      width: calc(100vw - 30px) !important;
+      height: 65vh !important;
+      bottom: 120px !important;
       right: 15px !important;
-      left: 15px !important; /* 左右居中 */
+      left: 15px !important;
       background-color: rgba(255, 255, 255, 0.9) !important;
     }
 
-    /* 移动端按钮位置调整 */
+    /* 移动端按钮大小与滚动按钮一致 */
     #dify-chatbot-bubble-button {
       bottom: 30px !important;
       right: 20px !important;
-      width: 65px !important;
-      height: 65px !important; /* 增大按钮方便触摸 */
+      width: 2.5rem !important; /* 与滚动按钮移动端大小一致 */
+      height: 2.5rem !important; /* 与滚动按钮移动端大小一致 */
     }
   }
 
-  /* 安全区域适配 - 针对iOS等带底部导航栏的设备 */
+  /* 安全区域适配 */
   @supports (padding: env(safe-area-inset-bottom)) {
     #dify-chatbot-bubble-button {
       bottom: calc(30px + env(safe-area-inset-bottom)) !important;
@@ -85,7 +85,6 @@
       bottom: calc(100px + env(safe-area-inset-bottom)) !important;
     }
 
-    /* 移动端安全区域额外适配 */
     @media (max-width: 768px) {
       #dify-chatbot-bubble-window {
         bottom: calc(120px + env(safe-area-inset-bottom)) !important;

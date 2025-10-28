@@ -872,9 +872,9 @@
     bottom: 30px !important;
     right: 30px !important;
     z-index: 9999 !important;
-    width: 60px !important;
-    height: 60px !important;
-    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4) !important;
+    width: 3rem !important;  
+    height: 3rem !important;  
+    box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;  
   }
 
    
@@ -884,7 +884,7 @@
     max-height: 600px !important;
     min-height: 400px !important;
     position: fixed !important;
-    bottom: 100px !important;  
+    bottom: 100px !important;
     right: 30px !important;
     top: auto !important;
     left: auto !important;
@@ -899,11 +899,11 @@
    
   @media (max-width: 768px) {
     #dify-chatbot-bubble-window {
-      width: calc(100vw - 30px) !important;  
-      height: 65vh !important;  
-      bottom: 120px !important;  
+      width: calc(100vw - 30px) !important;
+      height: 65vh !important;
+      bottom: 120px !important;
       right: 15px !important;
-      left: 15px !important;  
+      left: 15px !important;
       background-color: rgba(255, 255, 255, 0.9) !important;
     }
 
@@ -911,8 +911,8 @@
     #dify-chatbot-bubble-button {
       bottom: 30px !important;
       right: 20px !important;
-      width: 65px !important;
-      height: 65px !important;  
+      width: 2.5rem !important;  
+      height: 2.5rem !important;  
     }
   }
 
@@ -926,7 +926,6 @@
       bottom: calc(100px + env(safe-area-inset-bottom)) !important;
     }
 
-     
     @media (max-width: 768px) {
       #dify-chatbot-bubble-window {
         bottom: calc(120px + env(safe-area-inset-bottom)) !important;
@@ -934,7 +933,6 @@
     }
   }
 </style>
-
     
     
 <div class="scroll-buttons">
@@ -956,10 +954,8 @@
 <style>
 .scroll-buttons {
   position: fixed;
-   
-  left: 50%;          
-  bottom: 2rem;       
-  transform: translateX(-50%);   
+  right: 2rem;
+  bottom: 2rem;
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -999,9 +995,8 @@
  
 @media (max-width: 768px) {
   .scroll-buttons {
-    left: 50%;          
-    bottom: 1rem;       
-    transform: translateX(-50%);
+    right: 1rem;
+    bottom: 1rem;
   }
 
   .scroll-buttons button {
