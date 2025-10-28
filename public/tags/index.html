@@ -842,15 +842,17 @@
     
     
 <div class="scroll-buttons">
+  
   <button id="scrollToTop" aria-label="滚动到顶部">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="18 15 12 9 6 15"></polyline>
+      <path d="M12 19V5M5 12l7-7 7 7"/>
     </svg>
   </button>
 
+  
   <button id="scrollToBottom" aria-label="滚动到底部">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="6 9 12 15 18 9"></polyline>
+      <path d="M12 5v14M5 12l7 7 7-7"/>
     </svg>
   </button>
 </div>
@@ -871,7 +873,7 @@
   height: 3rem;
   border-radius: 50%;
   border: none;
-  background-color: #333;
+  background-color: #28a745;  
   color: white;
   cursor: pointer;
   display: flex;
@@ -879,14 +881,15 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease;  
   transform: translateY(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4);  
 }
 
 .scroll-buttons button:hover {
-  background-color: #555;
-  transform: translateY(0);
+  background-color: #218838;  
+  transform: translateY(0) scale(1.05);  
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
 }
 
 .scroll-buttons button.visible {
@@ -910,47 +913,41 @@
 </style>
 
 <script>
-
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   
   const scrollToTopBtn = document.getElementById('scrollToTop');
   const scrollToBottomBtn = document.getElementById('scrollToBottom');
 
   
-  window.addEventListener('scroll', function() {
+  const handleScroll = () => {
     
-    if (window.pageYOffset > 200) {
-      scrollToTopBtn.classList.add('visible');
-    } else {
-      scrollToTopBtn.classList.remove('visible');
-    }
+    scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
 
     
-    if ((window.innerHeight + window.pageYOffset) < document.body.offsetHeight - 100) {
-      scrollToBottomBtn.classList.add('visible');
-    } else {
-      scrollToBottomBtn.classList.remove('visible');
-    }
-  });
+    const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
+    scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+  };
 
   
-  scrollToTopBtn.addEventListener('click', function() {
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
+
+  
+  const scrollToBottom = () => {
     window.scrollTo({
-      top: 0,
+      top: document.documentElement.scrollHeight || document.body.scrollHeight,
       behavior: 'smooth'
     });
-  });
+  };
 
   
-  scrollToBottomBtn.addEventListener('click', function() {
-    window.scrollTo({
-      top: document.body.scrollHeight,
-      behavior: 'smooth'
-    });
-  });
+  window.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+  scrollToBottomBtn.addEventListener('click', scrollToBottom);
 
   
-  window.dispatchEvent(new Event('scroll'));
+  handleScroll();
 });
 </script>
 

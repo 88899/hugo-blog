@@ -1,14 +1,16 @@
 <!-- 滚动按钮 -->
 <div class="scroll-buttons">
+  <!-- 向上箭头 - 滚动到顶部 -->
   <button id="scrollToTop" aria-label="滚动到顶部">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="18 15 12 9 6 15"></polyline>
+      <path d="M12 19V5M5 12l7-7 7 7"/>
     </svg>
   </button>
 
+  <!-- 向下箭头 - 滚动到底部 -->
   <button id="scrollToBottom" aria-label="滚动到底部">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <polyline points="6 9 12 15 18 9"></polyline>
+      <path d="M12 5v14M5 12l7 7 7-7"/>
     </svg>
   </button>
 </div>
@@ -29,7 +31,7 @@
   height: 3rem;
   border-radius: 50%;
   border: none;
-  background-color: #333;
+  background-color: #28a745; /* 绿色背景 */
   color: white;
   cursor: pointer;
   display: flex;
@@ -37,14 +39,15 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  transition: all 0.3s ease; /* 合并过渡属性 */
   transform: translateY(10px);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4); /* 绿色阴影 */
 }
 
 .scroll-buttons button:hover {
-  background-color: #555;
-  transform: translateY(0);
+  background-color: #218838; /* 深一点的绿色 */
+  transform: translateY(0) scale(1.05); /* 轻微放大效果 */
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
 }
 
 .scroll-buttons button.visible {
@@ -68,46 +71,40 @@
 </style>
 
 <script>
-// 等待页面加载完成
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', () => {
   // 获取按钮元素
   const scrollToTopBtn = document.getElementById('scrollToTop');
   const scrollToBottomBtn = document.getElementById('scrollToBottom');
 
-  // 监听滚动事件，控制按钮显示/隐藏
-  window.addEventListener('scroll', function() {
-    // 当页面滚动超过200px时显示"回到顶部"按钮
-    if (window.pageYOffset > 200) {
-      scrollToTopBtn.classList.add('visible');
-    } else {
-      scrollToTopBtn.classList.remove('visible');
-    }
+  // 滚动处理函数
+  const handleScroll = () => {
+    // 显示/隐藏"回到顶部"按钮
+    scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
 
-    // 当页面未滚动到底部时显示"滚动到底部"按钮
-    if ((window.innerHeight + window.pageYOffset) < document.body.offsetHeight - 100) {
-      scrollToBottomBtn.classList.add('visible');
-    } else {
-      scrollToBottomBtn.classList.remove('visible');
-    }
-  });
+    // 显示/隐藏"滚动到底部"按钮
+    const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
+    scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+  };
 
   // 滚动到顶部
-  scrollToTopBtn.addEventListener('click', function() {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
-  });
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // 滚动到底部
-  scrollToBottomBtn.addEventListener('click', function() {
+  const scrollToBottom = () => {
     window.scrollTo({
-      top: document.body.scrollHeight,
+      top: document.documentElement.scrollHeight || document.body.scrollHeight,
       behavior: 'smooth'
     });
-  });
+  };
 
-  // 初始检查一次滚动位置
-  window.dispatchEvent(new Event('scroll'));
+  // 事件监听
+  window.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+  scrollToBottomBtn.addEventListener('click', scrollToBottom);
+
+  // 初始检查滚动位置
+  handleScroll();
 });
 </script>
