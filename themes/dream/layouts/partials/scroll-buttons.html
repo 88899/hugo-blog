@@ -18,11 +18,12 @@
 <style>
 .scroll-buttons {
   position: fixed;
-  right: 2rem;
-  bottom: 2rem;
+  right: 2rem; /* 与chat按钮水平对齐（PC端） */
+  /* 垂直位置：chat按钮底部 + chat高度 + 统一间隔0.5rem */
+  bottom: calc(2rem + 3rem + 0.5rem);
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.5rem; /* 按钮内部间隔，与外部间隔一致 */
   z-index: 50;
 }
 
@@ -31,7 +32,7 @@
   height: 3rem;
   border-radius: 50%;
   border: none;
-  background-color: #28a745; /* 绿色背景 */
+  background-color: #28a745;
   color: white;
   cursor: pointer;
   display: flex;
@@ -39,14 +40,14 @@
   justify-content: center;
   opacity: 0;
   visibility: hidden;
-  transition: all 0.3s ease; /* 合并过渡属性 */
+  transition: all 0.3s ease;
   transform: translateY(10px);
-  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4); /* 绿色阴影 */
+  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4);
 }
 
 .scroll-buttons button:hover {
-  background-color: #218838; /* 深一点的绿色 */
-  transform: translateY(0) scale(1.05); /* 轻微放大效果 */
+  background-color: #218838;
+  transform: translateY(0) scale(1.05);
   box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
 }
 
@@ -56,11 +57,12 @@
   transform: translateY(0);
 }
 
-/* 响应式调整 */
+/* 响应式调整（与chat按钮保持一致） */
 @media (max-width: 768px) {
   .scroll-buttons {
-    right: 1rem;
-    bottom: 1rem;
+    right: 1rem; /* 与chat按钮水平对齐（移动端） */
+    /* 移动端垂直位置：chat底部 + chat高度 + 统一间隔0.5rem */
+    bottom: calc(1rem + 2.5rem + 0.5rem);
   }
 
   .scroll-buttons button {
@@ -72,39 +74,24 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', () => {
-  // 获取按钮元素
   const scrollToTopBtn = document.getElementById('scrollToTop');
   const scrollToBottomBtn = document.getElementById('scrollToBottom');
 
-  // 滚动处理函数
   const handleScroll = () => {
-    // 显示/隐藏"回到顶部"按钮
     scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
-
-    // 显示/隐藏"滚动到底部"按钮
     const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
     scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
   };
 
-  // 滚动到顶部
-  const scrollToTop = () => {
-    window.scrollTo({ top: 0, behavior: 'smooth' });
-  };
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToBottom = () => window.scrollTo({
+    top: document.documentElement.scrollHeight || document.body.scrollHeight,
+    behavior: 'smooth'
+  });
 
-  // 滚动到底部
-  const scrollToBottom = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight || document.body.scrollHeight,
-      behavior: 'smooth'
-    });
-  };
-
-  // 事件监听
   window.addEventListener('scroll', handleScroll);
   scrollToTopBtn.addEventListener('click', scrollToTop);
   scrollToBottomBtn.addEventListener('click', scrollToBottom);
-
-  // 初始检查滚动位置
   handleScroll();
 });
 </script>
