@@ -12,15 +12,15 @@
 <script src="https://udify.app/embed.min.js" id="h2hkg50dPRmb7SaR" defer></script>
 
 <style>
-  /* 聊天按钮（彻底解决重叠，层级更高） */
+  /* 聊天按钮（小屏幕下强制无重叠） */
   #dify-chatbot-bubble-button {
     background-color: #28a745 !important;
     position: fixed !important;
-    bottom: 1.2rem !important; /* 垂直基准，与滚动按钮拉开大间隔 */
-    right: 1.2rem !important; /* 与滚动按钮完全水平对齐 */
-    z-index: 9999 !important; /* 层级最高，确保可点击 */
-    width: 2.8rem !important; /* 与滚动按钮大小统一 */
-    height: 2.8rem !important; /* 与滚动按钮大小统一 */
+    bottom: 1rem !important; /* 移动端垂直基准，与滚动按钮间隔5rem */
+    right: 1rem !important; /* 与滚动按钮完全水平对齐 */
+    z-index: 9999 !important;
+    width: 2.5rem !important; /* 与滚动按钮尺寸完全一致 */
+    height: 2.5rem !important; /* 与滚动按钮尺寸完全一致 */
     box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -33,8 +33,8 @@
     max-height: 600px !important;
     min-height: 400px !important;
     position: fixed !important;
-    bottom: 8.7rem !important; /* 滚动按钮底部+总高度+间隔 */
-    right: 1.2rem !important; /* 水平对齐 */
+    bottom: 7.5rem !important;
+    right: 1rem !important;
     top: auto !important;
     left: auto !important;
     z-index: 9998 !important;
@@ -45,42 +45,32 @@
     background-color: rgba(255, 255, 255, 0.9) !important;
   }
 
-  /* 移动端响应式（彻底无重合） */
+  /* 移动端专属优化（小屏幕下彻底无重叠） */
   @media (max-width: 768px) {
     #dify-chatbot-bubble-window {
-      width: calc(100vw - 2.4rem) !important; /* 适配1.2rem边距 */
+      width: calc(100vw - 2rem) !important;
       height: 65vh !important;
-      bottom: 7.7rem !important; /* 滚动按钮底部+总高度+间隔 */
-      right: 1.2rem !important; /* 强制水平对齐 */
-      left: 1.2rem !important;
+      bottom: 6.3rem !important; /* 滚动按钮底部+总高度+间隔 */
+      right: 1rem !important;
+      left: 1rem !important;
     }
 
     #dify-chatbot-bubble-button {
-      width: 2.4rem !important; /* 与滚动按钮大小一致 */
-      height: 2.4rem !important; /* 与滚动按钮大小一致 */
-      bottom: 1.2rem !important;
-      right: 1.2rem !important;
+      width: 2.5rem !important;
+      height: 2.5rem !important;
+      bottom: 1rem !important;
+      right: 1rem !important;
     }
   }
 
-  /* 安全区域适配（不破坏布局） */
+  /* 安全区域适配（小屏幕下不破坏布局） */
   @supports (padding: env(safe-area-inset-bottom)) {
     #dify-chatbot-bubble-button {
-      bottom: calc(1.2rem + env(safe-area-inset-bottom)) !important;
+      bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
     }
 
     #dify-chatbot-bubble-window {
-      bottom: calc(8.7rem + env(safe-area-inset-bottom)) !important;
-    }
-
-    @media (max-width: 768px) {
-      #dify-chatbot-bubble-button {
-        bottom: calc(1.2rem + env(safe-area-inset-bottom)) !important;
-      }
-
-      #dify-chatbot-bubble-window {
-        bottom: calc(7.7rem + env(safe-area-inset-bottom)) !important;
-      }
+      bottom: calc(6.3rem + env(safe-area-inset-bottom)) !important;
     }
   }
 </style>

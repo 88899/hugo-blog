@@ -856,17 +856,17 @@ Series | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开�
 <style>
 .scroll-buttons {
   position: fixed;
-  right: 1.2rem;  
-  bottom: 7.2rem;  
+  right: 1rem;
+  bottom: 6rem;  
   display: flex;
   flex-direction: column;
-  gap: 0.6rem;  
-  z-index: 99;  
+  gap: 0.8rem;
+  z-index: 99;
 }
 
 .scroll-buttons button {
-  width: 2.8rem;
-  height: 2.8rem;
+  width: 2.5rem;
+  height: 2.5rem;
   border-radius: 50%;
   border: none;
   background-color: #28a745;
@@ -897,14 +897,14 @@ Series | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开�
  
 @media (max-width: 768px) {
   .scroll-buttons {
-    right: 1.2rem !important;
-    bottom: 6.2rem !important;
-    gap: 0.6rem !important;
+    right: 1rem !important;
+    bottom: 5rem !important;  
+    gap: 0.8rem !important;
   }
 
   .scroll-buttons button {
-    width: 2.4rem !important;
-    height: 2.4rem !important;
+    width: 2.5rem !important;
+    height: 2.5rem !important;
   }
 }
 </style>
@@ -952,11 +952,11 @@ document.addEventListener('DOMContentLoaded', () => {
   #dify-chatbot-bubble-button {
     background-color: #28a745 !important;
     position: fixed !important;
-    bottom: 1.2rem !important;  
-    right: 1.2rem !important;  
-    z-index: 9999 !important;  
-    width: 2.8rem !important;  
-    height: 2.8rem !important;  
+    bottom: 1rem !important;  
+    right: 1rem !important;  
+    z-index: 9999 !important;
+    width: 2.5rem !important;  
+    height: 2.5rem !important;  
     box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -969,8 +969,8 @@ document.addEventListener('DOMContentLoaded', () => {
     max-height: 600px !important;
     min-height: 400px !important;
     position: fixed !important;
-    bottom: 8.7rem !important;  
-    right: 1.2rem !important;  
+    bottom: 7.5rem !important;
+    right: 1rem !important;
     top: auto !important;
     left: auto !important;
     z-index: 9998 !important;
@@ -984,39 +984,29 @@ document.addEventListener('DOMContentLoaded', () => {
    
   @media (max-width: 768px) {
     #dify-chatbot-bubble-window {
-      width: calc(100vw - 2.4rem) !important;  
+      width: calc(100vw - 2rem) !important;
       height: 65vh !important;
-      bottom: 7.7rem !important;  
-      right: 1.2rem !important;  
-      left: 1.2rem !important;
+      bottom: 6.3rem !important;  
+      right: 1rem !important;
+      left: 1rem !important;
     }
 
     #dify-chatbot-bubble-button {
-      width: 2.4rem !important;  
-      height: 2.4rem !important;  
-      bottom: 1.2rem !important;
-      right: 1.2rem !important;
+      width: 2.5rem !important;
+      height: 2.5rem !important;
+      bottom: 1rem !important;
+      right: 1rem !important;
     }
   }
 
    
   @supports (padding: env(safe-area-inset-bottom)) {
     #dify-chatbot-bubble-button {
-      bottom: calc(1.2rem + env(safe-area-inset-bottom)) !important;
+      bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
     }
 
     #dify-chatbot-bubble-window {
-      bottom: calc(8.7rem + env(safe-area-inset-bottom)) !important;
-    }
-
-    @media (max-width: 768px) {
-      #dify-chatbot-bubble-button {
-        bottom: calc(1.2rem + env(safe-area-inset-bottom)) !important;
-      }
-
-      #dify-chatbot-bubble-window {
-        bottom: calc(7.7rem + env(safe-area-inset-bottom)) !important;
-      }
+      bottom: calc(6.3rem + env(safe-area-inset-bottom)) !important;
     }
   }
 </style>
