@@ -875,17 +875,17 @@ x-data="{
 <style>
 .scroll-buttons {
   position: fixed;
-  right: 1.5rem;  
-  bottom: 6.8rem;  
+  right: 1.2rem;  
+  bottom: 7.2rem;  
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;  
-  z-index: 50;
+  gap: 0.6rem;  
+  z-index: 99;  
 }
 
 .scroll-buttons button {
-  width: 3rem;
-  height: 3rem;
+  width: 2.8rem;
+  height: 2.8rem;
   border-radius: 50%;
   border: none;
   background-color: #28a745;
@@ -916,14 +916,14 @@ x-data="{
  
 @media (max-width: 768px) {
   .scroll-buttons {
-    right: 1.5rem !important;  
-    bottom: 5.8rem !important;  
-    gap: 0.8rem !important;
+    right: 1.2rem !important;
+    bottom: 6.2rem !important;
+    gap: 0.6rem !important;
   }
 
   .scroll-buttons button {
-    width: 2.5rem !important;
-    height: 2.5rem !important;  
+    width: 2.4rem !important;
+    height: 2.4rem !important;
   }
 }
 </style>
@@ -971,11 +971,11 @@ document.addEventListener('DOMContentLoaded', () => {
   #dify-chatbot-bubble-button {
     background-color: #28a745 !important;
     position: fixed !important;
-    bottom: 1.5rem !important;  
-    right: 1.5rem !important;  
-    z-index: 9999 !important;
-    width: 3rem !important;  
-    height: 3rem !important;  
+    bottom: 1.2rem !important;  
+    right: 1.2rem !important;  
+    z-index: 9999 !important;  
+    width: 2.8rem !important;  
+    height: 2.8rem !important;  
     box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -988,8 +988,8 @@ document.addEventListener('DOMContentLoaded', () => {
     max-height: 600px !important;
     min-height: 400px !important;
     position: fixed !important;
-    bottom: 8.3rem !important;  
-    right: 1.5rem !important;  
+    bottom: 8.7rem !important;  
+    right: 1.2rem !important;  
     top: auto !important;
     left: auto !important;
     z-index: 9998 !important;
@@ -1003,38 +1003,38 @@ document.addEventListener('DOMContentLoaded', () => {
    
   @media (max-width: 768px) {
     #dify-chatbot-bubble-window {
-      width: calc(100vw - 3rem) !important;  
+      width: calc(100vw - 2.4rem) !important;  
       height: 65vh !important;
-      bottom: 7.3rem !important;  
-      right: 1.5rem !important;  
-      left: 1.5rem !important;
+      bottom: 7.7rem !important;  
+      right: 1.2rem !important;  
+      left: 1.2rem !important;
     }
 
     #dify-chatbot-bubble-button {
-      width: 2.5rem !important;  
-      height: 2.5rem !important;  
-      bottom: 1.5rem !important;
-      right: 1.5rem !important;  
+      width: 2.4rem !important;  
+      height: 2.4rem !important;  
+      bottom: 1.2rem !important;
+      right: 1.2rem !important;
     }
   }
 
    
   @supports (padding: env(safe-area-inset-bottom)) {
     #dify-chatbot-bubble-button {
-      bottom: calc(1.5rem + env(safe-area-inset-bottom)) !important;
+      bottom: calc(1.2rem + env(safe-area-inset-bottom)) !important;
     }
 
     #dify-chatbot-bubble-window {
-      bottom: calc(8.3rem + env(safe-area-inset-bottom)) !important;
+      bottom: calc(8.7rem + env(safe-area-inset-bottom)) !important;
     }
 
     @media (max-width: 768px) {
       #dify-chatbot-bubble-button {
-        bottom: calc(1.5rem + env(safe-area-inset-bottom)) !important;
+        bottom: calc(1.2rem + env(safe-area-inset-bottom)) !important;
       }
 
       #dify-chatbot-bubble-window {
-        bottom: calc(7.3rem + env(safe-area-inset-bottom)) !important;
+        bottom: calc(7.7rem + env(safe-area-inset-bottom)) !important;
       }
     }
   }
