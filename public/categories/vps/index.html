@@ -6,7 +6,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>VPS | AiEDU | Blog</title>
+    <title>VPS | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
 
     
   
@@ -27,7 +27,7 @@
 
 
 <meta property="og:url" content="https://googhub.nyc.mn/categories/vps/">
-  <meta property="og:site_name" content="AiEDU | Blog">
+  <meta property="og:site_name" content="编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源">
   <meta property="og:title" content="VPS">
   <meta property="og:description" content="Just do it!">
   <meta property="og:locale" content="zh_Hans">
@@ -53,13 +53,192 @@
 
 
 
+    
+    <style>
+         
+        #loading {
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .loader {
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #00a96e;
+            letter-spacing: 0.2em;
+            user-select: none;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #00a96e;
+            position: absolute;
+            animation: load .7s infinite alternate ease-in-out;
+            will-change: left, height, width;
+        }
+
+        .loader::before {
+            top: 0
+        }
+
+        .loader::after {
+            bottom: 0
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px
+            }
+
+            50% {
+                height: 8px;
+                width: 40px
+            }
+
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px
+            }
+        }
+
+         
+        #loading, #load-loading, .load-loading {
+            justify-content: center;
+            align-items: center;
+            display: -webkit-box;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999999;
+            background: #fff;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            pointer-events: auto;
+        }
+
+        .load-loading {
+            position: absolute;
+            background: transparent
+        }
+
+        .load-loading .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.2
+        }
+
+        #load-loading {
+            opacity: 0
+        }
+
+        #loading.close {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none;
+        }
+
+        .io-black-mode #loading,
+        .io-black-mode #load-loading {
+            background: #111;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .loader::before,
+            .loader::after {
+                animation: none;
+            }
+
+            #loading, #load-loading, .load-loading {
+                transition: none;
+            }
+        }
+    </style>
+
+    
+    <div id="loading" role="progressbar" aria-label="页面加载中">
+        <div class="loader">AiEDU</div>
+    </div>
+
+    <script>
+        
+        (function() {
+            const loadingScreen = document.getElementById('loading');
+            if (!loadingScreen) return;
+
+            function hideLoadingScreen() {
+                if (!loadingScreen.classList.contains('close')) {
+                    loadingScreen.classList.add('close');
+
+                    
+                    setTimeout(() => {
+                        if (loadingScreen.parentNode) {
+                            loadingScreen.parentNode.removeChild(loadingScreen);
+                        }
+                    }, 500);
+                }
+            }
+
+            
+            window.addEventListener('load', function() {
+                const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                setTimeout(hideLoadingScreen, delay);
+            });
+
+            
+            window.addEventListener('beforeunload', function() {
+                loadingScreen.classList.remove('close');
+            });
+
+            
+            if (window.pjax) {
+                document.addEventListener('pjax:send', function() {
+                    loadingScreen.classList.remove('close');
+                });
+
+                document.addEventListener('pjax:complete', function() {
+                    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                    setTimeout(hideLoadingScreen, delay);
+                });
+            }
+
+            
+            setTimeout(hideLoadingScreen, 8000);
+        })();
+    </script>
+
+
+
+
+
      
 
     
     <link rel="stylesheet" href="/css/custom.css" />
     
 
-    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" integrity="sha256-PtHu0lJIiSHfZeNj1nFd6wTX+Squ255SGZ/fc8seCtM=" crossorigin="anonymous"></script>
+    
+    <script defer src="/js/cdn.min.js"></script>
   </head>
 
   <body x-data="{
@@ -92,7 +271,7 @@
         </a>
         
         
-        <div class="text-base-content/60 text-sm">知识改变命运，AI改变知识。</div>
+        <div class="text-base-content/60 text-sm">AI 赋能，智启教育</div>
         
       </div>
       
@@ -162,11 +341,27 @@
 
 
 <li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="https://www.518855.xyz" target="_blank" title="导航">
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://www.518855.xyz" target="" title="导航">
     
     <ion-icon name="rocket"></ion-icon>
     
     导航
+  </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://cici.pp.ua" target="" title="文档">
+    
+    <ion-icon name="documents"></ion-icon>
+    
+    文档
   </a>
 </li>
 
@@ -184,21 +379,11 @@
 
 
 
-<li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="/index.xml" title="RSS">
-    <ion-icon name="logo-rss"></ion-icon>
-    RSS
-  </a>
-</li>
-
-
-
-
 
 
 
 <li>
-  <a class="inline-flex items-center p-2 cursor-pointer" href="https://github.com/88899" target="_blank" title="GitHub">
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://github.com/88899" target="" title="GitHub">
     
     <ion-icon name="logo-github"></ion-icon>
     
@@ -218,6 +403,8 @@
   <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
     <ion-icon name="information-circle"></ion-icon>关于</div>
 </li>
+
+
 
 
 
@@ -288,8 +475,21 @@
 
 
   
-  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.518855.xyz" target="_blank" title="导航">
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.518855.xyz" target="" title="导航">
     <ion-icon class="group-hover:text-primary-content" name="rocket"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://cici.pp.ua" target="" title="文档">
+    <ion-icon class="group-hover:text-primary-content" name="documents"></ion-icon>
   </a>
   
 
@@ -304,18 +504,11 @@
 
       
       
-<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/index.xml" title="RSS">
-  <ion-icon class="group-hover:text-primary-content" name="logo-rss"></ion-icon>
-</a>
-
-
-      
-      
 
 
 
   
-  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://github.com/88899" target="_blank" title="GitHub">
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://github.com/88899" target="" title="GitHub">
     <ion-icon class="group-hover:text-primary-content" name="logo-github"></ion-icon>
   </a>
   
@@ -352,6 +545,8 @@
 
 
 
+
+
       
 
       
@@ -371,7 +566,7 @@
 
   <div class="md:basis-[200px] lg:basis-[300px] p-4 prose dark:prose-invert">
     <h1 class="text-2xl">VPS</h1>
-    <p class="text-sm">4篇文章</p>
+    <p class="text-sm">7篇文章</p>
     <div class="flex flex-wrap gap-4 mt-6">
       
 
@@ -383,8 +578,14 @@
       
       
       
-      <a href="/categories/ops/" class="badge h-6 no-underline hover:badge-primary">
-        OPS
+      <a href="/categories/devops/" class="badge h-6 no-underline hover:badge-primary">
+        DevOps
+      </a>
+      
+      
+      
+      <a href="/categories/it/" class="badge h-6 no-underline hover:badge-primary">
+        IT
       </a>
       
       
@@ -392,6 +593,18 @@
       <span class="badge h-6 badge-primary">
         VPS
       </span>
+      
+      
+      
+      <a href="/categories/%E7%BC%96%E7%A8%8B/" class="badge h-6 no-underline hover:badge-primary">
+        编程
+      </a>
+      
+      
+      
+      <a href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" class="badge h-6 no-underline hover:badge-primary">
+        知识库
+      </a>
       
       
     </div>
@@ -406,11 +619,119 @@
       <div class="dream-grid">
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/">
+  
+  <figure>
+    
+    <img src="https://s3.aiedu.qzz.io/website/2025/10/f804cbd4633e6ab2b7927bf272ff5c9e.png" alt="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题" />
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2025-10-22T00:00:00Z</span>
+    
+    </p>
+
+    磁盘问题是日常工作中最常遇到的故障类型之一 —— 无论是磁盘空间莫名占满、I/O 读写卡顿，还是磁盘…
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png" alt="Sherry" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Sherry</span>
+    
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>17分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+          </div>
+        
+          <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/">
+  
+  <figure>
+    
+    <img src="https://s3.aiedu.qzz.io/website/2025/10/e64657a7fbfd7fd80d9e38410c4f08e0.png" alt="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南" />
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2025-10-10T00:00:00Z</span>
+    
+    </p>
+
+    在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教…
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="/img/personal/avatar.png" alt="AiEDU" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">AiEDU</span>
+    
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>4分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+          </div>
+        
+          <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
             <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/">
   
   <figure>
     
-    <img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250822092018412.png" alt="在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络" />
+    <img src="https://s3.aiedu.qzz.io/website/2025/10/f827a09e011ae662fe001642683a031f.png" alt="在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络" />
     
   </figure>
   
@@ -420,13 +741,11 @@
 
     <p class="date text-base-content/60">
     
-      <span data-format="luxon">2025-08-22T00:00:00Z</span>
+      <span data-format="luxon">2025-02-22T00:00:00Z</span>
     
     </p>
 
-    <h2 id="-背景说明">📌 背景说明</h2>
-<p>Cloudflare 提供的 WARP 服务，默认用于客户端加速网络。但在 VPS 上直接运行 WARP-CLI，<strong>会接管 VPS 全部流量</strong>，导致 VPS 失联。<br>
-为避免此问题，本教程指导你在 Linux VPS 上以 <strong>Proxy 模式</strong> 运行 WARP-CLI，使其仅在本地创建一个 Socks5 代理端口，你可以将需要的应用流量通过该端口走 WARP 网络。</p>
+    【Linux VPS WARP 配置避坑】Proxy 模式避免 VPS 失…
 
     
     <div class="card-actions justify-between items-center mt-4">
@@ -460,26 +779,25 @@
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/">
+            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2024/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/">
   
   <figure>
     
-    <img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250815175125342.png" alt="拿到Hax的EU VPS，最佳装机指南（小白白）" />
+    <img src="https://s3.aiedu.qzz.io/website/2025/10/6099051373d19c7626b541e7b7a151bb.png" alt="Docker 与 Podman 深度对比：容器化工具的全方位解析" />
     
   </figure>
   
 
   <div class="card-body">
-    <h2 class="card-title">拿到Hax的EU VPS，最佳装机指南（小白白）</h2>
+    <h2 class="card-title">Docker 与 Podman 深度对比：容器化工具的全方位解析</h2>
 
     <p class="date text-base-content/60">
     
-      <span data-format="luxon">2025-05-20T00:00:00Z</span>
+      <span data-format="luxon">2024-08-11T00:00:00Z</span>
     
     </p>
 
-    <h2 id="概要">概要</h2>
-<p>最近Hax EU区域的Vps更换硬盘，导致坚持一年多的EU终究是下线了，需要重新蹲抢，不过很辛运，作为老用户，很快就拿到一台。于是又开始重复多次的开机&ndash;&gt; 装系统&ndash;&gt;配置环境&ndash;&gt;搭建点；经历多了自然有一些自己的小心得，顺便记录下来作为以后的操作指南。</p>
+    【容器工具选型：Docker 还是 Podman？】Docker 生态成熟跨平台，Podman 安全…
 
     
     <div class="card-actions justify-between items-center mt-4">
@@ -488,7 +806,7 @@
   
   <div class="avatar mr-1">
     <div class="w-8 rounded-full">
-      <img class="my-0!" src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170400658.png" alt="Sherry" />
+      <img class="my-0!" src="/img/personal/avatar.png" alt="AiEDU" />
     </div>
   </div>
   
@@ -496,7 +814,7 @@
   <span itemprop="author" itemscope itemtype="https://schema.org/Person">
   
     
-      <span itemprop="name">Sherry</span>
+      <span itemprop="name">AiEDU</span>
     
   
   </span>
@@ -506,7 +824,7 @@
 
       <div class="flex items-center">
         <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>3分钟阅读</span>
+        <span>4分钟阅读</span>
       </div>
     </div>
   </div>
@@ -515,11 +833,11 @@
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
   
   <figure>
     
-    <img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250815174648479.png" alt="Lade.io注册到搭建应用, 小白完全指南" />
+    <img src="https://s3.aiedu.qzz.io/website/2025/10/f01c7e6a5b74279b0e1e7745f2206974.png" alt="Lade.io注册到搭建应用, 小白完全指南" />
     
   </figure>
   
@@ -529,18 +847,11 @@
 
     <p class="date text-base-content/60">
     
-      <span data-format="luxon">2025-05-03T00:00:00Z</span>
+      <span data-format="luxon">2024-03-03T00:00:00Z</span>
     
     </p>
 
-    <h2 id="说明">说明</h2>
-<ul>
-<li>我尽量简化，所以尽量用图说话：红色线代表需要要操作的, 所以你可以按着红色标识操作</li>
-<li>如果你已经有账号，可以直接跳转到第二节</li>
-<li>目前作者增加了github账号验证，所以你得有一个注册时间大于6个月的github账号</li>
-<li>所用到的代码（https://github.com/eooce/Sing-box/tree/main）</li>
-<li>我是小白，所以写作水平有限，请大家多多包涵</li>
-</ul>
+    【Lade.io 部署 Sing-box 教程】从注册（邮箱 + GitHub 验证）…
 
     
     <div class="card-actions justify-between items-center mt-4">
@@ -549,7 +860,7 @@
   
   <div class="avatar mr-1">
     <div class="w-8 rounded-full">
-      <img class="my-0!" src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250807170937500.png" alt="Sherry" />
+      <img class="my-0!" src="https://s3.aiedu.qzz.io/website/2025/10/c6c6fec07e85dec05895473a2965d864.png" alt="Sherry" />
     </div>
   </div>
   
@@ -576,26 +887,25 @@
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/">
+            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/">
   
   <figure>
     
-    <img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250815174321236.png" alt="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化" />
+    <img src="https://s3.aiedu.qzz.io/website/2025/10/f93550a6ebdb90b5118af1d0f906689b.png" alt="拿到Hax的EU VPS，最佳装机指南（小白白）" />
     
   </figure>
   
 
   <div class="card-body">
-    <h2 class="card-title">复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化</h2>
+    <h2 class="card-title">拿到Hax的EU VPS，最佳装机指南（小白白）</h2>
 
     <p class="date text-base-content/60">
     
-      <span data-format="luxon">2025-01-20T00:00:00Z</span>
+      <span data-format="luxon">2023-02-20T00:00:00Z</span>
     
     </p>
 
-    <h3 id="初衷">初衷</h3>
-<p>我非常喜欢Nl论坛，喜欢它的界面局和功能，符合我的体验和习惯。于是我想有没有办法自建一个学习学习，于是有了这篇文章。</p>
+    Hax EU VPS 小白配置指南】Debian12 系统首选（解决 Ubuntu20 报错 /…
 
     
     <div class="card-actions justify-between items-center mt-4">
@@ -604,7 +914,7 @@
   
   <div class="avatar mr-1">
     <div class="w-8 rounded-full">
-      <img class="my-0!" src="/img/personal/avatar.png" alt="Flio Niu" />
+      <img class="my-0!" src="https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png" alt="Sherry" />
     </div>
   </div>
   
@@ -612,7 +922,7 @@
   <span itemprop="author" itemscope itemtype="https://schema.org/Person">
   
     
-      <span itemprop="name">Flio Niu</span>
+      <span itemprop="name">Sherry</span>
     
   
   </span>
@@ -622,7 +932,65 @@
 
       <div class="flex items-center">
         <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>2分钟阅读</span>
+        <span>3分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+          </div>
+        
+          <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default1_hu_33478ca164b4fce4.webp" type="image/webp" />
+      <img src="/images/default1.jpg" alt="/images/default1.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">使用Chatgpt获取全网Free vps清单</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2023-02-11T00:00:00Z</span>
+    
+    </p>
+
+    【真免费 VPS 推荐（非试用）】无需绑信用卡，支持 Python/PHP/Docker，…
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="/img/personal/avatar.png" alt="AiEDU" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">AiEDU</span>
+    
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>7分钟阅读</span>
       </div>
     </div>
   </div>
@@ -645,12 +1013,12 @@
   <div>
   
   <p>
-    © 2023 - 2025 AiEDU | Blog
+    © 2023 - 2025  -  AiEDU | BLOG
   </p>
   
 
   
-
+  <p>知识改变命运，AI改变知识</p>
   
 </div>
 
@@ -701,7 +1069,7 @@
 
         <div class="prose dark:prose-invert">
           <p>Hi，这里是 <strong>AiEDU</strong> 的博客。<strong>AiEDU</strong> 是我在互联网上经常使用的名字。</p>
-<p>我是一个热衷于开源的软件工程师，在这里我会记录一些关于技术等知识。欢迎你通过评论或者邮件与我交流。</p>
+<p>我是一个热衷于开源的研发工程师，在这里我会记录一些关于技术等知识。欢迎你通过评论或者邮件与我交流。</p>
 
         </div>
       </div>
@@ -786,12 +1154,12 @@
   <div>
   
   <p>
-    © 2023 - 2025 AiEDU | Blog
+    © 2023 - 2025  -  AiEDU | BLOG
   </p>
   
 
   
-
+  <p>知识改变命运，AI改变知识</p>
   
 </div>
 
@@ -882,6 +1250,201 @@
     
 
     
+    
+      
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7QPNK9FQQL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7QPNK9FQQL');
+</script>
+
+    
+        
+    
+<div class="scroll-buttons">
+  <button id="scrollToTop" aria-label="滚动到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+  <button id="scrollToBottom" aria-label="滚动到底部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </button>
+</div>
+
+<style>
+.scroll-buttons {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;  
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;  
+  z-index: 99;
+}
+
+.scroll-buttons button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4);
+}
+
+.scroll-buttons button:hover {
+  background-color: #218838;
+  transform: translateY(0) scale(1.05);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
+}
+
+.scroll-buttons button.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+ 
+@media (max-width: 768px) {
+  .scroll-buttons {
+    right: 1rem !important;
+    bottom: 1rem !important;  
+    gap: 0.5rem !important;
+  }
+
+  .scroll-buttons button {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  const scrollToBottomBtn = document.getElementById('scrollToBottom');
+
+  const handleScroll = () => {
+    scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
+    const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
+    scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+  };
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToBottom = () => window.scrollTo({
+    top: document.documentElement.scrollHeight || document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+
+  window.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+  scrollToBottomBtn.addEventListener('click', scrollToBottom);
+  handleScroll();
+});
+</script>
+
+    
+    <script>
+  window.difyChatbotConfig = {
+    token: 'h2hkg50dPRmb7SaR',
+    inputs: {},
+    systemVariables: {},
+    userVariables: {
+      avatar_url: 'https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250829110345042.png',
+      name: 'AiEDU',
+    },
+  }
+</script>
+<script src="https://udify.app/embed.min.js" id="h2hkg50dPRmb7SaR" defer></script>
+
+<style>
+   
+  #dify-chatbot-bubble-button {
+    background-color: #28a745 !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;  
+    z-index: 9999 !important;
+    width: 2.5rem !important;  
+    height: 2.5rem !important;  
+    box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+   
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 70vh !important;
+    max-height: 600px !important;
+    min-height: 400px !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 9998 !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+   
+  @media (max-width: 768px) {
+    #dify-chatbot-bubble-window {
+      width: calc(100vw - 2rem) !important;
+      height: 65vh !important;
+      bottom: 1rem !important;  
+      right: 1rem !important;
+      left: 1rem !important;
+    }
+
+    #dify-chatbot-bubble-button {
+      width: 2.2rem !important;
+      height: 2.2rem !important;
+      bottom: 1rem !important;
+      right: 1rem !important;
+    }
+  }
+
+   
+  @supports (padding: env(safe-area-inset-bottom)) {
+    #dify-chatbot-bubble-button {
+      bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    #dify-chatbot-bubble-window {
+      bottom: calc(6.1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    @media (max-width: 768px) {
+      #dify-chatbot-bubble-button {
+        bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+      }
+
+      #dify-chatbot-bubble-window {
+        bottom: calc(4.3rem + env(safe-area-inset-bottom)) !important;
+      }
+    }
+  }
+</style>
+
 
     <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js" integrity="sha256-/IFmi82bIhdYWctu0UddSlJqpnzWm7Vh2C4CM32wF/k=" crossorigin="anonymous"></script>
     <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js" integrity="sha256-mr7eJMX3VC3F7G32mk4oWp1C6a2tlMYxUdptfT7uKI8=" crossorigin="anonymous"></script>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>U盘 on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+    <link>https://googhub.nyc.mn/tags/u%E7%9B%98/</link>
+    <description>Recent content in U盘 on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sat, 27 Aug 2022 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://googhub.nyc.mn/tags/u%E7%9B%98/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>U盘中的文件恢复</title>
+      <link>https://googhub.nyc.mn/posts/2022/u%E7%9B%98%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D/</link>
+      <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2022/u%E7%9B%98%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;U盘经常发生读取失败的问题，以下是一次数据恢复的过程记录，用到了两款软件。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

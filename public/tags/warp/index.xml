@@ -1,19 +1,26 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Warp on AiEDU | Blog</title>
+    <title>WARP on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
     <link>https://googhub.nyc.mn/tags/warp/</link>
-    <description>Recent content in Warp on AiEDU | Blog</description>
+    <description>Recent content in WARP on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Fri, 22 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 22 Feb 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://googhub.nyc.mn/tags/warp/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络</title>
       <link>https://googhub.nyc.mn/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/</link>
-      <pubDate>Fri, 22 Aug 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://googhub.nyc.mn/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/</guid>
       <description>&lt;h2 id=&#34;-背景说明&#34;&gt;📌 背景说明&lt;/h2&gt;&#xA;&lt;p&gt;Cloudflare 提供的 WARP 服务，默认用于客户端加速网络。但在 VPS 上直接运行 WARP-CLI，&lt;strong&gt;会接管 VPS 全部流量&lt;/strong&gt;，导致 VPS 失联。&lt;br&gt;&#xA;为避免此问题，本教程指导你在 Linux VPS 上以 &lt;strong&gt;Proxy 模式&lt;/strong&gt; 运行 WARP-CLI，使其仅在本地创建一个 Socks5 代理端口，你可以将需要的应用流量通过该端口走 WARP 网络。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>拿到Hax的EU VPS，最佳装机指南（小白白）</title>
+      <link>https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;最近Hax EU区域的Vps更换硬盘，导致坚持一年多的EU终究是下线了，需要重新蹲抢，不过很辛运，作为老用户，很快就拿到一台。于是又开始重复多次的开机&amp;ndash;&amp;gt; 装系统&amp;ndash;&amp;gt;配置环境&amp;ndash;&amp;gt;搭建点；经历多了自然有一些自己的小心得，顺便记录下来作为以后的操作指南。&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

@@ -1,0 +1,1372 @@
+<!DOCTYPE html>
+<html lang="zh-Hans"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>拿到Hax的EU VPS，最佳装机指南（小白白） | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+
+    
+  
+    <link href="/img/personal/avatar.png" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/" />
+
+
+
+<meta name="author" content="Sherry" />
+<meta name="description" content="Hax EU VPS 小白配置指南】Debian12 系统首选（解决 Ubuntu20 报错 / 24 卡顿），含 DNS 修改、Warp 安装、Docker 部署，3xui/Singbox 节点搭建对比，实测可用" />
+
+
+<meta name="keywords" content="VPN,WARP,HAX">
+
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+
+<meta property="og:url" content="https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/">
+  <meta property="og:site_name" content="编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源">
+  <meta property="og:title" content="拿到Hax的EU VPS，最佳装机指南（小白白）">
+  <meta property="og:description" content="Hax EU VPS 小白配置指南】Debian12 系统首选（解决 Ubuntu20 报错 / 24 卡顿），含 DNS 修改、Warp 安装、Docker 部署，3xui/Singbox 节点搭建对比，实测可用">
+  <meta property="og:locale" content="zh_Hans">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-02-20T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-06-11T00:00:00+00:00">
+    <meta property="article:tag" content="VPN">
+    <meta property="article:tag" content="WARP">
+    <meta property="article:tag" content="HAX">
+    <meta property="og:image" content="https://googhub.nyc.mn/img/global-background.jpg">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://googhub.nyc.mn/img/global-background.jpg">
+  <meta name="twitter:title" content="拿到Hax的EU VPS，最佳装机指南（小白白）">
+  <meta name="twitter:description" content="Hax EU VPS 小白配置指南】Debian12 系统首选（解决 Ubuntu20 报错 / 24 卡顿），含 DNS 修改、Warp 安装、Docker 部署，3xui/Singbox 节点搭建对比，实测可用">
+      <meta name="twitter:site" content="@dgdghub">
+
+
+
+
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
+
+
+
+
+    
+    <style>
+         
+        #loading {
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .loader {
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #00a96e;
+            letter-spacing: 0.2em;
+            user-select: none;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #00a96e;
+            position: absolute;
+            animation: load .7s infinite alternate ease-in-out;
+            will-change: left, height, width;
+        }
+
+        .loader::before {
+            top: 0
+        }
+
+        .loader::after {
+            bottom: 0
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px
+            }
+
+            50% {
+                height: 8px;
+                width: 40px
+            }
+
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px
+            }
+        }
+
+         
+        #loading, #load-loading, .load-loading {
+            justify-content: center;
+            align-items: center;
+            display: -webkit-box;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999999;
+            background: #fff;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            pointer-events: auto;
+        }
+
+        .load-loading {
+            position: absolute;
+            background: transparent
+        }
+
+        .load-loading .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.2
+        }
+
+        #load-loading {
+            opacity: 0
+        }
+
+        #loading.close {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none;
+        }
+
+        .io-black-mode #loading,
+        .io-black-mode #load-loading {
+            background: #111;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .loader::before,
+            .loader::after {
+                animation: none;
+            }
+
+            #loading, #load-loading, .load-loading {
+                transition: none;
+            }
+        }
+    </style>
+
+    
+    <div id="loading" role="progressbar" aria-label="页面加载中">
+        <div class="loader">AiEDU</div>
+    </div>
+
+    <script>
+        
+        (function() {
+            const loadingScreen = document.getElementById('loading');
+            if (!loadingScreen) return;
+
+            function hideLoadingScreen() {
+                if (!loadingScreen.classList.contains('close')) {
+                    loadingScreen.classList.add('close');
+
+                    
+                    setTimeout(() => {
+                        if (loadingScreen.parentNode) {
+                            loadingScreen.parentNode.removeChild(loadingScreen);
+                        }
+                    }, 500);
+                }
+            }
+
+            
+            window.addEventListener('load', function() {
+                const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                setTimeout(hideLoadingScreen, delay);
+            });
+
+            
+            window.addEventListener('beforeunload', function() {
+                loadingScreen.classList.remove('close');
+            });
+
+            
+            if (window.pjax) {
+                document.addEventListener('pjax:send', function() {
+                    loadingScreen.classList.remove('close');
+                });
+
+                document.addEventListener('pjax:complete', function() {
+                    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                    setTimeout(hideLoadingScreen, delay);
+                });
+            }
+
+            
+            setTimeout(hideLoadingScreen, 8000);
+        })();
+    </script>
+
+
+
+
+
+    
+
+
+<link rel="stylesheet" data-custom-syntax-highlighting />
+<style>
+  .chroma {
+    padding: 1em;
+    background-color: var(--dream-pre-bg, #f5f5f5);
+    border-radius: .5em;
+    overflow: auto;
+  }
+
+  html.dark .chroma {
+    background-color: var(--dream-pre-bg-dark, #262626);
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    
+    <script defer src="/js/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/personal/avatar.png" alt="AiEDU | BLOG" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="/" class="text-lg font-semibold cursor-pointer">
+          AiEDU | BLOG
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">AI 赋能，智启教育</div>
+        
+      </div>
+      
+    </section>
+
+    
+    
+      
+    
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
+        
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/" target="" title="首页">
+    
+    <ion-icon name="home"></ion-icon>
+    
+    首页
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://www.518855.xyz" target="" title="导航">
+    
+    <ion-icon name="rocket"></ion-icon>
+    
+    导航
+  </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://cici.pp.ua" target="" title="文档">
+    
+    <ion-icon name="documents"></ion-icon>
+    
+    文档
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="group inline-flex items-center p-2 cursor-pointer" href="/search" title="搜索">
+    <ion-icon name="search"></ion-icon>
+    搜索
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://github.com/88899" target="" title="GitHub">
+    
+    <ion-icon name="logo-github"></ion-icon>
+    
+    GitHub
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/" target="" title="首页">
+    <ion-icon class="group-hover:text-primary-content" name="home"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.518855.xyz" target="" title="导航">
+    <ion-icon class="group-hover:text-primary-content" name="rocket"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://cici.pp.ua" target="" title="文档">
+    <ion-icon class="group-hover:text-primary-content" name="documents"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/search" title="搜索">
+  <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://github.com/88899" target="" title="GitHub">
+    <ion-icon class="group-hover:text-primary-content" name="logo-github"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+
+<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
+
+
+
+
+
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+
+
+  <div class="lg:col-span-2">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="拿到Hax的EU VPS，最佳装机指南（小白白）">
+  <meta itemprop="description" content="Hax EU VPS 小白配置指南】Debian12 系统首选（解决 Ubuntu20 报错 / 24 卡顿），含 DNS 修改、Warp 安装、Docker 部署，3xui/Singbox 节点搭建对比，实测可用">
+  <meta itemprop="datePublished" content="2023-02-20T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-06-11T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1124">
+  <meta itemprop="image" content="https://googhub.nyc.mn/img/global-background.jpg">
+  <meta itemprop="keywords" content="VPN,WARP,HAX">
+
+      <header>
+        <h1 itemprop="headline">拿到Hax的EU VPS，最佳装机指南（小白白）</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2023-02-20T00:00:00Z</span>
+          
+
+          | <span>3分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2023-06-11T00:00:00Z</span>
+            </span>
+          
+        </p>
+
+        
+        <div class="flex justify-between">
+          
+            <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png" alt="Sherry" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Sherry</span>
+    
+  
+  </span>
+</div>
+
+          
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+    
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="" target="_blank" rel="noopener noreferrer"
+      title="Share on WeChat">
+      <ion-icon class="group-hover:text-primary-content" name="logo-WeChat"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=%e6%8b%bf%e5%88%b0Hax%e7%9a%84EU%20VPS%ef%bc%8c%e6%9c%80%e4%bd%b3%e8%a3%85%e6%9c%ba%e6%8c%87%e5%8d%97%ef%bc%88%e5%b0%8f%e7%99%bd%e7%99%bd%ef%bc%89&amp;url=https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=%e6%8b%bf%e5%88%b0Hax%e7%9a%84EU%20VPS%ef%bc%8c%e6%9c%80%e4%bd%b3%e8%a3%85%e6%9c%ba%e6%8c%87%e5%8d%97%ef%bc%88%e5%b0%8f%e7%99%bd%e7%99%bd%ef%bc%89%20https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      <section id="dream-single-post-content" itemprop="articleBody">
+        
+          <img class="w-full z-30" src="https://s3.aiedu.qzz.io/website/2025/10/f93550a6ebdb90b5118af1d0f906689b.png" alt="拿到Hax的EU VPS，最佳装机指南（小白白）" />
+        
+
+        <h2 id="概要">概要</h2>
+<p>最近Hax EU区域的Vps更换硬盘，导致坚持一年多的EU终究是下线了，需要重新蹲抢，不过很辛运，作为老用户，很快就拿到一台。于是又开始重复多次的开机&ndash;&gt; 装系统&ndash;&gt;配置环境&ndash;&gt;搭建点；经历多了自然有一些自己的小心得，顺便记录下来作为以后的操作指南。</p>
+<h2 id="一操作系统选择">一、操作系统选择</h2>
+<p>首选：Ddebian 12
+次选：Ubuntu22</p>
+<p>我看到很多mjj推荐Ubuntu20, 实操发现在部署最新版本的3xui时，会报错（具体信息忘记截图了，大致意思是系统版本过低, Debian11下也会有这个错误)，换Ubuntu22后，问题解决。</p>
+<p>可能有人会问，为啥不直接选择Ubuntu24呢？我也专门进行了实测，发现改用Ubuntu24后，安装和部署没出现什么错误，但是ssh连接后，输入命令和响应异常的缓慢，经常有卡顿（就像卡桢的感觉）。</p>
+<p>综上：经过多次实验，最终个人感觉Debian12最佳，无论是安装最新版本的3xui等的兼容性，还是ssh连接操作流畅性，我选择了Debian12.</p>
+<h2 id="二基本设置">二、基本设置</h2>
+<ul>
+<li>开机后不管三七二十二，先修改Dns:</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span># 修改resolv.conf文件，将以下nameserver加入
+</span></span><span style="display:flex;"><span>vi <span style="color:#ff79c6">/</span>etc<span style="color:#ff79c6">/</span>resolv.conf
+</span></span><span style="display:flex;"><span>nameserver <span style="color:#bd93f9">2606</span>:<span style="color:#bd93f9">4700</span>:<span style="color:#bd93f9">4700</span>::<span style="color:#bd93f9">1111</span>
+</span></span><span style="display:flex;"><span>nameserver <span style="color:#bd93f9">2606</span>:<span style="color:#bd93f9">4700</span>:<span style="color:#bd93f9">4700</span>::<span style="color:#bd93f9">1001</span>
+</span></span><span style="display:flex;"><span>nameserver <span style="color:#bd93f9">2001</span>:<span style="color:#bd93f9">4860</span>:<span style="color:#bd93f9">4860</span>::<span style="color:#bd93f9">8888</span>
+</span></span><span style="display:flex;"><span>nameserver <span style="color:#bd93f9">2001</span>:<span style="color:#bd93f9">4860</span>:<span style="color:#bd93f9">4860</span>::<span style="color:#bd93f9">8844</span>
+</span></span><span style="display:flex;"><span>nameserver <span style="color:#bd93f9">1.1.1.1</span>
+</span></span><span style="display:flex;"><span>nameserver <span style="color:#bd93f9">8.8.8.8</span>
+</span></span><span style="display:flex;"><span>nameserver <span style="color:#bd93f9">8.8.4.4</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span># 重启网络
+</span></span><span style="display:flex;"><span>service networking restart
+</span></span></code></pre></td></tr></table>
+</div>
+</div><ul>
+<li>更新系统</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>apt update
+</span></span><span style="display:flex;"><span>apt upgrade <span style="color:#ff79c6">-</span>y
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="三warp">三、Warp</h2>
+<p>我使用的是老王一键脚本(细节教程太多，请自行搜，也可以评论区留言）</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-rust" data-lang="rust"><span style="display:flex;"><span>执行脚本 .<span style="color:#ff79c6">/</span>ssh_tool.sh
+</span></span><span style="display:flex;"><span>选择菜单<span style="color:#bd93f9">7</span>
+</span></span><span style="display:flex;"><span>按提示安装warp
+</span></span><span style="display:flex;"><span>再次进入warp开启加速，选择<span style="color:#bd93f9">16</span>
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h2 id="四部署docker">四、部署docker</h2>
+<p>如果对版本没有要求，建议直接使用apt无脑安装(这个默认安装版本是20.0的)</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>apt install docker.io
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>apt install docker-compose
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>如果想安装最新版本，使用以下命令(每次复制一行，在vps执行一次，不要一次全部执行)</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span>apt install curl vim wget gnupg dpkg apt<span style="color:#ff79c6">-</span>transport<span style="color:#ff79c6">-</span>https lsb<span style="color:#ff79c6">-</span>release ca<span style="color:#ff79c6">-</span>certificates
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl <span style="color:#ff79c6">-</span>sSL https:<span style="color:#ff79c6">//</span>download<span style="color:#ff79c6">.</span>docker<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>linux<span style="color:#ff79c6">/</span>debian<span style="color:#ff79c6">/</span>gpg <span style="color:#ff79c6">|</span> gpg <span style="color:#ff79c6">--</span>dearmor <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span>share<span style="color:#ff79c6">/</span>keyrings<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>ce<span style="color:#ff79c6">.</span>gpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#f1fa8c">&#34;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://download.docker.com/linux/debian $(lsb_release -sc) stable&#34;</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>etc<span style="color:#ff79c6">/</span>apt<span style="color:#ff79c6">/</span>sources<span style="color:#ff79c6">.</span>list<span style="color:#ff79c6">.</span>d<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">.</span>list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl <span style="color:#ff79c6">-</span>sS https:<span style="color:#ff79c6">//</span>download<span style="color:#ff79c6">.</span>docker<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>linux<span style="color:#ff79c6">/</span>debian<span style="color:#ff79c6">/</span>gpg <span style="color:#ff79c6">|</span> gpg <span style="color:#ff79c6">--</span>dearmor <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span>share<span style="color:#ff79c6">/</span>keyrings<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>ce<span style="color:#ff79c6">.</span>gpg
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>echo <span style="color:#f1fa8c">&#34;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-ce.gpg] https://mirrors.tuna.tsinghua.edu.cn/docker-ce/linux/debian $(lsb_release -sc) stable&#34;</span> <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>etc<span style="color:#ff79c6">/</span>apt<span style="color:#ff79c6">/</span>sources<span style="color:#ff79c6">.</span>list<span style="color:#ff79c6">.</span>d<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">.</span>list
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>apt update
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>apt install docker<span style="color:#ff79c6">-</span>ce docker<span style="color:#ff79c6">-</span>ce<span style="color:#ff79c6">-</span>cli containerd<span style="color:#ff79c6">.</span>io docker<span style="color:#ff79c6">-</span>compose<span style="color:#ff79c6">-</span>plugin
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>curl <span style="color:#ff79c6">-</span>L https:<span style="color:#ff79c6">//</span>github<span style="color:#ff79c6">.</span>com<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">/</span>compose<span style="color:#ff79c6">/</span>releases<span style="color:#ff79c6">/</span>latest<span style="color:#ff79c6">/</span>download<span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>compose<span style="color:#ff79c6">-</span>Linux<span style="color:#ff79c6">-</span>x86_64 <span style="color:#ff79c6">&gt;</span> <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span>local<span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">bin</span><span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>compose
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>chmod <span style="color:#ff79c6">+</span>x <span style="color:#ff79c6">/</span>usr<span style="color:#ff79c6">/</span>local<span style="color:#ff79c6">/</span><span style="color:#8be9fd;font-style:italic">bin</span><span style="color:#ff79c6">/</span>docker<span style="color:#ff79c6">-</span>compose
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>以上在Debian12下验证过。</p>
+<h2 id="五搭建节点">五、搭建节点</h2>
+<p>如果你有多台Eu，建议一台部署3xui，一台部署F佬的一键梭哈(具体部署请看专门贴，我这里就不搬运了，如果有mjj懒得搜，也可以评论告诉我)。区别如下:</p>
+<p>3xui部署的节点，缺点是网络速度会慢一点，点是CPU和内存的使用比较温柔，基本没有超过60%的情况，网速也是平稳在一个区间内，没有忽然很高，忽然很低的情况。</p>
+<p>Singbox的节点，缺点是比较暴力，CPU会开启狂飙模式，忽上忽下，优点是网速也很快，但是偶尔会出现忽上忽下的情况。</p>
+<h2 id="六总结">六、总结</h2>
+<p>我是小白，很多细节和问题只能从表面记录自己的感受，无力挖掘到问题的本质和原理，希望大家包涵。也希望大佬看到了，能从更深层次指点指点。感谢！！！</p>
+
+
+      </section>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a role="button" class="btn btn-outline h-12" href="/posts/2024/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/" title="分享几个热度较高的MCP服务聚合平台">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 text-xs font-normal">上一页</span>
+            <span class="max-w-48 truncate">分享几个热度较高的MCP服务聚合平台</span>
+          </div>
+        </a>
+        
+
+        
+        <a role="button" class="btn btn-outline h-12" href="/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/" title="使用Chatgpt获取全网Free vps清单">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">使用Chatgpt获取全网Free vps清单</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+
+      
+       
+
+    </article>
+  </div>
+
+  <div
+    x-data="tocHighlighter()"
+    @scroll.window="debouncedScroll"
+    class="hidden lg:flex lg:flex-col lg:items-end lg:self-start"
+  >
+    
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#一操作系统选择">一、操作系统选择</a></li>
+    <li><a href="#二基本设置">二、基本设置</a></li>
+    <li><a href="#三warp">三、Warp</a></li>
+    <li><a href="#四部署docker">四、部署docker</a></li>
+    <li><a href="#五搭建节点">五、搭建节点</a></li>
+    <li><a href="#六总结">六、总结</a></li>
+  </ul>
+</nav>
+    
+  </div>
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2023 - 2025  -  AiEDU | BLOG
+  </p>
+  
+
+  
+  <p>知识改变命运，AI改变知识</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">关于我</div>
+
+        <div class="prose dark:prose-invert">
+          <p>Hi，这里是 <strong>AiEDU</strong> 的博客。<strong>AiEDU</strong> 是我在互联网上经常使用的名字。</p>
+<p>我是一个热衷于开源的研发工程师，在这里我会记录一些关于技术等知识。欢迎你通过评论或者邮件与我交流。</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">知识共享（Creative Commons）</div>
+
+        <div class="prose dark:prose-invert">
+          <p>此网站的所有内容都遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: underline;">CC BY-NC-SA 4.0<img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>。</p>
+<p>All contents of this website are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: underline;">CC BY-NC-SA 4.0<img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>.</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">社交链接</div>
+
+        <ul class="menu menu-horizontal flex-wrap w-full px-0 [&_ion-icon]:text-lg">
+  
+  <li>
+    <a href="mailto:aiedu985@gmail.com" title="Email">
+      <ion-icon name="mail"></ion-icon>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="https://github.com/88899" target="_blank" title="GitHub">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://x.com/mykenwayne" target="_blank" title="X">
+      <ion-icon name="logo-x"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://www.linkedin.com/in/mykenwayne" target="_blank" title="Linkedin">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://stackoverflow.com/users/5676489/mykenwayne" target="_blank" title="stack overflow">
+      <ion-icon name="logo-stackoverflow"></ion-icon>
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+    </article>
+  </div>
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2023 - 2025  -  AiEDU | BLOG
+  </p>
+  
+
+  
+  <p>知识改变命运，AI改变知识</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+    
+  
+  <script src="/js/grid.min.js"></script>
+
+
+
+
+  
+
+<script src="/js/main.min.js"></script>
+
+    
+
+
+  <script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+<script>
+    window.customSyntaxHighlighting = {
+      light: "/css/syntax-light.min.css",
+      dark: "/css/syntax-dark.min.css"
+    }
+
+    document.addEventListener('alpine:initialized', () => {
+      var isDark = Alpine.store('darkMode').isDark()
+      var customSyntaxHighlightingUrl = isDark ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light
+
+      document
+        .querySelector('link[data-custom-syntax-highlighting]')
+        .setAttribute('href', customSyntaxHighlightingUrl)
+    })
+  </script>
+
+
+
+
+  
+
+<script src="/js/toc.min.js"></script>
+
+
+  
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+    
+      
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7QPNK9FQQL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7QPNK9FQQL');
+</script>
+
+    
+        
+    
+<div class="scroll-buttons">
+  <button id="scrollToTop" aria-label="滚动到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+  <button id="scrollToBottom" aria-label="滚动到底部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </button>
+</div>
+
+<style>
+.scroll-buttons {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;  
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;  
+  z-index: 99;
+}
+
+.scroll-buttons button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4);
+}
+
+.scroll-buttons button:hover {
+  background-color: #218838;
+  transform: translateY(0) scale(1.05);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
+}
+
+.scroll-buttons button.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+ 
+@media (max-width: 768px) {
+  .scroll-buttons {
+    right: 1rem !important;
+    bottom: 1rem !important;  
+    gap: 0.5rem !important;
+  }
+
+  .scroll-buttons button {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  const scrollToBottomBtn = document.getElementById('scrollToBottom');
+
+  const handleScroll = () => {
+    scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
+    const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
+    scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+  };
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToBottom = () => window.scrollTo({
+    top: document.documentElement.scrollHeight || document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+
+  window.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+  scrollToBottomBtn.addEventListener('click', scrollToBottom);
+  handleScroll();
+});
+</script>
+
+    
+    <script>
+  window.difyChatbotConfig = {
+    token: 'h2hkg50dPRmb7SaR',
+    inputs: {},
+    systemVariables: {},
+    userVariables: {
+      avatar_url: 'https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250829110345042.png',
+      name: 'AiEDU',
+    },
+  }
+</script>
+<script src="https://udify.app/embed.min.js" id="h2hkg50dPRmb7SaR" defer></script>
+
+<style>
+   
+  #dify-chatbot-bubble-button {
+    background-color: #28a745 !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;  
+    z-index: 9999 !important;
+    width: 2.5rem !important;  
+    height: 2.5rem !important;  
+    box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+   
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 70vh !important;
+    max-height: 600px !important;
+    min-height: 400px !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 9998 !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+   
+  @media (max-width: 768px) {
+    #dify-chatbot-bubble-window {
+      width: calc(100vw - 2rem) !important;
+      height: 65vh !important;
+      bottom: 1rem !important;  
+      right: 1rem !important;
+      left: 1rem !important;
+    }
+
+    #dify-chatbot-bubble-button {
+      width: 2.2rem !important;
+      height: 2.2rem !important;
+      bottom: 1rem !important;
+      right: 1rem !important;
+    }
+  }
+
+   
+  @supports (padding: env(safe-area-inset-bottom)) {
+    #dify-chatbot-bubble-button {
+      bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    #dify-chatbot-bubble-window {
+      bottom: calc(6.1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    @media (max-width: 768px) {
+      #dify-chatbot-bubble-button {
+        bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+      }
+
+      #dify-chatbot-bubble-window {
+        bottom: calc(4.3rem + env(safe-area-inset-bottom)) !important;
+      }
+    }
+  }
+</style>
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js" integrity="sha256-/IFmi82bIhdYWctu0UddSlJqpnzWm7Vh2C4CM32wF/k=" crossorigin="anonymous"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js" integrity="sha256-mr7eJMX3VC3F7G32mk4oWp1C6a2tlMYxUdptfT7uKI8=" crossorigin="anonymous"></script>
+  </body>
+</html>

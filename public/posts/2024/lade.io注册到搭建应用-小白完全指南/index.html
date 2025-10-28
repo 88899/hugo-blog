@@ -1,0 +1,1328 @@
+<!DOCTYPE html>
+<html lang="zh-Hans"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lade.io注册到搭建应用, 小白完全指南 | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+
+    
+  
+    <link href="/img/personal/avatar.png" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" />
+
+
+
+<meta name="author" content="Sherry" />
+<meta name="description" content="【Lade.io 部署 Sing-box 教程】从注册（邮箱 &#43; GitHub 验证）到下载 Sing-box 文件、修改 start.sh，再到 mac CLI 安装部署，日志提取节点信息，小白友好" />
+
+
+<meta name="keywords" content="Docker,容器,工具,Lade">
+
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+
+<meta property="og:url" content="https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+  <meta property="og:site_name" content="编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源">
+  <meta property="og:title" content="Lade.io注册到搭建应用, 小白完全指南">
+  <meta property="og:description" content="【Lade.io 部署 Sing-box 教程】从注册（邮箱 &#43; GitHub 验证）到下载 Sing-box 文件、修改 start.sh，再到 mac CLI 安装部署，日志提取节点信息，小白友好">
+  <meta property="og:locale" content="zh_Hans">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2024-03-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2024-03-03T00:00:00+00:00">
+    <meta property="article:tag" content="Docker">
+    <meta property="article:tag" content="容器">
+    <meta property="article:tag" content="工具">
+    <meta property="article:tag" content="Lade">
+    <meta property="og:image" content="https://googhub.nyc.mn/img/global-background.jpg">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://googhub.nyc.mn/img/global-background.jpg">
+  <meta name="twitter:title" content="Lade.io注册到搭建应用, 小白完全指南">
+  <meta name="twitter:description" content="【Lade.io 部署 Sing-box 教程】从注册（邮箱 &#43; GitHub 验证）到下载 Sing-box 文件、修改 start.sh，再到 mac CLI 安装部署，日志提取节点信息，小白友好">
+      <meta name="twitter:site" content="@dgdghub">
+
+
+
+
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
+
+
+
+
+    
+    <style>
+         
+        #loading {
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .loader {
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #00a96e;
+            letter-spacing: 0.2em;
+            user-select: none;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #00a96e;
+            position: absolute;
+            animation: load .7s infinite alternate ease-in-out;
+            will-change: left, height, width;
+        }
+
+        .loader::before {
+            top: 0
+        }
+
+        .loader::after {
+            bottom: 0
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px
+            }
+
+            50% {
+                height: 8px;
+                width: 40px
+            }
+
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px
+            }
+        }
+
+         
+        #loading, #load-loading, .load-loading {
+            justify-content: center;
+            align-items: center;
+            display: -webkit-box;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999999;
+            background: #fff;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            pointer-events: auto;
+        }
+
+        .load-loading {
+            position: absolute;
+            background: transparent
+        }
+
+        .load-loading .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.2
+        }
+
+        #load-loading {
+            opacity: 0
+        }
+
+        #loading.close {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none;
+        }
+
+        .io-black-mode #loading,
+        .io-black-mode #load-loading {
+            background: #111;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .loader::before,
+            .loader::after {
+                animation: none;
+            }
+
+            #loading, #load-loading, .load-loading {
+                transition: none;
+            }
+        }
+    </style>
+
+    
+    <div id="loading" role="progressbar" aria-label="页面加载中">
+        <div class="loader">AiEDU</div>
+    </div>
+
+    <script>
+        
+        (function() {
+            const loadingScreen = document.getElementById('loading');
+            if (!loadingScreen) return;
+
+            function hideLoadingScreen() {
+                if (!loadingScreen.classList.contains('close')) {
+                    loadingScreen.classList.add('close');
+
+                    
+                    setTimeout(() => {
+                        if (loadingScreen.parentNode) {
+                            loadingScreen.parentNode.removeChild(loadingScreen);
+                        }
+                    }, 500);
+                }
+            }
+
+            
+            window.addEventListener('load', function() {
+                const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                setTimeout(hideLoadingScreen, delay);
+            });
+
+            
+            window.addEventListener('beforeunload', function() {
+                loadingScreen.classList.remove('close');
+            });
+
+            
+            if (window.pjax) {
+                document.addEventListener('pjax:send', function() {
+                    loadingScreen.classList.remove('close');
+                });
+
+                document.addEventListener('pjax:complete', function() {
+                    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                    setTimeout(hideLoadingScreen, delay);
+                });
+            }
+
+            
+            setTimeout(hideLoadingScreen, 8000);
+        })();
+    </script>
+
+
+
+
+
+    
+
+
+<link rel="stylesheet" data-custom-syntax-highlighting />
+<style>
+  .chroma {
+    padding: 1em;
+    background-color: var(--dream-pre-bg, #f5f5f5);
+    border-radius: .5em;
+    overflow: auto;
+  }
+
+  html.dark .chroma {
+    background-color: var(--dream-pre-bg-dark, #262626);
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    
+    <script defer src="/js/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/personal/avatar.png" alt="AiEDU | BLOG" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="/" class="text-lg font-semibold cursor-pointer">
+          AiEDU | BLOG
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">AI 赋能，智启教育</div>
+        
+      </div>
+      
+    </section>
+
+    
+    
+      
+    
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
+        
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/" target="" title="首页">
+    
+    <ion-icon name="home"></ion-icon>
+    
+    首页
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://www.518855.xyz" target="" title="导航">
+    
+    <ion-icon name="rocket"></ion-icon>
+    
+    导航
+  </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://cici.pp.ua" target="" title="文档">
+    
+    <ion-icon name="documents"></ion-icon>
+    
+    文档
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="group inline-flex items-center p-2 cursor-pointer" href="/search" title="搜索">
+    <ion-icon name="search"></ion-icon>
+    搜索
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://github.com/88899" target="" title="GitHub">
+    
+    <ion-icon name="logo-github"></ion-icon>
+    
+    GitHub
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/" target="" title="首页">
+    <ion-icon class="group-hover:text-primary-content" name="home"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.518855.xyz" target="" title="导航">
+    <ion-icon class="group-hover:text-primary-content" name="rocket"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://cici.pp.ua" target="" title="文档">
+    <ion-icon class="group-hover:text-primary-content" name="documents"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/search" title="搜索">
+  <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://github.com/88899" target="" title="GitHub">
+    <ion-icon class="group-hover:text-primary-content" name="logo-github"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+
+<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
+
+
+
+
+
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+
+
+  <div class="lg:col-span-2">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="Lade.io注册到搭建应用, 小白完全指南">
+  <meta itemprop="description" content="【Lade.io 部署 Sing-box 教程】从注册（邮箱 &#43; GitHub 验证）到下载 Sing-box 文件、修改 start.sh，再到 mac CLI 安装部署，日志提取节点信息，小白友好">
+  <meta itemprop="datePublished" content="2024-03-03T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2024-03-03T00:00:00+00:00">
+  <meta itemprop="wordCount" content="1015">
+  <meta itemprop="image" content="https://googhub.nyc.mn/img/global-background.jpg">
+  <meta itemprop="keywords" content="Docker,容器,工具,Lade">
+
+      <header>
+        <h1 itemprop="headline">Lade.io注册到搭建应用, 小白完全指南</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2024-03-03T00:00:00Z</span>
+          
+
+          | <span>3分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2024-03-03T00:00:00Z</span>
+            </span>
+          
+        </p>
+
+        
+        <div class="flex justify-between">
+          
+            <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="https://s3.aiedu.qzz.io/website/2025/10/c6c6fec07e85dec05895473a2965d864.png" alt="Sherry" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Sherry</span>
+    
+  
+  </span>
+</div>
+
+          
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+    
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="" target="_blank" rel="noopener noreferrer"
+      title="Share on WeChat">
+      <ion-icon class="group-hover:text-primary-content" name="logo-WeChat"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=Lade.io%e6%b3%a8%e5%86%8c%e5%88%b0%e6%90%ad%e5%bb%ba%e5%ba%94%e7%94%a8,%20%e5%b0%8f%e7%99%bd%e5%ae%8c%e5%85%a8%e6%8c%87%e5%8d%97&amp;url=https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=Lade.io%e6%b3%a8%e5%86%8c%e5%88%b0%e6%90%ad%e5%bb%ba%e5%ba%94%e7%94%a8,%20%e5%b0%8f%e7%99%bd%e5%ae%8c%e5%85%a8%e6%8c%87%e5%8d%97%20https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      <section id="dream-single-post-content" itemprop="articleBody">
+        
+          <img class="w-full z-30" src="https://s3.aiedu.qzz.io/website/2025/10/f01c7e6a5b74279b0e1e7745f2206974.png" alt="Lade.io注册到搭建应用, 小白完全指南" />
+        
+
+        <h2 id="说明">说明</h2>
+<ul>
+<li>我尽量简化，所以尽量用图说话：红色线代表需要要操作的, 所以你可以按着红色标识操作</li>
+<li>如果你已经有账号，可以直接跳转到第二节</li>
+<li>目前作者增加了github账号验证，所以你得有一个注册时间大于6个月的github账号</li>
+<li>所用到的代码（https://github.com/eooce/Sing-box/tree/main）</li>
+<li>我是小白，所以写作水平有限，请大家多多包涵</li>
+</ul>
+<h2 id="一注册账号">一、注册账号</h2>
+<ul>
+<li>打开：https://www.lade.io/，开始注册</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250519105710549.png" alt=""><ul>
+<li>
+<p>填写必须的信息
+<img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250519105959930.png" alt=""></p>
+</li>
+<li>
+<p>验证账号：去你的邮箱查收，并完成账号验证</p>
+</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250519110202153.png" alt=""><ul>
+<li>
+<p>重新登录，看到下面这个图代表登录成功了</p>
+</li>
+<li>
+<p>接下来进行github账号验证，按图中红色标识的三个操作（1. 创建gist, 2. 得到gist连接发给live chat, 3. 再次输入邮箱，约1分钟会给你审核结果）, 具体看下面的截图</p>
+</li>
+</ul>
+<img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250519110448902.png" alt=""><p>(如下图在github创建gist)
+<img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250519114736704.png" alt=""></p>
+<p>(创建成功后，复制地址栏中的连接)</p>
+<p>(回到Lade.io，点击live chat，将刚复制的连接发个chat)</p>
+<p>(chat会让你再次输入mail地址)</p>
+<img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250519111118127.png" alt=""><p>(提交后等待约1分钟，如果你的github账号不足6个月，会是这个提示（不成功）
+<img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250519111158847.png" alt=""></p>
+<p>(验证成功会返回这个消息)</p>
+<img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250519111239211.png" alt=""><h2 id="二部署应用">二、部署应用</h2>
+<ul>
+<li>
+<p>打开https://github.com/eooce/Sing-box/tree/main/nodejs， 下载图中三个文件
+<img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250519112118611.png" alt=""></p>
+</li>
+<li>
+<p>修改start.sh文件（重点，也是唯一需要修改的文件)
+说明：需要修改的配置如下图红色标识（如果不需要扎针，关于nezha的可以留空）。隧道token和自定义域名，请自行搜索教程解决。
+<img src="https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250519112501403.png" alt=""></p>
+</li>
+<li>
+<p>重点来了，下面的操作需要在你电脑上进行（我这里以mac电脑为例子，如果你是windows或者linux,请在lade官网看对应系统的操作指南https://www.lade.io/docs/platform/cli）， 另外lade也支持在远程服务器上操作。</p>
+</li>
+</ul>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#6272a4"># 安装lade环境</span>
+</span></span><span style="display:flex;"><span>brew install lade-io/tap/lade
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 进入前面保存好的文件所在的目录</span>
+</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> /xx/xx/刚下载好的文件所在目录
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 登入lade</span>
+</span></span><span style="display:flex;"><span>lade login
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 创建lade 应用，abcde是应用名称，自定义即可</span>
+</span></span><span style="display:flex;"><span>lade apps create abcde
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 部署lade 应用, 名字和上面保持一致</span>
+</span></span><span style="display:flex;"><span>lade deploy --app abcde
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 等一会儿，查看日志，节点信息在日志中</span>
+</span></span><span style="display:flex;"><span>lade logs -a abcde
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 可以查看应用运行状态</span>
+</span></span><span style="display:flex;"><span>lade apps show abcde
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>从日志中复制节点信息，导入你的骑墙软件即可玩耍了。</p>
+<p>到此为止，lade的应用就算部署完成了。我这里部署的是nodejs应用，当然你也可以举一反三，部署python应用.</p>
+
+
+      </section>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a role="button" class="btn btn-outline h-12" href="/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/" title="Agent、MCP、FunctionCall的区别">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 text-xs font-normal">上一页</span>
+            <span class="max-w-48 truncate">Agent、MCP、FunctionCall的区别</span>
+          </div>
+        </a>
+        
+
+        
+        <a role="button" class="btn btn-outline h-12" href="/posts/2024/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/" title="分享几个热度较高的MCP服务聚合平台">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">分享几个热度较高的MCP服务聚合平台</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+
+      
+       
+
+    </article>
+  </div>
+
+  <div
+    x-data="tocHighlighter()"
+    @scroll.window="debouncedScroll"
+    class="hidden lg:flex lg:flex-col lg:items-end lg:self-start"
+  >
+    
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#说明">说明</a></li>
+    <li><a href="#一注册账号">一、注册账号</a></li>
+    <li><a href="#二部署应用">二、部署应用</a></li>
+  </ul>
+</nav>
+    
+  </div>
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2023 - 2025  -  AiEDU | BLOG
+  </p>
+  
+
+  
+  <p>知识改变命运，AI改变知识</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">关于我</div>
+
+        <div class="prose dark:prose-invert">
+          <p>Hi，这里是 <strong>AiEDU</strong> 的博客。<strong>AiEDU</strong> 是我在互联网上经常使用的名字。</p>
+<p>我是一个热衷于开源的研发工程师，在这里我会记录一些关于技术等知识。欢迎你通过评论或者邮件与我交流。</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">知识共享（Creative Commons）</div>
+
+        <div class="prose dark:prose-invert">
+          <p>此网站的所有内容都遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: underline;">CC BY-NC-SA 4.0<img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>。</p>
+<p>All contents of this website are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: underline;">CC BY-NC-SA 4.0<img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>.</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">社交链接</div>
+
+        <ul class="menu menu-horizontal flex-wrap w-full px-0 [&_ion-icon]:text-lg">
+  
+  <li>
+    <a href="mailto:aiedu985@gmail.com" title="Email">
+      <ion-icon name="mail"></ion-icon>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="https://github.com/88899" target="_blank" title="GitHub">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://x.com/mykenwayne" target="_blank" title="X">
+      <ion-icon name="logo-x"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://www.linkedin.com/in/mykenwayne" target="_blank" title="Linkedin">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://stackoverflow.com/users/5676489/mykenwayne" target="_blank" title="stack overflow">
+      <ion-icon name="logo-stackoverflow"></ion-icon>
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+    </article>
+  </div>
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2023 - 2025  -  AiEDU | BLOG
+  </p>
+  
+
+  
+  <p>知识改变命运，AI改变知识</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+    
+  
+  <script src="/js/grid.min.js"></script>
+
+
+
+
+  
+
+<script src="/js/main.min.js"></script>
+
+    
+
+
+  <script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+<script>
+    window.customSyntaxHighlighting = {
+      light: "/css/syntax-light.min.css",
+      dark: "/css/syntax-dark.min.css"
+    }
+
+    document.addEventListener('alpine:initialized', () => {
+      var isDark = Alpine.store('darkMode').isDark()
+      var customSyntaxHighlightingUrl = isDark ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light
+
+      document
+        .querySelector('link[data-custom-syntax-highlighting]')
+        .setAttribute('href', customSyntaxHighlightingUrl)
+    })
+  </script>
+
+
+
+
+  
+
+<script src="/js/toc.min.js"></script>
+
+
+  
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+    
+      
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7QPNK9FQQL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7QPNK9FQQL');
+</script>
+
+    
+        
+    
+<div class="scroll-buttons">
+  <button id="scrollToTop" aria-label="滚动到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+  <button id="scrollToBottom" aria-label="滚动到底部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </button>
+</div>
+
+<style>
+.scroll-buttons {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;  
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;  
+  z-index: 99;
+}
+
+.scroll-buttons button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4);
+}
+
+.scroll-buttons button:hover {
+  background-color: #218838;
+  transform: translateY(0) scale(1.05);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
+}
+
+.scroll-buttons button.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+ 
+@media (max-width: 768px) {
+  .scroll-buttons {
+    right: 1rem !important;
+    bottom: 1rem !important;  
+    gap: 0.5rem !important;
+  }
+
+  .scroll-buttons button {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  const scrollToBottomBtn = document.getElementById('scrollToBottom');
+
+  const handleScroll = () => {
+    scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
+    const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
+    scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+  };
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToBottom = () => window.scrollTo({
+    top: document.documentElement.scrollHeight || document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+
+  window.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+  scrollToBottomBtn.addEventListener('click', scrollToBottom);
+  handleScroll();
+});
+</script>
+
+    
+    <script>
+  window.difyChatbotConfig = {
+    token: 'h2hkg50dPRmb7SaR',
+    inputs: {},
+    systemVariables: {},
+    userVariables: {
+      avatar_url: 'https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250829110345042.png',
+      name: 'AiEDU',
+    },
+  }
+</script>
+<script src="https://udify.app/embed.min.js" id="h2hkg50dPRmb7SaR" defer></script>
+
+<style>
+   
+  #dify-chatbot-bubble-button {
+    background-color: #28a745 !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;  
+    z-index: 9999 !important;
+    width: 2.5rem !important;  
+    height: 2.5rem !important;  
+    box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+   
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 70vh !important;
+    max-height: 600px !important;
+    min-height: 400px !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 9998 !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+   
+  @media (max-width: 768px) {
+    #dify-chatbot-bubble-window {
+      width: calc(100vw - 2rem) !important;
+      height: 65vh !important;
+      bottom: 1rem !important;  
+      right: 1rem !important;
+      left: 1rem !important;
+    }
+
+    #dify-chatbot-bubble-button {
+      width: 2.2rem !important;
+      height: 2.2rem !important;
+      bottom: 1rem !important;
+      right: 1rem !important;
+    }
+  }
+
+   
+  @supports (padding: env(safe-area-inset-bottom)) {
+    #dify-chatbot-bubble-button {
+      bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    #dify-chatbot-bubble-window {
+      bottom: calc(6.1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    @media (max-width: 768px) {
+      #dify-chatbot-bubble-button {
+        bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+      }
+
+      #dify-chatbot-bubble-window {
+        bottom: calc(4.3rem + env(safe-area-inset-bottom)) !important;
+      }
+    }
+  }
+</style>
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js" integrity="sha256-/IFmi82bIhdYWctu0UddSlJqpnzWm7Vh2C4CM32wF/k=" crossorigin="anonymous"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js" integrity="sha256-mr7eJMX3VC3F7G32mk4oWp1C6a2tlMYxUdptfT7uKI8=" crossorigin="anonymous"></script>
+  </body>
+</html>

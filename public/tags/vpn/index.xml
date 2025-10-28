@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>VPN on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+    <link>https://googhub.nyc.mn/tags/vpn/</link>
+    <description>Recent content in VPN on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sun, 11 Jun 2023 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://googhub.nyc.mn/tags/vpn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>拿到Hax的EU VPS，最佳装机指南（小白白）</title>
+      <link>https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;最近Hax EU区域的Vps更换硬盘，导致坚持一年多的EU终究是下线了，需要重新蹲抢，不过很辛运，作为老用户，很快就拿到一台。于是又开始重复多次的开机&amp;ndash;&amp;gt; 装系统&amp;ndash;&amp;gt;配置环境&amp;ndash;&amp;gt;搭建点；经历多了自然有一些自己的小心得，顺便记录下来作为以后的操作指南。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用Chatgpt获取全网Free vps清单</title>
+      <link>https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/</link>
+      <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;通过Chatgpt筛选出来的免费的Vps服务商。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化</title>
+      <link>https://googhub.nyc.mn/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/</guid>
+      <description>&lt;h3 id=&#34;初衷&#34;&gt;初衷&lt;/h3&gt;&#xA;&lt;p&gt;我非常喜欢Nl论坛，喜欢它的界面局和功能，符合我的体验和习惯。于是我想有没有办法自建一个学习学习，于是有了这篇文章。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

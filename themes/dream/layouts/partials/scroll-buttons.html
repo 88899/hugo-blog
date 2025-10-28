@@ -16,10 +16,10 @@
 .scroll-buttons {
   position: fixed;
   right: 1rem;
-  bottom: 6rem; /* 与chat按钮拉开大间距（PC端） */
+  bottom: 1rem; /* 与chat按钮紧凑间隔（PC端） */
   display: flex;
   flex-direction: column;
-  gap: 0.8rem;
+  gap: 0.6rem; /* 内部按钮间隔，视觉协调 */
   z-index: 99;
 }
 
@@ -53,17 +53,17 @@
   transform: translateY(0);
 }
 
-/* 移动端专属优化（小屏幕下强制无重叠） */
+/* 移动端间距优化 */
 @media (max-width: 768px) {
   .scroll-buttons {
     right: 1rem !important;
-    bottom: 5rem !important; /* 增大与chat按钮的垂直间隔 */
-    gap: 0.8rem !important;
+    bottom: 1rem !important; /* 移动端紧凑间隔 */
+    gap: 0.5rem !important;
   }
 
   .scroll-buttons button {
-    width: 2.5rem !important;
-    height: 2.5rem !important;
+    width: 2.2rem !important;
+    height: 2.2rem !important;
   }
 }
 </style>

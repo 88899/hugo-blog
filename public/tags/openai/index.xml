@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>OpenAI on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+    <link>https://googhub.nyc.mn/tags/openai/</link>
+    <description>Recent content in OpenAI on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://googhub.nyc.mn/tags/openai/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>从API Key到智能对话：基于LangChain的流式聊天应用开发实战</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/</guid>
+      <description>&lt;h2 id=&#34;一引言解锁gpt能力的钥匙&#34;&gt;一、引言：解锁GPT能力的钥匙&lt;/h2&gt;&#xA;&lt;p&gt;当开发者获得OpenAI API Key时，就像拿到了一把打开智能对话宇宙的钥匙。本文将结合&lt;code&gt;langchain&lt;/code&gt;框架，通过一个完整的流式聊天Demo，演示如何将API Key转化为具有上下文记忆、多会话管理和流式输出能力的智能对话系统。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Agent、MCP、FunctionCall的区别</title>
+      <link>https://googhub.nyc.mn/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>&lt;h2 id=&#34;一agent是自主决策的ai应用&#34;&gt;一、Agent是自主决策的AI应用&lt;/h2&gt;&#xA;&lt;p&gt;Agent是一种AI应用，能感知环境，能规划任务并调用外部工具完成任务。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;具备自主决策&lt;/li&gt;&#xA;&lt;li&gt;能够完成复杂任务&lt;/li&gt;&#xA;&lt;li&gt;可以调用外部工具&lt;/li&gt;&#xA;&lt;li&gt;可以调用MCP、Function Call等&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+  </channel>
+</rss>

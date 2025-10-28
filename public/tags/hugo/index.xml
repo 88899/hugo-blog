@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>HUGO on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+    <link>https://googhub.nyc.mn/tags/hugo/</link>
+    <description>Recent content in HUGO on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Wed, 11 Sep 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://googhub.nyc.mn/tags/hugo/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>如何在Hugo项目中加入数学公式的支持</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;本文是一篇在Hugo项目中引入数学公式支持的实操说明。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>怎么让Hugo支持markdown 流程图</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <description>&lt;p&gt;要让 Hugo 项目支持流程图，最常用的方案是集成 Mermaid—— 一个基于 JavaScript 的图表绘制工具，支持流程图、时序图、类图等多种图表类型。以下是具体实现步骤：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

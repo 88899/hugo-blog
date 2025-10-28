@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>知识库 on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+    <link>https://googhub.nyc.mn/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/</link>
+    <description>Recent content in 知识库 on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Tue, 18 Mar 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://googhub.nyc.mn/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>知识库 -文档 - 博客，技术选型完全指南</title>
+      <link>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;—— Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify 对比&lt;/p&gt;&#xA;&lt;p&gt;在IT团队搭建知识库、博客或文档站时，工具选型往往比内容写作更让人纠结。&#xA;有人想要自托管、完全可控；有人追求快速上线、免运维；有人需要强交互和版本管理。有人想要美观好看，颜值能打。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>怎么让Hugo支持markdown 流程图</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <description>&lt;p&gt;要让 Hugo 项目支持流程图，最常用的方案是集成 Mermaid—— 一个基于 JavaScript 的图表绘制工具，支持流程图、时序图、类图等多种图表类型。以下是具体实现步骤：&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

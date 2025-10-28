@@ -6,6 +6,126 @@
     <description>Recent content on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
+    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://googhub.nyc.mn/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</title>
+      <link>https://googhub.nyc.mn/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;磁盘问题是日常运维工作中最常遇到的故障类型之一，无论是磁盘空间莫名被占满了、I/O 读写卡顿，还是磁盘硬件老化了，选对工具都能让排查工作事半功倍。本文整合了当前主流的服务器磁盘排查工具，从基础操作到深度诊断全覆盖，每个工具都附带详细操作步骤和实战案例，即使是非运维专业的朋友，也能照着命令轻松上手。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南</title>
+      <link>https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教你定位占用源、分析原因，并安全清理，全程附具体操作指令和效果验证，新手也能跟着做。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网</title>
+      <link>https://googhub.nyc.mn/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/</guid>
+      <description>&lt;p&gt;在构建企业级网站时，选择合适的无头 CMS（内容管理系统）至关重要。无头 CMS 使得内容管理与网站前端分离，提供更大的灵活性，同时与各种现代前端技术栈（如 React、Vue、Next.js）兼容。今天，我们将对比五款符合你需求的无头 CMS，它们都支持 Markdown 编辑，且是开源免费的解决方案。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络</title>
+      <link>https://googhub.nyc.mn/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/</link>
+      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/</guid>
+      <description>&lt;h2 id=&#34;-背景说明&#34;&gt;📌 背景说明&lt;/h2&gt;&#xA;&lt;p&gt;Cloudflare 提供的 WARP 服务，默认用于客户端加速网络。但在 VPS 上直接运行 WARP-CLI，&lt;strong&gt;会接管 VPS 全部流量&lt;/strong&gt;，导致 VPS 失联。&lt;br&gt;&#xA;为避免此问题，本教程指导你在 Linux VPS 上以 &lt;strong&gt;Proxy 模式&lt;/strong&gt; 运行 WARP-CLI，使其仅在本地创建一个 Socks5 代理端口，你可以将需要的应用流量通过该端口走 WARP 网络。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>知识库 -文档 - 博客，技术选型完全指南</title>
+      <link>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;—— Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify 对比&lt;/p&gt;&#xA;&lt;p&gt;在IT团队搭建知识库、博客或文档站时，工具选型往往比内容写作更让人纠结。&#xA;有人想要自托管、完全可控；有人追求快速上线、免运维；有人需要强交互和版本管理。有人想要美观好看，颜值能打。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何在Hugo项目中加入数学公式的支持</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;本文是一篇在Hugo项目中引入数学公式支持的实操说明。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>怎么让Hugo支持markdown 流程图</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</guid>
+      <description>&lt;p&gt;要让 Hugo 项目支持流程图，最常用的方案是集成 Mermaid—— 一个基于 JavaScript 的图表绘制工具，支持流程图、时序图、类图等多种图表类型。以下是具体实现步骤：&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Docker 与 Podman 深度对比：容器化工具的全方位解析</title>
+      <link>https://googhub.nyc.mn/posts/2024/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/</link>
+      <pubDate>Sun, 11 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/</guid>
+      <description>&lt;p&gt;容器技术已成为现代软件开发和部署的基石，而 Docker 和 Podman 作为两款主流的容器化工具，常常被拿来比较。本文将从功能特性、使用场景、优缺点等多个维度对两者进行深度对比，帮助你在实际应用中做出更合适的选择。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>我让扣子空间，帮我预测沪深300的明日购买策略</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/</guid>
+      <description>&lt;h2 id=&#34;初试&#34;&gt;初试&lt;/h2&gt;&#xA;&lt;p&gt;近日看到很多佬友在分享扣子空间的邀请码，于是抱着试试的心态进行了试用，并记录了第一次使用的感受，分享给大家。试用过后，令人赞叹，我觉得至少是我目前所用过的Agent中，最接近人类工作模式的Agent。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>从API Key到智能对话：基于LangChain的流式聊天应用开发实战</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/</guid>
+      <description>&lt;h2 id=&#34;一引言解锁gpt能力的钥匙&#34;&gt;一、引言：解锁GPT能力的钥匙&lt;/h2&gt;&#xA;&lt;p&gt;当开发者获得OpenAI API Key时，就像拿到了一把打开智能对话宇宙的钥匙。本文将结合&lt;code&gt;langchain&lt;/code&gt;框架，通过一个完整的流式聊天Demo，演示如何将API Key转化为具有上下文记忆、多会话管理和流式输出能力的智能对话系统。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Agent、MCP、FunctionCall的区别</title>
+      <link>https://googhub.nyc.mn/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>&lt;h2 id=&#34;一agent是自主决策的ai应用&#34;&gt;一、Agent是自主决策的AI应用&lt;/h2&gt;&#xA;&lt;p&gt;Agent是一种AI应用，能感知环境，能规划任务并调用外部工具完成任务。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;具备自主决策&lt;/li&gt;&#xA;&lt;li&gt;能够完成复杂任务&lt;/li&gt;&#xA;&lt;li&gt;可以调用外部工具&lt;/li&gt;&#xA;&lt;li&gt;可以调用MCP、Function Call等&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>Lade.io注册到搭建应用, 小白完全指南</title>
+      <link>https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;我尽量简化，所以尽量用图说话：红色线代表需要要操作的, 所以你可以按着红色标识操作&lt;/li&gt;&#xA;&lt;li&gt;如果你已经有账号，可以直接跳转到第二节&lt;/li&gt;&#xA;&lt;li&gt;目前作者增加了github账号验证，所以你得有一个注册时间大于6个月的github账号&lt;/li&gt;&#xA;&lt;li&gt;所用到的代码（https://github.com/eooce/Sing-box/tree/main）&lt;/li&gt;&#xA;&lt;li&gt;我是小白，所以写作水平有限，请大家多多包涵&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>分享几个热度较高的MCP服务聚合平台</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Tue, 20 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/</guid>
+      <description>&lt;h3 id=&#34;mcp官方资源&#34;&gt;MCP官方资源：&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/modelcontextprotocol/servers&#34; target=&#34;_blank&#34;&gt;https://github.com/modelcontextprotocol/servers&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;awesome&#34;&gt;Awesome:&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/punkpeye/awesome-mcp-servers&#34; target=&#34;_blank&#34;&gt;https://github.com/punkpeye/awesome-mcp-servers&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>拿到Hax的EU VPS，最佳装机指南（小白白）</title>
+      <link>https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/</link>
+      <pubDate>Mon, 20 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;最近Hax EU区域的Vps更换硬盘，导致坚持一年多的EU终究是下线了，需要重新蹲抢，不过很辛运，作为老用户，很快就拿到一台。于是又开始重复多次的开机&amp;ndash;&amp;gt; 装系统&amp;ndash;&amp;gt;配置环境&amp;ndash;&amp;gt;搭建点；经历多了自然有一些自己的小心得，顺便记录下来作为以后的操作指南。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>使用Chatgpt获取全网Free vps清单</title>
+      <link>https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/</link>
+      <pubDate>Sat, 11 Feb 2023 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;通过Chatgpt筛选出来的免费的Vps服务商。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化</title>
+      <link>https://googhub.nyc.mn/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/</link>
+      <pubDate>Fri, 20 Jan 2023 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/</guid>
+      <description>&lt;h3 id=&#34;初衷&#34;&gt;初衷&lt;/h3&gt;&#xA;&lt;p&gt;我非常喜欢Nl论坛，喜欢它的界面局和功能，符合我的体验和习惯。于是我想有没有办法自建一个学习学习，于是有了这篇文章。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>U盘中的文件恢复</title>
+      <link>https://googhub.nyc.mn/posts/2022/u%E7%9B%98%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D/</link>
+      <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2022/u%E7%9B%98%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;U盘经常发生读取失败的问题，以下是一次数据恢复的过程记录，用到了两款软件。&lt;/p&gt;</description>
+    </item>
   </channel>
 </rss>

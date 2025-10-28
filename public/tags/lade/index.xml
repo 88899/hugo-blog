@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Lade on AiEDU | Blog</title>
+    <title>Lade on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
     <link>https://googhub.nyc.mn/tags/lade/</link>
-    <description>Recent content in Lade on AiEDU | Blog</description>
+    <description>Recent content in Lade on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Sat, 03 May 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 03 Mar 2024 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://googhub.nyc.mn/tags/lade/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Lade.io注册到搭建应用, 小白完全指南</title>
-      <link>https://googhub.nyc.mn/posts/2025/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
-      <pubDate>Sat, 03 May 2025 00:00:00 +0000</pubDate>
-      <guid>https://googhub.nyc.mn/posts/2025/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+      <link>https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sun, 03 Mar 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
       <description>&lt;h2 id=&#34;说明&#34;&gt;说明&lt;/h2&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;我尽量简化，所以尽量用图说话：红色线代表需要要操作的, 所以你可以按着红色标识操作&lt;/li&gt;&#xA;&lt;li&gt;如果你已经有账号，可以直接跳转到第二节&lt;/li&gt;&#xA;&lt;li&gt;目前作者增加了github账号验证，所以你得有一个注册时间大于6个月的github账号&lt;/li&gt;&#xA;&lt;li&gt;所用到的代码（https://github.com/eooce/Sing-box/tree/main）&lt;/li&gt;&#xA;&lt;li&gt;我是小白，所以写作水平有限，请大家多多包涵&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
   </channel>

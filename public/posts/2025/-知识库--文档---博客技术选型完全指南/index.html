@@ -1,0 +1,1451 @@
+<!DOCTYPE html>
+<html lang="zh-Hans"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识库 -文档 - 博客，技术选型完全指南 | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+
+    
+  
+    <link href="/img/personal/avatar.png" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" />
+
+
+
+<meta name="author" content="Sherry" />
+<meta name="description" content="搭建知识库 / 博客 / 文档站？对比 Trilium、Mintlify、Hugo、VuePress 等 8 工具，从功能特点、优劣势到适用场景（开源项目用 Read the Docs、静态站用 Hugo&#43;Netlify），助 IT 团队快速选型。" />
+
+
+<meta name="keywords" content="技术,工具">
+
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+
+<meta property="og:url" content="https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+  <meta property="og:site_name" content="编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源">
+  <meta property="og:title" content="知识库 -文档 - 博客，技术选型完全指南">
+  <meta property="og:description" content="搭建知识库 / 博客 / 文档站？对比 Trilium、Mintlify、Hugo、VuePress 等 8 工具，从功能特点、优劣势到适用场景（开源项目用 Read the Docs、静态站用 Hugo&#43;Netlify），助 IT 团队快速选型。">
+  <meta property="og:locale" content="zh_Hans">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2025-02-08T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-03-18T00:00:00+00:00">
+    <meta property="article:tag" content="技术">
+    <meta property="article:tag" content="工具">
+    <meta property="og:image" content="https://googhub.nyc.mn/img/global-background.jpg">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://googhub.nyc.mn/img/global-background.jpg">
+  <meta name="twitter:title" content="知识库 -文档 - 博客，技术选型完全指南">
+  <meta name="twitter:description" content="搭建知识库 / 博客 / 文档站？对比 Trilium、Mintlify、Hugo、VuePress 等 8 工具，从功能特点、优劣势到适用场景（开源项目用 Read the Docs、静态站用 Hugo&#43;Netlify），助 IT 团队快速选型。">
+      <meta name="twitter:site" content="@dgdghub">
+
+
+
+
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
+
+
+
+
+    
+    <style>
+         
+        #loading {
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .loader {
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #00a96e;
+            letter-spacing: 0.2em;
+            user-select: none;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #00a96e;
+            position: absolute;
+            animation: load .7s infinite alternate ease-in-out;
+            will-change: left, height, width;
+        }
+
+        .loader::before {
+            top: 0
+        }
+
+        .loader::after {
+            bottom: 0
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px
+            }
+
+            50% {
+                height: 8px;
+                width: 40px
+            }
+
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px
+            }
+        }
+
+         
+        #loading, #load-loading, .load-loading {
+            justify-content: center;
+            align-items: center;
+            display: -webkit-box;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999999;
+            background: #fff;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            pointer-events: auto;
+        }
+
+        .load-loading {
+            position: absolute;
+            background: transparent
+        }
+
+        .load-loading .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.2
+        }
+
+        #load-loading {
+            opacity: 0
+        }
+
+        #loading.close {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none;
+        }
+
+        .io-black-mode #loading,
+        .io-black-mode #load-loading {
+            background: #111;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .loader::before,
+            .loader::after {
+                animation: none;
+            }
+
+            #loading, #load-loading, .load-loading {
+                transition: none;
+            }
+        }
+    </style>
+
+    
+    <div id="loading" role="progressbar" aria-label="页面加载中">
+        <div class="loader">AiEDU</div>
+    </div>
+
+    <script>
+        
+        (function() {
+            const loadingScreen = document.getElementById('loading');
+            if (!loadingScreen) return;
+
+            function hideLoadingScreen() {
+                if (!loadingScreen.classList.contains('close')) {
+                    loadingScreen.classList.add('close');
+
+                    
+                    setTimeout(() => {
+                        if (loadingScreen.parentNode) {
+                            loadingScreen.parentNode.removeChild(loadingScreen);
+                        }
+                    }, 500);
+                }
+            }
+
+            
+            window.addEventListener('load', function() {
+                const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                setTimeout(hideLoadingScreen, delay);
+            });
+
+            
+            window.addEventListener('beforeunload', function() {
+                loadingScreen.classList.remove('close');
+            });
+
+            
+            if (window.pjax) {
+                document.addEventListener('pjax:send', function() {
+                    loadingScreen.classList.remove('close');
+                });
+
+                document.addEventListener('pjax:complete', function() {
+                    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                    setTimeout(hideLoadingScreen, delay);
+                });
+            }
+
+            
+            setTimeout(hideLoadingScreen, 8000);
+        })();
+    </script>
+
+
+
+
+
+    
+
+
+<link rel="stylesheet" data-custom-syntax-highlighting />
+<style>
+  .chroma {
+    padding: 1em;
+    background-color: var(--dream-pre-bg, #f5f5f5);
+    border-radius: .5em;
+    overflow: auto;
+  }
+
+  html.dark .chroma {
+    background-color: var(--dream-pre-bg-dark, #262626);
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    
+    <script defer src="/js/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/personal/avatar.png" alt="AiEDU | BLOG" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="/" class="text-lg font-semibold cursor-pointer">
+          AiEDU | BLOG
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">AI 赋能，智启教育</div>
+        
+      </div>
+      
+    </section>
+
+    
+    
+      
+    
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
+        
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/" target="" title="首页">
+    
+    <ion-icon name="home"></ion-icon>
+    
+    首页
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://www.518855.xyz" target="" title="导航">
+    
+    <ion-icon name="rocket"></ion-icon>
+    
+    导航
+  </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://cici.pp.ua" target="" title="文档">
+    
+    <ion-icon name="documents"></ion-icon>
+    
+    文档
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="group inline-flex items-center p-2 cursor-pointer" href="/search" title="搜索">
+    <ion-icon name="search"></ion-icon>
+    搜索
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://github.com/88899" target="" title="GitHub">
+    
+    <ion-icon name="logo-github"></ion-icon>
+    
+    GitHub
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/" target="" title="首页">
+    <ion-icon class="group-hover:text-primary-content" name="home"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.518855.xyz" target="" title="导航">
+    <ion-icon class="group-hover:text-primary-content" name="rocket"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://cici.pp.ua" target="" title="文档">
+    <ion-icon class="group-hover:text-primary-content" name="documents"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/search" title="搜索">
+  <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://github.com/88899" target="" title="GitHub">
+    <ion-icon class="group-hover:text-primary-content" name="logo-github"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+
+<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
+
+
+
+
+
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+
+
+  <div class="lg:col-span-2">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="知识库 -文档 - 博客，技术选型完全指南">
+  <meta itemprop="description" content="搭建知识库 / 博客 / 文档站？对比 Trilium、Mintlify、Hugo、VuePress 等 8 工具，从功能特点、优劣势到适用场景（开源项目用 Read the Docs、静态站用 Hugo&#43;Netlify），助 IT 团队快速选型。">
+  <meta itemprop="datePublished" content="2025-02-08T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-03-18T00:00:00+00:00">
+  <meta itemprop="wordCount" content="2016">
+  <meta itemprop="image" content="https://googhub.nyc.mn/img/global-background.jpg">
+  <meta itemprop="keywords" content="技术,工具">
+
+      <header>
+        <h1 itemprop="headline">知识库 -文档 - 博客，技术选型完全指南</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2025-02-08T00:00:00Z</span>
+          
+
+          | <span>5分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2025-03-18T00:00:00Z</span>
+            </span>
+          
+        </p>
+
+        
+        <div class="flex justify-between">
+          
+            <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png" alt="Sherry" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Sherry</span>
+    
+  
+  </span>
+</div>
+
+          
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+    
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="" target="_blank" rel="noopener noreferrer"
+      title="Share on WeChat">
+      <ion-icon class="group-hover:text-primary-content" name="logo-WeChat"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=%e7%9f%a5%e8%af%86%e5%ba%93%20-%e6%96%87%e6%a1%a3%20-%20%e5%8d%9a%e5%ae%a2%ef%bc%8c%e6%8a%80%e6%9c%af%e9%80%89%e5%9e%8b%e5%ae%8c%e5%85%a8%e6%8c%87%e5%8d%97&amp;url=https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=%e7%9f%a5%e8%af%86%e5%ba%93%20-%e6%96%87%e6%a1%a3%20-%20%e5%8d%9a%e5%ae%a2%ef%bc%8c%e6%8a%80%e6%9c%af%e9%80%89%e5%9e%8b%e5%ae%8c%e5%85%a8%e6%8c%87%e5%8d%97%20https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      <section id="dream-single-post-content" itemprop="articleBody">
+        
+          <img class="w-full z-30" src="https://s3.aiedu.qzz.io/website/2025/10/50f178ca0b54a6bb5c0f250d2d0eb99a.png" alt="知识库 -文档 - 博客，技术选型完全指南" />
+        
+
+        <p>—— Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify 对比</p>
+<p>在IT团队搭建知识库、博客或文档站时，工具选型往往比内容写作更让人纠结。
+有人想要自托管、完全可控；有人追求快速上线、免运维；有人需要强交互和版本管理。有人想要美观好看，颜值能打。</p>
+<p>下面这份对比指南，涵盖 Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify，从功能特点、优势劣势，到部署难度、编程友好度、上手难度等多个维度，帮助你快速找到最适合的方案。</p>
+<hr>
+<h2 id="-总览对比表">🧭 总览对比表</h2>
+<table>
+  <thead>
+      <tr>
+          <th>工具</th>
+          <th>类型</th>
+          <th>上手难度</th>
+          <th>部署难度</th>
+          <th>编程难度</th>
+          <th>备份</th>
+          <th>实时同步</th>
+          <th>优势</th>
+          <th>劣势</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td><strong>Docsify</strong></td>
+          <td>客户端渲染文档站</td>
+          <td>🌟</td>
+          <td>🌟</td>
+          <td>🌟🌟</td>
+          <td>手动文件备份</td>
+          <td>❌</td>
+          <td>零构建、轻量化</td>
+          <td>SEO 弱、大站性能差</td>
+          <td>内部文档、快速展示</td>
+      </tr>
+      <tr>
+          <td><strong>Mintlify</strong></td>
+          <td>托管文档平台</td>
+          <td>🌟</td>
+          <td>🌟</td>
+          <td>🌟🌟🌟🌟</td>
+          <td>SaaS 自动备份</td>
+          <td>✅</td>
+          <td>美观现代、交互强、快速上线</td>
+          <td>受 SaaS 限制、深度定制少</td>
+          <td>API 文档、开发者门户</td>
+      </tr>
+      <tr>
+          <td><strong>Read the Docs</strong></td>
+          <td>仓库驱动文档托管</td>
+          <td>🌟</td>
+          <td>🌟</td>
+          <td>🌟🌟🌟🌟</td>
+          <td>依赖 Git 备份</td>
+          <td>✅</td>
+          <td>自动构建、版本管理、开源友好</td>
+          <td>UI 样式限制大</td>
+          <td>开源项目文档、API 手册</td>
+      </tr>
+      <tr>
+          <td><strong>WordPress</strong></td>
+          <td>CMS</td>
+          <td>🌟</td>
+          <td>🌟🌟🌟🌟</td>
+          <td>🌟🌟🌟</td>
+          <td>插件支持</td>
+          <td>部分插件支持</td>
+          <td>生态庞大、非技术人员友好</td>
+          <td>安全维护复杂、性能依赖优化</td>
+          <td>内容团队、营销站点</td>
+      </tr>
+      <tr>
+          <td><strong>Netlify</strong></td>
+          <td>部署/托管平台</td>
+          <td>🌟🌟</td>
+          <td>🌟</td>
+          <td>🌟🌟🌟🌟</td>
+          <td>依赖 Git</td>
+          <td>✅</td>
+          <td>自动化部署、预览方便</td>
+          <td>高级功能收费</td>
+          <td>静态站托管、团队协作</td>
+      </tr>
+      <tr>
+          <td><strong>VuePress</strong></td>
+          <td>文档/博客 SSG</td>
+          <td>🌟🌟🌟</td>
+          <td>🌟🌟🌟</td>
+          <td>🌟🌟🌟🌟</td>
+          <td>手动文件备份</td>
+          <td>❌</td>
+          <td>支持 Vue 组件、SEO 友好</td>
+          <td>Vue 依赖、学习曲线</td>
+          <td>前端库文档、交互式教程</td>
+      </tr>
+      <tr>
+          <td><strong>Trilium</strong></td>
+          <td>知识库 / 笔记</td>
+          <td>🌟🌟🌟🌟</td>
+          <td>🌟🌟🌟</td>
+          <td>🌟🌟🌟</td>
+          <td>内置备份功能</td>
+          <td>❌（需手动同步方案）</td>
+          <td>层级清晰、可离线、自托管</td>
+          <td>界面偏工程化、生态小</td>
+          <td>研发笔记、研究型知识库</td>
+      </tr>
+      <tr>
+          <td><strong>Hugo</strong></td>
+          <td>静态站生成器（Go）</td>
+          <td>🌟🌟🌟🌟</td>
+          <td>🌟🌟🌟🌟</td>
+          <td>🌟🌟🌟🌟🌟</td>
+          <td>手动文件备份</td>
+          <td>❌</td>
+          <td>构建极快、完全可控</td>
+          <td>模板学习曲线高</td>
+          <td>技术博客、企业官网</td>
+      </tr>
+  </tbody>
+</table>
+<hr>
+<h2 id="-工具逐项解析">🔍 工具逐项解析</h2>
+<h3 id="-docsify--零构建文档站">📝 Docsify — 零构建文档站</h3>
+<p>📌 <strong>定位</strong>：客户端渲染的 Markdown 文档工具<br>
+✨ <strong>优点</strong>：零构建、轻量快速、配置简单<br>
+⚠️ <strong>缺点</strong>：SEO 弱、大型项目性能差<br>
+💾 <strong>备份</strong>：需自行管理文件<br>
+🔄 <strong>实时同步</strong>：不支持<br>
+🎯 <strong>适合</strong>：内部文档、快速演示、简单文档站点</p>
+<hr>
+<h3 id="-mintlify--托管式文档平台">📑 Mintlify — 托管式文档平台</h3>
+<p>📌 <strong>定位</strong>：开发者文档和 API 门户的 SaaS 平台<br>
+✨ <strong>优点</strong>：界面现代、交互强、零运维、支持 MDX<br>
+⚠️ <strong>缺点</strong>：SaaS 平台限制，定制化有限<br>
+💾 <strong>备份</strong>：由平台自动保障<br>
+🔄 <strong>实时同步</strong>：支持<br>
+🎯 <strong>适合</strong>：API 文档、快速上线的开发者门户</p>
+<hr>
+<h3 id="-read-the-docs--仓库驱动的文档托管">📚 Read the Docs — 仓库驱动的文档托管</h3>
+<p>📌 <strong>定位</strong>：自动化构建与托管文档的平台<br>
+✨ <strong>优点</strong>：仓库直连、支持版本化、开源友好<br>
+⚠️ <strong>缺点</strong>：样式和交互有限<br>
+💾 <strong>备份</strong>：依赖 Git 仓库<br>
+🔄 <strong>实时同步</strong>：与代码库同步<br>
+🎯 <strong>适合</strong>：开源项目文档、库/框架 API 手册</p>
+<hr>
+<h3 id="-wordpress--成熟的-cms-平台">🌍 WordPress — 成熟的 CMS 平台</h3>
+<p>📌 <strong>定位</strong>：世界上最流行的 CMS 系统<br>
+✨ <strong>优点</strong>：插件生态庞大、非技术人员友好<br>
+⚠️ <strong>缺点</strong>：插件依赖可能影响性能与安全<br>
+💾 <strong>备份</strong>：依赖插件或托管服务<br>
+🔄 <strong>实时同步</strong>：部分插件支持<br>
+🎯 <strong>适合</strong>：内容团队、营销网站、博客社区</p>
+<hr>
+<h3 id="-netlify--部署与托管平台">🚀 Netlify — 部署与托管平台</h3>
+<p>📌 <strong>定位</strong>：CI/CD 与静态站托管平台<br>
+✨ <strong>优点</strong>：自动化部署、Git 集成、全球 CDN<br>
+⚠️ <strong>缺点</strong>：高级功能收费<br>
+💾 <strong>备份</strong>：依赖 Git 仓库<br>
+🔄 <strong>实时同步</strong>：支持（随代码更新自动同步）<br>
+🎯 <strong>适合</strong>：前端团队、静态站点、持续集成</p>
+<hr>
+<h3 id="-vuepress--文档即-vue-应用">🖥️ VuePress — 文档即 Vue 应用</h3>
+<p>📌 <strong>定位</strong>：Markdown + Vue 组件的静态站框架<br>
+✨ <strong>优点</strong>：支持交互组件、SEO 友好<br>
+⚠️ <strong>缺点</strong>：依赖 Vue 技术栈，上手曲线高<br>
+💾 <strong>备份</strong>：手动文件管理<br>
+🔄 <strong>实时同步</strong>：不支持<br>
+🎯 <strong>适合</strong>：前端库文档、交互式教程</p>
+<hr>
+<h3 id="-trilium--本地可控的知识库">🗂️ Trilium — 本地可控的知识库</h3>
+<p>📌 <strong>定位</strong>：开源笔记 &amp; 知识库应用<br>
+✨ <strong>优点</strong>：结构清晰、可离线、标签强大、自托管可控<br>
+⚠️ <strong>缺点</strong>：界面偏工程化、生态较小<br>
+💾 <strong>备份</strong>：内置备份功能<br>
+🔄 <strong>实时同步</strong>：无原生功能，可配合 Git / 云盘<br>
+🎯 <strong>适合</strong>：研发笔记、研究型知识库、团队内部文档</p>
+<hr>
+<h3 id="-hugo--高性能静态站生成器">⚡ Hugo — 高性能静态站生成器</h3>
+<p>📌 <strong>定位</strong>：Go 编写的超高速静态站工具<br>
+✨ <strong>优点</strong>：构建极快、完全可控、社区活跃<br>
+⚠️ <strong>缺点</strong>：模板学习曲线陡峭<br>
+💾 <strong>备份</strong>：手动文件备份<br>
+🔄 <strong>实时同步</strong>：不支持<br>
+🎯 <strong>适合</strong>：技术博客、企业官网、大型文档站</p>
+<hr>
+<h2 id="-常见组合推荐">🛠️ 常见组合推荐</h2>
+<p>🔗 <strong>Hugo / VuePress + Netlify</strong> → 高性能静态站 + 自动化部署<br>
+🔗 <strong>Mintlify</strong> → SaaS API 文档，快速上线，实时同步<br>
+🔗 <strong>Read the Docs</strong> → 开源项目文档，仓库直连，版本化管理<br>
+🔗 <strong>Docsify</strong> → 小型项目或内部文档，轻量简单</p>
+<hr>
+<h2 id="-工程师选型流程图">⚡ 工程师选型流程图</h2>
+<p><code>flowchart TD     A[开始选型] --&gt; B{写文档的人是谁?}     B --&gt;|非技术人员| C[WordPress]     B --&gt;|技术人员| D{是否需要快速上线?}     D --&gt;|是| E[Mintlify 或 Docsify]     D --&gt;|否| F{是否开源项目?}     F --&gt;|是| G[Read the Docs]     F --&gt;|否| H{是否需要完全可控?}     H --&gt;|是| I[Hugo + Netlify 或 VuePress + Netlify]     H --&gt;|否| J[Trilium (内部知识库)]</code></p>
+<hr>
+<h2 id="-总结">✅ 总结</h2>
+<p>📌 <strong>个人知识库</strong> → Trilium（离线 &amp; 自托管，内置备份）<br>
+📌 <strong>快速上线 API 文档</strong> → Mintlify（托管 SaaS，实时同步）<br>
+📌 <strong>完全可控的静态站</strong> → Hugo + Netlify<br>
+📌 <strong>低门槛、插件生态</strong> → WordPress<br>
+📌 <strong>交互式前端文档</strong> → VuePress<br>
+📌 <strong>开源项目版本化文档</strong> → Read the Docs<br>
+📌 <strong>最简单的 Markdown 发布</strong> → Docsify<br>
+📌 <strong>自动化部署平台</strong> → Netlify</p>
+<hr>
+<p>📖 这份对比既是一张 <strong>工具地图</strong>，也是一个 <strong>选型流程指南</strong>。<br>
+无论你是个人开发者，还是企业团队，都能在其中找到合适的解决方案。</p>
+
+
+
+      </section>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a role="button" class="btn btn-outline h-12" href="/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/" title="在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 text-xs font-normal">上一页</span>
+            <span class="max-w-48 truncate">在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络</span>
+          </div>
+        </a>
+        
+
+        
+        <a role="button" class="btn btn-outline h-12" href="/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/" title="如何在Hugo项目中加入数学公式的支持">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">如何在Hugo项目中加入数学公式的支持</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+
+      
+       
+
+    </article>
+  </div>
+
+  <div
+    x-data="tocHighlighter()"
+    @scroll.window="debouncedScroll"
+    class="hidden lg:flex lg:flex-col lg:items-end lg:self-start"
+  >
+    
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#-总览对比表">🧭 总览对比表</a></li>
+    <li><a href="#-工具逐项解析">🔍 工具逐项解析</a>
+      <ul>
+        <li><a href="#-docsify--零构建文档站">📝 Docsify — 零构建文档站</a></li>
+        <li><a href="#-mintlify--托管式文档平台">📑 Mintlify — 托管式文档平台</a></li>
+        <li><a href="#-read-the-docs--仓库驱动的文档托管">📚 Read the Docs — 仓库驱动的文档托管</a></li>
+        <li><a href="#-wordpress--成熟的-cms-平台">🌍 WordPress — 成熟的 CMS 平台</a></li>
+        <li><a href="#-netlify--部署与托管平台">🚀 Netlify — 部署与托管平台</a></li>
+        <li><a href="#-vuepress--文档即-vue-应用">🖥️ VuePress — 文档即 Vue 应用</a></li>
+        <li><a href="#-trilium--本地可控的知识库">🗂️ Trilium — 本地可控的知识库</a></li>
+        <li><a href="#-hugo--高性能静态站生成器">⚡ Hugo — 高性能静态站生成器</a></li>
+      </ul>
+    </li>
+    <li><a href="#-常见组合推荐">🛠️ 常见组合推荐</a></li>
+    <li><a href="#-工程师选型流程图">⚡ 工程师选型流程图</a></li>
+    <li><a href="#-总结">✅ 总结</a></li>
+  </ul>
+</nav>
+    
+  </div>
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2023 - 2025  -  AiEDU | BLOG
+  </p>
+  
+
+  
+  <p>知识改变命运，AI改变知识</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">关于我</div>
+
+        <div class="prose dark:prose-invert">
+          <p>Hi，这里是 <strong>AiEDU</strong> 的博客。<strong>AiEDU</strong> 是我在互联网上经常使用的名字。</p>
+<p>我是一个热衷于开源的研发工程师，在这里我会记录一些关于技术等知识。欢迎你通过评论或者邮件与我交流。</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">知识共享（Creative Commons）</div>
+
+        <div class="prose dark:prose-invert">
+          <p>此网站的所有内容都遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: underline;">CC BY-NC-SA 4.0<img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>。</p>
+<p>All contents of this website are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: underline;">CC BY-NC-SA 4.0<img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>.</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">社交链接</div>
+
+        <ul class="menu menu-horizontal flex-wrap w-full px-0 [&_ion-icon]:text-lg">
+  
+  <li>
+    <a href="mailto:aiedu985@gmail.com" title="Email">
+      <ion-icon name="mail"></ion-icon>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="https://github.com/88899" target="_blank" title="GitHub">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://x.com/mykenwayne" target="_blank" title="X">
+      <ion-icon name="logo-x"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://www.linkedin.com/in/mykenwayne" target="_blank" title="Linkedin">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://stackoverflow.com/users/5676489/mykenwayne" target="_blank" title="stack overflow">
+      <ion-icon name="logo-stackoverflow"></ion-icon>
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+    </article>
+  </div>
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2023 - 2025  -  AiEDU | BLOG
+  </p>
+  
+
+  
+  <p>知识改变命运，AI改变知识</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+    
+  
+  <script src="/js/grid.min.js"></script>
+
+
+
+
+  
+
+<script src="/js/main.min.js"></script>
+
+    
+
+
+  <script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+<script>
+    window.customSyntaxHighlighting = {
+      light: "/css/syntax-light.min.css",
+      dark: "/css/syntax-dark.min.css"
+    }
+
+    document.addEventListener('alpine:initialized', () => {
+      var isDark = Alpine.store('darkMode').isDark()
+      var customSyntaxHighlightingUrl = isDark ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light
+
+      document
+        .querySelector('link[data-custom-syntax-highlighting]')
+        .setAttribute('href', customSyntaxHighlightingUrl)
+    })
+  </script>
+
+
+
+
+  
+
+<script src="/js/toc.min.js"></script>
+
+
+  
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+    
+      
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7QPNK9FQQL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7QPNK9FQQL');
+</script>
+
+    
+        
+    
+<div class="scroll-buttons">
+  <button id="scrollToTop" aria-label="滚动到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+  <button id="scrollToBottom" aria-label="滚动到底部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </button>
+</div>
+
+<style>
+.scroll-buttons {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;  
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;  
+  z-index: 99;
+}
+
+.scroll-buttons button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4);
+}
+
+.scroll-buttons button:hover {
+  background-color: #218838;
+  transform: translateY(0) scale(1.05);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
+}
+
+.scroll-buttons button.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+ 
+@media (max-width: 768px) {
+  .scroll-buttons {
+    right: 1rem !important;
+    bottom: 1rem !important;  
+    gap: 0.5rem !important;
+  }
+
+  .scroll-buttons button {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  const scrollToBottomBtn = document.getElementById('scrollToBottom');
+
+  const handleScroll = () => {
+    scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
+    const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
+    scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+  };
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToBottom = () => window.scrollTo({
+    top: document.documentElement.scrollHeight || document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+
+  window.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+  scrollToBottomBtn.addEventListener('click', scrollToBottom);
+  handleScroll();
+});
+</script>
+
+    
+    <script>
+  window.difyChatbotConfig = {
+    token: 'h2hkg50dPRmb7SaR',
+    inputs: {},
+    systemVariables: {},
+    userVariables: {
+      avatar_url: 'https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250829110345042.png',
+      name: 'AiEDU',
+    },
+  }
+</script>
+<script src="https://udify.app/embed.min.js" id="h2hkg50dPRmb7SaR" defer></script>
+
+<style>
+   
+  #dify-chatbot-bubble-button {
+    background-color: #28a745 !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;  
+    z-index: 9999 !important;
+    width: 2.5rem !important;  
+    height: 2.5rem !important;  
+    box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+   
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 70vh !important;
+    max-height: 600px !important;
+    min-height: 400px !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 9998 !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+   
+  @media (max-width: 768px) {
+    #dify-chatbot-bubble-window {
+      width: calc(100vw - 2rem) !important;
+      height: 65vh !important;
+      bottom: 1rem !important;  
+      right: 1rem !important;
+      left: 1rem !important;
+    }
+
+    #dify-chatbot-bubble-button {
+      width: 2.2rem !important;
+      height: 2.2rem !important;
+      bottom: 1rem !important;
+      right: 1rem !important;
+    }
+  }
+
+   
+  @supports (padding: env(safe-area-inset-bottom)) {
+    #dify-chatbot-bubble-button {
+      bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    #dify-chatbot-bubble-window {
+      bottom: calc(6.1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    @media (max-width: 768px) {
+      #dify-chatbot-bubble-button {
+        bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+      }
+
+      #dify-chatbot-bubble-window {
+        bottom: calc(4.3rem + env(safe-area-inset-bottom)) !important;
+      }
+    }
+  }
+</style>
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js" integrity="sha256-/IFmi82bIhdYWctu0UddSlJqpnzWm7Vh2C4CM32wF/k=" crossorigin="anonymous"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js" integrity="sha256-mr7eJMX3VC3F7G32mk4oWp1C6a2tlMYxUdptfT7uKI8=" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>MCP on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+    <link>https://googhub.nyc.mn/tags/mcp/</link>
+    <description>Recent content in MCP on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Sun, 05 May 2024 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://googhub.nyc.mn/tags/mcp/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Agent、MCP、FunctionCall的区别</title>
+      <link>https://googhub.nyc.mn/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>&lt;h2 id=&#34;一agent是自主决策的ai应用&#34;&gt;一、Agent是自主决策的AI应用&lt;/h2&gt;&#xA;&lt;p&gt;Agent是一种AI应用，能感知环境，能规划任务并调用外部工具完成任务。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;具备自主决策&lt;/li&gt;&#xA;&lt;li&gt;能够完成复杂任务&lt;/li&gt;&#xA;&lt;li&gt;可以调用外部工具&lt;/li&gt;&#xA;&lt;li&gt;可以调用MCP、Function Call等&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
+    </item>
+    <item>
+      <title>分享几个热度较高的MCP服务聚合平台</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/</link>
+      <pubDate>Tue, 20 Feb 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/</guid>
+      <description>&lt;h3 id=&#34;mcp官方资源&#34;&gt;MCP官方资源：&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/modelcontextprotocol/servers&#34; target=&#34;_blank&#34;&gt;https://github.com/modelcontextprotocol/servers&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;awesome&#34;&gt;Awesome:&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/punkpeye/awesome-mcp-servers&#34; target=&#34;_blank&#34;&gt;https://github.com/punkpeye/awesome-mcp-servers&lt;/a&gt;&#xA;&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>

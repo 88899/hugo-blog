@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="zh-Hans"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>知识库 | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+
+    
+  
+    <link href="/img/personal/avatar.png" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="https://googhub.nyc.mn/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/" />
+
+
+
+<meta name="author" content="AiEDU" />
+<meta name="description" content="Just do it!" />
+
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+
+<meta property="og:url" content="https://googhub.nyc.mn/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/">
+  <meta property="og:site_name" content="编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源">
+  <meta property="og:title" content="知识库">
+  <meta property="og:description" content="Just do it!">
+  <meta property="og:locale" content="zh_Hans">
+  <meta property="og:type" content="website">
+    <meta property="og:image" content="https://googhub.nyc.mn/img/global-background.jpg">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://googhub.nyc.mn/img/global-background.jpg">
+  <meta name="twitter:title" content="知识库">
+  <meta name="twitter:description" content="Just do it!">
+      <meta name="twitter:site" content="@dgdghub">
+
+
+
+
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
+
+
+
+
+    
+    <style>
+         
+        #loading {
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .loader {
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #00a96e;
+            letter-spacing: 0.2em;
+            user-select: none;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #00a96e;
+            position: absolute;
+            animation: load .7s infinite alternate ease-in-out;
+            will-change: left, height, width;
+        }
+
+        .loader::before {
+            top: 0
+        }
+
+        .loader::after {
+            bottom: 0
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px
+            }
+
+            50% {
+                height: 8px;
+                width: 40px
+            }
+
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px
+            }
+        }
+
+         
+        #loading, #load-loading, .load-loading {
+            justify-content: center;
+            align-items: center;
+            display: -webkit-box;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999999;
+            background: #fff;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            pointer-events: auto;
+        }
+
+        .load-loading {
+            position: absolute;
+            background: transparent
+        }
+
+        .load-loading .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.2
+        }
+
+        #load-loading {
+            opacity: 0
+        }
+
+        #loading.close {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none;
+        }
+
+        .io-black-mode #loading,
+        .io-black-mode #load-loading {
+            background: #111;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .loader::before,
+            .loader::after {
+                animation: none;
+            }
+
+            #loading, #load-loading, .load-loading {
+                transition: none;
+            }
+        }
+    </style>
+
+    
+    <div id="loading" role="progressbar" aria-label="页面加载中">
+        <div class="loader">AiEDU</div>
+    </div>
+
+    <script>
+        
+        (function() {
+            const loadingScreen = document.getElementById('loading');
+            if (!loadingScreen) return;
+
+            function hideLoadingScreen() {
+                if (!loadingScreen.classList.contains('close')) {
+                    loadingScreen.classList.add('close');
+
+                    
+                    setTimeout(() => {
+                        if (loadingScreen.parentNode) {
+                            loadingScreen.parentNode.removeChild(loadingScreen);
+                        }
+                    }, 500);
+                }
+            }
+
+            
+            window.addEventListener('load', function() {
+                const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                setTimeout(hideLoadingScreen, delay);
+            });
+
+            
+            window.addEventListener('beforeunload', function() {
+                loadingScreen.classList.remove('close');
+            });
+
+            
+            if (window.pjax) {
+                document.addEventListener('pjax:send', function() {
+                    loadingScreen.classList.remove('close');
+                });
+
+                document.addEventListener('pjax:complete', function() {
+                    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                    setTimeout(hideLoadingScreen, delay);
+                });
+            }
+
+            
+            setTimeout(hideLoadingScreen, 8000);
+        })();
+    </script>
+
+
+
+
+
+     
+
+    
+    <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    
+    <script defer src="/js/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/personal/avatar.png" alt="AiEDU | BLOG" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="/" class="text-lg font-semibold cursor-pointer">
+          AiEDU | BLOG
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">AI 赋能，智启教育</div>
+        
+      </div>
+      
+    </section>
+
+    
+    
+      
+    
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
+        
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/" target="" title="首页">
+    
+    <ion-icon name="home"></ion-icon>
+    
+    首页
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://www.518855.xyz" target="" title="导航">
+    
+    <ion-icon name="rocket"></ion-icon>
+    
+    导航
+  </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://cici.pp.ua" target="" title="文档">
+    
+    <ion-icon name="documents"></ion-icon>
+    
+    文档
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="group inline-flex items-center p-2 cursor-pointer" href="/search" title="搜索">
+    <ion-icon name="search"></ion-icon>
+    搜索
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://github.com/88899" target="" title="GitHub">
+    
+    <ion-icon name="logo-github"></ion-icon>
+    
+    GitHub
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/" target="" title="首页">
+    <ion-icon class="group-hover:text-primary-content" name="home"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.518855.xyz" target="" title="导航">
+    <ion-icon class="group-hover:text-primary-content" name="rocket"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://cici.pp.ua" target="" title="文档">
+    <ion-icon class="group-hover:text-primary-content" name="documents"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/search" title="搜索">
+  <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://github.com/88899" target="" title="GitHub">
+    <ion-icon class="group-hover:text-primary-content" name="logo-github"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+
+<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
+
+
+
+
+
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+
+
+<div class="flex flex-col md:flex-row mt-4">
+
+  <div class="md:basis-[200px] lg:basis-[300px] p-4 prose dark:prose-invert">
+    <h1 class="text-2xl">知识库</h1>
+    <p class="text-sm">2篇文章</p>
+    <div class="flex flex-wrap gap-4 mt-6">
+      
+
+      
+      
+      <a href="/categories/ai/" class="badge h-6 no-underline hover:badge-primary">
+        AI
+      </a>
+      
+      
+      
+      <a href="/categories/devops/" class="badge h-6 no-underline hover:badge-primary">
+        DevOps
+      </a>
+      
+      
+      
+      <a href="/categories/it/" class="badge h-6 no-underline hover:badge-primary">
+        IT
+      </a>
+      
+      
+      
+      <a href="/categories/vps/" class="badge h-6 no-underline hover:badge-primary">
+        VPS
+      </a>
+      
+      
+      
+      <a href="/categories/%E7%BC%96%E7%A8%8B/" class="badge h-6 no-underline hover:badge-primary">
+        编程
+      </a>
+      
+      
+      
+      <span class="badge h-6 badge-primary">
+        知识库
+      </span>
+      
+      
+    </div>
+  </div>
+  
+  <div class="divider divider-vertical md:divider-horizontal px-4 md:px-0"></div>
+  
+  <div class="flex-1">
+    
+
+    
+      <div class="dream-grid">
+        
+          <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+  
+  <figure>
+    
+    <img src="https://s3.aiedu.qzz.io/website/2025/10/50f178ca0b54a6bb5c0f250d2d0eb99a.png" alt="知识库 -文档 - 博客，技术选型完全指南" />
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">知识库 -文档 - 博客，技术选型完全指南</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2025-02-08T00:00:00Z</span>
+    
+    </p>
+
+    搭建知识库 / 博客 / 文档站？对比 Trilium、Mintlify、Hugo、VuePress…
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png" alt="Sherry" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Sherry</span>
+    
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>5分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+          </div>
+        
+          <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/">
+  
+  <figure>
+    
+    
+    <picture>
+      <source srcset="/images/default3_hu_599e07ea93afc07d.webp" type="image/webp" />
+      <img src="/images/default3.jpg" alt="/images/default3.jpg" />
+    </picture>
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">怎么让Hugo支持markdown 流程图</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2024-08-30T00:00:00Z</span>
+    
+    </p>
+
+    【Hugo 集成 Mermaid 流程图】教你创建 mermaid.html 模板、引入脚…
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="/img/personal/avatar.png" alt="AiEDU" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">AiEDU</span>
+    
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>2分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+          </div>
+        
+      </div>
+    
+
+    
+  </div>
+</div>
+
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2023 - 2025  -  AiEDU | BLOG
+  </p>
+  
+
+  
+  <p>知识改变命运，AI改变知识</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">关于我</div>
+
+        <div class="prose dark:prose-invert">
+          <p>Hi，这里是 <strong>AiEDU</strong> 的博客。<strong>AiEDU</strong> 是我在互联网上经常使用的名字。</p>
+<p>我是一个热衷于开源的研发工程师，在这里我会记录一些关于技术等知识。欢迎你通过评论或者邮件与我交流。</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">知识共享（Creative Commons）</div>
+
+        <div class="prose dark:prose-invert">
+          <p>此网站的所有内容都遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: underline;">CC BY-NC-SA 4.0<img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>。</p>
+<p>All contents of this website are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: underline;">CC BY-NC-SA 4.0<img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>.</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">社交链接</div>
+
+        <ul class="menu menu-horizontal flex-wrap w-full px-0 [&_ion-icon]:text-lg">
+  
+  <li>
+    <a href="mailto:aiedu985@gmail.com" title="Email">
+      <ion-icon name="mail"></ion-icon>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="https://github.com/88899" target="_blank" title="GitHub">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://x.com/mykenwayne" target="_blank" title="X">
+      <ion-icon name="logo-x"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://www.linkedin.com/in/mykenwayne" target="_blank" title="Linkedin">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://stackoverflow.com/users/5676489/mykenwayne" target="_blank" title="stack overflow">
+      <ion-icon name="logo-stackoverflow"></ion-icon>
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+    </article>
+  </div>
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2023 - 2025  -  AiEDU | BLOG
+  </p>
+  
+
+  
+  <p>知识改变命运，AI改变知识</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+    
+  
+  <script src="/js/grid.min.js"></script>
+
+
+
+
+  
+
+<script src="/js/main.min.js"></script>
+
+    
+
+
+<script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+    
+      
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7QPNK9FQQL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7QPNK9FQQL');
+</script>
+
+    
+        
+    
+<div class="scroll-buttons">
+  <button id="scrollToTop" aria-label="滚动到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+  <button id="scrollToBottom" aria-label="滚动到底部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </button>
+</div>
+
+<style>
+.scroll-buttons {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;  
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;  
+  z-index: 99;
+}
+
+.scroll-buttons button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4);
+}
+
+.scroll-buttons button:hover {
+  background-color: #218838;
+  transform: translateY(0) scale(1.05);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
+}
+
+.scroll-buttons button.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+ 
+@media (max-width: 768px) {
+  .scroll-buttons {
+    right: 1rem !important;
+    bottom: 1rem !important;  
+    gap: 0.5rem !important;
+  }
+
+  .scroll-buttons button {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  const scrollToBottomBtn = document.getElementById('scrollToBottom');
+
+  const handleScroll = () => {
+    scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
+    const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
+    scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+  };
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToBottom = () => window.scrollTo({
+    top: document.documentElement.scrollHeight || document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+
+  window.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+  scrollToBottomBtn.addEventListener('click', scrollToBottom);
+  handleScroll();
+});
+</script>
+
+    
+    <script>
+  window.difyChatbotConfig = {
+    token: 'h2hkg50dPRmb7SaR',
+    inputs: {},
+    systemVariables: {},
+    userVariables: {
+      avatar_url: 'https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250829110345042.png',
+      name: 'AiEDU',
+    },
+  }
+</script>
+<script src="https://udify.app/embed.min.js" id="h2hkg50dPRmb7SaR" defer></script>
+
+<style>
+   
+  #dify-chatbot-bubble-button {
+    background-color: #28a745 !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;  
+    z-index: 9999 !important;
+    width: 2.5rem !important;  
+    height: 2.5rem !important;  
+    box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+   
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 70vh !important;
+    max-height: 600px !important;
+    min-height: 400px !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 9998 !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+   
+  @media (max-width: 768px) {
+    #dify-chatbot-bubble-window {
+      width: calc(100vw - 2rem) !important;
+      height: 65vh !important;
+      bottom: 1rem !important;  
+      right: 1rem !important;
+      left: 1rem !important;
+    }
+
+    #dify-chatbot-bubble-button {
+      width: 2.2rem !important;
+      height: 2.2rem !important;
+      bottom: 1rem !important;
+      right: 1rem !important;
+    }
+  }
+
+   
+  @supports (padding: env(safe-area-inset-bottom)) {
+    #dify-chatbot-bubble-button {
+      bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    #dify-chatbot-bubble-window {
+      bottom: calc(6.1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    @media (max-width: 768px) {
+      #dify-chatbot-bubble-button {
+        bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+      }
+
+      #dify-chatbot-bubble-window {
+        bottom: calc(4.3rem + env(safe-area-inset-bottom)) !important;
+      }
+    }
+  }
+</style>
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js" integrity="sha256-/IFmi82bIhdYWctu0UddSlJqpnzWm7Vh2C4CM32wF/k=" crossorigin="anonymous"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js" integrity="sha256-mr7eJMX3VC3F7G32mk4oWp1C6a2tlMYxUdptfT7uKI8=" crossorigin="anonymous"></script>
+  </body>
+</html>

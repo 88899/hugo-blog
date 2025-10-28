@@ -12,15 +12,15 @@
 <script src="https://udify.app/embed.min.js" id="h2hkg50dPRmb7SaR" defer></script>
 
 <style>
-  /* 聊天按钮（小屏幕下强制无重叠） */
+  /* 聊天按钮（紧凑间距优化） */
   #dify-chatbot-bubble-button {
     background-color: #28a745 !important;
     position: fixed !important;
-    bottom: 1rem !important; /* 移动端垂直基准，与滚动按钮间隔5rem */
-    right: 1rem !important; /* 与滚动按钮完全水平对齐 */
+    bottom: 1rem !important; /* PC端垂直基准 */
+    right: 1rem !important; /* 水平对齐 */
     z-index: 9999 !important;
-    width: 2.5rem !important; /* 与滚动按钮尺寸完全一致 */
-    height: 2.5rem !important; /* 与滚动按钮尺寸完全一致 */
+    width: 2.5rem !important; /* 与滚动按钮尺寸统一 */
+    height: 2.5rem !important; /* 与滚动按钮尺寸统一 */
     box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
     margin: 0 !important;
     padding: 0 !important;
@@ -33,7 +33,7 @@
     max-height: 600px !important;
     min-height: 400px !important;
     position: fixed !important;
-    bottom: 7.5rem !important;
+    bottom: 1rem !important; /* 滚动按钮底部+总高度+紧凑间隔 */
     right: 1rem !important;
     top: auto !important;
     left: auto !important;
@@ -45,32 +45,42 @@
     background-color: rgba(255, 255, 255, 0.9) !important;
   }
 
-  /* 移动端专属优化（小屏幕下彻底无重叠） */
+  /* 移动端紧凑间距优化 */
   @media (max-width: 768px) {
     #dify-chatbot-bubble-window {
       width: calc(100vw - 2rem) !important;
       height: 65vh !important;
-      bottom: 6.3rem !important; /* 滚动按钮底部+总高度+间隔 */
+      bottom: 1rem !important; /* 滚动按钮底部+总高度+紧凑间隔 */
       right: 1rem !important;
       left: 1rem !important;
     }
 
     #dify-chatbot-bubble-button {
-      width: 2.5rem !important;
-      height: 2.5rem !important;
+      width: 2.2rem !important;
+      height: 2.2rem !important;
       bottom: 1rem !important;
       right: 1rem !important;
     }
   }
 
-  /* 安全区域适配（小屏幕下不破坏布局） */
+  /* 安全区域适配（不破坏紧凑布局） */
   @supports (padding: env(safe-area-inset-bottom)) {
     #dify-chatbot-bubble-button {
       bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
     }
 
     #dify-chatbot-bubble-window {
-      bottom: calc(6.3rem + env(safe-area-inset-bottom)) !important;
+      bottom: calc(6.1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    @media (max-width: 768px) {
+      #dify-chatbot-bubble-button {
+        bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+      }
+
+      #dify-chatbot-bubble-window {
+        bottom: calc(4.3rem + env(safe-area-inset-bottom)) !important;
+      }
     }
   }
 </style>

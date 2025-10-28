@@ -1,0 +1,1692 @@
+<!DOCTYPE html>
+<html lang="zh-Hans"
+  x-data
+  :class="$store.darkMode.class()"
+  :data-theme="$store.darkMode.theme()">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>使用Chatgpt获取全网Free vps清单 | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+
+    
+  
+    <link href="/img/personal/avatar.png" rel="icon" type="image/x-icon" />
+  
+
+
+<link rel="canonical" href="https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/" />
+
+
+
+<meta name="author" content="AiEDU" />
+<meta name="description" content="【真免费 VPS 推荐（非试用）】无需绑信用卡，支持 Python/PHP/Docker，月流量 25GB&#43;，含 Byet.host/HelioHost 等 13 家服务商，附续期与功能详情" />
+
+
+<meta name="keywords" content="工具,VPN">
+
+
+
+<meta name="generator" content="Hugo 0.148.2">
+
+
+<meta property="og:url" content="https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/">
+  <meta property="og:site_name" content="编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源">
+  <meta property="og:title" content="使用Chatgpt获取全网Free vps清单">
+  <meta property="og:description" content="【真免费 VPS 推荐（非试用）】无需绑信用卡，支持 Python/PHP/Docker，月流量 25GB&#43;，含 Byet.host/HelioHost 等 13 家服务商，附续期与功能详情">
+  <meta property="og:locale" content="zh_Hans">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="posts">
+    <meta property="article:published_time" content="2023-02-11T00:00:00+00:00">
+    <meta property="article:modified_time" content="2023-02-26T00:00:00+00:00">
+    <meta property="article:tag" content="工具">
+    <meta property="article:tag" content="VPN">
+    <meta property="og:image" content="https://googhub.nyc.mn/img/global-background.jpg">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/">
+
+
+
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:image" content="https://googhub.nyc.mn/img/global-background.jpg">
+  <meta name="twitter:title" content="使用Chatgpt获取全网Free vps清单">
+  <meta name="twitter:description" content="【真免费 VPS 推荐（非试用）】无需绑信用卡，支持 Python/PHP/Docker，月流量 25GB&#43;，含 Byet.host/HelioHost 等 13 家服务商，附续期与功能详情">
+      <meta name="twitter:site" content="@dgdghub">
+
+
+
+
+  
+
+<link rel="stylesheet" href="/css/output.min.css" />
+
+
+
+
+    
+    <style>
+         
+        #loading {
+            display: flex !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+
+        .loader {
+            width: 250px;
+            height: 50px;
+            line-height: 50px;
+            text-align: center;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-family: helvetica, arial, sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
+            color: #00a96e;
+            letter-spacing: 0.2em;
+            user-select: none;
+        }
+
+        .loader::before,
+        .loader::after {
+            content: "";
+            display: block;
+            width: 15px;
+            height: 15px;
+            background: #00a96e;
+            position: absolute;
+            animation: load .7s infinite alternate ease-in-out;
+            will-change: left, height, width;
+        }
+
+        .loader::before {
+            top: 0
+        }
+
+        .loader::after {
+            bottom: 0
+        }
+
+        @keyframes load {
+            0% {
+                left: 0;
+                height: 30px;
+                width: 15px
+            }
+
+            50% {
+                height: 8px;
+                width: 40px
+            }
+
+            100% {
+                left: 235px;
+                height: 30px;
+                width: 15px
+            }
+        }
+
+         
+        #loading, #load-loading, .load-loading {
+            justify-content: center;
+            align-items: center;
+            display: -webkit-box;
+            display: flex;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 9999999;
+            background: #fff;
+            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
+            pointer-events: auto;
+        }
+
+        .load-loading {
+            position: absolute;
+            background: transparent
+        }
+
+        .load-loading .bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.2
+        }
+
+        #load-loading {
+            opacity: 0
+        }
+
+        #loading.close {
+            opacity: 0 !important;
+            visibility: hidden !important;
+            pointer-events: none;
+        }
+
+        .io-black-mode #loading,
+        .io-black-mode #load-loading {
+            background: #111;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .loader::before,
+            .loader::after {
+                animation: none;
+            }
+
+            #loading, #load-loading, .load-loading {
+                transition: none;
+            }
+        }
+    </style>
+
+    
+    <div id="loading" role="progressbar" aria-label="页面加载中">
+        <div class="loader">AiEDU</div>
+    </div>
+
+    <script>
+        
+        (function() {
+            const loadingScreen = document.getElementById('loading');
+            if (!loadingScreen) return;
+
+            function hideLoadingScreen() {
+                if (!loadingScreen.classList.contains('close')) {
+                    loadingScreen.classList.add('close');
+
+                    
+                    setTimeout(() => {
+                        if (loadingScreen.parentNode) {
+                            loadingScreen.parentNode.removeChild(loadingScreen);
+                        }
+                    }, 500);
+                }
+            }
+
+            
+            window.addEventListener('load', function() {
+                const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                setTimeout(hideLoadingScreen, delay);
+            });
+
+            
+            window.addEventListener('beforeunload', function() {
+                loadingScreen.classList.remove('close');
+            });
+
+            
+            if (window.pjax) {
+                document.addEventListener('pjax:send', function() {
+                    loadingScreen.classList.remove('close');
+                });
+
+                document.addEventListener('pjax:complete', function() {
+                    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
+                    setTimeout(hideLoadingScreen, delay);
+                });
+            }
+
+            
+            setTimeout(hideLoadingScreen, 8000);
+        })();
+    </script>
+
+
+
+
+
+    
+
+
+<link rel="stylesheet" data-custom-syntax-highlighting />
+<style>
+  .chroma {
+    padding: 1em;
+    background-color: var(--dream-pre-bg, #f5f5f5);
+    border-radius: .5em;
+    overflow: auto;
+  }
+
+  html.dark .chroma {
+    background-color: var(--dream-pre-bg-dark, #262626);
+  }
+</style>
+
+
+
+
+
+
+
+
+
+    
+    <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    
+    <script defer src="/js/cdn.min.js"></script>
+  </head>
+
+  <body x-data="{
+    flip: false,
+  }">
+    
+    <div id="dream-global-bg"></div>
+
+    
+<nav x-data="{ isSticky: false }"
+  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+  class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
+  :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
+
+  
+  <div class="container flex justify-between px-4">
+  
+    <section class="flex items-center gap-4">
+      <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="翻转一下！">
+        <div class="h-10 rounded-full">
+          <img src="/img/personal/avatar.png" alt="AiEDU | BLOG" />
+        </div>
+      </div>
+
+      
+      <div>
+        
+        <a href="/" class="text-lg font-semibold cursor-pointer">
+          AiEDU | BLOG
+        </a>
+        
+        
+        <div class="text-base-content/60 text-sm">AI 赋能，智启教育</div>
+        
+      </div>
+      
+    </section>
+
+    
+    
+      
+    
+
+    <div class="dropdown dropdown-end sm:hidden">
+      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+        <ion-icon name="menu" class="text-2xl"></ion-icon>
+      </div>
+      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
+        
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/" target="" title="首页">
+    
+    <ion-icon name="home"></ion-icon>
+    
+    首页
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/categories" title="所有分类">
+    <ion-icon name="grid"></ion-icon>
+    所有分类
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/tags" title="所有标签">
+    <ion-icon name="pricetags"></ion-icon>
+    所有标签
+  </a>
+</li>
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="/posts" title="归档">
+    <ion-icon name="archive"></ion-icon>
+    归档
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://www.518855.xyz" target="" title="导航">
+    
+    <ion-icon name="rocket"></ion-icon>
+    
+    导航
+  </a>
+</li>
+
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://cici.pp.ua" target="" title="文档">
+    
+    <ion-icon name="documents"></ion-icon>
+    
+    文档
+  </a>
+</li>
+
+
+
+
+
+<li>
+  <a class="group inline-flex items-center p-2 cursor-pointer" href="/search" title="搜索">
+    <ion-icon name="search"></ion-icon>
+    搜索
+  </a>
+</li>
+
+
+
+
+
+
+
+<li>
+  <a class="inline-flex items-center p-2 cursor-pointer" href="https://github.com/88899" target="" title="GitHub">
+    
+    <ion-icon name="logo-github"></ion-icon>
+    
+    GitHub
+  </a>
+</li>
+
+
+
+
+
+
+
+
+
+<li>
+  <div role="link" tabindex="0" class="inline-flex items-center p-2 cursor-pointer" @click="flip = !flip" title="关于">
+    <ion-icon name="information-circle"></ion-icon>关于</div>
+</li>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      </ul>
+    </div>
+    <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
+      
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/" target="" title="首页">
+    <ion-icon class="group-hover:text-primary-content" name="home"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/categories" title="所有分类">
+  <ion-icon class="group-hover:text-primary-content" name="grid"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/tags" title="所有标签">
+  <ion-icon class="group-hover:text-primary-content" name="pricetags"></ion-icon>
+</a>
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/posts" title="归档">
+  <ion-icon class="group-hover:text-primary-content" name="archive"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://www.518855.xyz" target="" title="导航">
+    <ion-icon class="group-hover:text-primary-content" name="rocket"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://cici.pp.ua" target="" title="文档">
+    <ion-icon class="group-hover:text-primary-content" name="documents"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+<a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="/search" title="搜索">
+  <ion-icon class="group-hover:text-primary-content" name="search"></ion-icon>
+</a>
+
+
+      
+      
+
+
+
+  
+  <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" href="https://github.com/88899" target="" title="GitHub">
+    <ion-icon class="group-hover:text-primary-content" name="logo-github"></ion-icon>
+  </a>
+  
+
+
+
+      
+      
+
+
+
+
+<div role="link" tabindex="0" class="text-sm font-semibold cursor-pointer hover:underline" @click="flip = !flip" title="关于">关于</div>
+
+
+
+
+
+      
+
+      
+      
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      
+
+      
+    </section>
+  </div>
+</nav>
+
+
+    <div class="flip-container" :class="{ 'flip-it': flip }">
+      <div class="flipper">
+        <div class="front">
+          <div class="container">
+            
+<div class="lg:grid lg:grid-cols-4 gap-4 mt-4 px-4">
+
+
+  <div class="lg:col-span-2">
+    <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
+      
+  <meta itemprop="name" content="使用Chatgpt获取全网Free vps清单">
+  <meta itemprop="description" content="【真免费 VPS 推荐（非试用）】无需绑信用卡，支持 Python/PHP/Docker，月流量 25GB&#43;，含 Byet.host/HelioHost 等 13 家服务商，附续期与功能详情">
+  <meta itemprop="datePublished" content="2023-02-11T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2023-02-26T00:00:00+00:00">
+  <meta itemprop="wordCount" content="3408">
+  <meta itemprop="image" content="https://googhub.nyc.mn/img/global-background.jpg">
+  <meta itemprop="keywords" content="工具,VPN">
+
+      <header>
+        <h1 itemprop="headline">使用Chatgpt获取全网Free vps清单</h1>
+        <p class="text-sm">
+          
+            <span data-format="luxon">2023-02-11T00:00:00Z</span>
+          
+
+          | <span>7分钟阅读</span>
+
+          
+          | <span>更新于
+            
+              <span data-format="luxon">2023-02-26T00:00:00Z</span>
+            </span>
+          
+        </p>
+
+        
+        <div class="flex justify-between">
+          
+            <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="/img/personal/avatar.png" alt="AiEDU" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">AiEDU</span>
+    
+  
+  </span>
+</div>
+
+          
+
+          <div class="flex items-center gap-2">
+  
+  
+
+  
+  
+  
+  
+    
+  
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="" target="_blank" rel="noopener noreferrer"
+      title="Share on WeChat">
+      <ion-icon class="group-hover:text-primary-content" name="logo-WeChat"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://x.com/intent/post?text=%e4%bd%bf%e7%94%a8Chatgpt%e8%8e%b7%e5%8f%96%e5%85%a8%e7%bd%91Free%20vps%e6%b8%85%e5%8d%95&amp;url=https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/" target="_blank" rel="noopener noreferrer"
+      title="Share on X">
+      <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://facebook.com/sharer/sharer.php?u=https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/" target="_blank" rel="noopener noreferrer"
+      title="Share on Facebook">
+      <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
+    </a>
+  
+    <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
+      href="https://wa.me/?text=%e4%bd%bf%e7%94%a8Chatgpt%e8%8e%b7%e5%8f%96%e5%85%a8%e7%bd%91Free%20vps%e6%b8%85%e5%8d%95%20https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/" target="_blank" rel="noopener noreferrer"
+      title="Share on WhatsApp">
+      <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
+    </a>
+  
+
+  
+  
+</div>
+
+        </div>
+      </header>
+
+      <section id="dream-single-post-content" itemprop="articleBody">
+        
+
+        <h2 id="概要">概要</h2>
+<p>通过Chatgpt筛选出来的免费的Vps服务商。</p>
+<h2 id="服务商清单">服务商清单</h2>
+<h4 id="提示词">提示词</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 3
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 8
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 9
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">17
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">18
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">24
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">25
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">26
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">27
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">28
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">29
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">30
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">31
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">32
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">33
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">34
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>请帮我列出**符合条件的免费服务**，满足以下要求：
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>【条件要求】：
+</span></span><span style="display:flex;"><span>1. 必须是真正的免费服务（非限时试用），可以续期，但**全天候在线**，有休眠、暂停需要标注，不能有按月/每月小时限制。
+</span></span><span style="display:flex;"><span>2. 无需信用卡绑定。
+</span></span><span style="display:flex;"><span>3. 可以运行脚本（直接运行或通过伪装均可）。
+</span></span><span style="display:flex;"><span>4. 满足以下任意一条即可（请在表格中说明具体支持的条件）：
+</span></span><span style="display:flex;"><span>   - 支持 Python / Go / Rust / Java / PHP
+</span></span><span style="display:flex;"><span>   - 提供 Linux / FreeBSD 系统
+</span></span><span style="display:flex;"><span>   - 支持 Docker
+</span></span><span style="display:flex;"><span>   - 支持免费部署 Minecraft / TeamSpeak3 / Discord Bot
+</span></span><span style="display:flex;"><span>5. 免费服务必须提供至少 **25GB/月流量**。
+</span></span><span style="display:flex;"><span>6. 请完全排除以下大厂和静态平台：
+</span></span><span style="display:flex;"><span>   - 谷歌（GCP / Glitch）、亚马逊（AWS）、微软（Azure）、甲骨文（Oracle Cloud）、Cloudflare、GitHub、IBM Cloud
+</span></span><span style="display:flex;"><span>   - 所有只提供静态网站的，如 Vercel、Netlify
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>7. 排除我已经注册过的项目：
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>8. 尽量推荐更多服务，目标 <span style="color:#bd93f9">50</span> 个条目（如果可用）。
+</span></span><span style="display:flex;"><span>9. **避免重复条目**。
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>【输出要求】：
+</span></span><span style="display:flex;"><span>- 输出必须严格为 **Markdown 表格**，不要写段落、不要加解释、不要附加文字。
+</span></span><span style="display:flex;"><span>- 表格字段必须包含：
+</span></span><span style="display:flex;"><span>   1. 编号
+</span></span><span style="display:flex;"><span>   2. 服务名称
+</span></span><span style="display:flex;"><span>   3. 官网地址（只需首页或说明页面，不要领取界面）
+</span></span><span style="display:flex;"><span>   4. 是否不需要续期（✅️ / ❌️）
+</span></span><span style="display:flex;"><span>   5. 如果需要续期，请简要说明如何续期
+</span></span><span style="display:flex;"><span>   6. 具体支持的条件（如 Python / Docker / MC 等）
+</span></span><span style="display:flex;"><span>   7. 限制（CPU / 内存 / 磁盘 / 流量 / 全天候在线）
+</span></span><span style="display:flex;"><span>- 如果信息缺失，请标注“未知”，不要编造。
+</span></span><span style="display:flex;"><span>- 输出**中文**，只输出表格，不要任何额外说明或解释。
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="生成的清单">生成的清单</h4>
+<table>
+  <thead>
+      <tr>
+          <th>编号</th>
+          <th>服务名称</th>
+          <th>官网地址（只需首页或说明页面，不要领取界面）</th>
+          <th>是否不需要续期（✅️ / ❌️）</th>
+          <th>如果需要续期，请简要说明如何续期</th>
+          <th>具体支持的条件（如 Python / Docker / MC 等）</th>
+          <th>限制（CPU / 内存 / 磁盘 / 流量 / 全天候在线）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>InfinityFree</td>
+          <td><a href="https://infinityfree.net/" target="_blank">https://infinityfree.net</a>
+</td>
+          <td>❌️</td>
+          <td>长期无访问会触发“非活跃”暂停，按提示在控制面板/工单里恢复即可。 (<a href="https://forum.infinityfree.com/t/inactivity/17344?utm_source=chatgpt.com" title="Inactivity - Hosting Support" target="_blank">forum.infinityfree.com</a>
+)</td>
+          <td>PHP、MySQL、Cron</td>
+          <td>磁盘5GB；流量“无限制”（公平使用）；全天候在线（共享资源，可能限流/风控）。 (<a href="https://www.techradar.com/reviews/infinity-free?utm_source=chatgpt.com" title="InfinityFree web hosting review" target="_blank">TechRadar</a>
+)</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Byet.host Free Hosting</td>
+          <td><a href="https://byet.host/free-hosting" target="_blank">https://byet.host/free-hosting</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期要求（遵守TOS即可）。 (<a href="https://byet.host/terms-of-service?utm_source=chatgpt.com" title="TERMS AND CONDITIONS OF SERVICE Byet Internet" target="_blank">byet.host</a>
+)</td>
+          <td>PHP、MySQL、Cron、FTP</td>
+          <td>磁盘1GB；月流量50GB；共享CPU；全天候在线。 (<a href="https://byet.host/free-hosting?utm_source=chatgpt.com" title="Free Hosting" target="_blank">byet.host</a>
+)</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>FreeHosting.com</td>
+          <td><a href="https://www.freehosting.com/" target="_blank">https://www.freehosting.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期（域名到期需自行续域；与主机不同）。 (<a href="https://www.freehosting.com/tos.html?utm_source=chatgpt.com" title="TOS - Free Hosting" target="_blank">freehosting.com</a>
+)</td>
+          <td>PHP、MySQL、cPanel</td>
+          <td>磁盘10GB；带宽未计量/“无限制”；共享资源；全天候在线。 (<a href="https://www.freehosting.com/?utm_source=chatgpt.com" title="Free Hosting - Your Domain, Unlimited Bandwidth, PHP ..." target="_blank">freehosting.com</a>
+)</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>x10Hosting</td>
+          <td><a href="https://x10hosting.com/" target="_blank">https://x10hosting.com</a>
+</td>
+          <td>未知</td>
+          <td>未明确续期规则（可能有不活跃清理）。未知</td>
+          <td>PHP、MySQL（社区口径亦称支持Python/Perl，官方以PHP为主）</td>
+          <td>磁盘约500MB；带宽未计量/“无限制”；共享资源；全天候在线。 (<a href="https://www.tomsguide.com/buying-guide/best-free-web-hosting?utm_source=chatgpt.com" title="The best free web hosting in 2025" target="_blank">Tom&rsquo;s Guide</a>
+)</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>GoogieHost</td>
+          <td><a href="https://googiehost.com/" target="_blank">https://googiehost.com</a>
+</td>
+          <td>✅️</td>
+          <td>未见强制续期；遵守使用政策</td>
+          <td>PHP、MySQL、cPanel</td>
+          <td>磁盘1GB；月流量100GB；共享资源；全天候在线。 (<a href="https://www.tomsguide.com/buying-guide/best-free-web-hosting?utm_source=chatgpt.com" title="The best free web hosting in 2025" target="_blank">Tom&rsquo;s Guide</a>
+)</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>ProFreeHost</td>
+          <td><a href="https://profreehost.com/" target="_blank">https://profreehost.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、MySQL、Softaculous</td>
+          <td>磁盘未知；带宽“无限制”（宣称）；共享资源；全天候在线。 (<a href="https://byet.host/?utm_source=chatgpt.com" title="Byet Internet: Free Hosting, Paid Hosting, Reseller Services ..." target="_blank">byet.host</a>
+)</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>HyperPHP</td>
+          <td><a href="https://hyperphp.com/" target="_blank">https://hyperphp.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、MySQL、cPanel</td>
+          <td>磁盘约1GB；带宽“无限制”（宣称）；全天候在线。 (<a href="https://hyperphp.com/hosting-plans.php?utm_source=chatgpt.com" title="Hosting Plans" target="_blank">hyperphp.com</a>
+)</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>PlanetHoster “World Lite”</td>
+          <td><a href="https://www.planethoster.com/en/World-Lite" target="_blank">https://www.planethoster.com/en/World-Lite</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、MySQL、cPanel</td>
+          <td>磁盘约750MB；带宽“无限制”（宣称）；全天候在线。 (<a href="https://community.x10hosting.com/threads/limitations-for-the-free-hosting.200491/?utm_source=chatgpt.com" title="Limitations for the free hosting. \| x10Hosting" target="_blank">x10Hosting: Free Hosting Community</a>
+)</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>HelioHost</td>
+          <td><a href="https://heliohost.org/" target="_blank">https://heliohost.org</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、Python、Java/JSP、.NET、Ruby/RoR、Node.js、PostgreSQL/MySQL、Plesk</td>
+          <td>磁盘1GB（可捐赠扩展）；带宽“无限制”；共享CPU限额；全天候在线。 (<a href="https://heliohost.org/?utm_source=chatgpt.com" title="HelioHost \| Free Hosting" target="_blank">heliohost.org</a>
+, <a href="https://wiki.helionet.org/What_HelioHost_Offers?utm_source=chatgpt.com" title="What HelioHost Offers" target="_blank">wiki.helionet.org</a>
+)</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>FC2 Free Hosting</td>
+          <td><a href="https://fc2.com/" target="_blank">https://fc2.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP/CGI 等脚本、FTP</td>
+          <td>磁盘1GB；带宽“无限制”；共享资源；全天候在线。 (<a href="https://www.techradar.com/reviews/fc2?utm_source=chatgpt.com" title="FC2 free hosting review" target="_blank">TechRadar</a>
+, <a href="https://www.free-webhosts.com/reviews/Fc2.php?utm_source=chatgpt.com" title="Free Web Hosting Review of: Fc2" target="_blank">free-webhosts.com</a>
+)</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>FreeHosting.host（FreeHostingHost）</td>
+          <td><a href="https://freehosting.host/" target="_blank">https://freehosting.host</a>
+</td>
+          <td>❌️</td>
+          <td>需每30天登录一次客户端以防暂停，若被停需在面板点“Reactivate”。 (<a href="https://help.freehosting.host/self-help/reactivating-suspended-service-due-to-lack-of-login-into-client-area/?utm_source=chatgpt.com" title="Reactivating suspended service due to lack of login into client ..." target="_blank">help.freehosting.host</a>
+)</td>
+          <td>PHP、MySQL、cPanel</td>
+          <td>磁盘约1GB；月流量100GB；共享资源；全天候在线。 (<a href="https://dev.to/neil_brown/5-free-web-hosting-providers-that-dont-require-a-credit-card-p3h?utm_source=chatgpt.com" title="5 Free Web Hosting Providers That Don&#39;t Require a Credit ..." target="_blank">DEV Community</a>
+)</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>Free Web Hosting Area</td>
+          <td><a href="https://www.freewebhostingarea.com/" target="_blank">https://www.freewebhostingarea.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、MySQL、cron</td>
+          <td>磁盘数GB级（套餐差异）；带宽“无限制”；全天候在线。 (<a href="https://www.techradar.com/reviews/free-web-hosting-area?utm_source=chatgpt.com" title="Free Web Hosting Area review" target="_blank">TechRadar</a>
+)</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>AeonFree</td>
+          <td><a href="https://aeonfree.com/" target="_blank">https://aeonfree.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、MySQL、cPanel/SSL</td>
+          <td>磁盘未知；带宽“无限制”（宣称）；全天候在线。 (<a href="https://aeonfree.com/?utm_source=chatgpt.com" title="AeonFree: Free Unlimited Web Hosting with PHP, MySQL ..." target="_blank">Aeon Free</a>
+)</td>
+      </tr>
+      <tr>
+          <td>14</td>
+          <td>Koyeb（Hobby 免费实例）</td>
+          <td><a href="https://www.koyeb.com/" target="_blank">https://www.koyeb.com</a>
+</td>
+          <td>✅️</td>
+          <td>无需续期（可长期运行）；个别区域可能需绑卡但官方称可不绑加入Hobby</td>
+          <td>支持 Docker/容器、Linux 运行环境、可跑任意语言</td>
+          <td>共享vCPU/512MB RAM（典型）；月出站带宽约100GB（官方示例）；全天候在线。 (<a href="https://dev.to/neil_brown/5-free-web-hosting-providers-that-dont-require-a-credit-card-p3h?utm_source=chatgpt.com" title="5 Free Web Hosting Providers That Don&#39;t Require a Credit ..." target="_blank">DEV Community</a>
+)</td>
+      </tr>
+      <tr>
+          <td>15</td>
+          <td>Aternos（Minecraft）</td>
+          <td><a href="https://aternos.org/" target="_blank">https://aternos.org</a>
+</td>
+          <td>❌️</td>
+          <td>服务器无人在线会自动停止；需有人进入或在队列中手动启动</td>
+          <td>免费部署 Minecraft 服务器</td>
+          <td>CPU/内存/插件有限制；带宽未知；<strong>非24/7</strong>（空闲会停）。 (<a href="https://heliohost.org/?utm_source=chatgpt.com" title="HelioHost \| Free Hosting" target="_blank">heliohost.org</a>
+)</td>
+      </tr>
+      <tr>
+          <td>16</td>
+          <td>Minehut（Minecraft）</td>
+          <td><a href="https://minehut.com/" target="_blank">https://minehut.com</a>
+</td>
+          <td>❌️</td>
+          <td>空闲自动休眠；需要玩家连接唤醒</td>
+          <td>免费部署 Minecraft 服务器</td>
+          <td>10玩家起步等限制；带宽未知；<strong>非24/7</strong>（空闲会停）。 (<a href="https://www.koyeb.com/docs/faqs/pricing?utm_source=chatgpt.com" title="Pricing Frequently Asked Questions" target="_blank">Koyeb</a>
+)</td>
+      </tr>
+      <tr>
+          <td>17</td>
+          <td>DisCloud（Discord Bot）</td>
+          <td><a href="https://discloudbot.com/" target="_blank">https://discloudbot.com</a>
+</td>
+          <td>未知</td>
+          <td>未明确续期；按社区规则维护</td>
+          <td>免费部署 Discord Bot（容器化）</td>
+          <td>RAM/CPU配额较小；带宽未知；是否<strong>24/7</strong>取决于配额与队列。 (<a href="https://googiehost.com/freehosting?utm_source=chatgpt.com" title="FREE Web Hosting with cPanel PHP and MySQL SSL ... - GoogieHost" target="_blank">googiehost.com</a>
+)</td>
+      </tr>
+      <tr>
+          <td>18</td>
+          <td>PylexNodes（Discord/MC）</td>
+          <td><a href="https://pylexnodes.net/" target="_blank">https://pylexnodes.net</a>
+</td>
+          <td>未知</td>
+          <td>未明确续期</td>
+          <td>免费部署 Discord Bot / Minecraft（社区额度）</td>
+          <td>资源/队列限制；带宽未知；可能<strong>非24/7</strong>。 (<a href="https://www.planethoster.com/en/World-Hosting?utm_source=chatgpt.com" title="Hosting Plan - World Platform - (Canada) - (France &#43; Swiss)" target="_blank">planethoster.com</a>
+)</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="进一步整理">进一步整理</h4>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-shell" data-lang="shell"><span style="display:flex;"><span><span style="color:#6272a4"># 提示词</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>请按照上一条的要求，对生成的表格进行处理： - 去重（按服务名称或官网地址） - 排除我已注册的项目 - 排除大厂和静态平台（谷歌 GCP / Glitch、AWS、Azure、Oracle、Cloudflare、GitHub、IBM Cloud、Vercel、Netlify） - 保留原表字段，不增加列 - 只保留符合条件的服务（全天候、免费、流量≥25GB、支持任意环境） - 输出中文 Markdown 表格
+</span></span></code></pre></td></tr></table>
+</div>
+</div><h4 id="最终结果">最终结果</h4>
+<table>
+  <thead>
+      <tr>
+          <th>编号</th>
+          <th>服务名称</th>
+          <th>官网地址（只需首页或说明页面，不要领取界面）</th>
+          <th>是否不需要续期（✅️ / ❌️）</th>
+          <th>如果需要续期，请简要说明如何续期</th>
+          <th>具体支持的条件（如 Python / Docker / MC 等）</th>
+          <th>限制（CPU / 内存 / 磁盘 / 流量 / 全天候在线）</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1</td>
+          <td>InfinityFree</td>
+          <td><a href="https://infinityfree.net/" target="_blank">https://infinityfree.net</a>
+</td>
+          <td>❌️</td>
+          <td>长期无访问会触发“非活跃”暂停，按提示在控制面板/工单里恢复即可</td>
+          <td>PHP、MySQL、Cron</td>
+          <td>磁盘5GB；流量“无限制”（公平使用）；全天候在线（共享资源，可能限流/风控）</td>
+      </tr>
+      <tr>
+          <td>2</td>
+          <td>Byet.host Free Hosting</td>
+          <td><a href="https://byet.host/free-hosting" target="_blank">https://byet.host/free-hosting</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期要求（遵守TOS即可）</td>
+          <td>PHP、MySQL、Cron、FTP</td>
+          <td>磁盘1GB；月流量50GB；共享CPU；全天候在线</td>
+      </tr>
+      <tr>
+          <td>3</td>
+          <td>FreeHosting.com</td>
+          <td><a href="https://www.freehosting.com/" target="_blank">https://www.freehosting.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期（域名到期需自行续域；与主机不同）</td>
+          <td>PHP、MySQL、cPanel</td>
+          <td>磁盘10GB；带宽未计量/“无限制”；共享资源；全天候在线</td>
+      </tr>
+      <tr>
+          <td>4</td>
+          <td>GoogieHost</td>
+          <td><a href="https://googiehost.com/" target="_blank">https://googiehost.com</a>
+</td>
+          <td>✅️</td>
+          <td>未见强制续期；遵守使用政策</td>
+          <td>PHP、MySQL、cPanel</td>
+          <td>磁盘1GB；月流量100GB；共享资源；全天候在线</td>
+      </tr>
+      <tr>
+          <td>5</td>
+          <td>ProFreeHost</td>
+          <td><a href="https://profreehost.com/" target="_blank">https://profreehost.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、MySQL、Softaculous</td>
+          <td>磁盘未知；带宽“无限制”（宣称）；共享资源；全天候在线</td>
+      </tr>
+      <tr>
+          <td>6</td>
+          <td>HyperPHP</td>
+          <td><a href="https://hyperphp.com/" target="_blank">https://hyperphp.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、MySQL、cPanel</td>
+          <td>磁盘约1GB；带宽“无限制”（宣称）；全天候在线</td>
+      </tr>
+      <tr>
+          <td>7</td>
+          <td>PlanetHoster “World Lite”</td>
+          <td><a href="https://www.planethoster.com/en/World-Lite" target="_blank">https://www.planethoster.com/en/World-Lite</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、MySQL、cPanel</td>
+          <td>磁盘约750MB；带宽“无限制”（宣称）；全天候在线</td>
+      </tr>
+      <tr>
+          <td>8</td>
+          <td>HelioHost</td>
+          <td><a href="https://heliohost.org/" target="_blank">https://heliohost.org</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、Python、Java/JSP、.NET、Ruby/RoR、Node.js、PostgreSQL/MySQL、Plesk</td>
+          <td>磁盘1GB（可捐赠扩展）；带宽“无限制”；共享CPU限额；全天候在线</td>
+      </tr>
+      <tr>
+          <td>9</td>
+          <td>FC2 Free Hosting</td>
+          <td><a href="https://fc2.com/" target="_blank">https://fc2.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP/CGI 等脚本、FTP</td>
+          <td>磁盘1GB；带宽“无限制”；共享资源；全天候在线</td>
+      </tr>
+      <tr>
+          <td>10</td>
+          <td>FreeHosting.host（FreeHostingHost）</td>
+          <td><a href="https://freehosting.host/" target="_blank">https://freehosting.host</a>
+</td>
+          <td>❌️</td>
+          <td>需每30天登录一次客户端以防暂停，若被停需在面板点“Reactivate”</td>
+          <td>PHP、MySQL、cPanel</td>
+          <td>磁盘约1GB；月流量100GB；共享资源；全天候在线</td>
+      </tr>
+      <tr>
+          <td>11</td>
+          <td>Free Web Hosting Area</td>
+          <td><a href="https://www.freewebhostingarea.com/" target="_blank">https://www.freewebhostingarea.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、MySQL、cron</td>
+          <td>磁盘数GB级（套餐差异）；带宽“无限制”；全天候在线</td>
+      </tr>
+      <tr>
+          <td>12</td>
+          <td>AeonFree</td>
+          <td><a href="https://aeonfree.com/" target="_blank">https://aeonfree.com</a>
+</td>
+          <td>✅️</td>
+          <td>无强制续期</td>
+          <td>PHP、MySQL、cPanel/SSL</td>
+          <td>磁盘未知；带宽“无限制”（宣称）；全天候在线</td>
+      </tr>
+      <tr>
+          <td>13</td>
+          <td>Koyeb（Hobby 免费实例）</td>
+          <td><a href="https://www.koyeb.com/" target="_blank">https://www.koyeb.com</a>
+</td>
+          <td>✅️</td>
+          <td>无需续期（可长期运行）</td>
+          <td>支持 Docker/容器、Linux 运行环境、可跑任意语言</td>
+          <td>共享vCPU/512MB RAM（典型）；月出站带宽约100GB；全天候在线</td>
+      </tr>
+  </tbody>
+</table>
+
+
+      </section>
+
+      
+      <div class="divider"></div>
+      <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
+        
+        <a role="button" class="btn btn-outline h-12" href="/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/" title="拿到Hax的EU VPS，最佳装机指南（小白白）">
+          <ion-icon name="chevron-back"></ion-icon>
+          <div class="inline-flex flex-col items-start">
+            <span class="text-base-content/60 text-xs font-normal">上一页</span>
+            <span class="max-w-48 truncate">拿到Hax的EU VPS，最佳装机指南（小白白）</span>
+          </div>
+        </a>
+        
+
+        
+        <a role="button" class="btn btn-outline h-12" href="/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/" title="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化">
+          <div class="inline-flex flex-col items-end">
+            <span class="text-base-content/60 text-xs font-normal">下一页</span>
+            <span class="max-w-48 truncate">复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化</span>
+          </div>
+          <ion-icon name="chevron-forward"></ion-icon>
+        </a>
+        
+      </div>
+      
+
+      
+       
+
+    </article>
+  </div>
+
+  <div
+    x-data="tocHighlighter()"
+    @scroll.window="debouncedScroll"
+    class="hidden lg:flex lg:flex-col lg:items-end lg:self-start"
+  >
+    
+      <nav id="TableOfContents">
+  <ul>
+    <li><a href="#概要">概要</a></li>
+    <li><a href="#服务商清单">服务商清单</a>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+    
+  </div>
+</div>
+
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2023 - 2025  -  AiEDU | BLOG
+  </p>
+  
+
+  
+  <p>知识改变命运，AI改变知识</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+        <div class="back">
+          <div class="container">
+            
+            <div class="dream-grid dream-grid-about">
+  
+  
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">关于我</div>
+
+        <div class="prose dark:prose-invert">
+          <p>Hi，这里是 <strong>AiEDU</strong> 的博客。<strong>AiEDU</strong> 是我在互联网上经常使用的名字。</p>
+<p>我是一个热衷于开源的研发工程师，在这里我会记录一些关于技术等知识。欢迎你通过评论或者邮件与我交流。</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">知识共享（Creative Commons）</div>
+
+        <div class="prose dark:prose-invert">
+          <p>此网站的所有内容都遵循 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: underline;">CC BY-NC-SA 4.0<img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>。</p>
+<p>All contents of this website are licensed under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/?ref=chooser-v1" target="_blank" rel="license noopener noreferrer" style="display: inline-flex; align-items: center; gap: 0.25rem; text-decoration: underline;">CC BY-NC-SA 4.0<img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/cc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/by.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/nc.svg?ref=chooser-v1" alt=""><img style="height:22px; margin-top: 0; margin-bottom: 0;" src="https://mirrors.creativecommons.org/presskit/icons/sa.svg?ref=chooser-v1" alt=""></a>.</p>
+
+        </div>
+      </div>
+    </article>
+  </div>
+  
+  
+
+  
+  <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
+    <article
+      class="card bg-base-100 hover:bg-base-content/10 shadow-xl dark:border dark:border-base-content/30"
+    >
+      <div class="card-body">
+        <div class="card-title">社交链接</div>
+
+        <ul class="menu menu-horizontal flex-wrap w-full px-0 [&_ion-icon]:text-lg">
+  
+  <li>
+    <a href="mailto:aiedu985@gmail.com" title="Email">
+      <ion-icon name="mail"></ion-icon>
+    </a>
+  </li>
+  
+
+  
+  <li>
+    <a href="https://github.com/88899" target="_blank" title="GitHub">
+      <ion-icon name="logo-github"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://x.com/mykenwayne" target="_blank" title="X">
+      <ion-icon name="logo-x"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://www.linkedin.com/in/mykenwayne" target="_blank" title="Linkedin">
+      <ion-icon name="logo-linkedin"></ion-icon>
+    </a>
+  </li>
+  
+  <li>
+    <a href="https://stackoverflow.com/users/5676489/mykenwayne" target="_blank" title="stack overflow">
+      <ion-icon name="logo-stackoverflow"></ion-icon>
+    </a>
+  </li>
+  
+</ul>
+
+      </div>
+    </article>
+  </div>
+  
+
+  
+</div>
+
+            
+
+            
+<footer class="flex justify-between items-center gap-2 px-4 py-12">
+
+  <div>
+  
+  <p>
+    © 2023 - 2025  -  AiEDU | BLOG
+  </p>
+  
+
+  
+  <p>知识改变命运，AI改变知识</p>
+  
+</div>
+
+  <div
+  x-data="{ icons: [
+    { name: 'sunny', status: 'n' },
+    { name: 'moon', status: 'y' },
+    { name: 'desktop', status: 'auto' }
+  ] }"
+  class="flex items-center gap-2 h-[32px] px-2 bg-base-100 border border-base-content/30 rounded-full"
+>
+  <template x-for="icon in icons">
+    <div
+      role="button"
+      tabindex="0"
+      :aria-label="'Select ' + icon.name + ' mode'"
+      class="group inline-flex justify-center items-center p-1 rounded-full cursor-pointer hover:bg-primary"
+      :class="$store.darkMode.icon() === icon.name && 'bg-primary'"
+      @click="$store.darkMode.toggle(icon.status)"
+    >
+      <ion-icon
+        :name="`${icon.name}-outline`"
+        class="group-hover:text-primary-content"
+        :class="$store.darkMode.icon() === icon.name && 'text-primary-content'"
+      >
+      </ion-icon>
+    </div>
+  </template>
+</div>
+
+</footer>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+  window.lightTheme = "emerald"
+  window.darkTheme = "forest"
+</script>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/imagesloaded@5.0.0/imagesloaded.pkgd.min.js" integrity="sha256-htrLFfZJ6v5udOG+3kNLINIKh2gvoKqwEhHYfTTMICc=" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/masonry-layout@4.2.2/dist/masonry.pkgd.min.js" integrity="sha256-Nn1q/fx0H7SNLZMQ5Hw5JLaTRZp0yILA/FRexe19VdI=" crossorigin="anonymous"></script>
+
+  
+  
+    
+  
+  <script src="/js/grid.min.js"></script>
+
+
+
+
+  
+
+<script src="/js/main.min.js"></script>
+
+    
+
+
+  <script
+  src="https://cdn.jsdelivr.net/npm/luxon@1.26.0"
+  integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0="
+  crossorigin="anonymous"
+></script>
+<script>
+  format()
+
+  function format() {
+    document.querySelectorAll('span[data-format="luxon"]').forEach(el => {
+      const date = el.textContent
+
+      el.textContent = luxon.DateTime.fromISO(date, { locale: "zh" }).toFormat("yyyy年MM月dd日")
+    })
+  }
+</script>
+
+
+
+<script>
+    window.customSyntaxHighlighting = {
+      light: "/css/syntax-light.min.css",
+      dark: "/css/syntax-dark.min.css"
+    }
+
+    document.addEventListener('alpine:initialized', () => {
+      var isDark = Alpine.store('darkMode').isDark()
+      var customSyntaxHighlightingUrl = isDark ? window.customSyntaxHighlighting.dark : window.customSyntaxHighlighting.light
+
+      document
+        .querySelector('link[data-custom-syntax-highlighting]')
+        .setAttribute('href', customSyntaxHighlightingUrl)
+    })
+  </script>
+
+
+
+
+  
+
+<script src="/js/toc.min.js"></script>
+
+
+  
+    <script type="module">
+      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
+      mediumZoom('#dream-single-post-content img', {
+        background: 'oklch(var(--b1))',
+        margin: 24,
+      })
+    </script>
+  
+
+
+
+
+
+
+    
+
+    
+
+    
+
+    
+    
+      
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-7QPNK9FQQL"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-7QPNK9FQQL');
+</script>
+
+    
+        
+    
+<div class="scroll-buttons">
+  <button id="scrollToTop" aria-label="滚动到顶部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 19V5M5 12l7-7 7 7"/>
+    </svg>
+  </button>
+  <button id="scrollToBottom" aria-label="滚动到底部">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 5v14M5 12l7 7 7-7"/>
+    </svg>
+  </button>
+</div>
+
+<style>
+.scroll-buttons {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;  
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;  
+  z-index: 99;
+}
+
+.scroll-buttons button {
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  border: none;
+  background-color: #28a745;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  transform: translateY(10px);
+  box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4);
+}
+
+.scroll-buttons button:hover {
+  background-color: #218838;
+  transform: translateY(0) scale(1.05);
+  box-shadow: 0 4px 15px rgba(40, 167, 69, 0.5);
+}
+
+.scroll-buttons button.visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+ 
+@media (max-width: 768px) {
+  .scroll-buttons {
+    right: 1rem !important;
+    bottom: 1rem !important;  
+    gap: 0.5rem !important;
+  }
+
+  .scroll-buttons button {
+    width: 2.2rem !important;
+    height: 2.2rem !important;
+  }
+}
+</style>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const scrollToTopBtn = document.getElementById('scrollToTop');
+  const scrollToBottomBtn = document.getElementById('scrollToBottom');
+
+  const handleScroll = () => {
+    scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
+    const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
+    scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+  };
+
+  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
+  const scrollToBottom = () => window.scrollTo({
+    top: document.documentElement.scrollHeight || document.body.scrollHeight,
+    behavior: 'smooth'
+  });
+
+  window.addEventListener('scroll', handleScroll);
+  scrollToTopBtn.addEventListener('click', scrollToTop);
+  scrollToBottomBtn.addEventListener('click', scrollToBottom);
+  handleScroll();
+});
+</script>
+
+    
+    <script>
+  window.difyChatbotConfig = {
+    token: 'h2hkg50dPRmb7SaR',
+    inputs: {},
+    systemVariables: {},
+    userVariables: {
+      avatar_url: 'https://cdn.jsdelivr.net/gh/dgdghub/dg-pic@main/blog/20250829110345042.png',
+      name: 'AiEDU',
+    },
+  }
+</script>
+<script src="https://udify.app/embed.min.js" id="h2hkg50dPRmb7SaR" defer></script>
+
+<style>
+   
+  #dify-chatbot-bubble-button {
+    background-color: #28a745 !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;  
+    z-index: 9999 !important;
+    width: 2.5rem !important;  
+    height: 2.5rem !important;  
+    box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+   
+  #dify-chatbot-bubble-window {
+    width: 24rem !important;
+    height: 70vh !important;
+    max-height: 600px !important;
+    min-height: 400px !important;
+    position: fixed !important;
+    bottom: 1rem !important;  
+    right: 1rem !important;
+    top: auto !important;
+    left: auto !important;
+    z-index: 9998 !important;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.2) !important;
+    transform: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+  }
+
+   
+  @media (max-width: 768px) {
+    #dify-chatbot-bubble-window {
+      width: calc(100vw - 2rem) !important;
+      height: 65vh !important;
+      bottom: 1rem !important;  
+      right: 1rem !important;
+      left: 1rem !important;
+    }
+
+    #dify-chatbot-bubble-button {
+      width: 2.2rem !important;
+      height: 2.2rem !important;
+      bottom: 1rem !important;
+      right: 1rem !important;
+    }
+  }
+
+   
+  @supports (padding: env(safe-area-inset-bottom)) {
+    #dify-chatbot-bubble-button {
+      bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    #dify-chatbot-bubble-window {
+      bottom: calc(6.1rem + env(safe-area-inset-bottom)) !important;
+    }
+
+    @media (max-width: 768px) {
+      #dify-chatbot-bubble-button {
+        bottom: calc(1rem + env(safe-area-inset-bottom)) !important;
+      }
+
+      #dify-chatbot-bubble-window {
+        bottom: calc(4.3rem + env(safe-area-inset-bottom)) !important;
+      }
+    }
+  }
+</style>
+
+
+    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js" integrity="sha256-/IFmi82bIhdYWctu0UddSlJqpnzWm7Vh2C4CM32wF/k=" crossorigin="anonymous"></script>
+    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js" integrity="sha256-mr7eJMX3VC3F7G32mk4oWp1C6a2tlMYxUdptfT7uKI8=" crossorigin="anonymous"></script>
+  </body>
+</html>

@@ -6,6 +6,49 @@
     <description>Recent content in Categories on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
+    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://googhub.nyc.mn/categories/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>DevOps</title>
+      <link>https://googhub.nyc.mn/categories/devops/</link>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/categories/devops/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>VPS</title>
+      <link>https://googhub.nyc.mn/categories/vps/</link>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/categories/vps/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>编程</title>
+      <link>https://googhub.nyc.mn/categories/%E7%BC%96%E7%A8%8B/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/categories/%E7%BC%96%E7%A8%8B/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>知识库</title>
+      <link>https://googhub.nyc.mn/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>AI</title>
+      <link>https://googhub.nyc.mn/categories/ai/</link>
+      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/categories/ai/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>IT</title>
+      <link>https://googhub.nyc.mn/categories/it/</link>
+      <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/categories/it/</guid>
+      <description></description>
+    </item>
   </channel>
 </rss>

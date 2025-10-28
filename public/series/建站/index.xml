@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>建站 on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+    <link>https://googhub.nyc.mn/series/%E5%BB%BA%E7%AB%99/</link>
+    <description>Recent content in 建站 on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
+    <generator>Hugo</generator>
+    <language>zh-Hans</language>
+    <lastBuildDate>Thu, 18 Sep 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="https://googhub.nyc.mn/series/%E5%BB%BA%E7%AB%99/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网</title>
+      <link>https://googhub.nyc.mn/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/</link>
+      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/</guid>
+      <description>&lt;p&gt;在构建企业级网站时，选择合适的无头 CMS（内容管理系统）至关重要。无头 CMS 使得内容管理与网站前端分离，提供更大的灵活性，同时与各种现代前端技术栈（如 React、Vue、Next.js）兼容。今天，我们将对比五款符合你需求的无头 CMS，它们都支持 Markdown 编辑，且是开源免费的解决方案。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>知识库 -文档 - 博客，技术选型完全指南</title>
+      <link>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;—— Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify 对比&lt;/p&gt;&#xA;&lt;p&gt;在IT团队搭建知识库、博客或文档站时，工具选型往往比内容写作更让人纠结。&#xA;有人想要自托管、完全可控；有人追求快速上线、免运维；有人需要强交互和版本管理。有人想要美观好看，颜值能打。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>如何在Hugo项目中加入数学公式的支持</title>
+      <link>https://googhub.nyc.mn/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/</link>
+      <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/</guid>
+      <description>&lt;h2 id=&#34;概要&#34;&gt;概要&lt;/h2&gt;&#xA;&lt;p&gt;本文是一篇在Hugo项目中引入数学公式支持的实操说明。&lt;/p&gt;</description>
+    </item>
+  </channel>
+</rss>
