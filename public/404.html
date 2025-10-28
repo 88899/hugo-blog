@@ -794,14 +794,11 @@
         
     
 <div class="scroll-buttons">
-  
   <button id="scrollToTop" aria-label="滚动到顶部">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 19V5M5 12l7-7 7 7"/>
     </svg>
   </button>
-
-  
   <button id="scrollToBottom" aria-label="滚动到底部">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 5v14M5 12l7 7 7-7"/>
@@ -812,12 +809,11 @@
 <style>
 .scroll-buttons {
   position: fixed;
-  right: 2rem;  
-   
-  bottom: calc(2rem + 3rem + 0.5rem);
+  right: 1.5rem;  
+  bottom: 6.8rem;  
   display: flex;
   flex-direction: column;
-  gap: 0.5rem;  
+  gap: 0.8rem;  
   z-index: 50;
 }
 
@@ -854,14 +850,14 @@
  
 @media (max-width: 768px) {
   .scroll-buttons {
-    right: 1rem;  
-     
-    bottom: calc(1rem + 2.5rem + 0.5rem);
+    right: 1.5rem !important;  
+    bottom: 5.8rem !important;  
+    gap: 0.8rem !important;
   }
 
   .scroll-buttons button {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.5rem !important;
+    height: 2.5rem !important;  
   }
 }
 </style>
@@ -892,7 +888,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     
     <script>
-  
   window.difyChatbotConfig = {
     token: 'h2hkg50dPRmb7SaR',
     inputs: {},
@@ -903,24 +898,21 @@ document.addEventListener('DOMContentLoaded', () => {
     },
   }
 </script>
-
-<script
-  src="https://udify.app/embed.min.js"
-  id="h2hkg50dPRmb7SaR"
-  defer>
-</script>
+<script src="https://udify.app/embed.min.js" id="h2hkg50dPRmb7SaR" defer></script>
 
 <style>
    
   #dify-chatbot-bubble-button {
     background-color: #28a745 !important;
     position: fixed !important;
-    bottom: 2rem !important;  
-    right: 2rem !important;  
+    bottom: 1.5rem !important;  
+    right: 1.5rem !important;  
     z-index: 9999 !important;
     width: 3rem !important;  
     height: 3rem !important;  
     box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
    
@@ -930,8 +922,8 @@ document.addEventListener('DOMContentLoaded', () => {
     max-height: 600px !important;
     min-height: 400px !important;
     position: fixed !important;
-    bottom: calc(2rem + 3rem + 0.5rem) !important;  
-    right: 2rem !important;  
+    bottom: 8.3rem !important;  
+    right: 1.5rem !important;  
     top: auto !important;
     left: auto !important;
     z-index: 9998 !important;
@@ -945,38 +937,38 @@ document.addEventListener('DOMContentLoaded', () => {
    
   @media (max-width: 768px) {
     #dify-chatbot-bubble-window {
-      width: calc(100vw - 2rem) !important;  
+      width: calc(100vw - 3rem) !important;  
       height: 65vh !important;
-      bottom: calc(1rem + 2.5rem + 0.5rem) !important;  
-      right: 1rem !important;  
-      left: 1rem !important;
+      bottom: 7.3rem !important;  
+      right: 1.5rem !important;  
+      left: 1.5rem !important;
     }
 
     #dify-chatbot-bubble-button {
-      bottom: 1rem !important;  
-      right: 1rem !important;  
       width: 2.5rem !important;  
       height: 2.5rem !important;  
+      bottom: 1.5rem !important;
+      right: 1.5rem !important;  
     }
   }
 
    
   @supports (padding: env(safe-area-inset-bottom)) {
     #dify-chatbot-bubble-button {
-      bottom: calc(2rem + env(safe-area-inset-bottom)) !important;  
+      bottom: calc(1.5rem + env(safe-area-inset-bottom)) !important;
     }
 
     #dify-chatbot-bubble-window {
-      bottom: calc(2rem + 3rem + 0.5rem + env(safe-area-inset-bottom)) !important;  
+      bottom: calc(8.3rem + env(safe-area-inset-bottom)) !important;
     }
 
     @media (max-width: 768px) {
       #dify-chatbot-bubble-button {
-        bottom: calc(1rem + env(safe-area-inset-bottom)) !important;  
+        bottom: calc(1.5rem + env(safe-area-inset-bottom)) !important;
       }
 
       #dify-chatbot-bubble-window {
-        bottom: calc(1rem + 2.5rem + 0.5rem + env(safe-area-inset-bottom)) !important;  
+        bottom: calc(7.3rem + env(safe-area-inset-bottom)) !important;
       }
     }
   }

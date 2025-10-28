@@ -1,5 +1,4 @@
 <script>
-  // Dify 聊天窗口配置
   window.difyChatbotConfig = {
     token: 'h2hkg50dPRmb7SaR',
     inputs: {},
@@ -10,24 +9,21 @@
     },
   }
 </script>
-<!-- 加载 Dify 嵌入脚本 -->
-<script
-  src="https://udify.app/embed.min.js"
-  id="h2hkg50dPRmb7SaR"
-  defer>
-</script>
-<!-- 优化后的固定定位样式 -->
+<script src="https://udify.app/embed.min.js" id="h2hkg50dPRmb7SaR" defer></script>
+
 <style>
-  /* 聊天按钮（与滚动按钮统一样式+位置） */
+  /* 聊天按钮（强制与滚动按钮对齐） */
   #dify-chatbot-bubble-button {
     background-color: #28a745 !important;
     position: fixed !important;
-    bottom: 2rem !important; /* 垂直基准位置（PC端） */
-    right: 2rem !important; /* 与滚动按钮水平对齐（PC端） */
+    bottom: 1.5rem !important; /* 垂直基准（PC/移动端统一） */
+    right: 1.5rem !important; /* 水平位置：与滚动按钮完全一致 */
     z-index: 9999 !important;
-    width: 3rem !important; /* 大小一致 */
-    height: 3rem !important; /* 大小一致 */
+    width: 3rem !important; /* 大小统一 */
+    height: 3rem !important; /* 大小统一 */
     box-shadow: 0 3px 12px rgba(40, 167, 69, 0.4) !important;
+    margin: 0 !important;
+    padding: 0 !important;
   }
 
   /* 聊天窗口（PC端） */
@@ -37,8 +33,8 @@
     max-height: 600px !important;
     min-height: 400px !important;
     position: fixed !important;
-    bottom: calc(2rem + 3rem + 0.5rem) !important; /* 与滚动按钮同基准 */
-    right: 2rem !important; /* 水平对齐 */
+    bottom: 8.3rem !important; /* 滚动按钮底部+滚动按钮总高度+间隔 */
+    right: 1.5rem !important; /* 水平对齐 */
     top: auto !important;
     left: auto !important;
     z-index: 9998 !important;
@@ -49,41 +45,41 @@
     background-color: rgba(255, 255, 255, 0.9) !important;
   }
 
-  /* 移动端响应式（与滚动按钮完全对齐） */
+  /* 移动端响应式（彻底解决重合+对齐） */
   @media (max-width: 768px) {
     #dify-chatbot-bubble-window {
-      width: calc(100vw - 2rem) !important; /* 适配1rem左右边距 */
+      width: calc(100vw - 3rem) !important; /* 适配1.5rem左右边距 */
       height: 65vh !important;
-      bottom: calc(1rem + 2.5rem + 0.5rem) !important; /* 与滚动按钮同基准 */
-      right: 1rem !important; /* 水平对齐 */
-      left: 1rem !important;
+      bottom: 7.3rem !important; /* 滚动按钮底部+滚动按钮总高度+间隔 */
+      right: 1.5rem !important; /* 与滚动按钮同一水平位置 */
+      left: 1.5rem !important;
     }
 
     #dify-chatbot-bubble-button {
-      bottom: 1rem !important; /* 垂直基准位置（移动端） */
-      right: 1rem !important; /* 与滚动按钮水平对齐（移动端） */
-      width: 2.5rem !important; /* 大小一致 */
-      height: 2.5rem !important; /* 大小一致 */
+      width: 2.5rem !important; /* 与滚动按钮大小一致 */
+      height: 2.5rem !important; /* 与滚动按钮大小一致 */
+      bottom: 1.5rem !important;
+      right: 1.5rem !important; /* 强制水平对齐，无偏移 */
     }
   }
 
-  /* 安全区域适配（不破坏间隔） */
+  /* 安全区域适配（不破坏对齐和间隔） */
   @supports (padding: env(safe-area-inset-bottom)) {
     #dify-chatbot-bubble-button {
-      bottom: calc(2rem + env(safe-area-inset-bottom)) !important; /* PC端 */
+      bottom: calc(1.5rem + env(safe-area-inset-bottom)) !important;
     }
 
     #dify-chatbot-bubble-window {
-      bottom: calc(2rem + 3rem + 0.5rem + env(safe-area-inset-bottom)) !important; /* PC端 */
+      bottom: calc(8.3rem + env(safe-area-inset-bottom)) !important;
     }
 
     @media (max-width: 768px) {
       #dify-chatbot-bubble-button {
-        bottom: calc(1rem + env(safe-area-inset-bottom)) !important; /* 移动端 */
+        bottom: calc(1.5rem + env(safe-area-inset-bottom)) !important;
       }
 
       #dify-chatbot-bubble-window {
-        bottom: calc(1rem + 2.5rem + 0.5rem + env(safe-area-inset-bottom)) !important; /* 移动端 */
+        bottom: calc(7.3rem + env(safe-area-inset-bottom)) !important;
       }
     }
   }

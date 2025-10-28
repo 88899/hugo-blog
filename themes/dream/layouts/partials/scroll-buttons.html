@@ -1,13 +1,10 @@
 <!-- 滚动按钮 -->
 <div class="scroll-buttons">
-  <!-- 向上箭头 - 滚动到顶部 -->
   <button id="scrollToTop" aria-label="滚动到顶部">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 19V5M5 12l7-7 7 7"/>
     </svg>
   </button>
-
-  <!-- 向下箭头 - 滚动到底部 -->
   <button id="scrollToBottom" aria-label="滚动到底部">
     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M12 5v14M5 12l7 7 7-7"/>
@@ -18,12 +15,11 @@
 <style>
 .scroll-buttons {
   position: fixed;
-  right: 2rem; /* 与chat按钮水平对齐（PC端） */
-  /* 垂直位置：chat按钮底部 + chat高度 + 统一间隔0.5rem */
-  bottom: calc(2rem + 3rem + 0.5rem);
+  right: 1.5rem; /* PC/移动端统一水平基准（避免偏移） */
+  bottom: 6.8rem; /* 垂直位置：chat按钮底部+chat高度+1rem间隔（PC端） */
   display: flex;
   flex-direction: column;
-  gap: 0.5rem; /* 按钮内部间隔，与外部间隔一致 */
+  gap: 0.8rem; /* 内部按钮间隔，与外部间隔统一 */
   z-index: 50;
 }
 
@@ -57,17 +53,17 @@
   transform: translateY(0);
 }
 
-/* 响应式调整（与chat按钮保持一致） */
+/* 移动端响应式（强制对齐+无重合） */
 @media (max-width: 768px) {
   .scroll-buttons {
-    right: 1rem; /* 与chat按钮水平对齐（移动端） */
-    /* 移动端垂直位置：chat底部 + chat高度 + 统一间隔0.5rem */
-    bottom: calc(1rem + 2.5rem + 0.5rem);
+    right: 1.5rem !important; /* 与chat按钮完全一致的水平位置 */
+    bottom: 5.8rem !important; /* 垂直位置：chat底部(1.5rem)+chat高度(2.5rem)+1.8rem间隔 */
+    gap: 0.8rem !important;
   }
 
   .scroll-buttons button {
-    width: 2.5rem;
-    height: 2.5rem;
+    width: 2.5rem !important;
+    height: 2.5rem !important; /* 与chat按钮大小完全一致 */
   }
 }
 </style>
