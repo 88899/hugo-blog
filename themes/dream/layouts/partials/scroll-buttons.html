@@ -18,8 +18,10 @@
 <style>
 .scroll-buttons {
   position: fixed;
-  right: 2rem;
-  bottom: 2rem;
+  /* 关键修改：底部居中定位 */
+  left: 50%;         /* 水平方向定位到中间 */
+  bottom: 2rem;      /* 距离底部的距离 */
+  transform: translateX(-50%);  /* 水平居中微调（抵消left:50%的偏移） */
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -56,11 +58,12 @@
   transform: translateY(0);
 }
 
-/* 响应式调整 */
+/* 响应式调整（保持底部居中） */
 @media (max-width: 768px) {
   .scroll-buttons {
-    right: 1rem;
-    bottom: 1rem;
+    left: 50%;         /* 移动端同样水平居中 */
+    bottom: 1rem;      /* 移动端距离底部更近一些 */
+    transform: translateX(-50%);
   }
 
   .scroll-buttons button {

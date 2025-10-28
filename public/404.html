@@ -820,14 +820,14 @@
 <style>
    
   #dify-chatbot-bubble-button {
-    background-color: #1C64F2 !important;
+    background-color: #28a745 !important;
     position: fixed !important;
     bottom: 30px !important;
     right: 30px !important;
     z-index: 9999 !important;
     width: 60px !important;
     height: 60px !important;
-    box-shadow: 0 4px 12px rgba(28, 100, 242, 0.3) !important;
+    box-shadow: 0 4px 12px rgba(40, 167, 69, 0.4) !important;
   }
 
    
@@ -909,8 +909,10 @@
 <style>
 .scroll-buttons {
   position: fixed;
-  right: 2rem;
-  bottom: 2rem;
+   
+  left: 50%;          
+  bottom: 2rem;       
+  transform: translateX(-50%);   
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
@@ -950,8 +952,9 @@
  
 @media (max-width: 768px) {
   .scroll-buttons {
-    right: 1rem;
-    bottom: 1rem;
+    left: 50%;          
+    bottom: 1rem;       
+    transform: translateX(-50%);
   }
 
   .scroll-buttons button {
