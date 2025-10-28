@@ -145,7 +145,7 @@ jsDateFormat = "yyyy年MM月dd日"
 ID = "G-7QPNK9FQQL"
 
 [services.disqus]
-shortname = "aiedu-1"
+# shortname = "aiedu-1"
 
 # 多个内容目录映射
 [module]
