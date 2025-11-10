@@ -3,12 +3,12 @@
 <style>
   /* 仅保留布局和间距的样式，核心视觉样式由 HTML 类直接控制 */
   .category-nav-container {
-    @apply hidden md:flex items-end justify-center gap-2 px-4 !important;
+    @apply flex items-end justify-center gap-2 px-4 !important; /* 确保是flex布局 */
     height: 100%;
   }
 </style>
 
-{{/* 桌面端分类导航：浅绿色背景+最多6个分类 */}}
+{{/* 桌面端分类导航：保留所有能生效的强样式 */}}
 <div class="category-nav-container">
   {{ range $categories }}
   <a
@@ -26,33 +26,4 @@
   {{ end }}
 </div>
 
-{{/* 移动端分类导航：同步样式+修复变量重复声明问题 */}}
-<script>
-document.addEventListener('DOMContentLoaded', function() {
-  const mobileMenu = document.querySelector('.dropdown-content.menu');
-  if (mobileMenu) {
-    const divider = document.createElement('li');
-    divider.innerHTML = '<hr class="my-1 border-base-content/20">';
-    mobileMenu.appendChild(divider);
-
-    {{ range $categories }}
-    // 使用 var 代替 const，避免重复声明报错
-    var categoryItem = document.createElement('li');
-    categoryItem.innerHTML = `
-      <a
-        href="{{ .Page.RelPermalink }}"
-        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-        style="
-          font-size: 1rem !important;
-          border-radius: 9999px !important;
-        "
-      >
-        {{ .Name | upper }}
-      </a>
-    `;
-    mobileMenu.appendChild(categoryItem);
-    {{ end }}
-  }
-});
-</script>
 {{ end }}

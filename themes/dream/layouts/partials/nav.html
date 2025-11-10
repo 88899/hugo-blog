@@ -1,3 +1,13 @@
+<style>
+  /* 移动端隐藏分类导航 */
+  @media (max-width: 767px) {
+    #pc-category-nav {
+      display: none !important;
+    }
+  }
+</style>
+
+
 {{/* 三栏布局：左Logo + 中分类 + 右原有菜单 */}}
 {{ if site.Params.enableCategoryNav | default false }}
   {{ if site.Params.stickyNav }}
@@ -35,8 +45,10 @@
           {{ end }}
         </section>
 
-        {{/* 中间：分类导航 */}}
-        {{ partial "nav-category-extension.html" . }}
+        {{/* 中间：分类导航（仅PC端显示） */}}
+        <div id="pc-category-nav" class="flex items-center justify-center flex-1 px-4">
+          {{ partial "nav-category-extension.html" . }}
+        </div>
 
         {{/* 右侧：原有菜单区域 */}}
         <div class="flex items-center">
