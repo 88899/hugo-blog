@@ -56,6 +56,7 @@ textPreLoad   = "AiEDU"
 
 # 配置每页记录数
 paginate = 12
+enableCategoryNav = true
 
 # 当亮色时候，选择翡翠绿配色
 lightTheme = "emerald"
