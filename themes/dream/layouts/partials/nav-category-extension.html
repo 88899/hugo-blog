@@ -1,4 +1,26 @@
-{{ $categories := site.Taxonomies.categories.ByCount | first 6 }}
+{{/* 1. 获取所有分类，并按“英文在前、中文在后”排序 */}}
+{{ $allCategories := site.Taxonomies.categories.ByCount }}
+{{ $englishCats := slice }}
+{{ $chineseCats := slice }}
+
+{{/* 2. 区分英文和中文分类，分别存入对应数组 */}}
+{{ range $allCategories }}
+  {{ $name := .Name }}
+  {{/* 正则判断：仅含英文字母（大小写）的视为英文分类 */}}
+  {{ if findRE "^[A-Za-z]+$" $name }}
+    {{ $englishCats = $englishCats | append . }}
+  {{ else }}
+    {{ $chineseCats = $chineseCats | append . }}
+  {{ end }}
+{{ end }}
+
+{{/* 3. 内部排序：英文按字母升序，中文按名称拼音逻辑排序（适配中文习惯） */}}
+{{ $sortedEnglish := sort $englishCats "Name" "asc" }}
+{{ $sortedChinese := sort $chineseCats "Name" "asc" }}
+
+{{/* 4. 拼接排序结果（英文在前、中文在后），取前6个 */}}
+{{ $categories := $sortedEnglish | append $sortedChinese | first 6 }}
+
 {{ if $categories }}
 <style>
   /* 仅保留布局和间距的样式，核心视觉样式由 HTML 类直接控制 */
