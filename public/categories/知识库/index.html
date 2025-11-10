@@ -295,19 +295,6 @@
 <div class="category-nav-container">
   
   <a
-    href="/categories/vps/"
-    class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="vps"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    VPS
-  </a>
-  
-  <a
     href="/categories/%E7%BC%96%E7%A8%8B/"
     class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
     title="编程"
@@ -321,16 +308,16 @@
   </a>
   
   <a
-    href="/categories/devops/"
+    href="/categories/vps/"
     class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="devops"
+    title="vps"
     style="
       font-size: 1rem !important;
       margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
       border-radius: 9999px !important; /* 强制圆形 */
     "
   >
-    DEVOPS
+    VPS
   </a>
   
   <a
@@ -344,6 +331,19 @@
     "
   >
     AI
+  </a>
+  
+  <a
+    href="/categories/devops/"
+    class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
+    title="devops"
+    style="
+      font-size: 1rem !important;
+      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
+      border-radius: 9999px !important; /* 强制圆形 */
+    "
+  >
+    DEVOPS
   </a>
   
   <a
@@ -387,21 +387,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryItem = document.createElement('li');
     categoryItem.innerHTML = `
       <a
-        href="\/categories\/vps\/"
-        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-        style="
-          font-size: 1rem !important;
-          border-radius: 9999px !important;
-        "
-      >
-        VPS
-      </a>
-    `;
-    mobileMenu.appendChild(categoryItem);
-    
-    const categoryItem = document.createElement('li');
-    categoryItem.innerHTML = `
-      <a
         href="\/categories\/%E7%BC%96%E7%A8%8B\/"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
         style="
@@ -417,14 +402,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryItem = document.createElement('li');
     categoryItem.innerHTML = `
       <a
-        href="\/categories\/devops\/"
+        href="\/categories\/vps\/"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
         style="
           font-size: 1rem !important;
           border-radius: 9999px !important;
         "
       >
-        DEVOPS
+        VPS
       </a>
     `;
     mobileMenu.appendChild(categoryItem);
@@ -440,6 +425,21 @@ document.addEventListener('DOMContentLoaded', function() {
         "
       >
         AI
+      </a>
+    `;
+    mobileMenu.appendChild(categoryItem);
+    
+    const categoryItem = document.createElement('li');
+    categoryItem.innerHTML = `
+      <a
+        href="\/categories\/devops\/"
+        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
+        style="
+          font-size: 1rem !important;
+          border-radius: 9999px !important;
+        "
+      >
+        DEVOPS
       </a>
     `;
     mobileMenu.appendChild(categoryItem);
@@ -772,7 +772,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
   <div class="md:basis-[200px] lg:basis-[300px] p-4 prose dark:prose-invert">
     <h1 class="text-2xl">知识库</h1>
-    <p class="text-sm">2篇文章</p>
+    <p class="text-sm">3篇文章</p>
     <div class="flex flex-wrap gap-4 mt-6">
       
 
@@ -823,6 +823,60 @@ document.addEventListener('DOMContentLoaded', function() {
 
     
       <div class="dream-grid">
+        
+          <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
+            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/langgraph-%E5%AE%9E%E6%88%983-%E6%AD%A5%E6%90%AD%E5%BB%BA-agent-%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E6%89%8B%E6%90%93%E7%97%9B%E8%8B%A6/">
+  
+  <figure>
+    
+    <img src="https://s3.aiedu.qzz.io/website/2025/11/c8dbe35077ef88d2a542df4f656488ee.png" alt="LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦" />
+    
+  </figure>
+  
+
+  <div class="card-body">
+    <h2 class="card-title">LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦</h2>
+
+    <p class="date text-base-content/60">
+    
+      <span data-format="luxon">2025-10-25T00:00:00Z</span>
+    
+    </p>
+
+    本文面向 AI 开发初学者与刚入门工程师，聚焦复杂 Agent 开发的核心痛点 —— 手搓代码时流程…
+
+    
+    <div class="card-actions justify-between items-center mt-4">
+      
+        <div class="flex items-center">
+  
+  <div class="avatar mr-1">
+    <div class="w-8 rounded-full">
+      <img class="my-0!" src="https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png" alt="Sherry" />
+    </div>
+  </div>
+  
+
+  <span itemprop="author" itemscope itemtype="https://schema.org/Person">
+  
+    
+      <span itemprop="name">Sherry</span>
+    
+  
+  </span>
+</div>
+
+      
+
+      <div class="flex items-center">
+        <ion-icon name="time" class="mr-1"></ion-icon>
+        <span>14分钟阅读</span>
+      </div>
+    </div>
+  </div>
+</a>
+
+          </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
             <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">

@@ -6,7 +6,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南 | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+    <title>AI 研发全栈技术架构设计实战指南 | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
 
     
   
@@ -14,46 +14,47 @@
   
 
 
-<link rel="canonical" href="https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/" />
+<link rel="canonical" href="https://googhub.nyc.mn/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/" />
 
 
 
-<meta name="author" content="AiEDU" />
-<meta name="description" content="在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教你定位占用源、分析原因，并安全清理，全程附具体操作指令和效果验证，新手也能跟着做。" />
+<meta name="author" content="Sherry" />
+<meta name="description" content="本文聚焦 AI 研发全栈技术架构设计，从底层算力硬件、高性能网络与分层存储的基础设施搭建，到中间层虚拟化、混合云与算力调度的资源优化，再到核心层大模型训练、微调和推理的技术实现，最终延伸至上层场景化应用落地与工程化运维。整合可直接复用的配置模板、实操脚本与选型决策方案，助力 AI 开发者快速搭建稳定高效的研发环境，轻松掌握全流程架构设计要点" />
 
 
-<meta name="keywords" content="技术">
+<meta name="keywords" content="技术,经验">
 
 
 
 <meta name="generator" content="Hugo 0.148.2">
 
 
-<meta property="og:url" content="https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/">
+<meta property="og:url" content="https://googhub.nyc.mn/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/">
   <meta property="og:site_name" content="编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源">
-  <meta property="og:title" content="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南">
-  <meta property="og:description" content="在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教你定位占用源、分析原因，并安全清理，全程附具体操作指令和效果验证，新手也能跟着做。">
+  <meta property="og:title" content="AI 研发全栈技术架构设计实战指南">
+  <meta property="og:description" content="本文聚焦 AI 研发全栈技术架构设计，从底层算力硬件、高性能网络与分层存储的基础设施搭建，到中间层虚拟化、混合云与算力调度的资源优化，再到核心层大模型训练、微调和推理的技术实现，最终延伸至上层场景化应用落地与工程化运维。整合可直接复用的配置模板、实操脚本与选型决策方案，助力 AI 开发者快速搭建稳定高效的研发环境，轻松掌握全流程架构设计要点">
   <meta property="og:locale" content="zh_Hans">
   <meta property="og:type" content="article">
     <meta property="article:section" content="posts">
-    <meta property="article:published_time" content="2025-10-10T00:00:00+00:00">
-    <meta property="article:modified_time" content="2025-10-10T00:00:00+00:00">
+    <meta property="article:published_time" content="2025-11-03T00:00:00+00:00">
+    <meta property="article:modified_time" content="2025-11-03T00:00:00+00:00">
     <meta property="article:tag" content="技术">
+    <meta property="article:tag" content="经验">
     <meta property="og:image" content="https://googhub.nyc.mn/img/global-background.jpg">
-      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/">
-      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/">
-      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
-      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/">
-      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/">
-      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/ai-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8D%95%E6%9C%BA%E5%8D%95%E5%8D%A1%E5%BE%AE%E8%B0%83-unsloth-%E5%AE%9E%E6%88%98/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2025/langgraph-%E5%AE%9E%E6%88%983-%E6%AD%A5%E6%90%AD%E5%BB%BA-agent-%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E6%89%8B%E6%90%93%E7%97%9B%E8%8B%A6/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2024/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2024/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/">
+      <meta property="og:see_also" content="https://googhub.nyc.mn/posts/2024/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/">
 
 
 
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:image" content="https://googhub.nyc.mn/img/global-background.jpg">
-  <meta name="twitter:title" content="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南">
-  <meta name="twitter:description" content="在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教你定位占用源、分析原因，并安全清理，全程附具体操作指令和效果验证，新手也能跟着做。">
+  <meta name="twitter:title" content="AI 研发全栈技术架构设计实战指南">
+  <meta name="twitter:description" content="本文聚焦 AI 研发全栈技术架构设计，从底层算力硬件、高性能网络与分层存储的基础设施搭建，到中间层虚拟化、混合云与算力调度的资源优化，再到核心层大模型训练、微调和推理的技术实现，最终延伸至上层场景化应用落地与工程化运维。整合可直接复用的配置模板、实操脚本与选型决策方案，助力 AI 开发者快速搭建稳定高效的研发环境，轻松掌握全流程架构设计要点">
       <meta name="twitter:site" content="@dgdghub">
 
 
@@ -808,27 +809,27 @@ document.addEventListener('DOMContentLoaded', function() {
   <div class="lg:col-span-2">
     <article class="mx-auto prose prose-quoteless dark:prose-invert" id="dream-single-post-main" itemscope itemtype="http://schema.org/Article">
       
-  <meta itemprop="name" content="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南">
-  <meta itemprop="description" content="在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教你定位占用源、分析原因，并安全清理，全程附具体操作指令和效果验证，新手也能跟着做。">
-  <meta itemprop="datePublished" content="2025-10-10T00:00:00+00:00">
-  <meta itemprop="dateModified" content="2025-10-10T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2004">
+  <meta itemprop="name" content="AI 研发全栈技术架构设计实战指南">
+  <meta itemprop="description" content="本文聚焦 AI 研发全栈技术架构设计，从底层算力硬件、高性能网络与分层存储的基础设施搭建，到中间层虚拟化、混合云与算力调度的资源优化，再到核心层大模型训练、微调和推理的技术实现，最终延伸至上层场景化应用落地与工程化运维。整合可直接复用的配置模板、实操脚本与选型决策方案，助力 AI 开发者快速搭建稳定高效的研发环境，轻松掌握全流程架构设计要点">
+  <meta itemprop="datePublished" content="2025-11-03T00:00:00+00:00">
+  <meta itemprop="dateModified" content="2025-11-03T00:00:00+00:00">
+  <meta itemprop="wordCount" content="5325">
   <meta itemprop="image" content="https://googhub.nyc.mn/img/global-background.jpg">
-  <meta itemprop="keywords" content="技术">
+  <meta itemprop="keywords" content="技术,经验">
 
       <header>
-        <h1 itemprop="headline">快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南</h1>
+        <h1 itemprop="headline">AI 研发全栈技术架构设计实战指南</h1>
         <p class="text-sm">
           
-            <span data-format="luxon">2025-10-10T00:00:00Z</span>
+            <span data-format="luxon">2025-11-03T00:00:00Z</span>
           
 
-          | <span>4分钟阅读</span>
+          | <span>11分钟阅读</span>
 
           
           | <span>更新于
             
-              <span data-format="luxon">2025-10-10T00:00:00Z</span>
+              <span data-format="luxon">2025-11-03T00:00:00Z</span>
             </span>
           
         </p>
@@ -840,7 +841,7 @@ document.addEventListener('DOMContentLoaded', function() {
   
   <div class="avatar mr-1">
     <div class="w-8 rounded-full">
-      <img class="my-0!" src="/img/personal/avatar.png" alt="AiEDU" />
+      <img class="my-0!" src="https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png" alt="Sherry" />
     </div>
   </div>
   
@@ -848,7 +849,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <span itemprop="author" itemscope itemtype="https://schema.org/Person">
   
     
-      <span itemprop="name">AiEDU</span>
+      <span itemprop="name">Sherry</span>
     
   
   </span>
@@ -874,19 +875,19 @@ document.addEventListener('DOMContentLoaded', function() {
     </a>
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://x.com/intent/post?text=%e5%bf%ab%e9%80%9f%e5%ae%9a%e4%bd%8d%e5%92%8c%e8%a7%a3%e5%86%b3Ubuntu%20%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%a3%81%e7%9b%98%e5%8d%a0%e7%94%a8%e9%97%ae%e9%a2%98%ef%bc%8c%e5%ae%8c%e6%95%b4%e6%8e%92%e6%9f%a5%e4%b8%8e%e6%b8%85%e7%90%86%e6%8c%87%e5%8d%97&amp;url=https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      href="https://x.com/intent/post?text=AI%20%e7%a0%94%e5%8f%91%e5%85%a8%e6%a0%88%e6%8a%80%e6%9c%af%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1%e5%ae%9e%e6%88%98%e6%8c%87%e5%8d%97&amp;url=https://googhub.nyc.mn/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
       title="Share on X">
       <ion-icon class="group-hover:text-primary-content" name="logo-x"></ion-icon>
     </a>
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://facebook.com/sharer/sharer.php?u=https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      href="https://facebook.com/sharer/sharer.php?u=https://googhub.nyc.mn/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
       title="Share on Facebook">
       <ion-icon class="group-hover:text-primary-content" name="logo-facebook"></ion-icon>
     </a>
   
     <a class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary"
-      href="https://wa.me/?text=%e5%bf%ab%e9%80%9f%e5%ae%9a%e4%bd%8d%e5%92%8c%e8%a7%a3%e5%86%b3Ubuntu%20%e6%9c%8d%e5%8a%a1%e5%99%a8%e7%a3%81%e7%9b%98%e5%8d%a0%e7%94%a8%e9%97%ae%e9%a2%98%ef%bc%8c%e5%ae%8c%e6%95%b4%e6%8e%92%e6%9f%a5%e4%b8%8e%e6%b8%85%e7%90%86%e6%8c%87%e5%8d%97%20https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
+      href="https://wa.me/?text=AI%20%e7%a0%94%e5%8f%91%e5%85%a8%e6%a0%88%e6%8a%80%e6%9c%af%e6%9e%b6%e6%9e%84%e8%ae%be%e8%ae%a1%e5%ae%9e%e6%88%98%e6%8c%87%e5%8d%97%20https://googhub.nyc.mn/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/" target="_blank" rel="noopener noreferrer"
       title="Share on WhatsApp">
       <ion-icon class="group-hover:text-primary-content" name="logo-whatsapp"></ion-icon>
     </a>
@@ -901,54 +902,96 @@ document.addEventListener('DOMContentLoaded', function() {
 
       <section id="dream-single-post-content" itemprop="articleBody">
         
-          <img class="w-full z-30" src="https://s3.aiedu.qzz.io/website/2025/10/e64657a7fbfd7fd80d9e38410c4f08e0.png" alt="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南" />
+          <img class="w-full z-30" src="https://s3.aiedu.qzz.io/website/2025/11/daf9aacd586ef77d3bc0c0f230bab3d3.png" alt="AI 研发全栈技术架构设计实战指南" />
         
 
-        <p>在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教你定位占用源、分析原因，并安全清理，全程附具体操作指令和效果验证，新手也能跟着做。</p>
-<h2 id="一发现问题磁盘空间告警">一、发现问题：磁盘空间告警</h2>
-<p>又收到了服务器监控告警：“根分区 <code>/</code> 使用率达 98%”，登录服务器后，首先需要确认磁盘占用的整体情况。</p>
-<h2 id="二第一步确认哪个分区被占满">二、第一步：确认哪个分区被占满</h2>
-<p>磁盘满了不一定是根分区，可能是 <code>/var</code>、<code>/home</code> 等其他分区，第一步必须明确目标。</p>
-<h3 id="操作指令">操作指令</h3>
+        <p>AI 研发的技术架构设计贯穿从底层基础设施到上层应用落地的全流程，其核心是实现 “算力、数据、算法” 的高效协同。本文将从<strong>底层算力设施→中间层调度与虚拟化→核心层模型训练 / 推理→上层应用落地</strong>四个维度，系统拆解 AI 研发的技术架构要点，整合硬件配置、网络优化、存储选型、资源调度等关键技术，形成可直接复用的设计方案，助力开发者快速搭建稳定、高效的 AI 研发环境。</p>
+<h2 id="第一部分-底层基础设施架构算力网络与存储基石">第一部分 底层基础设施架构：算力、网络与存储基石</h2>
+<p>底层基础设施是 AI 研发的 “物理底座”，直接决定了模型训练的速度、稳定性和成本。核心涵盖<strong>算力硬件配置、高性能网络架构、分层存储设计</strong>三大模块。</p>
+<h3 id="11-算力硬件架构gpu-与环境适配">1.1 算力硬件架构：GPU 与环境适配</h3>
+<h4 id="111-核心算力设备选型">1.1.1 核心算力设备选型</h4>
+<p>AI 研发的核心算力依赖 GPU，需根据任务类型（训练 / 推理）和模型规模选择适配的硬件：</p>
+<ul>
+<li><strong>大规模训练场景</strong>：优先选择 NVIDIA A100/H100 等高端 GPU，支持多卡互联（NVLink）和高带宽内存（HBM），单卡算力可达数百 TFLOPS，满足千亿参数大模型的并行计算需求；</li>
+<li><strong>中小规模训练 / 微调场景</strong>：选用 NVIDIA A30/A10 等中端 GPU，平衡算力与成本，适合实验室研发或中小企业场景；</li>
+<li><strong>推理部署场景</strong>：采用 NVIDIA T4/Triton 等推理专用 GPU，支持 INT8 量化，兼顾低功耗与高吞吐量，适配高并发推理需求。</li>
+</ul>
+<h4 id="112-gpu-与软件环境适配">1.1.2 GPU 与软件环境适配</h4>
+<p>GPU 的性能发挥依赖于 CUDA 环境的正确配置，不同 PyTorch 版本对应固定的 CUDA 版本范围，避免兼容性问题：</p>
+<table>
+  <thead>
+      <tr>
+          <th>PyTorch 版本</th>
+          <th>兼容 CUDA 版本</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>1.12.1</td>
+          <td>11.6、11.3、10.2</td>
+          <td>中小规模模型训练、推理部署，兼容性强</td>
+      </tr>
+      <tr>
+          <td>2.0+</td>
+          <td>11.7、11.8、12.0+</td>
+          <td>大规模训练，支持新 GPU 特性（如 H100 的 Tensor Cores 优化）</td>
+      </tr>
+  </tbody>
+</table>
+<p><strong>配置建议</strong>：通过<code>conda</code>创建独立环境，指定 PyTorch 与 CUDA 版本，例如：</p>
+<p>bash</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>df -h
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>conda install <span style="color:#8be9fd;font-style:italic">pytorch</span><span style="color:#ff79c6">==</span>1.12.1 <span style="color:#8be9fd;font-style:italic">torchvision</span><span style="color:#ff79c6">==</span>0.13.1 <span style="color:#8be9fd;font-style:italic">torchaudio</span><span style="color:#ff79c6">==</span>0.12.1 <span style="color:#8be9fd;font-style:italic">cudatoolkit</span><span style="color:#ff79c6">=</span>11.3 -c pytorch
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="示例">示例</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>Filesystem      Size  Used Avail Use% Mounted on
-</span></span><span style="display:flex;"><span>/dev/sda1        50G   48G  1.2G  98% /          # 根分区满了
-</span></span><span style="display:flex;"><span>/dev/sdb1       100G   30G   70G  30% /data
-</span></span><span style="display:flex;"><span>tmpfs           3.9G     0  3.9G   0% /dev/shm
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="分析">分析</h3>
-<p>从 <code>Use%</code> 列可见，根分区 <code>/</code> 使用率 98%，是需要排查的目标。</p>
-<h2 id="三第二步定位根分区下的大目录">三、第二步：定位根分区下的大目录</h2>
-<p>知道根分区满了后，需要找出 <code>/</code> 目录下哪些子目录占用空间最大，缩小排查范围。</p>
-<h3 id="操作指令-1">操作指令</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 查看根目录下一级目录的大小（忽略权限错误）</span>
-</span></span><span style="display:flex;"><span>sudo du -sh /* 2&gt;/dev/null
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="示例-1">示例</h3>
+</div><h3 id="12-高性能网络架构低延迟高带宽设计">1.2 高性能网络架构：低延迟高带宽设计</h3>
+<p>AI 分布式训练（尤其是多节点 GPU 集群）对网络的带宽、延迟、稳定性要求极高，核心网络技术包括 InfiniBand（IB）、ROCE 协议及 QoS 优化。</p>
+<h4 id="121-核心网络技术选型">1.2.1 核心网络技术选型</h4>
+<table>
+  <thead>
+      <tr>
+          <th>网络技术</th>
+          <th>核心特性</th>
+          <th>适用场景</th>
+          <th>成本等级</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>InfiniBand（IB）</td>
+          <td>专用 RDMA 协议，高带宽（200G/400G）、低延迟（≤10μs）、无丢包</td>
+          <td>超大规模集群（≥100 节点）、千亿参数模型训练</td>
+          <td>高</td>
+      </tr>
+      <tr>
+          <td>ROCE</td>
+          <td>基于以太网的 RDMA 协议，兼容现有以太网设备</td>
+          <td>中小规模集群（≤50 节点）、成本敏感场景</td>
+          <td>中</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="122-ib-无丢包机制原理">1.2.2 IB 无丢包机制原理</h4>
+<p>IB 的无丢包能力源于三重协同机制：</p>
+<ol>
+<li><strong>微观信用控制</strong>：发送方发送量严格≤接收方缓存容量，杜绝缓存溢出；</li>
+<li><strong>中观链路层管控</strong>：通过数据校验与重传机制，解决物理层传输错误；</li>
+<li><strong>宏观子网调度</strong>：子网管理器规划无阻塞传输路径，避免网络拥塞。</li>
+</ol>
+<h4 id="123-qos-优化roce-组网的稳定性保障">1.2.3 QoS 优化：ROCE 组网的稳定性保障</h4>
+<p>ROCE 基于以太网的 “尽力而为” 传输模式，需通过 QoS 技术提升稳定性，核心优化手段包括：</p>
+<ol>
+<li><strong>流量分类与标记</strong>：将 GPU 跨节点 RDMA 流量标记为高优先级（如 DSCP=EF），办公流量标记为低优先级，确保交换机优先处理训练数据；</li>
+<li><strong>优先级队列配置</strong>：为 RDMA 流量分配 PQ（优先级队列），保障延迟≤15μs，避免队列拥堵导致丢包；</li>
+<li><strong>带宽限制与拥塞控制</strong>：限制非关键流量带宽（如办公下载≤10Mbps），通过 WRED 算法提前丢弃低优先级数据包，防止缓存溢出。</li>
+</ol>
+<p><strong>实操配置模板（华为 CE 交换机）</strong>：</p>
+<p>bash</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -972,55 +1015,273 @@ document.addEventListener('DOMContentLoaded', function() {
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">19
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">20
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">21
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">22
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">23
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>8.0K    /bin
-</span></span><span style="display:flex;"><span>4.0K    /boot
-</span></span><span style="display:flex;"><span>2.7G    /data
-</span></span><span style="display:flex;"><span>4.0K    /dev
-</span></span><span style="display:flex;"><span>1.2G    /etc
-</span></span><span style="display:flex;"><span>5.3G    /home
-</span></span><span style="display:flex;"><span>0       /init
-</span></span><span style="display:flex;"><span>8.0M    /lib
-</span></span><span style="display:flex;"><span>4.0K    /lib64
-</span></span><span style="display:flex;"><span>16K     /lost+found
-</span></span><span style="display:flex;"><span>4.0K    /media
-</span></span><span style="display:flex;"><span>4.0K    /mnt
-</span></span><span style="display:flex;"><span>12G     /opt
-</span></span><span style="display:flex;"><span>du: cannot access &#39;/proc/1234/task/1234/fd/4&#39;: No such file or directory  # 可忽略
-</span></span><span style="display:flex;"><span>0       /proc
-</span></span><span style="display:flex;"><span>4.0K    /root
-</span></span><span style="display:flex;"><span>1.2M    /run
-</span></span><span style="display:flex;"><span>8.0K    /sbin
-</span></span><span style="display:flex;"><span>4.0K    /srv
-</span></span><span style="display:flex;"><span>0       /sys
-</span></span><span style="display:flex;"><span>4.0K    /tmp
-</span></span><span style="display:flex;"><span>28G     /var       # 重点！/var 目录占用 28G
-</span></span><span style="display:flex;"><span>4.5G    /usr
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 1. 流量分类标记</span>
+</span></span><span style="display:flex;"><span>traffic classifier RDMA_TRAFFIC operator or
+</span></span><span style="display:flex;"><span> <span style="color:#ff79c6">if</span>-match destination-port <span style="color:#bd93f9">4791</span>  <span style="color:#6272a4"># RDMA默认端口</span>
+</span></span><span style="display:flex;"><span>traffic behavior RDMA_BEHAVIOR
+</span></span><span style="display:flex;"><span> remark dscp ef
+</span></span><span style="display:flex;"><span>traffic policy RDMA_POLICY
+</span></span><span style="display:flex;"><span> classifier RDMA_TRAFFIC behavior RDMA_BEHAVIOR
+</span></span><span style="display:flex;"><span>interface Eth-Trunk1
+</span></span><span style="display:flex;"><span> traffic-policy RDMA_POLICY inbound
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 2. PQ队列配置</span>
+</span></span><span style="display:flex;"><span>qos queue-profile RDMA_QUEUE
+</span></span><span style="display:flex;"><span> queue <span style="color:#bd93f9">0</span> priority <span style="color:#bd93f9">7</span>  <span style="color:#6272a4"># 高优先级队列</span>
+</span></span><span style="display:flex;"><span> queue <span style="color:#bd93f9">1</span> priority <span style="color:#bd93f9">1</span>  <span style="color:#6272a4"># 低优先级队列</span>
+</span></span><span style="display:flex;"><span>interface Eth-Trunk1
+</span></span><span style="display:flex;"><span> qos apply queue-profile RDMA_QUEUE
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 3. 带宽限制</span>
+</span></span><span style="display:flex;"><span>qos car RDMA_CAR cir <span style="color:#bd93f9">102400</span>  <span style="color:#6272a4"># 限制非关键流量100Gbps</span>
+</span></span><span style="display:flex;"><span>interface Eth-Trunk1
+</span></span><span style="display:flex;"><span> qos car RDMA_CAR inbound
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="分析-1">分析</h3>
-<p><code>/var</code> 目录占用 28G，是根分区下最大的目录，下一步重点排查 <code>/var</code>。</p>
-<h2 id="四第三步深入大目录逐层排查">四、第三步：深入大目录，逐层排查</h2>
-<p>进入 <code>/var</code> 目录，继续用 <code>du</code> 命令找子目录中的 “空间大户”。</p>
-<h3 id="操作指令-2">操作指令</h3>
+</div><h4 id="124-滑动窗口数据传输的效率核心">1.2.4 滑动窗口：数据传输的效率核心</h4>
+<p>滑动窗口技术通过 “批量发送未确认数据 + 动态调整范围”，平衡传输可靠性与效率，广泛应用于 IB、ROCE、TCP 协议，其配置直接影响训练数据吞吐量。</p>
+<h5 id="核心参数与计算公式">核心参数与计算公式</h5>
+<p>最优窗口大小决定链路利用率，计算公式如下：</p>
+<p>plaintext</p>
+<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
+<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
+</span></code></pre></td>
+<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>最优窗口大小（字节）= 链路带宽（Gbps） × 往返延迟（ms） × 125000（换算系数：1Gbps=125MB/s）
+</span></span></code></pre></td></tr></table>
+</div>
+</div><p>示例：100Gbps 链路 + 10μs 往返延迟，最优窗口 = 100×0.01×125000=125,000 字节≈122KB（约 30 个 4KB 帧）。</p>
+<h5 id="不同协议的窗口特性ai-场景适配">不同协议的窗口特性（AI 场景适配）</h5>
+<table>
+  <thead>
+      <tr>
+          <th>协议</th>
+          <th>窗口单位</th>
+          <th>核心特点</th>
+          <th>配置建议</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>IB</td>
+          <td>帧</td>
+          <td>与信用控制绑定，无拥塞窗口，稳定性高</td>
+          <td>64-128 帧（大规模训练）</td>
+          <td>超大规模集群梯度同步</td>
+      </tr>
+      <tr>
+          <td>ROCE</td>
+          <td>帧</td>
+          <td>依赖 QoS 稳定窗口，易因丢包收缩</td>
+          <td>32-64 帧（中小规模训练）</td>
+          <td>成本敏感型训练集群</td>
+      </tr>
+      <tr>
+          <td>TCP</td>
+          <td>字节</td>
+          <td>拥塞窗口波动大，延迟高</td>
+          <td>仅用于控制信令传输</td>
+          <td>推理服务辅助通信</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="13-分层存储架构适配-ai-数据全生命周期">1.3 分层存储架构：适配 AI 数据全生命周期</h3>
+<p>AI 数据按访问频率可分为热数据、温数据、冷数据，需结合 RAID 技术与分布式存储，构建分层存储体系。</p>
+<h4 id="131-主流-raid-级别选型ai-场景适配">1.3.1 主流 RAID 级别选型（AI 场景适配）</h4>
+<table>
+  <thead>
+      <tr>
+          <th>RAID 级别</th>
+          <th>核心特性</th>
+          <th>容量利用率</th>
+          <th>性能表现</th>
+          <th>适用数据类型</th>
+          <th>硬件配置建议</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>RAID0</td>
+          <td>无冗余，条带化存储</td>
+          <td>100%</td>
+          <td>读写最优（无惩罚）</td>
+          <td>临时数据（batch 缓存）</td>
+          <td>2 块 NVMe SSD</td>
+      </tr>
+      <tr>
+          <td>RAID1</td>
+          <td>双副本镜像</td>
+          <td>50%</td>
+          <td>读快写一般</td>
+          <td>元数据（MDS 节点）</td>
+          <td>2 块 NVMe SSD</td>
+      </tr>
+      <tr>
+          <td>RAID5</td>
+          <td>单校验分布式存储</td>
+          <td>(n-1)/n</td>
+          <td>读优写中等（单惩罚）</td>
+          <td>温数据（历史数据集）</td>
+          <td>3-5 块 SATA SSD</td>
+      </tr>
+      <tr>
+          <td>RAID6</td>
+          <td>双校验分布式存储</td>
+          <td>(n-2)/n</td>
+          <td>读优写差（双惩罚）</td>
+          <td>冷数据（归档日志）</td>
+          <td>4-6 块 HDD</td>
+      </tr>
+      <tr>
+          <td>RAID10</td>
+          <td>镜像 + 条带化</td>
+          <td>50%</td>
+          <td>读写优秀（无校验惩罚）</td>
+          <td>热数据（训练模型参数）</td>
+          <td>4 块及以上 NVMe SSD</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="132-分层存储架构设计">1.3.2 分层存储架构设计</h4>
+<ol>
+<li><strong>热数据层</strong>：采用 RAID10 + 分布式块存储（如 Ceph），提供高 IOPS（≥10 万）和低延迟（≤1ms），适配当前训练的 batch 数据、模型参数；</li>
+<li><strong>温数据层</strong>：采用 RAID5 + 分布式文件存储（如 GlusterFS），平衡容量与性能，存储历史训练数据集、中等频率访问的模型文件；</li>
+<li><strong>冷数据层</strong>：采用 RAID6 + 对象存储（如 MinIO），高冗余低成本，存储归档训练日志、模型备份。</li>
+</ol>
+<h2 id="第二部分-中间层架构虚拟化混合云与算力调度">第二部分 中间层架构：虚拟化、混合云与算力调度</h2>
+<p>中间层架构的核心是实现 “资源弹性分配与高效利用”，涵盖虚拟化技术、混合云架构、算力调度平台三大模块，衔接底层硬件与上层模型任务。</p>
+<h3 id="21-虚拟化技术gpu-资源的灵活管控">2.1 虚拟化技术：GPU 资源的灵活管控</h3>
+<h4 id="211-核心虚拟化方案对比">2.1.1 核心虚拟化方案对比</h4>
+<table>
+  <thead>
+      <tr>
+          <th>方案</th>
+          <th>技术原理</th>
+          <th>隔离性</th>
+          <th>性能损耗</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>vGPU</td>
+          <td>物理 GPU 切片，分配虚拟 GPU 核心</td>
+          <td>高</td>
+          <td>≤5%</td>
+          <td>多用户共享 GPU（如实验室研发）</td>
+      </tr>
+      <tr>
+          <td>MIG</td>
+          <td>硬件级 GPU 分区，独立显存与算力</td>
+          <td>极高</td>
+          <td>0%</td>
+          <td>企业级多任务部署（训练 + 推理混合）</td>
+      </tr>
+      <tr>
+          <td>容器虚拟化</td>
+          <td>Docker+NVIDIA Container Toolkit</td>
+          <td>中</td>
+          <td>0%</td>
+          <td>单用户多任务（如多模型并行训练）</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="212-实操配置mig-模式">2.1.2 实操配置（MIG 模式）</h4>
+<p>以 NVIDIA A100 为例，拆分 GPU 为多个独立实例：</p>
+<p>bash</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 进入/var目录</span>
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> /var
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 查看/var下一级目录的大小</span>
-</span></span><span style="display:flex;"><span>sudo du -sh * 2&gt;/dev/null
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 1. 启用MIG模式</span>
+</span></span><span style="display:flex;"><span>nvidia-smi -mig <span style="color:#bd93f9">1</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 2. 创建MIG实例（10GB显存+200TFLOPS算力）</span>
+</span></span><span style="display:flex;"><span>nvidia-mig-parted -a <span style="color:#f1fa8c">&#34;all,19,10,0&#34;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 3. 验证实例</span>
+</span></span><span style="display:flex;"><span>nvidia-smi mig -lgi
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="输出示例">输出示例</h3>
+</div><h3 id="22-混合云架构算力弹性扩展">2.2 混合云架构：算力弹性扩展</h3>
+<h4 id="221-架构设计核心">2.2.1 架构设计核心</h4>
+<p>混合云架构整合<strong>私有云（本地 GPU 集群）+ 公有云（按需租用 GPU 资源）</strong>，实现 “稳定任务本地化，峰值任务云端扩容”：</p>
+<ol>
+<li><strong>私有云层</strong>：部署核心训练任务、敏感数据存储，保障数据安全与低延迟；</li>
+<li><strong>公有云层</strong>：对接 AWS/GCP/ 阿里云的 GPU 实例（如 p3.8xlarge），应对突发算力需求（如模型紧急微调、多版本测试）；</li>
+<li><strong>数据同步层</strong>：通过对象存储（如 S3 兼容存储）实现跨云数据同步，采用增量同步策略减少带宽消耗。</li>
+</ol>
+<h4 id="222-成本优化策略">2.2.2 成本优化策略</h4>
+<ul>
+<li>采用 “预留实例 + 按需实例” 组合：私有云预留核心算力，公有云按需租用峰值算力；</li>
+<li>利用公有云 Spot 实例：非核心任务（如数据预处理）使用 Spot 实例，成本降低 30%-50%。</li>
+</ul>
+<h3 id="23-算力调度平台资源的智能分配">2.3 算力调度平台：资源的智能分配</h3>
+<h4 id="231-核心功能模块">2.3.1 核心功能模块</h4>
+<ol>
+<li><strong>资源编排</strong>：基于 Kubernetes 构建，通过 GPU Operator 管理 GPU 资源，支持按任务优先级分配资源；</li>
+<li><strong>负载均衡</strong>：动态监控节点算力利用率，将任务调度至低负载节点，避免单点过载；</li>
+<li><strong>队列管理</strong>：设计任务队列机制，支持优先级排序（如训练任务＞推理任务＞数据预处理任务）；</li>
+<li><strong>弹性扩缩容</strong>：结合混合云架构，当私有云算力不足时，自动触发公有云实例扩容。</li>
+</ol>
+<h4 id="232-开源方案选型">2.3.2 开源方案选型</h4>
+<table>
+  <thead>
+      <tr>
+          <th>方案</th>
+          <th>核心优势</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Kubeflow</td>
+          <td>专为 ML 工作流设计，支持端到端任务调度</td>
+          <td>企业级 AI 研发平台</td>
+      </tr>
+      <tr>
+          <td>Volcano</td>
+          <td>高性能批处理调度，优化 GPU 资源利用率</td>
+          <td>大规模分布式训练</td>
+      </tr>
+      <tr>
+          <td>Ray</td>
+          <td>轻量级分布式框架，支持动态资源调度</td>
+          <td>中小规模模型训练 / 推理</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="第三部分-核心层架构大模型训练微调与推理">第三部分 核心层架构：大模型训练、微调与推理</h2>
+<p>核心层架构聚焦 AI 研发的核心任务，针对 “训练、微调、推理” 三个阶段的差异化需求，优化算力协同、数据处理与模型部署流程。</p>
+<h3 id="31-大模型训练架构">3.1 大模型训练架构</h3>
+<h4 id="311-并行计算策略">3.1.1 并行计算策略</h4>
+<p>大模型训练需突破单卡算力限制，采用多维并行策略：</p>
+<ol>
+<li><strong>数据并行</strong>：将训练数据拆分到多卡，每张卡独立计算梯度，再通过 AllReduce 同步梯度（依赖高带宽网络）；</li>
+<li><strong>模型并行</strong>：将模型层拆分到多卡，解决单卡显存不足问题（如千亿参数模型）；</li>
+<li><strong>张量并行</strong>：将模型张量拆分到多卡，并行计算矩阵运算，提升计算效率。</li>
+</ol>
+<h4 id="312-关键技术选型">3.1.2 关键技术选型</h4>
+<ul>
+<li><strong>并行框架</strong>：DeepSpeed、Megatron-LM，支持 3D 并行与 ZeRO 优化，降低显存占用；</li>
+<li><strong>梯度同步</strong>：NCCL（NVIDIA Collective Communications Library），优化多卡 / 多节点梯度传输；</li>
+<li>** checkpoint 管理 **：采用分布式存储定期保存训练进度，支持断点续训，避免数据丢失。</li>
+</ul>
+<h4 id="313-架构配置示例16-节点-a100-集群">3.1.3 架构配置示例（16 节点 A100 集群）</h4>
+<p>python</p>
+<p>运行</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1038,39 +1299,56 @@ document.addEventListener('DOMContentLoaded', function() {
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>4.0K    backups
-</span></span><span style="display:flex;"><span>2.1G    cache
-</span></span><span style="display:flex;"><span>4.0K    crash
-</span></span><span style="display:flex;"><span>4.0K    lib
-</span></span><span style="display:flex;"><span>25G     lib/docker  # 重点！/var/lib/docker 占用 25G
-</span></span><span style="display:flex;"><span>4.0K    local
-</span></span><span style="display:flex;"><span>0       lock
-</span></span><span style="display:flex;"><span>8.0K    log
-</span></span><span style="display:flex;"><span>4.0K    mail
-</span></span><span style="display:flex;"><span>4.0K    opt
-</span></span><span style="display:flex;"><span>0       run
-</span></span><span style="display:flex;"><span>4.0K    spool
-</span></span><span style="display:flex;"><span>4.0K    tmp
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#6272a4"># DeepSpeed并行配置（ds_config.json）</span>
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;train_batch_size&#34;</span>: <span style="color:#bd93f9">1024</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;gradient_accumulation_steps&#34;</span>: <span style="color:#bd93f9">8</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;fp16&#34;</span>: {<span style="color:#f1fa8c">&#34;enabled&#34;</span>: true},
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;zero_optimization&#34;</span>: {
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;stage&#34;</span>: <span style="color:#bd93f9">3</span>,
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;offload_optimizer&#34;</span>: {<span style="color:#f1fa8c">&#34;device&#34;</span>: <span style="color:#f1fa8c">&#34;cpu&#34;</span>},
+</span></span><span style="display:flex;"><span>    <span style="color:#f1fa8c">&#34;offload_param&#34;</span>: {<span style="color:#f1fa8c">&#34;device&#34;</span>: <span style="color:#f1fa8c">&#34;cpu&#34;</span>}
+</span></span><span style="display:flex;"><span>  },
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;communication_data_type&#34;</span>: <span style="color:#f1fa8c">&#34;fp16&#34;</span>,
+</span></span><span style="display:flex;"><span>  <span style="color:#f1fa8c">&#34;allreduce_communication_dim&#34;</span>: <span style="color:#bd93f9">16384</span>
+</span></span><span style="display:flex;"><span>}
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="分析-2">分析</h3>
-<p><code>/var/lib/docker</code> 占用 25G，而 Docker 的数据通常存在这里，继续排查 Docker 相关目录。</p>
-<h2 id="五第四步定位-docker-占用的具体位置">五、第四步：定位 Docker 占用的具体位置</h2>
-<p>Docker 的核心数据目录是 <code>overlay2</code>（默认存储驱动），查看其大小：</p>
-<h3 id="操作指令-3">操作指令</h3>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 查看/var/lib/docker下的子目录大小</span>
-</span></span><span style="display:flex;"><span><span style="color:#8be9fd;font-style:italic">cd</span> /var/lib/docker
-</span></span><span style="display:flex;"><span>sudo du -sh * 2&gt;/dev/null
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h3 id="输出示例-1">输出示例</h3>
+</div><h3 id="32-模型微调架构">3.2 模型微调架构</h3>
+<h4 id="321-主流微调方案对比">3.2.1 主流微调方案对比</h4>
+<table>
+  <thead>
+      <tr>
+          <th>方案</th>
+          <th>核心原理</th>
+          <th>显存占用</th>
+          <th>适用场景</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>Fine-tuning</td>
+          <td>全参数微调</td>
+          <td>高</td>
+          <td>小模型（≤1 亿参数）、数据充足场景</td>
+      </tr>
+      <tr>
+          <td>LoRA</td>
+          <td>低秩适配，仅训练新增矩阵</td>
+          <td>低（降低 70%+）</td>
+          <td>大模型（≥10 亿参数）、成本敏感场景</td>
+      </tr>
+      <tr>
+          <td>QLoRA</td>
+          <td>量化 + LoRA，模型量化为 4/8 位</td>
+          <td>极低</td>
+          <td>超大规模模型（≥百亿参数）、单机多卡场景</td>
+      </tr>
+  </tbody>
+</table>
+<h4 id="322-实操配置lora-微调-llama-2">3.2.2 实操配置（LoRA 微调 LLaMA 2）</h4>
+<p>python</p>
+<p>运行</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f"> 1
@@ -1085,126 +1363,46 @@ document.addEventListener('DOMContentLoaded', function() {
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">10
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">11
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">12
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">13
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">14
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">15
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">16
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>4.0K    builder
-</span></span><span style="display:flex;"><span>4.0K    buildkit
-</span></span><span style="display:flex;"><span>4.0K    containers
-</span></span><span style="display:flex;"><span>4.0K    image
-</span></span><span style="display:flex;"><span>4.0K    network
-</span></span><span style="display:flex;"><span>24G     overlay2  # 重点！overlay2 占用 24G
-</span></span><span style="display:flex;"><span>4.0K    plugins
-</span></span><span style="display:flex;"><span>4.0K    runtimes
-</span></span><span style="display:flex;"><span>4.0K    swarm
-</span></span><span style="display:flex;"><span>4.0K    tmp
-</span></span><span style="display:flex;"><span>4.0K    trust
-</span></span><span style="display:flex;"><span>4.0K    volumes
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-python" data-lang="python"><span style="display:flex;"><span><span style="color:#ff79c6">from</span> peft <span style="color:#ff79c6">import</span> LoraConfig, get_peft_model
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># LoRA配置</span>
+</span></span><span style="display:flex;"><span>lora_config <span style="color:#ff79c6">=</span> LoraConfig(
+</span></span><span style="display:flex;"><span>    r<span style="color:#ff79c6">=</span><span style="color:#bd93f9">8</span>,  <span style="color:#6272a4"># 低秩矩阵维度</span>
+</span></span><span style="display:flex;"><span>    lora_alpha<span style="color:#ff79c6">=</span><span style="color:#bd93f9">32</span>,  <span style="color:#6272a4"># 缩放因子</span>
+</span></span><span style="display:flex;"><span>    target_modules<span style="color:#ff79c6">=</span>[<span style="color:#f1fa8c">&#34;q_proj&#34;</span>, <span style="color:#f1fa8c">&#34;v_proj&#34;</span>],  <span style="color:#6272a4"># 目标模块</span>
+</span></span><span style="display:flex;"><span>    lora_dropout<span style="color:#ff79c6">=</span><span style="color:#bd93f9">0.05</span>,
+</span></span><span style="display:flex;"><span>    bias<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;none&#34;</span>,
+</span></span><span style="display:flex;"><span>    task_type<span style="color:#ff79c6">=</span><span style="color:#f1fa8c">&#34;CAUSAL_LM&#34;</span>
+</span></span><span style="display:flex;"><span>)
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 加载模型并应用LoRA</span>
+</span></span><span style="display:flex;"><span>model <span style="color:#ff79c6">=</span> AutoModelForCausalLM<span style="color:#ff79c6">.</span>from_pretrained(<span style="color:#f1fa8c">&#34;meta-llama/Llama-2-7b-hf&#34;</span>)
+</span></span><span style="display:flex;"><span>model <span style="color:#ff79c6">=</span> get_peft_model(model, lora_config)
+</span></span><span style="display:flex;"><span>model<span style="color:#ff79c6">.</span>print_trainable_parameters()  <span style="color:#6272a4"># 仅1%左右参数可训练</span>
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="分析-3">分析</h3>
-<p><code>overlay2</code> 目录占用 24G，这是 Docker 存储镜像和容器数据的核心目录（原因：冗余镜像、停止的容器、运行时数据等）。</p>
-<h2 id="六第五步分析占用原因并安全清理">六、第五步：分析占用原因并安全清理</h2>
-<h3 id="原因分析">原因分析</h3>
-<p><code>overlay2</code> 占用大的常见原因：</p>
-<ul>
-<li>积累了大量未使用的 Docker 镜像（如旧版本、构建失败的镜像）；</li>
-<li>停止的容器未删除（其读写层数据仍保留）；</li>
-<li>构建镜像时的缓存未清理；</li>
-<li>运行中的容器产生大量日志或临时文件。</li>
-</ul>
-<h3 id="实操清理步骤">实操清理步骤</h3>
-<h4 id="步骤-1查看-docker-可回收资源">步骤 1：查看 Docker 可回收资源</h4>
-<p>先通过 <code>docker system df</code> 确认哪些资源可以清理：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker system df
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="输出示例-2">输出示例</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">3
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">4
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>TYPE            TOTAL     ACTIVE    SIZE      RECLAIMABLE
-</span></span><span style="display:flex;"><span>Images          15        3         18G       15G (83%)  # 可回收15G
-</span></span><span style="display:flex;"><span>Containers      8         2         2.5G      2.0G (80%) # 可回收2.0G
-</span></span><span style="display:flex;"><span>Local Volumes   5         1         1.2G      1.0G (83%) # 可回收1.0G
-</span></span><span style="display:flex;"><span>Build Cache     20        0         3.5G      3.5G (100%)# 可回收3.5G
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="步骤-2一键清理所有未使用资源推荐">步骤 2：一键清理所有未使用资源（推荐）</h4>
-<p>用 Docker 自带的清理命令，安全删除未被使用的资源：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 清理未被任何容器使用的镜像、容器、网络、缓存（-a 包含未引用镜像，-f 强制清理）</span>
-</span></span><span style="display:flex;"><span>docker system prune -a -f
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="可选清理未使用的卷谨慎卷可能含关键数据">可选：清理未使用的卷（谨慎！卷可能含关键数据）</h4>
-<p>如果确认卷中无重要数据，可加上 <code>--volumes</code> 参数：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>docker system prune -a -f --volumes
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="步骤-3验证清理效果">步骤 3：验证清理效果</h4>
-<p>清理后再次查看 <code>overlay2</code> 大小：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo du -sh /var/lib/docker/overlay2
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="输出对比">输出对比</h4>
-<ul>
-<li>清理前：<code>24G /var/lib/docker/overlay2</code></li>
-<li>清理后：<code>5.2G /var/lib/docker/overlay2</code>（释放约 18.8G，符合预估的可回收空间）</li>
-</ul>
-<h2 id="七其他常见占用场景及处理附案例">七、其他常见占用场景及处理（附案例）</h2>
-<p>除了 Docker，磁盘满还可能是其他原因，以下是两个高频场景：</p>
-<h3 id="场景-1日志文件过大如varlog">场景 1：日志文件过大（如 <code>/var/log</code>）</h3>
-<h4 id="排查">排查</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 查看/var/log下的大文件（大于100M）</span>
-</span></span><span style="display:flex;"><span>sudo find /var/log -type f -size +100M 2&gt;/dev/null
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="输出示例-3">输出示例</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>/var/log/syslog  # 系统日志，大小 2.3G
-</span></span><span style="display:flex;"><span>/var/log/auth.log # 认证日志，大小 1.8G
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="原因">原因</h4>
-<p>服务频繁报错（如应用程序崩溃）导致日志疯狂写入，或日志未配置轮转。</p>
-<h4 id="处理">处理</h4>
+</div><h3 id="33-模型推理架构">3.3 模型推理架构</h3>
+<h4 id="331-推理优化技术">3.3.1 推理优化技术</h4>
+<ol>
+<li><strong>模型量化</strong>：采用 INT8/FP16 量化，降低显存占用，提升吞吐量（工具：TensorRT、ONNX Runtime）；</li>
+<li><strong>模型剪枝</strong>：移除冗余参数，简化模型结构（工具：TorchPrune）；</li>
+<li><strong>批处理优化</strong>：采用动态批处理策略，根据请求量调整批大小，提升 GPU 利用率。</li>
+</ol>
+<h4 id="332-高并发部署架构">3.3.2 高并发部署架构</h4>
+<p>采用 “负载均衡 + 多实例部署” 架构，支撑高并发推理请求：</p>
+<ol>
+<li><strong>前端层</strong>：Nginx 作为负载均衡器，分发推理请求；</li>
+<li><strong>推理层</strong>：基于 Triton Inference Server 部署多模型实例，支持动态扩缩容；</li>
+<li><strong>缓存层</strong>：Redis 缓存高频推理结果（如热门问答、固定模板输出），降低推理延迟。</li>
+</ol>
+<h4 id="333-部署示例triton-inference-server">3.3.3 部署示例（Triton Inference Server）</h4>
+<p>bash</p>
 <div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
 <table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
 <pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
@@ -1214,68 +1412,129 @@ document.addEventListener('DOMContentLoaded', function() {
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">5
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">6
 </span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">7
+</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">8
 </span></code></pre></td>
 <td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 安全清空日志（保留文件，避免进程写入失败）</span>
-</span></span><span style="display:flex;"><span>sudo truncate -s <span style="color:#bd93f9">0</span> /var/log/syslog
-</span></span><span style="display:flex;"><span>sudo truncate -s <span style="color:#bd93f9">0</span> /var/log/auth.log
+<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 1. 模型转换为ONNX格式</span>
+</span></span><span style="display:flex;"><span>torch.onnx.export<span style="color:#ff79c6">(</span>model, dummy_input, <span style="color:#f1fa8c">&#34;model.onnx&#34;</span>, <span style="color:#8be9fd;font-style:italic">opset_version</span><span style="color:#ff79c6">=</span>17<span style="color:#ff79c6">)</span>
 </span></span><span style="display:flex;"><span>
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 长期解决：配置logrotate（示例：编辑syslog的轮转配置）</span>
-</span></span><span style="display:flex;"><span>sudo nano /etc/logrotate.d/rsyslog
-</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 确保配置了 size 限制（如 size 100M）和保留份数（如 rotate 7）</span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 2. 启动Triton服务</span>
+</span></span><span style="display:flex;"><span>tritonserver --model-repository<span style="color:#ff79c6">=</span>/models --http-port<span style="color:#ff79c6">=</span><span style="color:#bd93f9">8000</span> --grpc-port<span style="color:#ff79c6">=</span><span style="color:#bd93f9">8001</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#6272a4"># 3. 发送推理请求</span>
+</span></span><span style="display:flex;"><span>curl -X POST http://localhost:8000/v2/models/model/infer -d infer_request.json
 </span></span></code></pre></td></tr></table>
 </div>
-</div><h3 id="场景-2已删除但被进程占用的文件">场景 2：已删除但被进程占用的文件</h3>
-<h4 id="问题表现">问题表现</h4>
-<p>明明删除了大文件，<code>df -h</code> 显示空间仍满（因为文件被进程占用，未释放）。</p>
-<h4 id="排查-1">排查</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#6272a4"># 查找已删除但被进程占用的文件</span>
-</span></span><span style="display:flex;"><span>sudo lsof +L1
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="输出示例-4">输出示例</h4>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">2
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-plaintext" data-lang="plaintext"><span style="display:flex;"><span>COMMAND  PID   USER   FD   TYPE DEVICE SIZE/OFF NLINK NAME
-</span></span><span style="display:flex;"><span>nginx   1234   root    1w  REG    8:1  20971520     0 /var/log/nginx/access.log (deleted)
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h4 id="处理-1">处理</h4>
-<p>重启占用文件的进程，释放空间：</p>
-<div class="highlight"><div style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">
-<table style="border-spacing:0;padding:0;margin:0;border:0;"><tr><td style="vertical-align:top;padding:0;margin:0;border:0;">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code><span style="white-space:pre;-webkit-user-select:none;user-select:none;margin-right:0.4em;padding:0 0.4em 0 0.4em;color:#7f7f7f">1
-</span></code></pre></td>
-<td style="vertical-align:top;padding:0;margin:0;border:0;;width:100%">
-<pre tabindex="0" style="color:#f8f8f2;background-color:#282a36;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>sudo systemctl restart nginx
-</span></span></code></pre></td></tr></table>
-</div>
-</div><h2 id="八总结完整排查流程">八、总结：完整排查流程</h2>
-<ol>
-<li><strong>确认满的分区</strong>：<code>df -h</code> → 找到 <code>Use%</code> 接近 100% 的分区（如 <code>/</code>）。</li>
-<li><strong>定位大目录</strong>：<code>sudo du -sh /* 2&gt;/dev/null</code> → 找出分区下的大目录（如 <code>/var</code>）。</li>
-<li><strong>逐层深入</strong>：进入大目录，重复 <code>sudo du -sh *</code> → 定位到具体目录（如 <code>/var/lib/docker/overlay2</code>）。</li>
-<li><strong>分析原因</strong>：根据目录类型判断占用源（Docker 资源、日志、临时文件等）。</li>
-<li><strong>安全清理</strong>：
+</div><h2 id="第四部分-上层应用架构场景化落地与工程化实践">第四部分 上层应用架构：场景化落地与工程化实践</h2>
+<p>上层应用架构需结合具体 AI 场景，将底层算力与核心模型转化为可落地的产品，核心涵盖场景化架构设计、工程化部署、监控运维三大模块。</p>
+<h3 id="41-场景化架构设计">4.1 场景化架构设计</h3>
+<h4 id="411-计算机视觉cv场景">4.1.1 计算机视觉（CV）场景</h4>
 <ul>
-<li>Docker 资源：<code>docker system prune -a -f</code>；</li>
-<li>日志文件：<code>truncate -s 0 文件名</code>；</li>
-<li>已删除的占用文件：重启对应进程。</li>
+<li><strong>核心任务</strong>：图像分类、目标检测、语义分割；</li>
+<li><strong>架构特点</strong>：前端采用边缘设备采集图像，后端通过 GPU 集群进行模型推理，存储层采用 RAID10 存储训练样本，RAID5 存储推理结果；</li>
+<li><strong>优化点</strong>：采用 TensorRT 优化推理速度，边缘端预处理图像（如 resize、归一化）减少传输带宽。</li>
 </ul>
-</li>
-<li><strong>验证效果</strong>：再次用 <code>df -h</code> 或 <code>du -sh</code> 确认空间释放。</li>
+<h4 id="412-自然语言处理nlp场景">4.1.2 自然语言处理（NLP）场景</h4>
+<ul>
+<li><strong>核心任务</strong>：文本生成、情感分析、机器翻译；</li>
+<li><strong>架构特点</strong>：前端对接 API 网关，中间层采用 LoRA 微调大模型，后端通过 Redis 缓存词典与高频结果；</li>
+<li><strong>优化点</strong>：采用量化推理降低显存占用，结合混合云应对突发文本生成需求。</li>
+</ul>
+<h4 id="413-自动驾驶场景">4.1.3 自动驾驶场景</h4>
+<ul>
+<li><strong>核心任务</strong>：环境感知、路径规划；</li>
+<li><strong>架构特点</strong>：边缘端部署 GPU 模块进行实时推理（延迟≤20ms），云端进行模型训练与更新，网络层采用 IB 保障高带宽数据传输；</li>
+<li><strong>优化点</strong>：多传感器数据融合预处理，采用模型并行提升推理速度。</li>
+</ul>
+<h3 id="42-工程化部署最佳实践">4.2 工程化部署最佳实践</h3>
+<ol>
+<li><strong>版本控制</strong>：采用 Git 管理代码，DVC 管理训练数据与模型权重，确保可追溯；</li>
+<li><strong>CI/CD 流水线</strong>：基于 Jenkins/GitHub Actions 构建自动化流程，实现代码提交→测试→模型训练→部署的全流程自动化；</li>
+<li><strong>容器化部署</strong>：将模型与依赖打包为 Docker 镜像，通过 Kubernetes 实现多环境一致部署。</li>
 </ol>
-<p>通过以上步骤，既能精准定位磁盘占用源，又能安全清理，避免误删系统文件导致服务异常。记得定期清理（如加入定时任务），防止磁盘再次占满。</p>
+<h3 id="43-监控与运维体系">4.3 监控与运维体系</h3>
+<h4 id="431-核心监控指标">4.3.1 核心监控指标</h4>
+<ul>
+<li><strong>算力层</strong>：GPU 利用率、显存占用、温度；</li>
+<li><strong>网络层</strong>：带宽利用率、延迟、丢包率；</li>
+<li><strong>模型层</strong>：训练损失、推理吞吐量、延迟；</li>
+<li><strong>应用层</strong>：请求成功率、响应时间。</li>
+</ul>
+<h4 id="432-监控工具选型">4.3.2 监控工具选型</h4>
+<table>
+  <thead>
+      <tr>
+          <th>监控维度</th>
+          <th>工具</th>
+          <th>核心功能</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>算力监控</td>
+          <td>NVIDIA DCGM、Prometheus+Grafana</td>
+          <td>实时监控 GPU 状态，设置告警阈值</td>
+      </tr>
+      <tr>
+          <td>网络监控</td>
+          <td>Iperf3、Netdata</td>
+          <td>测试带宽与延迟，监控网络拥塞</td>
+      </tr>
+      <tr>
+          <td>模型监控</td>
+          <td>MLflow、Weights &amp; Biases</td>
+          <td>跟踪训练指标，对比模型版本</td>
+      </tr>
+  </tbody>
+</table>
+<h2 id="第五部分-架构选型决策矩阵与落地工具包">第五部分 架构选型决策矩阵与落地工具包</h2>
+<h3 id="51-架构选型决策矩阵">5.1 架构选型决策矩阵</h3>
+<table>
+  <thead>
+      <tr>
+          <th>决策维度</th>
+          <th>选项 1</th>
+          <th>选项 2</th>
+          <th>选型依据</th>
+      </tr>
+  </thead>
+  <tbody>
+      <tr>
+          <td>网络技术</td>
+          <td>IB</td>
+          <td>ROCE</td>
+          <td>集群规模≥100 节点选 IB，否则选 ROCE</td>
+      </tr>
+      <tr>
+          <td>RAID 级别</td>
+          <td>RAID10</td>
+          <td>RAID5</td>
+          <td>热数据选 RAID10，温数据选 RAID5</td>
+      </tr>
+      <tr>
+          <td>微调方案</td>
+          <td>Fine-tuning</td>
+          <td>LoRA</td>
+          <td>模型参数≤1 亿选 Fine-tuning，否则选 LoRA</td>
+      </tr>
+      <tr>
+          <td>调度平台</td>
+          <td>Kubeflow</td>
+          <td>Ray</td>
+          <td>企业级选 Kubeflow，中小规模选 Ray</td>
+      </tr>
+  </tbody>
+</table>
+<h3 id="52-落地工具包可直接复用">5.2 落地工具包（可直接复用）</h3>
+<ol>
+<li><strong>环境配置脚本</strong>：PyTorch+CUDA 环境一键安装脚本；</li>
+<li><strong>网络优化模板</strong>：IB/ROCE 组网 QoS 配置文件；</li>
+<li><strong>存储配置指南</strong>：不同数据类型的 RAID 配置与分布式存储部署手册；</li>
+<li><strong>模型训练 / 推理模板</strong>：DeepSpeed 并行配置、LoRA 微调代码、Triton 部署配置；</li>
+<li><strong>监控面板模板</strong>：Grafana GPU / 模型监控仪表盘导入文件。</li>
+</ol>
+<h2 id="总结">总结</h2>
+<p>AI 研发的技术架构设计需围绕 “业务需求→算力匹配→效率优化” 的核心逻辑，从底层基础设施的硬件选型与优化，到中间层的资源调度与弹性扩展，再到核心层的模型训练 / 推理优化，最终落地到上层场景化应用。本文提供的全栈架构方案覆盖 AI 研发全流程，开发者可根据实际场景（模型规模、集群大小、成本预算）调整选型，快速搭建高效、稳定的 AI 研发环境。</p>
 
 
 
@@ -1285,20 +1544,20 @@ document.addEventListener('DOMContentLoaded', function() {
       <div class="divider"></div>
       <div class="flex flex-col md:flex-row justify-between gap-4 py-4">
         
-        <a role="button" class="btn btn-outline h-12" href="/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/" title="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题">
+        <a role="button" class="btn btn-outline h-12" href="/posts/2025/ai-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8D%95%E6%9C%BA%E5%8D%95%E5%8D%A1%E5%BE%AE%E8%B0%83-unsloth-%E5%AE%9E%E6%88%98/" title="AI 大模型单机单卡微调-Unsloth 实战">
           <ion-icon name="chevron-back"></ion-icon>
           <div class="inline-flex flex-col items-start">
             <span class="text-base-content/60 text-xs font-normal">上一页</span>
-            <span class="max-w-48 truncate">服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</span>
+            <span class="max-w-48 truncate">AI 大模型单机单卡微调-Unsloth 实战</span>
           </div>
         </a>
         
 
         
-        <a role="button" class="btn btn-outline h-12" href="/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/" title="无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网">
+        <a role="button" class="btn btn-outline h-12" href="/posts/2025/langgraph-%E5%AE%9E%E6%88%983-%E6%AD%A5%E6%90%AD%E5%BB%BA-agent-%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E6%89%8B%E6%90%93%E7%97%9B%E8%8B%A6/" title="LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦">
           <div class="inline-flex flex-col items-end">
             <span class="text-base-content/60 text-xs font-normal">下一页</span>
-            <span class="max-w-48 truncate">无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网</span>
+            <span class="max-w-48 truncate">LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦</span>
           </div>
           <ion-icon name="chevron-forward"></ion-icon>
         </a>
@@ -1320,48 +1579,41 @@ document.addEventListener('DOMContentLoaded', function() {
     
       <nav id="TableOfContents">
   <ul>
-    <li><a href="#一发现问题磁盘空间告警">一、发现问题：磁盘空间告警</a></li>
-    <li><a href="#二第一步确认哪个分区被占满">二、第一步：确认哪个分区被占满</a>
+    <li><a href="#第一部分-底层基础设施架构算力网络与存储基石">第一部分 底层基础设施架构：算力、网络与存储基石</a>
       <ul>
-        <li><a href="#操作指令">操作指令</a></li>
-        <li><a href="#示例">示例</a></li>
-        <li><a href="#分析">分析</a></li>
+        <li><a href="#11-算力硬件架构gpu-与环境适配">1.1 算力硬件架构：GPU 与环境适配</a></li>
+        <li><a href="#12-高性能网络架构低延迟高带宽设计">1.2 高性能网络架构：低延迟高带宽设计</a></li>
+        <li><a href="#13-分层存储架构适配-ai-数据全生命周期">1.3 分层存储架构：适配 AI 数据全生命周期</a></li>
       </ul>
     </li>
-    <li><a href="#三第二步定位根分区下的大目录">三、第二步：定位根分区下的大目录</a>
+    <li><a href="#第二部分-中间层架构虚拟化混合云与算力调度">第二部分 中间层架构：虚拟化、混合云与算力调度</a>
       <ul>
-        <li><a href="#操作指令-1">操作指令</a></li>
-        <li><a href="#示例-1">示例</a></li>
-        <li><a href="#分析-1">分析</a></li>
+        <li><a href="#21-虚拟化技术gpu-资源的灵活管控">2.1 虚拟化技术：GPU 资源的灵活管控</a></li>
+        <li><a href="#22-混合云架构算力弹性扩展">2.2 混合云架构：算力弹性扩展</a></li>
+        <li><a href="#23-算力调度平台资源的智能分配">2.3 算力调度平台：资源的智能分配</a></li>
       </ul>
     </li>
-    <li><a href="#四第三步深入大目录逐层排查">四、第三步：深入大目录，逐层排查</a>
+    <li><a href="#第三部分-核心层架构大模型训练微调与推理">第三部分 核心层架构：大模型训练、微调与推理</a>
       <ul>
-        <li><a href="#操作指令-2">操作指令</a></li>
-        <li><a href="#输出示例">输出示例</a></li>
-        <li><a href="#分析-2">分析</a></li>
+        <li><a href="#31-大模型训练架构">3.1 大模型训练架构</a></li>
+        <li><a href="#32-模型微调架构">3.2 模型微调架构</a></li>
+        <li><a href="#33-模型推理架构">3.3 模型推理架构</a></li>
       </ul>
     </li>
-    <li><a href="#五第四步定位-docker-占用的具体位置">五、第四步：定位 Docker 占用的具体位置</a>
+    <li><a href="#第四部分-上层应用架构场景化落地与工程化实践">第四部分 上层应用架构：场景化落地与工程化实践</a>
       <ul>
-        <li><a href="#操作指令-3">操作指令</a></li>
-        <li><a href="#输出示例-1">输出示例</a></li>
-        <li><a href="#分析-3">分析</a></li>
+        <li><a href="#41-场景化架构设计">4.1 场景化架构设计</a></li>
+        <li><a href="#42-工程化部署最佳实践">4.2 工程化部署最佳实践</a></li>
+        <li><a href="#43-监控与运维体系">4.3 监控与运维体系</a></li>
       </ul>
     </li>
-    <li><a href="#六第五步分析占用原因并安全清理">六、第五步：分析占用原因并安全清理</a>
+    <li><a href="#第五部分-架构选型决策矩阵与落地工具包">第五部分 架构选型决策矩阵与落地工具包</a>
       <ul>
-        <li><a href="#原因分析">原因分析</a></li>
-        <li><a href="#实操清理步骤">实操清理步骤</a></li>
+        <li><a href="#51-架构选型决策矩阵">5.1 架构选型决策矩阵</a></li>
+        <li><a href="#52-落地工具包可直接复用">5.2 落地工具包（可直接复用）</a></li>
       </ul>
     </li>
-    <li><a href="#七其他常见占用场景及处理附案例">七、其他常见占用场景及处理（附案例）</a>
-      <ul>
-        <li><a href="#场景-1日志文件过大如varlog">场景 1：日志文件过大（如 <code>/var/log</code>）</a></li>
-        <li><a href="#场景-2已删除但被进程占用的文件">场景 2：已删除但被进程占用的文件</a></li>
-      </ul>
-    </li>
-    <li><a href="#八总结完整排查流程">八、总结：完整排查流程</a></li>
+    <li><a href="#总结">总结</a></li>
   </ul>
 </nav>
     

@@ -329,19 +329,6 @@
 <div class="category-nav-container">
   
   <a
-    href="/categories/vps/"
-    class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="vps"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    VPS
-  </a>
-  
-  <a
     href="/categories/%E7%BC%96%E7%A8%8B/"
     class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
     title="编程"
@@ -355,16 +342,16 @@
   </a>
   
   <a
-    href="/categories/devops/"
+    href="/categories/vps/"
     class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="devops"
+    title="vps"
     style="
       font-size: 1rem !important;
       margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
       border-radius: 9999px !important; /* 强制圆形 */
     "
   >
-    DEVOPS
+    VPS
   </a>
   
   <a
@@ -378,6 +365,19 @@
     "
   >
     AI
+  </a>
+  
+  <a
+    href="/categories/devops/"
+    class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
+    title="devops"
+    style="
+      font-size: 1rem !important;
+      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
+      border-radius: 9999px !important; /* 强制圆形 */
+    "
+  >
+    DEVOPS
   </a>
   
   <a
@@ -421,21 +421,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryItem = document.createElement('li');
     categoryItem.innerHTML = `
       <a
-        href="\/categories\/vps\/"
-        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-        style="
-          font-size: 1rem !important;
-          border-radius: 9999px !important;
-        "
-      >
-        VPS
-      </a>
-    `;
-    mobileMenu.appendChild(categoryItem);
-    
-    const categoryItem = document.createElement('li');
-    categoryItem.innerHTML = `
-      <a
         href="\/categories\/%E7%BC%96%E7%A8%8B\/"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
         style="
@@ -451,14 +436,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryItem = document.createElement('li');
     categoryItem.innerHTML = `
       <a
-        href="\/categories\/devops\/"
+        href="\/categories\/vps\/"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
         style="
           font-size: 1rem !important;
           border-radius: 9999px !important;
         "
       >
-        DEVOPS
+        VPS
       </a>
     `;
     mobileMenu.appendChild(categoryItem);
@@ -474,6 +459,21 @@ document.addEventListener('DOMContentLoaded', function() {
         "
       >
         AI
+      </a>
+    `;
+    mobileMenu.appendChild(categoryItem);
+    
+    const categoryItem = document.createElement('li');
+    categoryItem.innerHTML = `
+      <a
+        href="\/categories\/devops\/"
+        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
+        style="
+          font-size: 1rem !important;
+          border-radius: 9999px !important;
+        "
+      >
+        DEVOPS
       </a>
     `;
     mobileMenu.appendChild(categoryItem);
@@ -810,7 +810,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <meta itemprop="description" content="本文聚焦企业级网站构建中无头 CMS 的选择，详细对比 Strapi、Ghost、Contentful、Netlify CMS、DatoCMS 五款支持 Markdown 且开源免费（或含免费套餐）的解决方案，分别阐述各 CMS 的核心特点、易用性及适用场景，附总结对比表，并针对不同需求（如企业级灵活扩展、内容驱动、多语言管理、静态网站适配等）提供选择指南，助力用户挑选适配 React、Vue 等现代前端技术栈的无头 CMS。">
   <meta itemprop="datePublished" content="2025-09-18T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-09-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2158">
+  <meta itemprop="wordCount" content="2157">
   <meta itemprop="image" content="https://googhub.nyc.mn/img/global-background.jpg">
   <meta itemprop="keywords" content="工具,经验,技术">
 
@@ -902,7 +902,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <img class="w-full z-30" src="https://s3.aiedu.qzz.io/website/2025/10/736f691b8d0288986e5e6c0a9f0005c4.png" alt="无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网" />
         
 
-        <p>在构建企业级网站时，选择合适的无头 CMS（内容管理系统）至关重要。无头 CMS 使得内容管理与网站前端分离，提供更大的灵活性，同时与各种现代前端技术栈（如 React、Vue、Next.js）兼容。今天，我们将对比五款符合你需求的无头 CMS，它们都支持 Markdown 编辑，且是开源免费的解决方案。</p>
+        <p>构建企业级网站时，选择合适的无头 CMS（内容管理系统）至关重要。无头 CMS 使得内容管理与网站前端分离，提供更大的灵活性，同时与各种现代前端技术栈（如 React、Vue、Next.js）兼容。今天，我们将对比五款符合你需求的无头 CMS，它们都支持 Markdown 编辑，且是开源免费的解决方案。</p>
 <h3 id="1-strapi">1. <strong>Strapi</strong></h3>
 <p><strong>官网</strong>: <a href="https://strapi.io/" target="_blank">https://strapi.io</a>
 <br>

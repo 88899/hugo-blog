@@ -328,19 +328,6 @@
 <div class="category-nav-container">
   
   <a
-    href="/categories/vps/"
-    class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="vps"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    VPS
-  </a>
-  
-  <a
     href="/categories/%E7%BC%96%E7%A8%8B/"
     class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
     title="编程"
@@ -354,16 +341,16 @@
   </a>
   
   <a
-    href="/categories/devops/"
+    href="/categories/vps/"
     class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="devops"
+    title="vps"
     style="
       font-size: 1rem !important;
       margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
       border-radius: 9999px !important; /* 强制圆形 */
     "
   >
-    DEVOPS
+    VPS
   </a>
   
   <a
@@ -377,6 +364,19 @@
     "
   >
     AI
+  </a>
+  
+  <a
+    href="/categories/devops/"
+    class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
+    title="devops"
+    style="
+      font-size: 1rem !important;
+      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
+      border-radius: 9999px !important; /* 强制圆形 */
+    "
+  >
+    DEVOPS
   </a>
   
   <a
@@ -420,21 +420,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryItem = document.createElement('li');
     categoryItem.innerHTML = `
       <a
-        href="\/categories\/vps\/"
-        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-        style="
-          font-size: 1rem !important;
-          border-radius: 9999px !important;
-        "
-      >
-        VPS
-      </a>
-    `;
-    mobileMenu.appendChild(categoryItem);
-    
-    const categoryItem = document.createElement('li');
-    categoryItem.innerHTML = `
-      <a
         href="\/categories\/%E7%BC%96%E7%A8%8B\/"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
         style="
@@ -450,14 +435,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryItem = document.createElement('li');
     categoryItem.innerHTML = `
       <a
-        href="\/categories\/devops\/"
+        href="\/categories\/vps\/"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
         style="
           font-size: 1rem !important;
           border-radius: 9999px !important;
         "
       >
-        DEVOPS
+        VPS
       </a>
     `;
     mobileMenu.appendChild(categoryItem);
@@ -473,6 +458,21 @@ document.addEventListener('DOMContentLoaded', function() {
         "
       >
         AI
+      </a>
+    `;
+    mobileMenu.appendChild(categoryItem);
+    
+    const categoryItem = document.createElement('li');
+    categoryItem.innerHTML = `
+      <a
+        href="\/categories\/devops\/"
+        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
+        style="
+          font-size: 1rem !important;
+          border-radius: 9999px !important;
+        "
+      >
+        DEVOPS
       </a>
     `;
     mobileMenu.appendChild(categoryItem);
@@ -809,7 +809,7 @@ document.addEventListener('DOMContentLoaded', function() {
   <meta itemprop="description" content="搭建知识库 / 博客 / 文档站？对比 Trilium、Mintlify、Hugo、VuePress 等 8 工具，从功能特点、优劣势到适用场景（开源项目用 Read the Docs、静态站用 Hugo&#43;Netlify），助 IT 团队快速选型。">
   <meta itemprop="datePublished" content="2025-02-08T00:00:00+00:00">
   <meta itemprop="dateModified" content="2025-03-18T00:00:00+00:00">
-  <meta itemprop="wordCount" content="2016">
+  <meta itemprop="wordCount" content="2014">
   <meta itemprop="image" content="https://googhub.nyc.mn/img/global-background.jpg">
   <meta itemprop="keywords" content="技术,工具">
 
@@ -901,7 +901,7 @@ document.addEventListener('DOMContentLoaded', function() {
           <img class="w-full z-30" src="https://s3.aiedu.qzz.io/website/2025/10/50f178ca0b54a6bb5c0f250d2d0eb99a.png" alt="知识库 -文档 - 博客，技术选型完全指南" />
         
 
-        <p>—— Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify 对比</p>
+        <p>Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify 对比</p>
 <p>在IT团队搭建知识库、博客或文档站时，工具选型往往比内容写作更让人纠结。
 有人想要自托管、完全可控；有人追求快速上线、免运维；有人需要强交互和版本管理。有人想要美观好看，颜值能打。</p>
 <p>下面这份对比指南，涵盖 Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify，从功能特点、优势劣势，到部署难度、编程友好度、上手难度等多个维度，帮助你快速找到最适合的方案。</p>

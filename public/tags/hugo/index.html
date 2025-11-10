@@ -295,19 +295,6 @@
 <div class="category-nav-container">
   
   <a
-    href="/categories/vps/"
-    class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="vps"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    VPS
-  </a>
-  
-  <a
     href="/categories/%E7%BC%96%E7%A8%8B/"
     class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
     title="编程"
@@ -321,16 +308,16 @@
   </a>
   
   <a
-    href="/categories/devops/"
+    href="/categories/vps/"
     class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="devops"
+    title="vps"
     style="
       font-size: 1rem !important;
       margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
       border-radius: 9999px !important; /* 强制圆形 */
     "
   >
-    DEVOPS
+    VPS
   </a>
   
   <a
@@ -344,6 +331,19 @@
     "
   >
     AI
+  </a>
+  
+  <a
+    href="/categories/devops/"
+    class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
+    title="devops"
+    style="
+      font-size: 1rem !important;
+      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
+      border-radius: 9999px !important; /* 强制圆形 */
+    "
+  >
+    DEVOPS
   </a>
   
   <a
@@ -387,21 +387,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryItem = document.createElement('li');
     categoryItem.innerHTML = `
       <a
-        href="\/categories\/vps\/"
-        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-        style="
-          font-size: 1rem !important;
-          border-radius: 9999px !important;
-        "
-      >
-        VPS
-      </a>
-    `;
-    mobileMenu.appendChild(categoryItem);
-    
-    const categoryItem = document.createElement('li');
-    categoryItem.innerHTML = `
-      <a
         href="\/categories\/%E7%BC%96%E7%A8%8B\/"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
         style="
@@ -417,14 +402,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryItem = document.createElement('li');
     categoryItem.innerHTML = `
       <a
-        href="\/categories\/devops\/"
+        href="\/categories\/vps\/"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
         style="
           font-size: 1rem !important;
           border-radius: 9999px !important;
         "
       >
-        DEVOPS
+        VPS
       </a>
     `;
     mobileMenu.appendChild(categoryItem);
@@ -440,6 +425,21 @@ document.addEventListener('DOMContentLoaded', function() {
         "
       >
         AI
+      </a>
+    `;
+    mobileMenu.appendChild(categoryItem);
+    
+    const categoryItem = document.createElement('li');
+    categoryItem.innerHTML = `
+      <a
+        href="\/categories\/devops\/"
+        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
+        style="
+          font-size: 1rem !important;
+          border-radius: 9999px !important;
+        "
+      >
+        DEVOPS
       </a>
     `;
     mobileMenu.appendChild(categoryItem);
@@ -963,8 +963,8 @@ document.addEventListener('DOMContentLoaded', function() {
     
     
     <picture>
-      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
-      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
+      <source srcset="/images/default1_hu_33478ca164b4fce4.webp" type="image/webp" />
+      <img src="/images/default1.jpg" alt="/images/default1.jpg" />
     </picture>
     
   </figure>

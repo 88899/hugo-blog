@@ -6,8 +6,29 @@
     <description>Recent content in 开发指南 on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Mon, 20 Jan 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://googhub.nyc.mn/series/%E5%BC%80%E5%8F%91%E6%8C%87%E5%8D%97/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>AI 大模型单机单卡微调-Unsloth 实战</title>
+      <link>https://googhub.nyc.mn/posts/2025/ai-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8D%95%E6%9C%BA%E5%8D%95%E5%8D%A1%E5%BE%AE%E8%B0%83-unsloth-%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/ai-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8D%95%E6%9C%BA%E5%8D%95%E5%8D%A1%E5%BE%AE%E8%B0%83-unsloth-%E5%AE%9E%E6%88%98/</guid>
+      <description>&lt;p&gt;本文聚焦单机单卡硬件场景，围绕 Unsloth 工具展开 AI 大模型微调技术实践，覆盖从环境搭建、数据处理、模型配置、训练执行到部署测试的全流程。手册内容以实操为核心，包含详细命令、代码示例及问题排查方案，适用于需要在消费级 GPU（如 RTX 3090/4090）上实现轻量化微调的技术人员，同时提供主流微调技术与工具的横向对比，为技术选型提供参考。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI 研发全栈技术架构设计实战指南</title>
+      <link>https://googhub.nyc.mn/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;AI 研发的技术架构设计贯穿从底层基础设施到上层应用落地的全流程，其核心是实现 “算力、数据、算法” 的高效协同。本文将从&lt;strong&gt;底层算力设施→中间层调度与虚拟化→核心层模型训练 / 推理→上层应用落地&lt;/strong&gt;四个维度，系统拆解 AI 研发的技术架构要点，整合硬件配置、网络优化、存储选型、资源调度等关键技术，形成可直接复用的设计方案，助力开发者快速搭建稳定、高效的 AI 研发环境。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦</title>
+      <link>https://googhub.nyc.mn/posts/2025/langgraph-%E5%AE%9E%E6%88%983-%E6%AD%A5%E6%90%AD%E5%BB%BA-agent-%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E6%89%8B%E6%90%93%E7%97%9B%E8%8B%A6/</link>
+      <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/langgraph-%E5%AE%9E%E6%88%983-%E6%AD%A5%E6%90%AD%E5%BB%BA-agent-%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E6%89%8B%E6%90%93%E7%97%9B%E8%8B%A6/</guid>
+      <description>&lt;p&gt;在 LangGraph 出现之前，多工具协同 Agent 的开发堪称 “踩坑重灾区”：不仅要手动编写工具调用判断、结果处理、循环终止等胶水代码，逻辑冗余且上线后频繁出现 “漏处理工具结果” 等功能性 bug；用全局变量存储会话状态时，多用户并发场景下极易引发上下文覆盖问题，故障排查往往要耗费大量时间定位根因；更棘手的是新增单一工具（如 “物流查询”），竟需同步修改 5 处以上关联逻辑（判断条件、参数传递、结果拼接），稍有不慎就会引发其他流程的连锁故障。&lt;/p&gt;</description>
+    </item>
     <item>
       <title>怎么让Hugo支持markdown 流程图</title>
       <link>https://googhub.nyc.mn/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/</link>

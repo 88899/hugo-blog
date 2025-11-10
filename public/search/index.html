@@ -295,19 +295,6 @@
 <div class="category-nav-container">
   
   <a
-    href="/categories/vps/"
-    class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="vps"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    VPS
-  </a>
-  
-  <a
     href="/categories/%E7%BC%96%E7%A8%8B/"
     class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
     title="编程"
@@ -321,16 +308,16 @@
   </a>
   
   <a
-    href="/categories/devops/"
+    href="/categories/vps/"
     class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="devops"
+    title="vps"
     style="
       font-size: 1rem !important;
       margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
       border-radius: 9999px !important; /* 强制圆形 */
     "
   >
-    DEVOPS
+    VPS
   </a>
   
   <a
@@ -344,6 +331,19 @@
     "
   >
     AI
+  </a>
+  
+  <a
+    href="/categories/devops/"
+    class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
+    title="devops"
+    style="
+      font-size: 1rem !important;
+      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
+      border-radius: 9999px !important; /* 强制圆形 */
+    "
+  >
+    DEVOPS
   </a>
   
   <a
@@ -387,21 +387,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryItem = document.createElement('li');
     categoryItem.innerHTML = `
       <a
-        href="\/categories\/vps\/"
-        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-        style="
-          font-size: 1rem !important;
-          border-radius: 9999px !important;
-        "
-      >
-        VPS
-      </a>
-    `;
-    mobileMenu.appendChild(categoryItem);
-    
-    const categoryItem = document.createElement('li');
-    categoryItem.innerHTML = `
-      <a
         href="\/categories\/%E7%BC%96%E7%A8%8B\/"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
         style="
@@ -417,14 +402,14 @@ document.addEventListener('DOMContentLoaded', function() {
     const categoryItem = document.createElement('li');
     categoryItem.innerHTML = `
       <a
-        href="\/categories\/devops\/"
+        href="\/categories\/vps\/"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
         style="
           font-size: 1rem !important;
           border-radius: 9999px !important;
         "
       >
-        DEVOPS
+        VPS
       </a>
     `;
     mobileMenu.appendChild(categoryItem);
@@ -440,6 +425,21 @@ document.addEventListener('DOMContentLoaded', function() {
         "
       >
         AI
+      </a>
+    `;
+    mobileMenu.appendChild(categoryItem);
+    
+    const categoryItem = document.createElement('li');
+    categoryItem.innerHTML = `
+      <a
+        href="\/categories\/devops\/"
+        class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
+        style="
+          font-size: 1rem !important;
+          border-radius: 9999px !important;
+        "
+      >
+        DEVOPS
       </a>
     `;
     mobileMenu.appendChild(categoryItem);
@@ -1073,9 +1073,15 @@ x-data="{
 
 
 
+
+
+
+
+
+
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@7.0.0/dist/fuse.min.js" integrity="sha256-42IbU8t3tOwwbexB7ZVRHm3YDRf65aBPPjRtIUufj5I=" crossorigin="anonymous"></script>
 <script>
-  var fuseData = [{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["DevOps","VPS"],"description":"磁盘问题是日常工作中最常遇到的故障类型之一 —— 无论是磁盘空间莫名占满、I/O 读写卡顿，还是磁盘硬件提前老化，选对工具都能让排查效率翻倍","readingTime":17,"tags":["技术","经验","运维"],"title":"服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题","url":"/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["DevOps","VPS"],"description":"在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教你定位占用源、分析原因，并安全清理，全程附具体操作指令和效果验证，新手也能跟着做。","readingTime":4,"tags":["技术"],"title":"快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南","url":"/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["编程"],"description":"本文聚焦企业级网站构建中无头 CMS 的选择，详细对比 Strapi、Ghost、Contentful、Netlify CMS、DatoCMS 五款支持 Markdown 且开源免费（或含免费套餐）的解决方案，分别阐述各 CMS 的核心特点、易用性及适用场景，附总结对比表，并针对不同需求（如企业级灵活扩展、内容驱动、多语言管理、静态网站适配等）提供选择指南，助力用户挑选适配 React、Vue 等现代前端技术栈的无头 CMS。","readingTime":5,"tags":["工具","经验","技术"],"title":"无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网","url":"/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/"},{"author":null,"avatar":"/img/personal/avatar.png","categories":["VPS"],"description":"【Linux VPS WARP 配置避坑】Proxy 模式避免 VPS 失联，Ubuntu/Debian 分步教安装 WARP-CLI、设 Socks5 代理，附 IPv6 转 IPv4 方法，含验证命令","readingTime":4,"tags":["WARP","技术","工具"],"title":"在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络","url":"/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["编程","知识库"],"description":"搭建知识库 / 博客 / 文档站？对比 Trilium、Mintlify、Hugo、VuePress 等 8 工具，从功能特点、优劣势到适用场景（开源项目用 Read the Docs、静态站用 Hugo+Netlify），助 IT 团队快速选型。","readingTime":5,"tags":["技术","工具"],"title":"知识库 -文档 - 博客，技术选型完全指南","url":"/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["编程"],"description":"【Hugo 集成数学公式教程】手把手给 MathJax/KaTeX 配置代码，详解两者优缺点：MathJax 兼容全，KaTeX 速度快，帮 Hugo 用户选对工具","readingTime":2,"tags":["技术","HUGO"],"title":"如何在Hugo项目中加入数学公式的支持","url":"/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["知识库","编程"],"description":"【Hugo 集成 Mermaid 流程图】教你创建 mermaid.html 模板、引入脚本，Markdown 加 front matter 即可用，支持主题适配、自定义样式，附预览验证命令","readingTime":2,"tags":["HUGO","工具"],"title":"怎么让Hugo支持markdown 流程图","url":"/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["DevOps","VPS"],"description":"【容器工具选型：Docker 还是 Podman？】Docker 生态成熟跨平台，Podman 安全轻量无守护进程，按安全需求、环境（Linux / 跨平台）教你选","readingTime":4,"tags":["运维","Docker","容器"],"title":"Docker 与 Podman 深度对比：容器化工具的全方位解析","url":"/posts/2024/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/"},{"author":null,"avatar":"/img/personal/avatar.png","categories":["AI"],"description":"【扣子空间试用：AI Agent 做股市策略】提需求即等结果！Coze 规划模式 15 分钟完成沪深股市策略预测，自动生成多形式文件，附内测邀请码，体验超预期","readingTime":1,"tags":["股票","工具"],"title":"我让扣子空间，帮我预测沪深300的明日购买策略","url":"/posts/2024/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/"},{"author":"Wang Wei","avatar":"https://s3.aiedu.qzz.io/website/2025/10/3bc7c81204f9fae60c895f587b9f49b0.png","categories":["AI","编程"],"description":"LangChain+OpenAI API Key 开发指南：完整流式聊天 Demo，覆盖上下文记忆、多会话管理、生产级安全配置，助开发者快速落地智能客服 / 教育助手","readingTime":3,"tags":["LangChain","OpenAI","GPT"],"title":"从API Key到智能对话：基于LangChain的流式聊天应用开发实战","url":"/posts/2024/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/"},{"author":null,"avatar":"/img/personal/avatar.png","categories":["AI"],"description":"【AI 工具选型：Agent/MCP/Function Call】对比三者定位（决策 / 标准化 / 扩展），给任务复杂度 / 部署灵活度参考，解决 AI 工具选型难题","readingTime":3,"tags":["GPT","MCP","OpenAI","技术"],"title":"Agent、MCP、FunctionCall的区别","url":"/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c6c6fec07e85dec05895473a2965d864.png","categories":["VPS"],"description":"【Lade.io 部署 Sing-box 教程】从注册（邮箱 + GitHub 验证）到下载 Sing-box 文件、修改 start.sh，再到 mac CLI 安装部署，日志提取节点信息，小白友好","readingTime":3,"tags":["Docker","容器","工具","Lade"],"title":"Lade.io注册到搭建应用, 小白完全指南","url":"/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/"},{"author":"Xiao Mi","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c6c6fec07e85dec05895473a2965d864.png","categories":["AI","编程"],"description":"MCP 协议核心资源合集】含 GitHub 官方服务器库、Awesome 资源集、Glama 查询平台及阿里云百炼国内服务，助力开发者快速搭建 AI 与工具 / 数据连接的智能体，获取全场景 MCP 开发支持","readingTime":1,"tags":["GPT","MCP"],"title":"分享几个热度较高的MCP服务聚合平台","url":"/posts/2024/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["VPS"],"description":"Hax EU VPS 小白配置指南】Debian12 系统首选（解决 Ubuntu20 报错 / 24 卡顿），含 DNS 修改、Warp 安装、Docker 部署，3xui/Singbox 节点搭建对比，实测可用","readingTime":3,"tags":["VPN","WARP","HAX"],"title":"拿到Hax的EU VPS，最佳装机指南（小白白）","url":"/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["VPS","DevOps"],"description":"【真免费 VPS 推荐（非试用）】无需绑信用卡，支持 Python/PHP/Docker，月流量 25GB+，含 Byet.host/HelioHost 等 13 家服务商，附续期与功能详情","readingTime":7,"tags":["工具","VPN"],"title":"使用Chatgpt获取全网Free vps清单","url":"/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/"},{"author":"Flio Niu","avatar":"/img/personal/avatar.png","categories":["DevOps"],"description":"如何用 Serv00 幸存账号薅免费羊毛？教你搭建与 NL 一致的论坛：下载对应 PHP8.1 版 Flarum no-public 源码，上传解压到 public_html，浏览器安装 + 后台设置，还能装语言扩展，附案例展示。","readingTime":2,"tags":["VPS","VPN","运维","Serv00"],"title":"复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化","url":"/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["IT"],"description":"【U 盘读取失败数据恢复】用 Recoverit（安装破解 + 选文件恢复）或 Diskgenius（解压即用），附 U 盘无法识别 360 修复法，重要数据建议找专业服务","readingTime":2,"tags":["工具","U盘","经验"],"title":"U盘中的文件恢复","url":"/posts/2022/u%E7%9B%98%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D/"}];
+  var fuseData = [{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["AI","编程"],"description":"聚焦单机单卡（如 RTX 3090/4090）AI 大模型微调场景，以 Unsloth 工具为核心，涵盖微调技术与工具横向对比、双系统（Ubuntu/Windows）环境搭建、数据集处理、模型配置与预加载、训练执行与监控、模型部署测试及常见问题排查全流程，提供可直接参照的命令与代码示例，助力技术人员实现轻量化高效微调，同时给出适配不同显存的选型建议，平衡显存占用、训练速度与微调效果","readingTime":16,"tags":["技术","经验"],"title":"AI 大模型单机单卡微调-Unsloth 实战","url":"/posts/2025/ai-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8D%95%E6%9C%BA%E5%8D%95%E5%8D%A1%E5%BE%AE%E8%B0%83-unsloth-%E5%AE%9E%E6%88%98/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["AI"],"description":"本文聚焦 AI 研发全栈技术架构设计，从底层算力硬件、高性能网络与分层存储的基础设施搭建，到中间层虚拟化、混合云与算力调度的资源优化，再到核心层大模型训练、微调和推理的技术实现，最终延伸至上层场景化应用落地与工程化运维。整合可直接复用的配置模板、实操脚本与选型决策方案，助力 AI 开发者快速搭建稳定高效的研发环境，轻松掌握全流程架构设计要点","readingTime":11,"tags":["技术","经验"],"title":"AI 研发全栈技术架构设计实战指南","url":"/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["编程","知识库"],"description":"本文面向 AI 开发初学者与刚入门工程师，聚焦复杂 Agent 开发的核心痛点 —— 手搓代码时流程控制混乱、状态管理繁琐、工具集成低效，以开发者从 “手搓党” 到 LangGraph “真香” 的真实经历为线索，系统拆解 LangGraph 的核心价值与实操方法","readingTime":14,"tags":["技术","LangChain"],"title":"LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦","url":"/posts/2025/langgraph-%E5%AE%9E%E6%88%983-%E6%AD%A5%E6%90%AD%E5%BB%BA-agent-%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E6%89%8B%E6%90%93%E7%97%9B%E8%8B%A6/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["DevOps","VPS"],"description":"磁盘问题是日常工作中最常遇到的故障类型之一 —— 无论是磁盘空间莫名占满、I/O 读写卡顿，还是磁盘硬件提前老化，选对工具都能让排查效率翻倍","readingTime":17,"tags":["技术","经验","运维"],"title":"服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题","url":"/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["DevOps","VPS"],"description":"在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教你定位占用源、分析原因，并安全清理，全程附具体操作指令和效果验证，新手也能跟着做。","readingTime":4,"tags":["技术"],"title":"快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南","url":"/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["编程"],"description":"本文聚焦企业级网站构建中无头 CMS 的选择，详细对比 Strapi、Ghost、Contentful、Netlify CMS、DatoCMS 五款支持 Markdown 且开源免费（或含免费套餐）的解决方案，分别阐述各 CMS 的核心特点、易用性及适用场景，附总结对比表，并针对不同需求（如企业级灵活扩展、内容驱动、多语言管理、静态网站适配等）提供选择指南，助力用户挑选适配 React、Vue 等现代前端技术栈的无头 CMS。","readingTime":5,"tags":["工具","经验","技术"],"title":"无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网","url":"/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/"},{"author":null,"avatar":"/img/personal/avatar.png","categories":["VPS"],"description":"【Linux VPS WARP 配置避坑】Proxy 模式避免 VPS 失联，Ubuntu/Debian 分步教安装 WARP-CLI、设 Socks5 代理，附 IPv6 转 IPv4 方法，含验证命令","readingTime":4,"tags":["WARP","技术","工具"],"title":"在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络","url":"/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["编程","知识库"],"description":"搭建知识库 / 博客 / 文档站？对比 Trilium、Mintlify、Hugo、VuePress 等 8 工具，从功能特点、优劣势到适用场景（开源项目用 Read the Docs、静态站用 Hugo+Netlify），助 IT 团队快速选型。","readingTime":5,"tags":["技术","工具"],"title":"知识库 -文档 - 博客，技术选型完全指南","url":"/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["编程"],"description":"【Hugo 集成数学公式教程】手把手给 MathJax/KaTeX 配置代码，详解两者优缺点：MathJax 兼容全，KaTeX 速度快，帮 Hugo 用户选对工具","readingTime":2,"tags":["技术","HUGO"],"title":"如何在Hugo项目中加入数学公式的支持","url":"/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["知识库","编程"],"description":"【Hugo 集成 Mermaid 流程图】教你创建 mermaid.html 模板、引入脚本，Markdown 加 front matter 即可用，支持主题适配、自定义样式，附预览验证命令","readingTime":2,"tags":["HUGO","工具"],"title":"怎么让Hugo支持markdown 流程图","url":"/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["DevOps","VPS"],"description":"【容器工具选型：Docker 还是 Podman？】Docker 生态成熟跨平台，Podman 安全轻量无守护进程，按安全需求、环境（Linux / 跨平台）教你选","readingTime":4,"tags":["运维","Docker","容器"],"title":"Docker 与 Podman 深度对比：容器化工具的全方位解析","url":"/posts/2024/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/"},{"author":null,"avatar":"/img/personal/avatar.png","categories":["AI"],"description":"【扣子空间试用：AI Agent 做股市策略】提需求即等结果！Coze 规划模式 15 分钟完成沪深股市策略预测，自动生成多形式文件，附内测邀请码，体验超预期","readingTime":1,"tags":["股票","工具"],"title":"我让扣子空间，帮我预测沪深300的明日购买策略","url":"/posts/2024/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/"},{"author":"Wang Wei","avatar":"https://s3.aiedu.qzz.io/website/2025/10/3bc7c81204f9fae60c895f587b9f49b0.png","categories":["AI","编程"],"description":"LangChain+OpenAI API Key 开发指南：完整流式聊天 Demo，覆盖上下文记忆、多会话管理、生产级安全配置，助开发者快速落地智能客服 / 教育助手","readingTime":3,"tags":["LangChain","OpenAI","GPT"],"title":"从API Key到智能对话：基于LangChain的流式聊天应用开发实战","url":"/posts/2024/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/"},{"author":null,"avatar":"/img/personal/avatar.png","categories":["AI"],"description":"【AI 工具选型：Agent/MCP/Function Call】对比三者定位（决策 / 标准化 / 扩展），给任务复杂度 / 部署灵活度参考，解决 AI 工具选型难题","readingTime":3,"tags":["GPT","MCP","OpenAI","技术"],"title":"Agent、MCP、FunctionCall的区别","url":"/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c6c6fec07e85dec05895473a2965d864.png","categories":["VPS"],"description":"【Lade.io 部署 Sing-box 教程】从注册（邮箱 + GitHub 验证）到下载 Sing-box 文件、修改 start.sh，再到 mac CLI 安装部署，日志提取节点信息，小白友好","readingTime":3,"tags":["Docker","容器","工具","Lade"],"title":"Lade.io注册到搭建应用, 小白完全指南","url":"/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/"},{"author":"Xiao Mi","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c6c6fec07e85dec05895473a2965d864.png","categories":["AI","编程"],"description":"MCP 协议核心资源合集】含 GitHub 官方服务器库、Awesome 资源集、Glama 查询平台及阿里云百炼国内服务，助力开发者快速搭建 AI 与工具 / 数据连接的智能体，获取全场景 MCP 开发支持","readingTime":1,"tags":["GPT","MCP"],"title":"分享几个热度较高的MCP服务聚合平台","url":"/posts/2024/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["VPS"],"description":"Hax EU VPS 小白配置指南】Debian12 系统首选（解决 Ubuntu20 报错 / 24 卡顿），含 DNS 修改、Warp 安装、Docker 部署，3xui/Singbox 节点搭建对比，实测可用","readingTime":3,"tags":["VPN","WARP","HAX"],"title":"拿到Hax的EU VPS，最佳装机指南（小白白）","url":"/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/"},{"author":"AiEDU","avatar":"/img/personal/avatar.png","categories":["VPS","DevOps"],"description":"【真免费 VPS 推荐（非试用）】无需绑信用卡，支持 Python/PHP/Docker，月流量 25GB+，含 Byet.host/HelioHost 等 13 家服务商，附续期与功能详情","readingTime":7,"tags":["工具","VPN"],"title":"使用Chatgpt获取全网Free vps清单","url":"/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/"},{"author":"Flio Niu","avatar":"/img/personal/avatar.png","categories":["DevOps"],"description":"如何用 Serv00 幸存账号薅免费羊毛？教你搭建与 NL 一致的论坛：下载对应 PHP8.1 版 Flarum no-public 源码，上传解压到 public_html，浏览器安装 + 后台设置，还能装语言扩展，附案例展示。","readingTime":2,"tags":["VPS","VPN","运维","Serv00"],"title":"复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化","url":"/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/"},{"author":"Sherry","avatar":"https://s3.aiedu.qzz.io/website/2025/10/c9636914b0782ae3f9269b50dcb88659.png","categories":["IT"],"description":"【U 盘读取失败数据恢复】用 Recoverit（安装破解 + 选文件恢复）或 Diskgenius（解压即用），附 U 盘无法识别 360 修复法，重要数据建议找专业服务","readingTime":2,"tags":["工具","U盘","经验"],"title":"U盘中的文件恢复","url":"/posts/2022/u%E7%9B%98%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D/"}];
   var fuseOptions = {
     keys: [
       "title",

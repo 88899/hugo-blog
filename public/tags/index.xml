@@ -6,20 +6,27 @@
     <description>Recent content in Tags on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
-    <lastBuildDate>Wed, 22 Oct 2025 00:00:00 +0000</lastBuildDate>
+    <lastBuildDate>Thu, 06 Nov 2025 00:00:00 +0000</lastBuildDate>
     <atom:link href="https://googhub.nyc.mn/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>技术</title>
       <link>https://googhub.nyc.mn/tags/%E6%8A%80%E6%9C%AF/</link>
-      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://googhub.nyc.mn/tags/%E6%8A%80%E6%9C%AF/</guid>
       <description></description>
     </item>
     <item>
       <title>经验</title>
       <link>https://googhub.nyc.mn/tags/%E7%BB%8F%E9%AA%8C/</link>
-      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
       <guid>https://googhub.nyc.mn/tags/%E7%BB%8F%E9%AA%8C/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>LangChain</title>
+      <link>https://googhub.nyc.mn/tags/langchain/</link>
+      <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/tags/langchain/</guid>
       <description></description>
     </item>
     <item>
@@ -76,13 +83,6 @@
       <link>https://googhub.nyc.mn/tags/gpt/</link>
       <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
       <guid>https://googhub.nyc.mn/tags/gpt/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>LangChain</title>
-      <link>https://googhub.nyc.mn/tags/langchain/</link>
-      <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
-      <guid>https://googhub.nyc.mn/tags/langchain/</guid>
       <description></description>
     </item>
     <item>

@@ -8,11 +8,32 @@
     <language>zh-Hans</language>
     <atom:link href="https://googhub.nyc.mn/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
+      <title>AI 大模型单机单卡微调-Unsloth 实战</title>
+      <link>https://googhub.nyc.mn/posts/2025/ai-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8D%95%E6%9C%BA%E5%8D%95%E5%8D%A1%E5%BE%AE%E8%B0%83-unsloth-%E5%AE%9E%E6%88%98/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/ai-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8D%95%E6%9C%BA%E5%8D%95%E5%8D%A1%E5%BE%AE%E8%B0%83-unsloth-%E5%AE%9E%E6%88%98/</guid>
+      <description>&lt;p&gt;本文聚焦单机单卡硬件场景，围绕 Unsloth 工具展开 AI 大模型微调技术实践，覆盖从环境搭建、数据处理、模型配置、训练执行到部署测试的全流程。手册内容以实操为核心，包含详细命令、代码示例及问题排查方案，适用于需要在消费级 GPU（如 RTX 3090/4090）上实现轻量化微调的技术人员，同时提供主流微调技术与工具的横向对比，为技术选型提供参考。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>AI 研发全栈技术架构设计实战指南</title>
+      <link>https://googhub.nyc.mn/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;AI 研发的技术架构设计贯穿从底层基础设施到上层应用落地的全流程，其核心是实现 “算力、数据、算法” 的高效协同。本文将从&lt;strong&gt;底层算力设施→中间层调度与虚拟化→核心层模型训练 / 推理→上层应用落地&lt;/strong&gt;四个维度，系统拆解 AI 研发的技术架构要点，整合硬件配置、网络优化、存储选型、资源调度等关键技术，形成可直接复用的设计方案，助力开发者快速搭建稳定、高效的 AI 研发环境。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦</title>
+      <link>https://googhub.nyc.mn/posts/2025/langgraph-%E5%AE%9E%E6%88%983-%E6%AD%A5%E6%90%AD%E5%BB%BA-agent-%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E6%89%8B%E6%90%93%E7%97%9B%E8%8B%A6/</link>
+      <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/langgraph-%E5%AE%9E%E6%88%983-%E6%AD%A5%E6%90%AD%E5%BB%BA-agent-%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E6%89%8B%E6%90%93%E7%97%9B%E8%8B%A6/</guid>
+      <description>&lt;p&gt;在 LangGraph 出现之前，多工具协同 Agent 的开发堪称 “踩坑重灾区”：不仅要手动编写工具调用判断、结果处理、循环终止等胶水代码，逻辑冗余且上线后频繁出现 “漏处理工具结果” 等功能性 bug；用全局变量存储会话状态时，多用户并发场景下极易引发上下文覆盖问题，故障排查往往要耗费大量时间定位根因；更棘手的是新增单一工具（如 “物流查询”），竟需同步修改 5 处以上关联逻辑（判断条件、参数传递、结果拼接），稍有不慎就会引发其他流程的连锁故障。&lt;/p&gt;</description>
+    </item>
+    <item>
       <title>服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</title>
       <link>https://googhub.nyc.mn/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/</link>
       <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
       <guid>https://googhub.nyc.mn/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/</guid>
-      <description>&lt;p&gt;磁盘问题是日常运维工作中最常遇到的故障类型之一，无论是磁盘空间莫名被占满了、I/O 读写卡顿，还是磁盘硬件老化了，选对工具都能让排查工作事半功倍。本文整合了当前主流的服务器磁盘排查工具，从基础操作到深度诊断全覆盖，每个工具都附带详细操作步骤和实战案例，即使是非运维专业的朋友，也能照着命令轻松上手。&lt;/p&gt;</description>
+      <description>&lt;p&gt;服务器磁盘问题是日常运维工作中最常遇到的故障类型之一，无论是磁盘空间莫名被占满了、I/O 读写卡顿，还是磁盘硬件老化了，选对工具都能让排查工作事半功倍。本文整合了当前主流的服务器磁盘排查工具，从基础操作到深度诊断全覆盖，每个工具都附带详细操作步骤和实战案例，即使是非运维专业的朋友，也能照着命令轻松上手。&lt;/p&gt;</description>
     </item>
     <item>
       <title>快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南</title>
@@ -26,7 +47,7 @@
       <link>https://googhub.nyc.mn/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/</link>
       <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
       <guid>https://googhub.nyc.mn/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/</guid>
-      <description>&lt;p&gt;在构建企业级网站时，选择合适的无头 CMS（内容管理系统）至关重要。无头 CMS 使得内容管理与网站前端分离，提供更大的灵活性，同时与各种现代前端技术栈（如 React、Vue、Next.js）兼容。今天，我们将对比五款符合你需求的无头 CMS，它们都支持 Markdown 编辑，且是开源免费的解决方案。&lt;/p&gt;</description>
+      <description>&lt;p&gt;构建企业级网站时，选择合适的无头 CMS（内容管理系统）至关重要。无头 CMS 使得内容管理与网站前端分离，提供更大的灵活性，同时与各种现代前端技术栈（如 React、Vue、Next.js）兼容。今天，我们将对比五款符合你需求的无头 CMS，它们都支持 Markdown 编辑，且是开源免费的解决方案。&lt;/p&gt;</description>
     </item>
     <item>
       <title>在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络</title>
@@ -40,7 +61,7 @@
       <link>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
       <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
-      <description>&lt;p&gt;—— Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify 对比&lt;/p&gt;&#xA;&lt;p&gt;在IT团队搭建知识库、博客或文档站时，工具选型往往比内容写作更让人纠结。&#xA;有人想要自托管、完全可控；有人追求快速上线、免运维；有人需要强交互和版本管理。有人想要美观好看，颜值能打。&lt;/p&gt;</description>
+      <description>&lt;p&gt;Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify 对比&lt;/p&gt;&#xA;&lt;p&gt;在IT团队搭建知识库、博客或文档站时，工具选型往往比内容写作更让人纠结。&#xA;有人想要自托管、完全可控；有人追求快速上线、免运维；有人需要强交互和版本管理。有人想要美观好看，颜值能打。&lt;/p&gt;</description>
     </item>
     <item>
       <title>如何在Hugo项目中加入数学公式的支持</title>
