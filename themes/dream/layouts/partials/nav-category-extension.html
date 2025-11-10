@@ -36,8 +36,8 @@ document.addEventListener('DOMContentLoaded', function() {
     mobileMenu.appendChild(divider);
 
     {{ range $categories }}
-    const categoryItem = document.createElement('li');
-    categoryItem.innerHTML = `
+    const categoryItem2 = document.createElement('li');
+    categoryItem2.innerHTML = `
       <a
         href="{{ .Page.RelPermalink }}"
         class="badge h-6 no-underline text-gray-800 bg-green-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function() {
         {{ .Name | upper }}
       </a>
     `;
-    mobileMenu.appendChild(categoryItem);
+    mobileMenu.appendChild(categoryItem2);
     {{ end }}
   }
 });
