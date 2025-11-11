@@ -18,12 +18,12 @@
 
 {{ if $categories }}
 <style>
-/* 容器样式：核心修改左移（仅调整布局，不改变其他属性） */
+/* 容器样式：保持不变 */
 .category-container {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* 从居中改为靠左对齐 */
-  padding: 6px 0 6px 16px; /* 左移16px（适度留白，大气不贴边），上下padding不变 */
+  justify-content: flex-start;
+  padding: 6px 0 6px 16px;
   width: 100%;
   overflow: hidden;
 }
@@ -32,7 +32,7 @@
 .category-tag {
   color: #666; /* 亮色默认文字 */
   font-size: 1.0rem;
-  font-weight: 450;
+  font-weight: 450; /* 固定字重 */
   margin: 0 16px;
   text-decoration: none;
   white-space: nowrap;
@@ -44,13 +44,13 @@
   -webkit-backface-visibility: hidden;
 }
 
-/* 原有交互效果：保持不变 */
+/* 核心修改：hover/active时仅改颜色，保持字重不变（消除宽度变化） */
 .category-tag:hover, .category-tag.active {
   color: #10b981;
-  font-weight: 600;
+  font-weight: 450; /* 与默认一致，无宽度突变 */
 }
 
-/* 静态横线效果：保持不变 */
+/* 静态横线效果：保持不变（作为主要交互反馈） */
 .category-tag::after {
   content: "";
   position: absolute;
@@ -65,13 +65,14 @@
   width: 100%;
 }
 
-/* 暗黑模式：保持不变 */
+/* 暗黑模式：同步统一字重 */
 html.dark .category-tag {
   color: #bbb;
 }
 
 html.dark .category-tag:hover, html.dark .category-tag.active {
   color: #4ade80;
+  font-weight: 450; /* 保持一致 */
 }
 
 html.dark .category-tag::after {
