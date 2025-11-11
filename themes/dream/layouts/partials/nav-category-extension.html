@@ -1,162 +1,127 @@
-{{/* 1. 获取所有分类，并按“英文在前、中文在后”排序 */}}
-{{ $allCategories := site.Taxonomies.categories.ByCount }}
+{{/* 分类数据处理逻辑（保持不变） */}}
+{{ $allCategories := site.Taxonomies.categories.ByCount | default slice }}
 {{ $englishCats := slice }}
 {{ $chineseCats := slice }}
 
-{{/* 2. 区分英文和中文分类，分别存入对应数组 */}}
-{{ range $allCategories }}
-  {{ $name := .Name }}
-  {{/* 正则判断：仅含英文字母（大小写）的视为英文分类 */}}
-  {{ if findRE "^[A-Za-z]+$" $name }}
+{{ range where $allCategories "Page" "!=" nil }}
+  {{ $name := .Name | default "" }}
+  {{ if and $name (findRE "^[A-Za-z]+$" $name) }}
     {{ $englishCats = $englishCats | append . }}
-  {{ else }}
+  {{ else if $name }}
     {{ $chineseCats = $chineseCats | append . }}
   {{ end }}
 {{ end }}
 
-{{/* 3. 内部排序：英文按字母升序，中文按名称拼音逻辑排序（适配中文习惯） */}}
-{{ $sortedEnglish := sort $englishCats "Name" "asc" }}
-{{ $sortedChinese := sort $chineseCats "Name" "asc" }}
-
-{{/* 4. 拼接排序结果（英文在前、中文在后），取前6个 */}}
+{{ $sortedEnglish := sort $englishCats "Name" "asc" | default slice }}
+{{ $sortedChinese := sort $chineseCats "Name" "asc" | default slice }}
 {{ $categories := $sortedEnglish | append $sortedChinese | first 6 }}
 
 {{ if $categories }}
 <style>
-  /* 核心优化：细阴影+无抖动+高性能 */
+/* 全局清零：移除所有可能触发GPU的属性 */
+.category-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 0;
+  width: 100%;
+  overflow: hidden;
+}
+
+/* 导航条：零阴影、零过渡、零复杂样式 */
+.category-bg-bar {
+  /* 亮色模式：纯白实色，无阴影，仅1px细边框 */
+  background: #ffffff;
+  border: 1px solid #e0e0e0;
+  border-radius: 20px;
+  padding: 10px 36px;
+  display: inline-flex;
+  align-items: center;
+  max-width: 95vw;
+}
+
+/* 彻底移除hover动画：仅文字反馈，无任何布局/样式变动 */
+.category-bg-bar:hover {
+  border-color: #e0e0e0; /* 边框不变，避免重绘 */
+}
+
+/* 暗黑模式：纯黑实色，零阴影，仅1px细边框 */
+html.dark .category-bg-bar {
+  background: #1e1e1e;
+  border: 1px solid #333;
+}
+
+html.dark .category-bg-bar:hover {
+  border-color: #333; /* 边框不变 */
+}
+
+/* 标签样式：仅文字颜色变化，无其他过渡 */
+.category-tag {
+  color: #666; /* 亮色默认文字 */
+  font-size: 1.0rem;
+  font-weight: 450;
+  margin: 0 16px;
+  text-decoration: none;
+  white-space: nowrap;
+  padding: 2px 0;
+}
+
+/* 仅通过文字颜色和字重反馈交互（零渲染成本） */
+.category-tag:hover, .category-tag.active {
+  color: #10b981;
+  font-weight: 600;
+}
+
+html.dark .category-tag {
+  color: #bbb; /* 暗黑默认文字 */
+}
+
+html.dark .category-tag:hover, html.dark .category-tag.active {
+  color: #4ade80;
+}
+
+/* 响应式适配（保持基础功能） */
+@media (max-width: 768px) {
   .category-bg-bar {
-    background-color: rgba(255, 255, 255, 0.85) !important;
-    backdrop-filter: blur(7px) !important;
-    -webkit-backdrop-filter: blur(7px) !important;
-
-    /* 精细化阴影：更细更淡 */
-    box-shadow:
-      inset 0 1px 0.5px rgba(0, 0, 0, 0.04),
-      inset 0 -1px 0.5px rgba(0, 0, 0, 0.02),
-      inset 1px 0 0.5px rgba(0, 0, 0, 0.04),
-      inset -1px 0 0.5px rgba(0, 0, 0, 0.04),
-      0 1px 2px rgba(0, 0, 0, 0.03) !important;
-
-    padding: 10px 36px !important;
-    border-radius: 20px !important;
-    border: 1px solid rgba(230, 230, 230, 0.4) !important;
-    will-change: transform, box-shadow, border-color !important;
-    transition:
-      transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-
-    display: inline-flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    transform: translateZ(0) !important;
+    padding: 8px 16px;
+    overflow-x: auto;
+    justify-content: flex-start;
   }
-
-  .category-bg-bar:hover {
-    transform: translateY(-2px) scale(1.008) translateZ(0) !important;
-    box-shadow:
-      inset 0 1px 0.5px rgba(0, 0, 0, 0.04),
-      inset 0 -1px 0.5px rgba(0, 0, 0, 0.02),
-      inset 1px 0 0.5px rgba(0, 0, 0, 0.04),
-      inset -1px 0 0.5px rgba(0, 0, 0, 0.04),
-      0 6px 12px rgba(0, 0, 0, 0.07) !important;
-    border-color: rgba(220, 220, 220, 0.6) !important;
-  }
-
-  html.dark .category-bg-bar {
-    background-color: rgba(30, 30, 30, 0.85) !important;
-    box-shadow:
-      inset 0 1px 0.5px rgba(255, 255, 255, 0.04),
-      inset 0 -1px 0.5px rgba(255, 255, 255, 0.02),
-      inset 1px 0 0.5px rgba(255, 255, 255, 0.04),
-      inset -1px 0 0.5px rgba(255, 255, 255, 0.04),
-      0 1px 2px rgba(0, 0, 0, 0.2) !important;
-    border: 1px solid rgba(60, 60, 60, 0.4) !important;
-    will-change: transform, box-shadow, border-color !important;
-    transition:
-      transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
-      border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
-    transform: translateZ(0) !important;
-  }
-
-  html.dark .category-bg-bar:hover {
-    transform: translateY(-2px) scale(1.008) translateZ(0) !important;
-    box-shadow:
-      inset 0 1px 0.5px rgba(255, 255, 255, 0.04),
-      inset 0 -1px 0.5px rgba(255, 255, 255, 0.02),
-      inset 1px 0 0.5px rgba(255, 255, 255, 0.04),
-      inset -1px 0 0.5px rgba(255, 255, 255, 0.04),
-      0 6px 12px rgba(0, 0, 0, 0.25) !important;
-    border-color: rgba(80, 80, 80, 0.6) !important;
-  }
-
   .category-tag {
-    color: rgba(0, 0, 0, 0.7) !important;
-    font-size: 1.0rem !important;
-    font-weight: 450 !important;
-    margin: 0 16px !important;
-    text-decoration: none !important;
-    transition: color 0.2s ease, font-weight 0.2s ease !important;
-    letter-spacing: 0.03em !important;
-    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) !important;
-    line-height: 1.2 !important;
+    margin: 0 10px;
+    font-size: 0.9rem;
   }
-  .category-tag:hover, .category-tag.active {
-    color: #10b981 !important;
-    font-weight: 600 !important;
-  }
-
-  html.dark .category-tag {
-    color: rgba(255, 255, 255, 0.7) !important;
-    font-size: 1.0rem !important;
-    margin: 0 16px !important;
-    letter-spacing: 0.03em !important;
-    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) !important;
-    line-height: 1.2 !important;
-  }
-  html.dark .category-tag:hover, html.dark .category-tag.active {
-    color: #4ade80 !important;
-    font-weight: 600 !important;
-  }
+}
 </style>
 
-{{/* 桌面端分类导航：修复报错+完整优化 */}}
-<div style="display: flex; align-items: center; justify-content: center; height: 100%; padding: 6px 0;">
+<div class="category-container">
   <div class="category-bg-bar">
     {{ $currentPage := . }}
     {{ range $categories }}
-      {{ $categoryPage := .Page }}
-      {{ $isActive := false }}
+      {{ $categoryPage := .Page | default nil }}
+      {{ if $categoryPage }}
+        {{ $isActive := false }}
+        {{ $currentRelPermalink := $currentPage.RelPermalink | lower | default "" }}
+        {{ $categoryRelPermalink := $categoryPage.RelPermalink | lower | default "" }}
 
-      {{/* 修复eq语法错误：正确传递两个参数 */}}
-      {{ $currentRelPermalink := $currentPage.RelPermalink | lower }}
-      {{ $categoryRelPermalink := $categoryPage.RelPermalink | lower }}
-
-      {{ if eq $currentPage.Kind "term" }}
-        {{/* 修正：eq需要两个参数，用括号包裹lower处理 */}}
-        {{ if or (eq $currentRelPermalink $categoryRelPermalink) (eq (lower $currentPage.Title) (lower $categoryPage.Title)) }}
-          {{ $isActive = true }}
-        {{ end }}
-      {{ else if eq $currentPage.Kind "page" }}
-        {{ range $currentPage.Params.categories }}
-          {{ $articleCat := site.GetPage (printf "/categories/%s" .) }}
-          {{ if and $articleCat (eq (lower $articleCat.RelPermalink) $categoryRelPermalink) }}
+        {{ if eq $currentPage.Kind "term" }}
+          {{ if or (eq $currentRelPermalink $categoryRelPermalink) (eq (lower $currentPage.Title | default "") (lower $categoryPage.Title | default "")) }}
             {{ $isActive = true }}
           {{ end }}
+        {{ else if eq $currentPage.Kind "page" }}
+          {{ range $currentPage.Params.categories | default slice }}
+            {{ $articleCat := site.GetPage (printf "/categories/%s" .) | default nil }}
+            {{ if and $articleCat (eq (lower $articleCat.RelPermalink | default "") $categoryRelPermalink) }}
+              {{ $isActive = true }}
+            {{ end }}
+          {{ end }}
         {{ end }}
-      {{ end }}
 
-      <a
-        href="{{ $categoryPage.RelPermalink }}"
-        class="category-tag {{ if $isActive }}active{{ end }}"
-        title="{{ $categoryPage.Name }}"
-        aria-label="{{ printf "导航至%s分类" $categoryPage.Name }}"
-      >
-        {{ $categoryPage.Name | upper }}
-      </a>
+        <a href="{{ $categoryPage.RelPermalink }}" class="category-tag {{ if $isActive }}active{{ end }}" title="{{ $categoryPage.Name | default "分类" }}">
+          {{ $categoryPage.Name | upper | default "UNKNOWN" }}
+        </a>
+      {{ end }}
     {{ end }}
   </div>
 </div>
-
 {{ end }}
