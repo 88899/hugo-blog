@@ -352,52 +352,38 @@
 .category-tag {
   color: #666;  
   font-size: 1.0rem;
-  font-weight: 450;  
+  font-weight: 450;
   margin: 0 16px;
   text-decoration: none;
   white-space: nowrap;
-  padding: 2px 0;
-  position: relative;
+  padding: 3px 0 2px;  
+   
+  border-bottom: 0 solid transparent;
+   
   transform: none !important;
   will-change: none !important;
-  backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+   
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
  
 .category-tag:hover, .category-tag.active {
   color: #10b981;
-  font-weight: 450;  
-}
-
- 
-.category-tag::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: 0;
-  width: 0;
-  height: 1px;
-  background-color: #10b981;
-}
-
-.category-tag:hover::after, .category-tag.active::after {
-  width: 100%;
+  border-bottom-width: 1px;  
+  border-bottom-color: #10b981;
 }
 
  
 html.dark .category-tag {
   color: #bbb;
+  border-bottom: 0 solid transparent;
 }
 
 html.dark .category-tag:hover, html.dark .category-tag.active {
   color: #4ade80;
-  font-weight: 450;  
-}
-
-html.dark .category-tag::after {
-  background-color: #4ade80;
-  height: 1px;
+  border-bottom-width: 1px;
+  border-bottom-color: #4ade80;
 }
 
  
@@ -1152,8 +1138,8 @@ html.dark .category-tag::after {
     
     
     <picture>
-      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
-      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
+      <source srcset="/images/default1_hu_33478ca164b4fce4.webp" type="image/webp" />
+      <img src="/images/default1.jpg" alt="/images/default1.jpg" />
     </picture>
     
   </figure>
@@ -1264,8 +1250,8 @@ html.dark .category-tag::after {
     
     
     <picture>
-      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
-      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
+      <source srcset="/images/default3_hu_599e07ea93afc07d.webp" type="image/webp" />
+      <img src="/images/default3.jpg" alt="/images/default3.jpg" />
     </picture>
     
   </figure>
