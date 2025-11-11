@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>AI on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
-    <link>https://googhub.nyc.mn/categories/ai/</link>
-    <description>Recent content in AI on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
+    <title>干货 on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
+    <link>https://googhub.nyc.mn/categories/%E5%B9%B2%E8%B4%A7/</link>
+    <description>Recent content in 干货 on 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</description>
     <generator>Hugo</generator>
     <language>zh-Hans</language>
     <lastBuildDate>Thu, 06 Nov 2025 00:00:00 +0000</lastBuildDate>
-    <atom:link href="https://googhub.nyc.mn/categories/ai/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://googhub.nyc.mn/categories/%E5%B9%B2%E8%B4%A7/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>AI 大模型单机单卡微调-Unsloth 实战</title>
       <link>https://googhub.nyc.mn/posts/2025/ai-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8D%95%E6%9C%BA%E5%8D%95%E5%8D%A1%E5%BE%AE%E8%B0%83-unsloth-%E5%AE%9E%E6%88%98/</link>
@@ -30,11 +30,25 @@
       <description>&lt;p&gt;在 LangGraph 出现之前，多工具协同 Agent 的开发堪称 “踩坑重灾区”：不仅要手动编写工具调用判断、结果处理、循环终止等胶水代码，逻辑冗余且上线后频繁出现 “漏处理工具结果” 等功能性 bug；用全局变量存储会话状态时，多用户并发场景下极易引发上下文覆盖问题，故障排查往往要耗费大量时间定位根因；更棘手的是新增单一工具（如 “物流查询”），竟需同步修改 5 处以上关联逻辑（判断条件、参数传递、结果拼接），稍有不慎就会引发其他流程的连锁故障。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>我让扣子空间，帮我预测沪深300的明日购买策略</title>
-      <link>https://googhub.nyc.mn/posts/2024/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/</link>
-      <pubDate>Tue, 18 Jun 2024 00:00:00 +0000</pubDate>
-      <guid>https://googhub.nyc.mn/posts/2024/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/</guid>
-      <description>&lt;h2 id=&#34;初试&#34;&gt;初试&lt;/h2&gt;&#xA;&lt;p&gt;近日看到很多佬友在分享扣子空间的邀请码，于是抱着试试的心态进行了试用，并记录了第一次使用的感受，分享给大家。试用过后，令人赞叹，我觉得至少是我目前所用过的Agent中，最接近人类工作模式的Agent。&lt;/p&gt;</description>
+      <title>服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</title>
+      <link>https://googhub.nyc.mn/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/</link>
+      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/</guid>
+      <description>&lt;p&gt;服务器磁盘问题是日常运维工作中最常遇到的故障类型之一，无论是磁盘空间莫名被占满了、I/O 读写卡顿，还是磁盘硬件老化了，选对工具都能让排查工作事半功倍。本文整合了当前主流的服务器磁盘排查工具，从基础操作到深度诊断全覆盖，每个工具都附带详细操作步骤和实战案例，即使是非运维专业的朋友，也能照着命令轻松上手。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南</title>
+      <link>https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Fri, 10 Oct 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教你定位占用源、分析原因，并安全清理，全程附具体操作指令和效果验证，新手也能跟着做。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>知识库 -文档 - 博客，技术选型完全指南</title>
+      <link>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
+      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
+      <description>&lt;p&gt;Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify 对比&lt;/p&gt;&#xA;&lt;p&gt;在IT团队搭建知识库、博客或文档站时，工具选型往往比内容写作更让人纠结。&#xA;有人想要自托管、完全可控；有人追求快速上线、免运维；有人需要强交互和版本管理。有人想要美观好看，颜值能打。&lt;/p&gt;</description>
     </item>
     <item>
       <title>从API Key到智能对话：基于LangChain的流式聊天应用开发实战</title>
@@ -42,20 +56,6 @@
       <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
       <guid>https://googhub.nyc.mn/posts/2024/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/</guid>
       <description>&lt;h2 id=&#34;一引言解锁gpt能力的钥匙&#34;&gt;一、引言：解锁GPT能力的钥匙&lt;/h2&gt;&#xA;&lt;p&gt;当开发者获得OpenAI API Key时，就像拿到了一把打开智能对话宇宙的钥匙。本文将结合&lt;code&gt;langchain&lt;/code&gt;框架，通过一个完整的流式聊天Demo，演示如何将API Key转化为具有上下文记忆、多会话管理和流式输出能力的智能对话系统。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Agent、MCP、FunctionCall的区别</title>
-      <link>https://googhub.nyc.mn/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
-      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
-      <guid>https://googhub.nyc.mn/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
-      <description>&lt;h2 id=&#34;一agent是自主决策的ai应用&#34;&gt;一、Agent是自主决策的AI应用&lt;/h2&gt;&#xA;&lt;p&gt;Agent是一种AI应用，能感知环境，能规划任务并调用外部工具完成任务。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;具备自主决策&lt;/li&gt;&#xA;&lt;li&gt;能够完成复杂任务&lt;/li&gt;&#xA;&lt;li&gt;可以调用外部工具&lt;/li&gt;&#xA;&lt;li&gt;可以调用MCP、Function Call等&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
-    </item>
-    <item>
-      <title>分享几个热度较高的MCP服务聚合平台</title>
-      <link>https://googhub.nyc.mn/posts/2024/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/</link>
-      <pubDate>Tue, 20 Feb 2024 00:00:00 +0000</pubDate>
-      <guid>https://googhub.nyc.mn/posts/2024/%E5%88%86%E4%BA%AB%E5%87%A0%E4%B8%AA%E7%83%AD%E5%BA%A6%E8%BE%83%E9%AB%98%E7%9A%84mcp%E6%9C%8D%E5%8A%A1%E8%81%9A%E5%90%88%E5%B9%B3%E5%8F%B0/</guid>
-      <description>&lt;h3 id=&#34;mcp官方资源&#34;&gt;MCP官方资源：&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/modelcontextprotocol/servers&#34; target=&#34;_blank&#34;&gt;https://github.com/modelcontextprotocol/servers&lt;/a&gt;&#xA;&lt;/p&gt;&#xA;&lt;h3 id=&#34;awesome&#34;&gt;Awesome:&lt;/h3&gt;&#xA;&lt;p&gt;&lt;a href=&#34;https://github.com/punkpeye/awesome-mcp-servers&#34; target=&#34;_blank&#34;&gt;https://github.com/punkpeye/awesome-mcp-servers&lt;/a&gt;&#xA;&lt;/p&gt;</description>
     </item>
   </channel>
 </rss>

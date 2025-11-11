@@ -23,31 +23,31 @@
       <description></description>
     </item>
     <item>
-      <title>知识库</title>
-      <link>https://googhub.nyc.mn/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/</link>
-      <pubDate>Sat, 25 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://googhub.nyc.mn/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/</guid>
+      <title>干货</title>
+      <link>https://googhub.nyc.mn/categories/%E5%B9%B2%E8%B4%A7/</link>
+      <pubDate>Wed, 05 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/categories/%E5%B9%B2%E8%B4%A7/</guid>
       <description></description>
     </item>
     <item>
-      <title>DevOps</title>
-      <link>https://googhub.nyc.mn/categories/devops/</link>
+      <title>架构</title>
+      <link>https://googhub.nyc.mn/categories/%E6%9E%B6%E6%9E%84/</link>
+      <pubDate>Mon, 03 Nov 2025 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/categories/%E6%9E%B6%E6%9E%84/</guid>
+      <description></description>
+    </item>
+    <item>
+      <title>运维</title>
+      <link>https://googhub.nyc.mn/categories/%E8%BF%90%E7%BB%B4/</link>
       <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
-      <guid>https://googhub.nyc.mn/categories/devops/</guid>
+      <guid>https://googhub.nyc.mn/categories/%E8%BF%90%E7%BB%B4/</guid>
       <description></description>
     </item>
     <item>
       <title>VPS</title>
       <link>https://googhub.nyc.mn/categories/vps/</link>
-      <pubDate>Wed, 22 Oct 2025 00:00:00 +0000</pubDate>
+      <pubDate>Sat, 22 Feb 2025 00:00:00 +0000</pubDate>
       <guid>https://googhub.nyc.mn/categories/vps/</guid>
-      <description></description>
-    </item>
-    <item>
-      <title>IT</title>
-      <link>https://googhub.nyc.mn/categories/it/</link>
-      <pubDate>Sat, 27 Aug 2022 00:00:00 +0000</pubDate>
-      <guid>https://googhub.nyc.mn/categories/it/</guid>
       <description></description>
     </item>
   </channel>

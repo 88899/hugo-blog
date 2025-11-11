@@ -346,93 +346,217 @@
 
 <style>
    
-  .category-nav-container {
-    @apply flex items-end justify-center gap-2 px-4 !important;  
-    height: 100%;
+  .category-bg-bar {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(7px) !important;
+    -webkit-backdrop-filter: blur(7px) !important;
+
+     
+    box-shadow:
+      inset 0 1px 0.5px rgba(0, 0, 0, 0.04),
+      inset 0 -1px 0.5px rgba(0, 0, 0, 0.02),
+      inset 1px 0 0.5px rgba(0, 0, 0, 0.04),
+      inset -1px 0 0.5px rgba(0, 0, 0, 0.04),
+      0 1px 2px rgba(0, 0, 0, 0.03) !important;
+
+    padding: 10px 36px !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(230, 230, 230, 0.4) !important;
+    will-change: transform, box-shadow, border-color !important;
+    transition:
+      transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: translateZ(0) !important;
+  }
+
+  .category-bg-bar:hover {
+    transform: translateY(-2px) scale(1.008) translateZ(0) !important;
+    box-shadow:
+      inset 0 1px 0.5px rgba(0, 0, 0, 0.04),
+      inset 0 -1px 0.5px rgba(0, 0, 0, 0.02),
+      inset 1px 0 0.5px rgba(0, 0, 0, 0.04),
+      inset -1px 0 0.5px rgba(0, 0, 0, 0.04),
+      0 6px 12px rgba(0, 0, 0, 0.07) !important;
+    border-color: rgba(220, 220, 220, 0.6) !important;
+  }
+
+  html.dark .category-bg-bar {
+    background-color: rgba(30, 30, 30, 0.85) !important;
+    box-shadow:
+      inset 0 1px 0.5px rgba(255, 255, 255, 0.04),
+      inset 0 -1px 0.5px rgba(255, 255, 255, 0.02),
+      inset 1px 0 0.5px rgba(255, 255, 255, 0.04),
+      inset -1px 0 0.5px rgba(255, 255, 255, 0.04),
+      0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(60, 60, 60, 0.4) !important;
+    will-change: transform, box-shadow, border-color !important;
+    transition:
+      transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    transform: translateZ(0) !important;
+  }
+
+  html.dark .category-bg-bar:hover {
+    transform: translateY(-2px) scale(1.008) translateZ(0) !important;
+    box-shadow:
+      inset 0 1px 0.5px rgba(255, 255, 255, 0.04),
+      inset 0 -1px 0.5px rgba(255, 255, 255, 0.02),
+      inset 1px 0 0.5px rgba(255, 255, 255, 0.04),
+      inset -1px 0 0.5px rgba(255, 255, 255, 0.04),
+      0 6px 12px rgba(0, 0, 0, 0.25) !important;
+    border-color: rgba(80, 80, 80, 0.6) !important;
+  }
+
+  .category-tag {
+    color: rgba(0, 0, 0, 0.7) !important;
+    font-size: 1.0rem !important;
+    font-weight: 450 !important;
+    margin: 0 16px !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease, font-weight 0.2s ease !important;
+    letter-spacing: 0.03em !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    line-height: 1.2 !important;
+  }
+  .category-tag:hover, .category-tag.active {
+    color: #10b981 !important;
+    font-weight: 600 !important;
+  }
+
+  html.dark .category-tag {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 1.0rem !important;
+    margin: 0 16px !important;
+    letter-spacing: 0.03em !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) !important;
+    line-height: 1.2 !important;
+  }
+  html.dark .category-tag:hover, html.dark .category-tag.active {
+    color: #4ade80 !important;
+    font-weight: 600 !important;
   }
 </style>
 
 
-<div class="category-nav-container">
-  
-  <a
-    href="/categories/ai/"
-    class="badge h-6 no-underline text-gray-800 bg-gray-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="ai"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    AI
-  </a>
-  
-  <a
-    href="/categories/devops/"
-    class="badge h-6 no-underline text-gray-800 bg-gray-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="devops"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    DEVOPS
-  </a>
-  
-  <a
-    href="/categories/it/"
-    class="badge h-6 no-underline text-gray-800 bg-gray-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="it"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    IT
-  </a>
-  
-  <a
-    href="/categories/vps/"
-    class="badge h-6 no-underline text-gray-800 bg-gray-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="vps"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    VPS
-  </a>
-  
-  <a
-    href="/categories/%E7%BC%96%E7%A8%8B/"
-    class="badge h-6 no-underline text-gray-800 bg-gray-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="编程"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    编程
-  </a>
-  
-  <a
-    href="/categories/%E7%9F%A5%E8%AF%86%E5%BA%93/"
-    class="badge h-6 no-underline text-gray-800 bg-gray-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="知识库"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    知识库
-  </a>
-  
+<div style="display: flex; align-items: center; justify-content: center; height: 100%; padding: 6px 0;">
+  <div class="category-bg-bar">
+    
+    
+      
+      
+
+      
+      
+      
+
+      
+
+      <a
+        href="/categories/ai/"
+        class="category-tag "
+        title="AI"
+        aria-label="导航至AI分类"
+      >
+        AI
+      </a>
+    
+      
+      
+
+      
+      
+      
+
+      
+
+      <a
+        href="/categories/vps/"
+        class="category-tag "
+        title="VPS"
+        aria-label="导航至VPS分类"
+      >
+        VPS
+      </a>
+    
+      
+      
+
+      
+      
+      
+
+      
+
+      <a
+        href="/categories/%E7%BC%96%E7%A8%8B/"
+        class="category-tag "
+        title="编程"
+        aria-label="导航至编程分类"
+      >
+        编程
+      </a>
+    
+      
+      
+
+      
+      
+      
+
+      
+
+      <a
+        href="/categories/%E5%B9%B2%E8%B4%A7/"
+        class="category-tag "
+        title="干货"
+        aria-label="导航至干货分类"
+      >
+        干货
+      </a>
+    
+      
+      
+
+      
+      
+      
+
+      
+
+      <a
+        href="/categories/%E6%9E%B6%E6%9E%84/"
+        class="category-tag "
+        title="架构"
+        aria-label="导航至架构分类"
+      >
+        架构
+      </a>
+    
+      
+      
+
+      
+      
+      
+
+      
+
+      <a
+        href="/categories/%E8%BF%90%E7%BB%B4/"
+        class="category-tag "
+        title="运维"
+        aria-label="导航至运维分类"
+      >
+        运维
+      </a>
+    
+  </div>
 </div>
 
 

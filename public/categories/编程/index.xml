@@ -23,20 +23,6 @@
       <description>&lt;p&gt;在 LangGraph 出现之前，多工具协同 Agent 的开发堪称 “踩坑重灾区”：不仅要手动编写工具调用判断、结果处理、循环终止等胶水代码，逻辑冗余且上线后频繁出现 “漏处理工具结果” 等功能性 bug；用全局变量存储会话状态时，多用户并发场景下极易引发上下文覆盖问题，故障排查往往要耗费大量时间定位根因；更棘手的是新增单一工具（如 “物流查询”），竟需同步修改 5 处以上关联逻辑（判断条件、参数传递、结果拼接），稍有不慎就会引发其他流程的连锁故障。&lt;/p&gt;</description>
     </item>
     <item>
-      <title>无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网</title>
-      <link>https://googhub.nyc.mn/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/</link>
-      <pubDate>Thu, 18 Sep 2025 00:00:00 +0000</pubDate>
-      <guid>https://googhub.nyc.mn/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/</guid>
-      <description>&lt;p&gt;构建企业级网站时，选择合适的无头 CMS（内容管理系统）至关重要。无头 CMS 使得内容管理与网站前端分离，提供更大的灵活性，同时与各种现代前端技术栈（如 React、Vue、Next.js）兼容。今天，我们将对比五款符合你需求的无头 CMS，它们都支持 Markdown 编辑，且是开源免费的解决方案。&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>知识库 -文档 - 博客，技术选型完全指南</title>
-      <link>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</link>
-      <pubDate>Sat, 08 Feb 2025 00:00:00 +0000</pubDate>
-      <guid>https://googhub.nyc.mn/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/</guid>
-      <description>&lt;p&gt;Trilium、Mintlify、Hugo、WordPress、VuePress、Read the Docs、Docsify、Netlify 对比&lt;/p&gt;&#xA;&lt;p&gt;在IT团队搭建知识库、博客或文档站时，工具选型往往比内容写作更让人纠结。&#xA;有人想要自托管、完全可控；有人追求快速上线、免运维；有人需要强交互和版本管理。有人想要美观好看，颜值能打。&lt;/p&gt;</description>
-    </item>
-    <item>
       <title>如何在Hugo项目中加入数学公式的支持</title>
       <link>https://googhub.nyc.mn/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/</link>
       <pubDate>Fri, 30 Aug 2024 00:00:00 +0000</pubDate>
@@ -56,6 +42,13 @@
       <pubDate>Sat, 25 May 2024 00:00:00 +0000</pubDate>
       <guid>https://googhub.nyc.mn/posts/2024/%E4%BB%8Eapi-key%E5%88%B0%E6%99%BA%E8%83%BD%E5%AF%B9%E8%AF%9D%E5%9F%BA%E4%BA%8Elangchain%E7%9A%84%E6%B5%81%E5%BC%8F%E8%81%8A%E5%A4%A9%E5%BA%94%E7%94%A8%E5%BC%80%E5%8F%91%E5%AE%9E%E6%88%98/</guid>
       <description>&lt;h2 id=&#34;一引言解锁gpt能力的钥匙&#34;&gt;一、引言：解锁GPT能力的钥匙&lt;/h2&gt;&#xA;&lt;p&gt;当开发者获得OpenAI API Key时，就像拿到了一把打开智能对话宇宙的钥匙。本文将结合&lt;code&gt;langchain&lt;/code&gt;框架，通过一个完整的流式聊天Demo，演示如何将API Key转化为具有上下文记忆、多会话管理和流式输出能力的智能对话系统。&lt;/p&gt;</description>
+    </item>
+    <item>
+      <title>Agent、MCP、FunctionCall的区别</title>
+      <link>https://googhub.nyc.mn/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/</link>
+      <pubDate>Mon, 08 Apr 2024 00:00:00 +0000</pubDate>
+      <guid>https://googhub.nyc.mn/posts/2024/agentmcpfunctioncall%E7%9A%84%E5%8C%BA%E5%88%AB/</guid>
+      <description>&lt;h2 id=&#34;一agent是自主决策的ai应用&#34;&gt;一、Agent是自主决策的AI应用&lt;/h2&gt;&#xA;&lt;p&gt;Agent是一种AI应用，能感知环境，能规划任务并调用外部工具完成任务。&lt;/p&gt;&#xA;&lt;ul&gt;&#xA;&lt;li&gt;具备自主决策&lt;/li&gt;&#xA;&lt;li&gt;能够完成复杂任务&lt;/li&gt;&#xA;&lt;li&gt;可以调用外部工具&lt;/li&gt;&#xA;&lt;li&gt;可以调用MCP、Function Call等&lt;/li&gt;&#xA;&lt;/ul&gt;</description>
     </item>
     <item>
       <title>分享几个热度较高的MCP服务聚合平台</title>

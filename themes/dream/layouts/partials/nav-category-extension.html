@@ -23,29 +23,140 @@
 
 {{ if $categories }}
 <style>
-  /* 仅保留布局和间距的样式，核心视觉样式由 HTML 类直接控制 */
-  .category-nav-container {
-    @apply flex items-end justify-center gap-2 px-4 !important; /* 确保是flex布局 */
-    height: 100%;
+  /* 核心优化：细阴影+无抖动+高性能 */
+  .category-bg-bar {
+    background-color: rgba(255, 255, 255, 0.85) !important;
+    backdrop-filter: blur(7px) !important;
+    -webkit-backdrop-filter: blur(7px) !important;
+
+    /* 精细化阴影：更细更淡 */
+    box-shadow:
+      inset 0 1px 0.5px rgba(0, 0, 0, 0.04),
+      inset 0 -1px 0.5px rgba(0, 0, 0, 0.02),
+      inset 1px 0 0.5px rgba(0, 0, 0, 0.04),
+      inset -1px 0 0.5px rgba(0, 0, 0, 0.04),
+      0 1px 2px rgba(0, 0, 0, 0.03) !important;
+
+    padding: 10px 36px !important;
+    border-radius: 14px !important;
+    border: 1px solid rgba(230, 230, 230, 0.4) !important;
+    will-change: transform, box-shadow, border-color !important;
+    transition:
+      transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    transform: translateZ(0) !important;
+  }
+
+  .category-bg-bar:hover {
+    transform: translateY(-2px) scale(1.008) translateZ(0) !important;
+    box-shadow:
+      inset 0 1px 0.5px rgba(0, 0, 0, 0.04),
+      inset 0 -1px 0.5px rgba(0, 0, 0, 0.02),
+      inset 1px 0 0.5px rgba(0, 0, 0, 0.04),
+      inset -1px 0 0.5px rgba(0, 0, 0, 0.04),
+      0 6px 12px rgba(0, 0, 0, 0.07) !important;
+    border-color: rgba(220, 220, 220, 0.6) !important;
+  }
+
+  html.dark .category-bg-bar {
+    background-color: rgba(30, 30, 30, 0.85) !important;
+    box-shadow:
+      inset 0 1px 0.5px rgba(255, 255, 255, 0.04),
+      inset 0 -1px 0.5px rgba(255, 255, 255, 0.02),
+      inset 1px 0 0.5px rgba(255, 255, 255, 0.04),
+      inset -1px 0 0.5px rgba(255, 255, 255, 0.04),
+      0 1px 2px rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(60, 60, 60, 0.4) !important;
+    will-change: transform, box-shadow, border-color !important;
+    transition:
+      transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      box-shadow 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+      border-color 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94) !important;
+    transform: translateZ(0) !important;
+  }
+
+  html.dark .category-bg-bar:hover {
+    transform: translateY(-2px) scale(1.008) translateZ(0) !important;
+    box-shadow:
+      inset 0 1px 0.5px rgba(255, 255, 255, 0.04),
+      inset 0 -1px 0.5px rgba(255, 255, 255, 0.02),
+      inset 1px 0 0.5px rgba(255, 255, 255, 0.04),
+      inset -1px 0 0.5px rgba(255, 255, 255, 0.04),
+      0 6px 12px rgba(0, 0, 0, 0.25) !important;
+    border-color: rgba(80, 80, 80, 0.6) !important;
+  }
+
+  .category-tag {
+    color: rgba(0, 0, 0, 0.7) !important;
+    font-size: 1.0rem !important;
+    font-weight: 450 !important;
+    margin: 0 16px !important;
+    text-decoration: none !important;
+    transition: color 0.2s ease, font-weight 0.2s ease !important;
+    letter-spacing: 0.03em !important;
+    text-shadow: 0 1px 0 rgba(255, 255, 255, 0.9) !important;
+    line-height: 1.2 !important;
+  }
+  .category-tag:hover, .category-tag.active {
+    color: #10b981 !important;
+    font-weight: 600 !important;
+  }
+
+  html.dark .category-tag {
+    color: rgba(255, 255, 255, 0.7) !important;
+    font-size: 1.0rem !important;
+    margin: 0 16px !important;
+    letter-spacing: 0.03em !important;
+    text-shadow: 0 1px 0 rgba(0, 0, 0, 0.5) !important;
+    line-height: 1.2 !important;
+  }
+  html.dark .category-tag:hover, html.dark .category-tag.active {
+    color: #4ade80 !important;
+    font-weight: 600 !important;
   }
 </style>
 
-{{/* 桌面端分类导航：保留所有能生效的强样式 */}}
-<div class="category-nav-container">
-  {{ range $categories }}
-  <a
-    href="{{ .Page.RelPermalink }}"
-    class="badge h-6 no-underline text-gray-800 bg-gray-100 hover:badge-primary hover:text-white rounded-full py-1.5 px-3.5 mx-2 transition-all duration-200 ease-in-out text-uppercase !important"
-    title="{{ .Name }}"
-    style="
-      font-size: 1rem !important;
-      margin: 0 0.5rem !important; /* 左右间距0.5rem，上下0 */
-      border-radius: 9999px !important; /* 强制圆形 */
-    "
-  >
-    {{ .Name | upper }}
-  </a>
-  {{ end }}
+{{/* 桌面端分类导航：修复报错+完整优化 */}}
+<div style="display: flex; align-items: center; justify-content: center; height: 100%; padding: 6px 0;">
+  <div class="category-bg-bar">
+    {{ $currentPage := . }}
+    {{ range $categories }}
+      {{ $categoryPage := .Page }}
+      {{ $isActive := false }}
+
+      {{/* 修复eq语法错误：正确传递两个参数 */}}
+      {{ $currentRelPermalink := $currentPage.RelPermalink | lower }}
+      {{ $categoryRelPermalink := $categoryPage.RelPermalink | lower }}
+
+      {{ if eq $currentPage.Kind "term" }}
+        {{/* 修正：eq需要两个参数，用括号包裹lower处理 */}}
+        {{ if or (eq $currentRelPermalink $categoryRelPermalink) (eq (lower $currentPage.Title) (lower $categoryPage.Title)) }}
+          {{ $isActive = true }}
+        {{ end }}
+      {{ else if eq $currentPage.Kind "page" }}
+        {{ range $currentPage.Params.categories }}
+          {{ $articleCat := site.GetPage (printf "/categories/%s" .) }}
+          {{ if and $articleCat (eq (lower $articleCat.RelPermalink) $categoryRelPermalink) }}
+            {{ $isActive = true }}
+          {{ end }}
+        {{ end }}
+      {{ end }}
+
+      <a
+        href="{{ $categoryPage.RelPermalink }}"
+        class="category-tag {{ if $isActive }}active{{ end }}"
+        title="{{ $categoryPage.Name }}"
+        aria-label="{{ printf "导航至%s分类" $categoryPage.Name }}"
+      >
+        {{ $categoryPage.Name | upper }}
+      </a>
+    {{ end }}
+  </div>
 </div>
 
 {{ end }}
