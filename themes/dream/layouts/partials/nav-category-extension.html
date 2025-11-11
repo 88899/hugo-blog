@@ -18,7 +18,7 @@
 
 {{ if $categories }}
 <style>
-/* 全局清零：移除所有可能触发GPU的属性 */
+/* 容器样式（保持不变） */
 .category-container {
   display: flex;
   align-items: center;
@@ -28,34 +28,7 @@
   overflow: hidden;
 }
 
-/* 导航条：零阴影、零过渡、零复杂样式 */
-.category-bg-bar {
-  /* 亮色模式：纯白实色，无阴影，仅1px细边框 */
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 50px;
-  padding: 10px 36px;
-  display: inline-flex;
-  align-items: center;
-  max-width: 95vw;
-}
-
-/* 彻底移除hover动画：仅文字反馈，无任何布局/样式变动 */
-.category-bg-bar:hover {
-  border-color: #e0e0e0; /* 边框不变，避免重绘 */
-}
-
-/* 暗黑模式：纯黑实色，零阴影，仅1px细边框 */
-html.dark .category-bg-bar {
-  background: #1e1e1e;
-  border: 1px solid #333;
-}
-
-html.dark .category-bg-bar:hover {
-  border-color: #333; /* 边框不变 */
-}
-
-/* 标签样式：仅文字颜色变化，无其他过渡 */
+/* 标签样式：保留原有属性，仅新增静态横线基础 */
 .category-tag {
   color: #666; /* 亮色默认文字 */
   font-size: 1.0rem;
@@ -64,14 +37,38 @@ html.dark .category-bg-bar:hover {
   text-decoration: none;
   white-space: nowrap;
   padding: 2px 0;
+  position: relative; /* 伪元素定位基础 */
+  /* 强制CPU渲染，禁用所有GPU加速 */
+  transform: none !important;
+  will-change: none !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
-/* 仅通过文字颜色和字重反馈交互（零渲染成本） */
+/* 原有交互效果：保持不变（颜色+字重） */
 .category-tag:hover, .category-tag.active {
   color: #10b981;
   font-weight: 600;
 }
 
+/* 核心修改：去掉过渡动画，改为静态显示/隐藏横线 */
+.category-tag::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0; /* 默认隐藏 */
+  height: 1px; /* 横线变细，减少渲染成本 */
+  background-color: #10b981;
+  /* 移除所有transition，无动态计算 */
+}
+
+/* hover/激活时直接显示横线（无动画，零负载） */
+.category-tag:hover::after, .category-tag.active::after {
+  width: 100%;
+}
+
+/* 暗黑模式：进一步简化横线样式，降低计算压力 */
 html.dark .category-tag {
   color: #bbb; /* 暗黑默认文字 */
 }
@@ -80,13 +77,13 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
   color: #4ade80;
 }
 
-/* 响应式适配（保持基础功能） */
+html.dark .category-tag::after {
+  background-color: #4ade80;
+  height: 1px; /* 统一细横线，减少对比度计算 */
+}
+
+/* 响应式适配（保持不变） */
 @media (max-width: 768px) {
-  .category-bg-bar {
-    padding: 8px 16px;
-    overflow-x: auto;
-    justify-content: flex-start;
-  }
   .category-tag {
     margin: 0 10px;
     font-size: 0.9rem;
@@ -95,33 +92,31 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 </style>
 
 <div class="category-container">
-  <div class="category-bg-bar">
-    {{ $currentPage := . }}
-    {{ range $categories }}
-      {{ $categoryPage := .Page | default nil }}
-      {{ if $categoryPage }}
-        {{ $isActive := false }}
-        {{ $currentRelPermalink := $currentPage.RelPermalink | lower | default "" }}
-        {{ $categoryRelPermalink := $categoryPage.RelPermalink | lower | default "" }}
+  {{ $currentPage := . }}
+  {{ range $categories }}
+    {{ $categoryPage := .Page | default nil }}
+    {{ if $categoryPage }}
+      {{ $isActive := false }}
+      {{ $currentRelPermalink := $currentPage.RelPermalink | lower | default "" }}
+      {{ $categoryRelPermalink := $categoryPage.RelPermalink | lower | default "" }}
 
-        {{ if eq $currentPage.Kind "term" }}
-          {{ if or (eq $currentRelPermalink $categoryRelPermalink) (eq (lower $currentPage.Title | default "") (lower $categoryPage.Title | default "")) }}
+      {{ if eq $currentPage.Kind "term" }}
+        {{ if or (eq $currentRelPermalink $categoryRelPermalink) (eq (lower $currentPage.Title | default "") (lower $categoryPage.Title | default "")) }}
+          {{ $isActive = true }}
+        {{ end }}
+      {{ else if eq $currentPage.Kind "page" }}
+        {{ range $currentPage.Params.categories | default slice }}
+          {{ $articleCat := site.GetPage (printf "/categories/%s" .) | default nil }}
+          {{ if and $articleCat (eq (lower $articleCat.RelPermalink | default "") $categoryRelPermalink) }}
             {{ $isActive = true }}
           {{ end }}
-        {{ else if eq $currentPage.Kind "page" }}
-          {{ range $currentPage.Params.categories | default slice }}
-            {{ $articleCat := site.GetPage (printf "/categories/%s" .) | default nil }}
-            {{ if and $articleCat (eq (lower $articleCat.RelPermalink | default "") $categoryRelPermalink) }}
-              {{ $isActive = true }}
-            {{ end }}
-          {{ end }}
         {{ end }}
-
-        <a href="{{ $categoryPage.RelPermalink }}" class="category-tag {{ if $isActive }}active{{ end }}" title="{{ $categoryPage.Name | default "分类" }}">
-          {{ $categoryPage.Name | upper | default "UNKNOWN" }}
-        </a>
       {{ end }}
+
+      <a href="{{ $categoryPage.RelPermalink }}" class="category-tag {{ if $isActive }}active{{ end }}" title="{{ $categoryPage.Name | default "分类" }}">
+        {{ $categoryPage.Name | upper | default "UNKNOWN" }}
+      </a>
     {{ end }}
-  </div>
+  {{ end }}
 </div>
 {{ end }}

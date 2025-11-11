@@ -346,33 +346,6 @@
 }
 
  
-.category-bg-bar {
-   
-  background: #ffffff;
-  border: 1px solid #e0e0e0;
-  border-radius: 50px;
-  padding: 10px 36px;
-  display: inline-flex;
-  align-items: center;
-  max-width: 95vw;
-}
-
- 
-.category-bg-bar:hover {
-  border-color: #e0e0e0;  
-}
-
- 
-html.dark .category-bg-bar {
-  background: #1e1e1e;
-  border: 1px solid #333;
-}
-
-html.dark .category-bg-bar:hover {
-  border-color: #333;  
-}
-
- 
 .category-tag {
   color: #666;  
   font-size: 1.0rem;
@@ -381,6 +354,12 @@ html.dark .category-bg-bar:hover {
   text-decoration: none;
   white-space: nowrap;
   padding: 2px 0;
+  position: relative;  
+   
+  transform: none !important;
+  will-change: none !important;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
 }
 
  
@@ -389,6 +368,24 @@ html.dark .category-bg-bar:hover {
   font-weight: 600;
 }
 
+ 
+.category-tag::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0;  
+  height: 1px;  
+  background-color: #10b981;
+   
+}
+
+ 
+.category-tag:hover::after, .category-tag.active::after {
+  width: 100%;
+}
+
+ 
 html.dark .category-tag {
   color: #bbb;  
 }
@@ -397,13 +394,13 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
   color: #4ade80;
 }
 
+html.dark .category-tag::after {
+  background-color: #4ade80;
+  height: 1px;  
+}
+
  
 @media (max-width: 768px) {
-  .category-bg-bar {
-    padding: 8px 16px;
-    overflow-x: auto;
-    justify-content: flex-start;
-  }
   .category-tag {
     margin: 0 10px;
     font-size: 0.9rem;
@@ -412,88 +409,86 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 </style>
 
 <div class="category-container">
-  <div class="category-bg-bar">
+  
+  
     
     
       
       
-        
-        
-        
-
-        
-
-        <a href="/categories/ai/" class="category-tag " title="AI">
-          AI
-        </a>
       
+
+      
+
+      <a href="/categories/ai/" class="category-tag " title="AI">
+        AI
+      </a>
+    
+  
+    
     
       
       
-        
-        
-        
-
-        
-
-        <a href="/categories/vps/" class="category-tag " title="VPS">
-          VPS
-        </a>
       
+
+      
+
+      <a href="/categories/vps/" class="category-tag " title="VPS">
+        VPS
+      </a>
+    
+  
+    
     
       
       
-        
-        
-        
-
-        
-
-        <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-tag " title="编程">
-          编程
-        </a>
       
+
+      
+
+      <a href="/categories/%E7%BC%96%E7%A8%8B/" class="category-tag " title="编程">
+        编程
+      </a>
+    
+  
+    
     
       
       
-        
-        
-        
-
-        
-
-        <a href="/categories/%E5%B9%B2%E8%B4%A7/" class="category-tag " title="干货">
-          干货
-        </a>
       
+
+      
+
+      <a href="/categories/%E5%B9%B2%E8%B4%A7/" class="category-tag " title="干货">
+        干货
+      </a>
+    
+  
+    
     
       
       
-        
-        
-        
-
-        
-
-        <a href="/categories/%E6%9E%B6%E6%9E%84/" class="category-tag " title="架构">
-          架构
-        </a>
       
+
+      
+
+      <a href="/categories/%E6%9E%B6%E6%9E%84/" class="category-tag " title="架构">
+        架构
+      </a>
+    
+  
+    
     
       
       
-        
-        
-        
-
-        
-
-        <a href="/categories/%E8%BF%90%E7%BB%B4/" class="category-tag " title="运维">
-          运维
-        </a>
       
+
+      
+
+      <a href="/categories/%E8%BF%90%E7%BB%B4/" class="category-tag " title="运维">
+        运维
+      </a>
     
-  </div>
+  
 </div>
 
         </div>
@@ -1178,8 +1173,8 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
     
     
     <picture>
-      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
-      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
+      <source srcset="/images/default4_hu_ae815e0f1649c253.webp" type="image/webp" />
+      <img src="/images/default4.jpg" alt="/images/default4.jpg" />
     </picture>
     
   </figure>
