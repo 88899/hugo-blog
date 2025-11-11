@@ -339,8 +339,8 @@
 .category-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 6px 0;
+  justify-content: flex-start;  
+  padding: 6px 0 6px 16px;  
   width: 100%;
   overflow: hidden;
 }
@@ -354,8 +354,7 @@
   text-decoration: none;
   white-space: nowrap;
   padding: 2px 0;
-  position: relative;  
-   
+  position: relative;
   transform: none !important;
   will-change: none !important;
   backface-visibility: hidden;
@@ -374,20 +373,18 @@
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 0;  
-  height: 1px;  
+  width: 0;
+  height: 1px;
   background-color: #10b981;
-   
 }
 
- 
 .category-tag:hover::after, .category-tag.active::after {
   width: 100%;
 }
 
  
 html.dark .category-tag {
-  color: #bbb;  
+  color: #bbb;
 }
 
 html.dark .category-tag:hover, html.dark .category-tag.active {
@@ -396,7 +393,7 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
 html.dark .category-tag::after {
   background-color: #4ade80;
-  height: 1px;  
+  height: 1px;
 }
 
  
@@ -989,8 +986,8 @@ html.dark .category-tag::after {
     
     
     <picture>
-      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
-      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
+      <source srcset="/images/default4_hu_ae815e0f1649c253.webp" type="image/webp" />
+      <img src="/images/default4.jpg" alt="/images/default4.jpg" />
     </picture>
     
   </figure>

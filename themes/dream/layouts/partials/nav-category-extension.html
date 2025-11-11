@@ -18,17 +18,17 @@
 
 {{ if $categories }}
 <style>
-/* 容器样式（保持不变） */
+/* 容器样式：核心修改左移（仅调整布局，不改变其他属性） */
 .category-container {
   display: flex;
   align-items: center;
-  justify-content: center;
-  padding: 6px 0;
+  justify-content: flex-start; /* 从居中改为靠左对齐 */
+  padding: 6px 0 6px 16px; /* 左移16px（适度留白，大气不贴边），上下padding不变 */
   width: 100%;
   overflow: hidden;
 }
 
-/* 标签样式：保留原有属性，仅新增静态横线基础 */
+/* 标签样式：保持不变（含稳定性优化） */
 .category-tag {
   color: #666; /* 亮色默认文字 */
   font-size: 1.0rem;
@@ -37,40 +37,37 @@
   text-decoration: none;
   white-space: nowrap;
   padding: 2px 0;
-  position: relative; /* 伪元素定位基础 */
-  /* 强制CPU渲染，禁用所有GPU加速 */
+  position: relative;
   transform: none !important;
   will-change: none !important;
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 }
 
-/* 原有交互效果：保持不变（颜色+字重） */
+/* 原有交互效果：保持不变 */
 .category-tag:hover, .category-tag.active {
   color: #10b981;
   font-weight: 600;
 }
 
-/* 核心修改：去掉过渡动画，改为静态显示/隐藏横线 */
+/* 静态横线效果：保持不变 */
 .category-tag::after {
   content: "";
   position: absolute;
   left: 0;
   bottom: 0;
-  width: 0; /* 默认隐藏 */
-  height: 1px; /* 横线变细，减少渲染成本 */
+  width: 0;
+  height: 1px;
   background-color: #10b981;
-  /* 移除所有transition，无动态计算 */
 }
 
-/* hover/激活时直接显示横线（无动画，零负载） */
 .category-tag:hover::after, .category-tag.active::after {
   width: 100%;
 }
 
-/* 暗黑模式：进一步简化横线样式，降低计算压力 */
+/* 暗黑模式：保持不变 */
 html.dark .category-tag {
-  color: #bbb; /* 暗黑默认文字 */
+  color: #bbb;
 }
 
 html.dark .category-tag:hover, html.dark .category-tag.active {
@@ -79,10 +76,10 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
 html.dark .category-tag::after {
   background-color: #4ade80;
-  height: 1px; /* 统一细横线，减少对比度计算 */
+  height: 1px;
 }
 
-/* 响应式适配（保持不变） */
+/* 响应式适配：保持不变 */
 @media (max-width: 768px) {
   .category-tag {
     margin: 0 10px;
