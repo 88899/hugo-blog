@@ -883,28 +883,43 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       <div class="dream-grid">
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/"
+  aria-label="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/f804cbd4633e6ab2b7927bf272ff5c9e.png" alt="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/f804cbd4633e6ab2b7927bf272ff5c9e.png"
+        alt="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-10-22T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-10-22">2025-10-22T00:00:00Z</span>
+      
     </p>
 
-    磁盘问题是日常工作中最常遇到的故障类型之一 —— 无论是磁盘空间莫名占满、I/O 读写卡顿，还是磁盘…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      磁盘问题是日常工作中最常遇到的故障类型之一 —— 无论是磁盘空间莫名占满、I/O 读写卡顿，还是磁盘…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -926,39 +941,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>17分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="17分钟阅读">
+          17分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/"
+  aria-label="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/e64657a7fbfd7fd80d9e38410c4f08e0.png" alt="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/e64657a7fbfd7fd80d9e38410c4f08e0.png"
+        alt="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-10-10T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-10-10">2025-10-10T00:00:00Z</span>
+      
     </p>
 
-    在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -980,39 +1041,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>4分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="4分钟阅读">
+          4分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/"
+  aria-label="在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/f827a09e011ae662fe001642683a031f.png" alt="在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/f827a09e011ae662fe001642683a031f.png"
+        alt="在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-02-22T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-02-22">2025-02-22T00:00:00Z</span>
+      
     </p>
 
-    【Linux VPS WARP 配置避坑】Proxy 模式避免 VPS 失…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      【Linux VPS WARP 配置避坑】Proxy 模式避免 VPS 失…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1032,39 +1139,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>4分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="4分钟阅读">
+          4分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2024/lade.io%E6%B3%A8%E5%86%8C%E5%88%B0%E6%90%AD%E5%BB%BA%E5%BA%94%E7%94%A8-%E5%B0%8F%E7%99%BD%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/"
+  aria-label="Lade.io注册到搭建应用, 小白完全指南 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/f01c7e6a5b74279b0e1e7745f2206974.png" alt="Lade.io注册到搭建应用, 小白完全指南" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/f01c7e6a5b74279b0e1e7745f2206974.png"
+        alt="Lade.io注册到搭建应用, 小白完全指南"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">Lade.io注册到搭建应用, 小白完全指南</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">Lade.io注册到搭建应用, 小白完全指南</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2024-03-03T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2024-03-03">2024-03-03T00:00:00Z</span>
+      
     </p>
 
-    【Lade.io 部署 Sing-box 教程】从注册（邮箱 + GitHub 验证）…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      【Lade.io 部署 Sing-box 教程】从注册（邮箱 + GitHub 验证）…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1086,39 +1239,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>3分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="3分钟阅读">
+          3分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2023/%E6%8B%BF%E5%88%B0hax%E7%9A%84eu-vps%E6%9C%80%E4%BD%B3%E8%A3%85%E6%9C%BA%E6%8C%87%E5%8D%97%E5%B0%8F%E7%99%BD%E7%99%BD/"
+  aria-label="拿到Hax的EU VPS，最佳装机指南（小白白） - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/f93550a6ebdb90b5118af1d0f906689b.png" alt="拿到Hax的EU VPS，最佳装机指南（小白白）" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/f93550a6ebdb90b5118af1d0f906689b.png"
+        alt="拿到Hax的EU VPS，最佳装机指南（小白白）"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">拿到Hax的EU VPS，最佳装机指南（小白白）</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">拿到Hax的EU VPS，最佳装机指南（小白白）</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2023-02-20T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2023-02-20">2023-02-20T00:00:00Z</span>
+      
     </p>
 
-    Hax EU VPS 小白配置指南】Debian12 系统首选（解决 Ubuntu20 报错 /…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      Hax EU VPS 小白配置指南】Debian12 系统首选（解决 Ubuntu20 报错 /…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1140,43 +1339,96 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>3分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="3分钟阅读">
+          3分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2023/%E4%BD%BF%E7%94%A8chatgpt%E8%8E%B7%E5%8F%96%E5%85%A8%E7%BD%91free-vps%E6%B8%85%E5%8D%95/"
+  aria-label="使用Chatgpt获取全网Free vps清单 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    
-    <picture>
-      <source srcset="/images/default3_hu_599e07ea93afc07d.webp" type="image/webp" />
-      <img src="/images/default3.jpg" alt="/images/default3.jpg" />
-    </picture>
+      
+      
+      <picture>
+        <source
+          srcset="/images/default2_hu_8e2a304948ea57db.webp"
+          type="image/webp"
+          width="640"
+          height="443"
+        />
+        <img
+          src="/images/default2_hu_9203b6d730be0be5.jpg"
+          alt="/images/default2.jpg"
+          loading="lazy"
+          width="640"
+          height="443"
+          class="w-full h-auto object-cover"
+        />
+      </picture>
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">使用Chatgpt获取全网Free vps清单</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">使用Chatgpt获取全网Free vps清单</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2023-02-11T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2023-02-11">2023-02-11T00:00:00Z</span>
+      
     </p>
 
-    【真免费 VPS 推荐（非试用）】无需绑信用卡，支持 Python/PHP/Docker，…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      【真免费 VPS 推荐（非试用）】无需绑信用卡，支持 Python/PHP/Docker，…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1198,39 +1450,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>7分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="7分钟阅读">
+          7分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/"
+  aria-label="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/f605631c0b2a5cc96b5d4839abc3ec84.png" alt="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/f605631c0b2a5cc96b5d4839abc3ec84.png"
+        alt="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2023-01-20T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2023-01-20">2023-01-20T00:00:00Z</span>
+      
     </p>
 
-    如何用 Serv00 幸存账号薅免费羊毛？教你搭建与 NL 一致的论坛：下载对应 PHP8.1…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      如何用 Serv00 幸存账号薅免费羊毛？教你搭建与 NL 一致的论坛：下载对应 PHP8.1…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1252,14 +1550,45 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>2分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="2分钟阅读">
+          2分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
       </div>

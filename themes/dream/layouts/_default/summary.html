@@ -1,56 +1,137 @@
-<a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="{{ .RelPermalink }}">
+<div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="{{ .RelPermalink }}"
+  aria-label="{{ .Title }} - {{ T "viewArticle" | default "查看文章" }}"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   {{ if .Params.image }}
-  <figure>
+  <figure class="m-0">
     {{ with .Resources.Get .Params.image }}
-    {{ if eq .MediaType.SubType "svg" }}
-      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
+      {{ if eq .MediaType.SubType "svg" }}
+        <img
+          src="{{ .RelPermalink }}"
+          alt="{{ .Title | default $.Title }}"
+          loading="lazy"
+          width="{{ .Width }}"
+          height="{{ .Height }}"
+          class="w-full h-auto object-cover"
+        />
+      {{ else }}
+        {{ $webp := .Resize (printf "%dx%d webp q85" .Width .Height) }}
+        {{ $fallback := .Resize (printf "%dx%d q85" .Width .Height) }}
+        <picture>
+          <source
+            srcset="{{ $webp.RelPermalink }}"
+            type="image/webp"
+            width="{{ $webp.Width }}"
+            height="{{ $webp.Height }}"
+          />
+          <img
+            src="{{ $fallback.RelPermalink }}"
+            alt="{{ .Title | default $.Title }}"
+            loading="lazy"
+            width="{{ $fallback.Width }}"
+            height="{{ $fallback.Height }}"
+            class="w-full h-auto object-cover"
+          />
+        </picture>
+      {{ end }}
     {{ else }}
-      {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
-      <picture>
-        <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
-        <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
-      </picture>
-    {{ end }}
-    {{ else }}
-    <img src="{{ .Params.image }}" alt="{{ .Title }}" />
+      <img
+        src="{{ .Params.image }}"
+        alt="{{ .Title }}"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='{{ resources.Get "images/default1.jpg" | relURL }}'"
+      />
     {{ end }}
   </figure>
   {{ else if not site.Params.noDefaultSummaryCover }}
-  <figure>
+  <figure class="m-0">
     {{ with resources.Get (printf "images/default%d.jpg" (index (seq 4 | shuffle) 0)) }}
-    {{ $webp := .Resize (printf "%dx%d webp" .Width .Height) }}
-    <picture>
-      <source srcset="{{ $webp.RelPermalink }}" type="image/webp" />
-      <img src="{{ .RelPermalink }}" alt="{{ .Title }}" />
-    </picture>
+      {{ $webp := .Resize (printf "%dx%d webp q85" .Width .Height) }}
+      {{ $fallback := .Resize (printf "%dx%d q85" .Width .Height) }}
+      <picture>
+        <source
+          srcset="{{ $webp.RelPermalink }}"
+          type="image/webp"
+          width="{{ $webp.Width }}"
+          height="{{ $webp.Height }}"
+        />
+        <img
+          src="{{ $fallback.RelPermalink }}"
+          alt="{{ .Title | default $.Title }}"
+          loading="lazy"
+          width="{{ $fallback.Width }}"
+          height="{{ $fallback.Height }}"
+          class="w-full h-auto object-cover"
+        />
+      </picture>
     {{ end }}
   </figure>
   {{ end }}
 
-  <div class="card-body">
-    <h2 class="card-title">{{ .Title }}</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">{{ .Title }}</h2>
 
-    <p class="date text-base-content/60">
-    {{ if site.Params.Experimental.jsDate }}
-      <span data-format="luxon">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
-    {{ else }}
-      {{ .Date | time.Format "Monday, Jan 2, 2006" }}
-    {{ end }}
+    <p class="date text-base-content/60 text-sm mb-3">
+      {{ if site.Params.Experimental.jsDate }}
+        <span data-format="luxon" aria-label="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "2006-01-02T15:04:05Z07:00" }}</span>
+      {{ else }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}" aria-label="{{ .Date.Format "2006年1月2日" }}">
+          {{ .Date | time.Format "Monday, Jan 2, 2006" }}
+        </time>
+      {{ end }}
     </p>
-<!--
-    {{ or .Description (.Summary | emojify | safeHTML) }} -->
-    {{ or (.Description | truncate 50 "…") (.Summary | emojify | safeHTML | truncate 50 "…") }}
+
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      {{ or (.Description | truncate 50 "…") (.Summary | emojify | safeHTML | truncate 50 "…") }}
+    </p>
 
     {{ $hasAuthor := or .Params.author site.Params.author }}
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       {{ if $hasAuthor }}
         {{ partial "author.html" (dict "Params" .Params "template" "summary") }}
       {{ end }}
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="{{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}">
+          {{ .ReadingTime }}{{ T "minuteRead" .ReadingTime }}
+        </span>
       </div>
     </div>
   </div>
-</a>
+
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>

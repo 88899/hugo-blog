@@ -883,32 +883,54 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       <div class="dream-grid">
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2022/u%E7%9B%98%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2022/u%E7%9B%98%E4%B8%AD%E7%9A%84%E6%96%87%E4%BB%B6%E6%81%A2%E5%A4%8D/"
+  aria-label="U盘中的文件恢复 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    
-    <picture>
-      <source srcset="/images/default2_hu_c96b8a8cc3f55f81.webp" type="image/webp" />
-      <img src="/images/default2.jpg" alt="/images/default2.jpg" />
-    </picture>
+      
+      
+      <picture>
+        <source
+          srcset="/images/default1_hu_1bc1d6d231b6a645.webp"
+          type="image/webp"
+          width="640"
+          height="512"
+        />
+        <img
+          src="/images/default1_hu_4ffd7cb470e02bf3.jpg"
+          alt="/images/default1.jpg"
+          loading="lazy"
+          width="640"
+          height="512"
+          class="w-full h-auto object-cover"
+        />
+      </picture>
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">U盘中的文件恢复</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">U盘中的文件恢复</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2022-08-27T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2022-08-27">2022-08-27T00:00:00Z</span>
+      
     </p>
 
-    【U 盘读取失败数据恢复】用 Recoverit（安装破解 + 选文件恢复）…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      【U 盘读取失败数据恢复】用 Recoverit（安装破解 + 选文件恢复）…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -930,14 +952,45 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>2分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="2分钟阅读">
+          2分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
       </div>

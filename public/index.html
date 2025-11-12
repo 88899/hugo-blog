@@ -831,28 +831,43 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 <div class="dream-grid opacity-0">
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/ai-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8D%95%E6%9C%BA%E5%8D%95%E5%8D%A1%E5%BE%AE%E8%B0%83-unsloth-%E5%AE%9E%E6%88%98/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/ai-%E5%A4%A7%E6%A8%A1%E5%9E%8B%E5%8D%95%E6%9C%BA%E5%8D%95%E5%8D%A1%E5%BE%AE%E8%B0%83-unsloth-%E5%AE%9E%E6%88%98/"
+  aria-label="AI 大模型单机单卡微调-Unsloth 实战 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/11/95e07365779a7604d919d4383b83ac0b.png" alt="AI 大模型单机单卡微调-Unsloth 实战" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/11/95e07365779a7604d919d4383b83ac0b.png"
+        alt="AI 大模型单机单卡微调-Unsloth 实战"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">AI 大模型单机单卡微调-Unsloth 实战</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">AI 大模型单机单卡微调-Unsloth 实战</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-11-05T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-11-05">2025-11-05T00:00:00Z</span>
+      
     </p>
 
-    聚焦单机单卡（如 RTX 3090/4090）AI 大模型微调场景，以 Unsloth 工具为核心，…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      聚焦单机单卡（如 RTX 3090/4090）AI 大模型微调场景，以 Unsloth 工具为核心，…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -874,39 +889,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>16分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="16分钟阅读">
+          16分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/ai-%E7%A0%94%E5%8F%91%E5%85%A8%E6%A0%88%E6%8A%80%E6%9C%AF%E6%9E%B6%E6%9E%84%E8%AE%BE%E8%AE%A1%E5%AE%9E%E6%88%98%E6%8C%87%E5%8D%97/"
+  aria-label="AI 研发全栈技术架构设计实战指南 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/11/daf9aacd586ef77d3bc0c0f230bab3d3.png" alt="AI 研发全栈技术架构设计实战指南" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/11/daf9aacd586ef77d3bc0c0f230bab3d3.png"
+        alt="AI 研发全栈技术架构设计实战指南"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">AI 研发全栈技术架构设计实战指南</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">AI 研发全栈技术架构设计实战指南</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-11-03T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-11-03">2025-11-03T00:00:00Z</span>
+      
     </p>
 
-    本文聚焦 AI 研发全栈技术架构设计，从底层算力硬件、高性能网络与分层存储的基础设施搭建，到中间层虚…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      本文聚焦 AI 研发全栈技术架构设计，从底层算力硬件、高性能网络与分层存储的基础设施搭建，到中间层虚…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -928,39 +989,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>11分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="11分钟阅读">
+          11分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/langgraph-%E5%AE%9E%E6%88%983-%E6%AD%A5%E6%90%AD%E5%BB%BA-agent-%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E6%89%8B%E6%90%93%E7%97%9B%E8%8B%A6/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/langgraph-%E5%AE%9E%E6%88%983-%E6%AD%A5%E6%90%AD%E5%BB%BA-agent-%E5%BD%BB%E5%BA%95%E5%91%8A%E5%88%AB%E6%89%8B%E6%90%93%E7%97%9B%E8%8B%A6/"
+  aria-label="LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/11/c8dbe35077ef88d2a542df4f656488ee.png" alt="LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/11/c8dbe35077ef88d2a542df4f656488ee.png"
+        alt="LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">LangGraph 实战，3 步搭建 Agent 彻底告别手搓痛苦</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-10-25T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-10-25">2025-10-25T00:00:00Z</span>
+      
     </p>
 
-    本文面向 AI 开发初学者与刚入门工程师，聚焦复杂 Agent 开发的核心痛点 —— 手搓代码时流程…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      本文面向 AI 开发初学者与刚入门工程师，聚焦复杂 Agent 开发的核心痛点 —— 手搓代码时流程…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -982,39 +1089,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>14分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="14分钟阅读">
+          14分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/"
+  aria-label="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/f804cbd4633e6ab2b7927bf272ff5c9e.png" alt="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/f804cbd4633e6ab2b7927bf272ff5c9e.png"
+        alt="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-10-22T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-10-22">2025-10-22T00:00:00Z</span>
+      
     </p>
 
-    磁盘问题是日常工作中最常遇到的故障类型之一 —— 无论是磁盘空间莫名占满、I/O 读写卡顿，还是磁盘…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      磁盘问题是日常工作中最常遇到的故障类型之一 —— 无论是磁盘空间莫名占满、I/O 读写卡顿，还是磁盘…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1036,39 +1189,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>17分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="17分钟阅读">
+          17分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/%E5%BF%AB%E9%80%9F%E5%AE%9A%E4%BD%8D%E5%92%8C%E8%A7%A3%E5%86%B3ubuntu-%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E5%8D%A0%E7%94%A8%E9%97%AE%E9%A2%98%E5%AE%8C%E6%95%B4%E6%8E%92%E6%9F%A5%E4%B8%8E%E6%B8%85%E7%90%86%E6%8C%87%E5%8D%97/"
+  aria-label="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/e64657a7fbfd7fd80d9e38410c4f08e0.png" alt="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/e64657a7fbfd7fd80d9e38410c4f08e0.png"
+        alt="快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">快速定位和解决Ubuntu 服务器磁盘占用问题，完整排查与清理指南</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-10-10T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-10-10">2025-10-10T00:00:00Z</span>
+      
     </p>
 
-    在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      在服务器运维中，“磁盘空间满了” 是高频问题。以下将以一个真实场景为例，从发现磁盘占满开始，一步步教…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1090,39 +1289,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>4分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="4分钟阅读">
+          4分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/%E6%97%A0%E5%A4%B4-cms-%E9%80%89%E5%9E%8B%E6%8C%87%E5%8D%97%E5%BC%80%E6%BA%90%E5%85%8D%E8%B4%B9%E6%98%93%E7%94%A8%E6%89%93%E9%80%A0%E5%A4%A7%E6%B0%94%E7%A7%91%E6%8A%80%E6%84%9F%E5%AE%98%E7%BD%91/"
+  aria-label="无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/736f691b8d0288986e5e6c0a9f0005c4.png" alt="无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/736f691b8d0288986e5e6c0a9f0005c4.png"
+        alt="无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">无头 CMS 选型指南：开源、免费、易用，打造大气科技感官网</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-09-18T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-09-18">2025-09-18T00:00:00Z</span>
+      
     </p>
 
-    本文聚焦企业级网站构建中无头 CMS 的选择，…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      本文聚焦企业级网站构建中无头 CMS 的选择，…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1144,39 +1389,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>5分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="5分钟阅读">
+          5分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/%E5%9C%A8-linux-vps-%E4%B8%8A%E5%AE%89%E8%A3%85%E4%B8%8E%E9%85%8D%E7%BD%AE-warp-cli-%E5%B9%B6%E9%80%9A%E8%BF%87-socks5-%E4%BB%A3%E7%90%86%E6%8E%A5%E5%85%A5-warp-%E7%BD%91%E7%BB%9C/"
+  aria-label="在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/f827a09e011ae662fe001642683a031f.png" alt="在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/f827a09e011ae662fe001642683a031f.png"
+        alt="在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">在 Linux VPS 上安装与配置 WARP-CLI 并通过 Socks5 代理接入 WARP 网络</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-02-22T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-02-22">2025-02-22T00:00:00Z</span>
+      
     </p>
 
-    【Linux VPS WARP 配置避坑】Proxy 模式避免 VPS 失…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      【Linux VPS WARP 配置避坑】Proxy 模式避免 VPS 失…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1196,39 +1487,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>4分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="4分钟阅读">
+          4分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/-%E7%9F%A5%E8%AF%86%E5%BA%93--%E6%96%87%E6%A1%A3---%E5%8D%9A%E5%AE%A2%E6%8A%80%E6%9C%AF%E9%80%89%E5%9E%8B%E5%AE%8C%E5%85%A8%E6%8C%87%E5%8D%97/"
+  aria-label="知识库 -文档 - 博客，技术选型完全指南 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/50f178ca0b54a6bb5c0f250d2d0eb99a.png" alt="知识库 -文档 - 博客，技术选型完全指南" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/50f178ca0b54a6bb5c0f250d2d0eb99a.png"
+        alt="知识库 -文档 - 博客，技术选型完全指南"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">知识库 -文档 - 博客，技术选型完全指南</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">知识库 -文档 - 博客，技术选型完全指南</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-02-08T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-02-08">2025-02-08T00:00:00Z</span>
+      
     </p>
 
-    搭建知识库 / 博客 / 文档站？对比 Trilium、Mintlify、Hugo、VuePress…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      搭建知识库 / 博客 / 文档站？对比 Trilium、Mintlify、Hugo、VuePress…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1250,39 +1587,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>5分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="5分钟阅读">
+          5分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2024/%E5%A6%82%E4%BD%95%E5%9C%A8hugo%E9%A1%B9%E7%9B%AE%E4%B8%AD%E5%8A%A0%E5%85%A5%E6%95%B0%E5%AD%A6%E5%85%AC%E5%BC%8F%E7%9A%84%E6%94%AF%E6%8C%81/"
+  aria-label="如何在Hugo项目中加入数学公式的支持 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/36910d5a1fe0ecebe5dd84ed56fe26cd.png" alt="如何在Hugo项目中加入数学公式的支持" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/36910d5a1fe0ecebe5dd84ed56fe26cd.png"
+        alt="如何在Hugo项目中加入数学公式的支持"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">如何在Hugo项目中加入数学公式的支持</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">如何在Hugo项目中加入数学公式的支持</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2024-08-30T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2024-08-30">2024-08-30T00:00:00Z</span>
+      
     </p>
 
-    【Hugo 集成数学公式教程】手把手给 MathJax/KaTeX 配置代码，详解两者优缺…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      【Hugo 集成数学公式教程】手把手给 MathJax/KaTeX 配置代码，详解两者优缺…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1304,43 +1687,96 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>2分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="2分钟阅读">
+          2分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2024/%E6%80%8E%E4%B9%88%E8%AE%A9hugo%E6%94%AF%E6%8C%81markdown-%E6%B5%81%E7%A8%8B%E5%9B%BE/"
+  aria-label="怎么让Hugo支持markdown 流程图 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    
-    <picture>
-      <source srcset="/images/default4_hu_ae815e0f1649c253.webp" type="image/webp" />
-      <img src="/images/default4.jpg" alt="/images/default4.jpg" />
-    </picture>
+      
+      
+      <picture>
+        <source
+          srcset="/images/default1_hu_1bc1d6d231b6a645.webp"
+          type="image/webp"
+          width="640"
+          height="512"
+        />
+        <img
+          src="/images/default1_hu_4ffd7cb470e02bf3.jpg"
+          alt="/images/default1.jpg"
+          loading="lazy"
+          width="640"
+          height="512"
+          class="w-full h-auto object-cover"
+        />
+      </picture>
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">怎么让Hugo支持markdown 流程图</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">怎么让Hugo支持markdown 流程图</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2024-08-30T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2024-08-30">2024-08-30T00:00:00Z</span>
+      
     </p>
 
-    【Hugo 集成 Mermaid 流程图】教你创建 mermaid.html 模板、引入脚…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      【Hugo 集成 Mermaid 流程图】教你创建 mermaid.html 模板、引入脚…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1362,39 +1798,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>2分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="2分钟阅读">
+          2分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2024/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2024/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/"
+  aria-label="Docker 与 Podman 深度对比：容器化工具的全方位解析 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/6099051373d19c7626b541e7b7a151bb.png" alt="Docker 与 Podman 深度对比：容器化工具的全方位解析" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/6099051373d19c7626b541e7b7a151bb.png"
+        alt="Docker 与 Podman 深度对比：容器化工具的全方位解析"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">Docker 与 Podman 深度对比：容器化工具的全方位解析</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">Docker 与 Podman 深度对比：容器化工具的全方位解析</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2024-08-11T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2024-08-11">2024-08-11T00:00:00Z</span>
+      
     </p>
 
-    【容器工具选型：Docker 还是 Podman？】Docker 生态成熟跨平台，Podman 安全…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      【容器工具选型：Docker 还是 Podman？】Docker 生态成熟跨平台，Podman 安全…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1416,39 +1898,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>4分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="4分钟阅读">
+          4分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
     <div class="w-full md:w-1/2 lg:w-1/3 xl:w-1/4 p-4 dream-column">
-      <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2024/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/">
+      <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2024/%E6%88%91%E8%AE%A9%E6%89%A3%E5%AD%90%E7%A9%BA%E9%97%B4%E5%B8%AE%E6%88%91%E9%A2%84%E6%B5%8B%E6%B2%AA%E6%B7%B1300%E7%9A%84%E6%98%8E%E6%97%A5%E8%B4%AD%E4%B9%B0%E7%AD%96%E7%95%A5/"
+  aria-label="我让扣子空间，帮我预测沪深300的明日购买策略 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/48c4ca20426ec86e9aa3fae50dbaf4fa.png" alt="我让扣子空间，帮我预测沪深300的明日购买策略" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/48c4ca20426ec86e9aa3fae50dbaf4fa.png"
+        alt="我让扣子空间，帮我预测沪深300的明日购买策略"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">我让扣子空间，帮我预测沪深300的明日购买策略</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">我让扣子空间，帮我预测沪深300的明日购买策略</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2024-06-18T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2024-06-18">2024-06-18T00:00:00Z</span>
+      
     </p>
 
-    【扣子空间试用：AI Agent 做股市策略】提需求即等结果！Coze 规划模式 15 分钟完成沪深…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      【扣子空间试用：AI Agent 做股市策略】提需求即等结果！Coze 规划模式 15 分钟完成沪深…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1468,14 +1996,45 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>1分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="1分钟阅读">
+          1分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
     </div>
   
 </div>

@@ -975,28 +975,43 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       <div class="dream-grid">
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/"
+  aria-label="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/f605631c0b2a5cc96b5d4839abc3ec84.png" alt="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/f605631c0b2a5cc96b5d4839abc3ec84.png"
+        alt="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2023-01-20T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2023-01-20">2023-01-20T00:00:00Z</span>
+      
     </p>
 
-    如何用 Serv00 幸存账号薅免费羊毛？教你搭建与 NL 一致的论坛：下载对应 PHP8.1…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      如何用 Serv00 幸存账号薅免费羊毛？教你搭建与 NL 一致的论坛：下载对应 PHP8.1…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1018,14 +1033,45 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>2分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="2分钟阅读">
+          2分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
       </div>

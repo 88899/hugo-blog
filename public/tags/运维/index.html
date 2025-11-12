@@ -975,28 +975,43 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       <div class="dream-grid">
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2025/%E6%9C%8D%E5%8A%A1%E5%99%A8%E7%A3%81%E7%9B%98%E6%8E%92%E6%9F%A5%E5%B7%A5%E5%85%B7%E7%BB%88%E6%9E%81%E6%8C%87%E5%8D%97%E9%9D%9E%E8%BF%90%E7%BB%B4%E4%B9%9F%E8%83%BD%E8%BD%BB%E6%9D%BE%E6%90%9E%E5%AE%9A%E7%A3%81%E7%9B%98%E9%97%AE%E9%A2%98/"
+  aria-label="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/f804cbd4633e6ab2b7927bf272ff5c9e.png" alt="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/f804cbd4633e6ab2b7927bf272ff5c9e.png"
+        alt="服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">服务器磁盘排查工具终极指南：非运维也能轻松搞定磁盘问题</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2025-10-22T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2025-10-22">2025-10-22T00:00:00Z</span>
+      
     </p>
 
-    磁盘问题是日常工作中最常遇到的故障类型之一 —— 无论是磁盘空间莫名占满、I/O 读写卡顿，还是磁盘…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      磁盘问题是日常工作中最常遇到的故障类型之一 —— 无论是磁盘空间莫名占满、I/O 读写卡顿，还是磁盘…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1018,39 +1033,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>17分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="17分钟阅读">
+          17分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2024/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2024/docker-%E4%B8%8E-podman-%E6%B7%B1%E5%BA%A6%E5%AF%B9%E6%AF%94%E5%AE%B9%E5%99%A8%E5%8C%96%E5%B7%A5%E5%85%B7%E7%9A%84%E5%85%A8%E6%96%B9%E4%BD%8D%E8%A7%A3%E6%9E%90/"
+  aria-label="Docker 与 Podman 深度对比：容器化工具的全方位解析 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/6099051373d19c7626b541e7b7a151bb.png" alt="Docker 与 Podman 深度对比：容器化工具的全方位解析" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/6099051373d19c7626b541e7b7a151bb.png"
+        alt="Docker 与 Podman 深度对比：容器化工具的全方位解析"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">Docker 与 Podman 深度对比：容器化工具的全方位解析</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">Docker 与 Podman 深度对比：容器化工具的全方位解析</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2024-08-11T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2024-08-11">2024-08-11T00:00:00Z</span>
+      
     </p>
 
-    【容器工具选型：Docker 还是 Podman？】Docker 生态成熟跨平台，Podman 安全…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      【容器工具选型：Docker 还是 Podman？】Docker 生态成熟跨平台，Podman 安全…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1072,39 +1133,85 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>4分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="4分钟阅读">
+          4分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
           <div class="w-full md:w-1/2 lg:w-1/3 p-4 dream-column">
-            <a class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30" href="/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/">
+            <div
+  class="card bg-base-100 hover:bg-base-content/10 shadow-xl cursor-pointer dark:border dark:border-base-content/30 transition-all duration-300 ease-in-out"
+  data-href="/posts/2023/-%E5%A4%8D%E5%88%BBnl%E5%90%8C%E6%AC%BE%E8%AE%BA%E5%9D%9B%E5%9C%A8serv00%E6%89%93%E9%80%A0%E9%AB%98%E6%80%A7%E8%83%BD%E5%85%8D%E8%B4%B9%E7%A4%BE%E5%8C%BAserv00%E4%BB%B7%E5%80%BC%E6%9C%80%E5%A4%A7%E5%8C%96/"
+  aria-label="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化 - 查看文章"
+  touch-action="manipulation"
+  tabindex="0"
+  role="link"
+>
   
-  <figure>
+  <figure class="m-0">
     
-    <img src="https://s3.aiedu.qzz.io/website/2025/10/f605631c0b2a5cc96b5d4839abc3ec84.png" alt="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化" />
+      <img
+        src="https://s3.aiedu.qzz.io/website/2025/10/f605631c0b2a5cc96b5d4839abc3ec84.png"
+        alt="复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化"
+        loading="lazy"
+        class="w-full h-auto object-cover"
+        onerror="this.onerror=null; this.src='\/images\/default1.jpg'"
+      />
     
   </figure>
   
 
-  <div class="card-body">
-    <h2 class="card-title">复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化</h2>
+  <div class="card-body p-4">
+    <h2 class="card-title text-xl font-semibold mb-2 line-clamp-2">复刻NL同款论坛：在Serv00打造高性能免费社区，Serv00价值最大化</h2>
 
-    <p class="date text-base-content/60">
-    
-      <span data-format="luxon">2023-01-20T00:00:00Z</span>
-    
+    <p class="date text-base-content/60 text-sm mb-3">
+      
+        <span data-format="luxon" aria-label="2023-01-20">2023-01-20T00:00:00Z</span>
+      
     </p>
 
-    如何用 Serv00 幸存账号薅免费羊毛？教你搭建与 NL 一致的论坛：下载对应 PHP8.1…
+    <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
+      如何用 Serv00 幸存账号薅免费羊毛？教你搭建与 NL 一致的论坛：下载对应 PHP8.1…
+    </p>
 
     
-    <div class="card-actions justify-between items-center mt-4">
+    <div class="card-actions justify-between items-center mt-auto">
       
         <div class="flex items-center">
   
@@ -1126,14 +1233,45 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
 
       
 
-      <div class="flex items-center">
-        <ion-icon name="time" class="mr-1"></ion-icon>
-        <span>2分钟阅读</span>
+      <div class="flex items-center text-sm text-base-content/70">
+        <ion-icon name="time" class="mr-1 text-xs" aria-hidden="true"></ion-icon>
+        <span aria-label="2分钟阅读">
+          2分钟阅读
+        </span>
       </div>
     </div>
   </div>
-</a>
 
+  <script>
+    (function() {
+      const card = document.currentScript.closest('[data-href]');
+      if (!card) return;
+
+      card.addEventListener('touchstart', () => {
+        card.classList.add('active');
+      }, { passive: true });
+
+      card.addEventListener('touchend', () => {
+        card.classList.remove('active');
+      }, { passive: true });
+
+      card.addEventListener('contextmenu', (e) => {
+        e.preventDefault();
+      });
+
+      card.addEventListener('click', () => {
+        window.location.href = card.dataset.href;
+      });
+
+      card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          window.location.href = card.dataset.href;
+        }
+      });
+    })();
+  </script>
+</div>
           </div>
         
       </div>
