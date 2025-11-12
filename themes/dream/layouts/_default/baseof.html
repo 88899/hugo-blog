@@ -20,6 +20,31 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" integrity="sha256-PtHu0lJIiSHfZeNj1nFd6wTX+Squ255SGZ/fc8seCtM=" crossorigin="anonymous"></script>
     -->
     <script defer src="/js/cdn.min.js"></script>
+
+    <!-- 在 baseof.html 的 <head> 中添加以下 CSS -->
+    <style>
+      /* 全局禁用文本选中（核心解决选中问题） */
+      * {
+        -webkit-user-select: none; /* Safari（包括iPhone Safari） */
+        -moz-user-select: none;    /* Firefox */
+        -ms-user-select: none;     /* Edge/IE */
+        user-select: none;         /* 标准属性（现代浏览器） */
+      }
+
+      /* 保留输入框、文本域的选中功能（避免影响用户输入） */
+      input, textarea, [contenteditable="true"] {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+      }
+
+      /* 可选：禁用长按选中（移动端常见） */
+      *:not(input):not(textarea):not([contenteditable="true"]) {
+        -webkit-touch-callout: none; /* 禁用iOS长按弹出菜单（复制/分享等） */
+      }
+    </style>
+
   </head>
 
   <body x-data="{

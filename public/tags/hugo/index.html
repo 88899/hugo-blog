@@ -239,6 +239,31 @@
 
     
     <script defer src="/js/cdn.min.js"></script>
+
+    
+    <style>
+       
+      * {
+        -webkit-user-select: none;  
+        -moz-user-select: none;     
+        -ms-user-select: none;      
+        user-select: none;          
+      }
+
+       
+      input, textarea, [contenteditable="true"] {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+      }
+
+       
+      *:not(input):not(textarea):not([contenteditable="true"]) {
+        -webkit-touch-callout: none;  
+      }
+    </style>
+
   </head>
 
   <body x-data="{
@@ -1008,8 +1033,8 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
     
     
     <picture>
-      <source srcset="/images/default1_hu_33478ca164b4fce4.webp" type="image/webp" />
-      <img src="/images/default1.jpg" alt="/images/default1.jpg" />
+      <source srcset="/images/default3_hu_599e07ea93afc07d.webp" type="image/webp" />
+      <img src="/images/default3.jpg" alt="/images/default3.jpg" />
     </picture>
     
   </figure>

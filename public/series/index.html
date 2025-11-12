@@ -242,6 +242,31 @@ Series | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开�
 
     
     <script defer src="/js/cdn.min.js"></script>
+
+    
+    <style>
+       
+      * {
+        -webkit-user-select: none;  
+        -moz-user-select: none;     
+        -ms-user-select: none;      
+        user-select: none;          
+      }
+
+       
+      input, textarea, [contenteditable="true"] {
+        -webkit-user-select: text;
+        -moz-user-select: text;
+        -ms-user-select: text;
+        user-select: text;
+      }
+
+       
+      *:not(input):not(textarea):not([contenteditable="true"]) {
+        -webkit-touch-callout: none;  
+      }
+    </style>
+
   </head>
 
   <body x-data="{
@@ -1329,8 +1354,8 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
     
     
     <picture>
-      <source srcset="/images/default4_hu_ae815e0f1649c253.webp" type="image/webp" />
-      <img src="/images/default4.jpg" alt="/images/default4.jpg" />
+      <source srcset="/images/default3_hu_599e07ea93afc07d.webp" type="image/webp" />
+      <img src="/images/default3.jpg" alt="/images/default3.jpg" />
     </picture>
     
   </figure>
