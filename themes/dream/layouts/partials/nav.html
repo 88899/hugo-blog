@@ -7,15 +7,21 @@
   }
 </style>
 
-
 {{/* 三栏布局：左Logo + 中分类 + 右原有菜单 */}}
 {{ if site.Params.enableCategoryNav | default false }}
   {{ if site.Params.stickyNav }}
+  <!-- 简化Alpine.js：仅保留粘性导航状态，移除多余逻辑 -->
   <nav x-data="{ isSticky: false }"
-    x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+    x-init="
+      // 简化滚动监听（移除复杂防抖，原生监听足够轻量）
+      window.addEventListener('scroll', () => {
+        isSticky = window.scrollY > 30;
+      });
+    "
     class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
     :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
   {{ else }}
+  <!-- 非粘性导航：完全移除Alpine.js多余状态 -->
   <nav class="mt-4 lg:mt-8 py-4">
   {{ end }}
     {{ if site.Params.zenMode }}
@@ -24,7 +30,7 @@
     <div class="container px-4">
     {{ end }}
       <div class="flex items-center justify-between w-full">
-        {{/* 左侧：Logo区域 */}}
+        {{/* 左侧：Logo区域（保持不变） */}}
         <section class="flex items-center gap-4">
           <div class="avatar cursor-pointer hover:avatar-online" @click="flip = !flip" title="{{ T "flip" }}">
             <div class="h-10 rounded-full">
@@ -45,17 +51,21 @@
           {{ end }}
         </section>
 
-        {{/* 中间：分类导航（仅PC端显示） */}}
+        {{/* 中间：分类导航（保持稳定版，无性能问题） */}}
         <div id="pc-category-nav" class="flex items-center justify-center flex-1 px-4">
           {{ partial "nav-category-extension.html" . }}
         </div>
 
-        {{/* 右侧：原有菜单区域 */}}
+        {{/* 右侧：原有菜单区域（恢复原生下拉逻辑，修复展开/关闭） */}}
         <div class="flex items-center">
+          <!-- 移动端下拉菜单：回归Tailwind原生dropdown，修复焦点冲突 -->
           <div class="dropdown dropdown-end sm:hidden">
-            <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+            <!-- 恢复tabindex，添加辅助点击逻辑（原生+手动互补） -->
+            <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option"
+              @click="document.activeElement.blur();">
               <ion-icon name="menu" class="text-2xl"></ion-icon>
             </div>
+            <!-- 保留原生dropdown-content，移除Alpine.js x-show和过渡 -->
             <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
               {{ $navItems := slice "about" "search" "rss" "posts" "categories" "tags" }}
               {{ if site.Params.reorderNavItems }}
@@ -64,6 +74,8 @@
               {{ partial "navMobileMenu.html" (dict "navItems" $navItems) }}
             </ul>
           </div>
+
+          <!-- 桌面端菜单（保持不变） -->
           <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
             {{ $navItems := slice "about" "search" "rss" "posts" "categories" "tags" }}
             {{ if site.Params.reorderNavItems }}
