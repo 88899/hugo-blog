@@ -290,23 +290,39 @@
     #pc-category-nav {
       display: none !important;
     }
+     
+    .mobile-menu-btn {
+      -webkit-tap-highlight-color: transparent;  
+    }
+    .mobile-dropdown-menu {
+      position: absolute;
+      right: 0;
+      top: 100%;
+      margin-top: 8px;  
+      z-index: 50;  
+    }
   }
 </style>
 
 
 
   
-  
-  <nav x-data="{ isSticky: false }"
+  <nav x-data="{
+    isSticky: false,
+    dropdownOpen: false // 控制移动端菜单的唯一状态
+  }"
     x-init="
-      // 简化滚动监听（移除复杂防抖，原生监听足够轻量）
+      // 滚动监听（原生轻量，无防抖不影响性能）
       window.addEventListener('scroll', () => {
         isSticky = window.scrollY > 30;
+      });
+      // Safari专属：ESC键关闭菜单
+      window.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape') dropdownOpen = false;
       });
     "
     class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
     :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
-  
     
     <div class="container px-4">
     
@@ -552,16 +568,24 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
         </div>
 
         
-        <div class="flex items-center">
+        <div class="flex items-center relative">
           
-          <div class="dropdown dropdown-end sm:hidden">
+          <div class="sm:hidden">
             
-            <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option"
-              @click="document.activeElement.blur();">
+            <button
+              class="btn btn-ghost btn-square mobile-menu-btn"
+              aria-label="菜单"
+              @click="dropdownOpen = !dropdownOpen"
+              :aria-expanded="dropdownOpen">
               <ion-icon name="menu" class="text-2xl"></ion-icon>
-            </div>
+            </button>
+
             
-            <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
+            <ul
+              class="mobile-dropdown-menu menu w-36 bg-base-100 rounded-box shadow-md overflow-hidden"
+              x-show="dropdownOpen"
+              @click.away="dropdownOpen = false"
+              aria-hidden="!dropdownOpen">
               
               
                 
