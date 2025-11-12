@@ -1,10 +1,22 @@
 {{ if site.Params.stickyNav }}
-<nav x-data="{ isSticky: false }"
-  x-init="window.addEventListener('scroll', () => { isSticky = window.scrollY > 30 })"
+<nav x-data="{
+  isSticky: false,
+  dropdownOpen: false // 新增：控制移动端菜单状态（与主导航一致）
+}"
+  x-init="
+    // 原有滚动监听逻辑不变
+    window.addEventListener('scroll', () => {
+      isSticky = window.scrollY > 30;
+    });
+    // Safari专属：ESC键关闭菜单（统一兼容）
+    window.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') dropdownOpen = false;
+    });
+  "
   class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
   :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
 {{ else }}
-<nav class="mt-4 lg:mt-8 py-4">
+<nav x-data="{ dropdownOpen: false }" class="mt-4 lg:mt-8 py-4">
 {{ end }}
   {{ if site.Params.zenMode }}
   <div class="container flex justify-between max-w-[65ch] mx-auto px-4 md:px-0">
@@ -37,48 +49,65 @@
       {{ $navItems = site.Params.reorderNavItems }}
     {{ end }}
 
-    <div class="dropdown dropdown-end sm:hidden">
-      <div tabindex="0" role="button" class="btn btn-ghost btn-square" aria-label="Select an option">
+    <!-- 移动端菜单：优化为纯Alpine.js控制（与主导航逻辑一致） -->
+    <div class="dropdown dropdown-end sm:hidden relative">
+      <!-- 按钮：改为原生button，移除tabindex，添加Safari专属样式 -->
+      <button
+        class="btn btn-ghost btn-square mobile-menu-btn"
+        aria-label="菜单"
+        @click="dropdownOpen = !dropdownOpen"
+        :aria-expanded="dropdownOpen">
         <ion-icon name="menu" class="text-2xl"></ion-icon>
-      </div>
-      <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-md">
+      </button>
+
+      <!-- 菜单：x-show控制显示，点击外部关闭，添加Safari兼容样式 -->
+      <ul
+        class="dropdown-content menu w-36 bg-base-100 rounded-box shadow-md z-50 overflow-hidden"
+        x-show="dropdownOpen"
+        @click.away="dropdownOpen = false"
+        aria-hidden="!dropdownOpen">
         {{ partial "navMobileMenu.html" (dict "navItems" $navItems) }}
       </ul>
     </div>
+
+    <!-- 桌面端菜单：保持原有逻辑不变 -->
     <section class="hidden sm:flex sm:items-center sm:gap-2 md:gap-4">
       {{ if not site.Params.collapseNavItems }}
-
-      {{ range $navItems }}
-      {{ partial "renderNavItem.html" . }}
-      {{ end }}
-
-      {{ with site.Params.navItems }}
-      {{ partial "navCustomItems.html" (dict "navItems" $navItems "mobile" false) }}
-      {{ end }}
-
+        {{ range $navItems }}
+        {{ partial "renderNavItem.html" . }}
+        {{ end }}
+        {{ with site.Params.navItems }}
+        {{ partial "navCustomItems.html" (dict "navItems" $navItems "mobile" false) }}
+        {{ end }}
       {{ else }}
-
-      {{ $collapseNavItems := site.Params.collapseNavItems }}
-      {{ $items := complement $collapseNavItems $navItems }}
-      {{ range $items }}
-      {{ partial "renderNavItem.html" . }}
-      {{ end }}
-
-      <div class="dropdown dropdown-end dropdown-hover">
-        <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
-          <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
+        {{ $collapseNavItems := site.Params.collapseNavItems }}
+        {{ $items := complement $collapseNavItems $navItems }}
+        {{ range $items }}
+        {{ partial "renderNavItem.html" . }}
+        {{ end }}
+        <div class="dropdown dropdown-end dropdown-hover">
+          <div tabindex="0" role="button" class="group inline-flex items-center p-2 rounded-full cursor-pointer hover:bg-primary" aria-label="Select an option">
+            <ion-icon class="group-hover:text-primary-content text-xl" name="menu"></ion-icon>
+          </div>
+          <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-xl">
+            {{ range $collapseNavItems }}
+            {{ partial "renderMobileNavItem.html" . }}
+            {{ end }}
+            {{ with site.Params.navItems }}
+            {{ partial "navCustomItems.html" (dict "navItems" $navItems "mobile" true) }}
+            {{ end }}
+          </ul>
         </div>
-        <ul tabindex="0" class="dropdown-content menu w-36 bg-base-100 rounded-box z-1 shadow-xl">
-          {{ range $collapseNavItems }}
-          {{ partial "renderMobileNavItem.html" . }}
-          {{ end }}
-
-          {{ with site.Params.navItems }}
-          {{ partial "navCustomItems.html" (dict "navItems" $navItems "mobile" true) }}
-          {{ end }}
-        </ul>
-      </div>
       {{ end }}
     </section>
   </div>
 </nav>
+
+<!-- 新增：Safari专属兼容样式（与主导航一致） -->
+<style>
+  @media (max-width: 767px) {
+    .mobile-menu-btn {
+      -webkit-tap-highlight-color: transparent; /* 移除Safari点击高亮 */
+    }
+  }
+</style>
