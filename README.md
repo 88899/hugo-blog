@@ -47,8 +47,9 @@ mermaid: true
 ---
 ```
 ## github submodule
+我的笔记内容是独立的仓库，并使用git submodule引入，你可以使用自己的笔记仓库
 ```shell
-git submodule add https://github.com/88899/notes.git content
+git submodule add https://github.com/xxx/xx.git content
 ```
 
 ## vercel配置
