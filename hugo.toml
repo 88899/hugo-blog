@@ -23,6 +23,12 @@ block = true
 [markup.goldmark.renderer]
 unsafe = true
 
+[images]
+  disableLazyLoading = false
+
+[markup.imageRender]
+loading = "lazy"
+
 [markup.goldmark.extensions.passthrough]
 enable = true
 
@@ -47,7 +53,7 @@ series = "series"
 
 [params]
 # 网站完全打开前预加载动画
-enablePreLoad = true
+enablePreLoad = false
 # 预加载的动画文字, 只有当enablePreLoad=true时生效
 textPreLoad   = "AiEDU"
 

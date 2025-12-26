@@ -23,7 +23,7 @@
 
 
 
-<meta name="generator" content="Hugo 0.148.2">
+<meta name="generator" content="Hugo 0.152.2">
 
 
 <meta property="og:url" content="https://googhub.nyc.mn/categories/%E7%BC%96%E7%A8%8B/">
@@ -52,180 +52,6 @@
 
 
 
-
-    
-    <style>
-         
-        #loading {
-            display: flex !important;
-            opacity: 1 !important;
-            visibility: visible !important;
-        }
-
-        .loader {
-            width: 250px;
-            height: 50px;
-            line-height: 50px;
-            text-align: center;
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            font-family: helvetica, arial, sans-serif;
-            text-transform: uppercase;
-            font-weight: 900;
-            color: #00a96e;
-            letter-spacing: 0.2em;
-            user-select: none;
-        }
-
-        .loader::before,
-        .loader::after {
-            content: "";
-            display: block;
-            width: 15px;
-            height: 15px;
-            background: #00a96e;
-            position: absolute;
-            animation: load .7s infinite alternate ease-in-out;
-            will-change: left, height, width;
-        }
-
-        .loader::before {
-            top: 0
-        }
-
-        .loader::after {
-            bottom: 0
-        }
-
-        @keyframes load {
-            0% {
-                left: 0;
-                height: 30px;
-                width: 15px
-            }
-
-            50% {
-                height: 8px;
-                width: 40px
-            }
-
-            100% {
-                left: 235px;
-                height: 30px;
-                width: 15px
-            }
-        }
-
-         
-        #loading, #load-loading, .load-loading {
-            justify-content: center;
-            align-items: center;
-            display: -webkit-box;
-            display: flex;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: 9999999;
-            background: #fff;
-            transition: opacity 0.5s ease-in-out, visibility 0.5s ease-in-out;
-            pointer-events: auto;
-        }
-
-        .load-loading {
-            position: absolute;
-            background: transparent
-        }
-
-        .load-loading .bg {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: #000;
-            opacity: 0.2
-        }
-
-        #load-loading {
-            opacity: 0
-        }
-
-        #loading.close {
-            opacity: 0 !important;
-            visibility: hidden !important;
-            pointer-events: none;
-        }
-
-        .io-black-mode #loading,
-        .io-black-mode #load-loading {
-            background: #111;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            .loader::before,
-            .loader::after {
-                animation: none;
-            }
-
-            #loading, #load-loading, .load-loading {
-                transition: none;
-            }
-        }
-    </style>
-
-    
-    <div id="loading" role="progressbar" aria-label="页面加载中">
-        <div class="loader">AiEDU</div>
-    </div>
-
-    <script>
-        
-        (function() {
-            const loadingScreen = document.getElementById('loading');
-            if (!loadingScreen) return;
-
-            function hideLoadingScreen() {
-                if (!loadingScreen.classList.contains('close')) {
-                    loadingScreen.classList.add('close');
-
-                    
-                    setTimeout(() => {
-                        if (loadingScreen.parentNode) {
-                            loadingScreen.parentNode.removeChild(loadingScreen);
-                        }
-                    }, 500);
-                }
-            }
-
-            
-            window.addEventListener('load', function() {
-                const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
-                setTimeout(hideLoadingScreen, delay);
-            });
-
-            
-            window.addEventListener('beforeunload', function() {
-                loadingScreen.classList.remove('close');
-            });
-
-            
-            if (window.pjax) {
-                document.addEventListener('pjax:send', function() {
-                    loadingScreen.classList.remove('close');
-                });
-
-                document.addEventListener('pjax:complete', function() {
-                    const delay = window.matchMedia('(prefers-reduced-motion: reduce)').matches ? 0 : 300;
-                    setTimeout(hideLoadingScreen, delay);
-                });
-            }
-
-            
-            setTimeout(hideLoadingScreen, 8000);
-        })();
-    </script>
 
 
 
@@ -1133,7 +959,7 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
     </p>
 
     <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
-      【Hugo 集成数学公式教程】手把手给 MathJax/KaTeX 配置代码，详解两者优缺…
+      【Hugo 集成数学公式教程】手把手给 MathJax/KaTeX 配置代码，详解两者优缺点…
     </p>
 
     
@@ -1216,17 +1042,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default4_hu_e95c37cd6f0c7364.webp"
+          srcset="/images/default1_hu_1bc1d6d231b6a645.webp"
           type="image/webp"
           width="640"
-          height="426"
+          height="512"
         />
         <img
-          src="/images/default4_hu_d8146c9d4ec53771.jpg"
-          alt="/images/default4.jpg"
+          src="/images/default1_hu_4ffd7cb470e02bf3.jpg"
+          alt="/images/default1.jpg"
           loading="lazy"
           width="640"
-          height="426"
+          height="512"
           class="w-full h-auto object-cover"
         />
       </picture>
@@ -1244,7 +1070,7 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
     </p>
 
     <p class="text-base-content/80 text-sm line-clamp-2 mb-4">
-      【Hugo 集成 Mermaid 流程图】教你创建 mermaid.html 模板、引入脚…
+      【Hugo 集成 Mermaid 流程图】教你创建 mermaid.html 模板、引入脚本…
     </p>
 
     
