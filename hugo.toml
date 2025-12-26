@@ -13,6 +13,9 @@ enableRobotsTXT = true
 
 hasCJKLanguage = true
 
+[images]
+disableLazyLoading = false
+
 [markup]
 [markup.goldmark.parser]
 wrapStandAloneImageWithinParagraph = false
@@ -22,9 +25,6 @@ block = true
 
 [markup.goldmark.renderer]
 unsafe = true
-
-[markup.images]
-disableLazyLoading = false
 
 [markup.imageRender]
 loading = "lazy"
