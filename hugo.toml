@@ -23,8 +23,8 @@ block = true
 [markup.goldmark.renderer]
 unsafe = true
 
-[images]
-  disableLazyLoading = false
+[markup.images]
+disableLazyLoading = false
 
 [markup.imageRender]
 loading = "lazy"
