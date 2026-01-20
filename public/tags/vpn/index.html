@@ -67,6 +67,29 @@
     <script defer src="/js/cdn.min.js"></script>
 
     
+    <script>
+      (function() {
+        
+        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        
+        if (isDark === 'y' || (!isDark && prefersDark)) {
+          document.documentElement.classList.add('dark');
+        }
+
+        
+        var darkTheme = window.darkTheme || 'forest';
+        var lightTheme = window.lightTheme || 'emerald';
+        if (isDark === 'y' || (!isDark && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', darkTheme);
+        } else {
+          document.documentElement.setAttribute('data-theme', lightTheme);
+        }
+      })();
+    </script>
+
+    
     <style>
        
       * {
@@ -923,17 +946,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default2_hu_8e2a304948ea57db.webp"
+          srcset="/images/default4_hu_e95c37cd6f0c7364.webp"
           type="image/webp"
           width="640"
-          height="443"
+          height="426"
         />
         <img
-          src="/images/default2_hu_9203b6d730be0be5.jpg"
-          alt="/images/default2.jpg"
+          src="/images/default4_hu_d8146c9d4ec53771.jpg"
+          alt="/images/default4.jpg"
           loading="lazy"
           width="640"
-          height="443"
+          height="426"
           class="w-full h-auto object-cover"
         />
       </picture>
