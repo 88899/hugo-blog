@@ -4,6 +4,31 @@
   :class="$store.darkMode.class()"
   :data-theme="$store.darkMode.theme()">
   <head>
+
+    
+    <script>
+      (function() {
+        
+        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        
+        if (isDark === 'y' || (!isDark && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'forest');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'emerald');
+        }
+      })();
+    </script>
+
+    
+    <style>
+      html {
+        color-scheme: light !important;
+      }
+    </style>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>工具 | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>
@@ -1121,17 +1146,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default4_hu_e95c37cd6f0c7364.webp"
+          srcset="/images/default3_hu_18ac16e07816c39c.webp"
           type="image/webp"
           width="640"
-          height="426"
+          height="421"
         />
         <img
-          src="/images/default4_hu_d8146c9d4ec53771.jpg"
-          alt="/images/default4.jpg"
+          src="/images/default3_hu_28cec4a48c82f5b5.jpg"
+          alt="/images/default3.jpg"
           loading="lazy"
           width="640"
-          height="426"
+          height="421"
           class="w-full h-auto object-cover"
         />
       </picture>
@@ -1541,17 +1566,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default2_hu_8e2a304948ea57db.webp"
+          srcset="/images/default4_hu_e95c37cd6f0c7364.webp"
           type="image/webp"
           width="640"
-          height="443"
+          height="426"
         />
         <img
-          src="/images/default2_hu_9203b6d730be0be5.jpg"
-          alt="/images/default2.jpg"
+          src="/images/default4_hu_d8146c9d4ec53771.jpg"
+          alt="/images/default4.jpg"
           loading="lazy"
           width="640"
-          height="443"
+          height="426"
           class="w-full h-auto object-cover"
         />
       </picture>

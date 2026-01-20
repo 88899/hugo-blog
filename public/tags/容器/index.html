@@ -4,6 +4,31 @@
   :class="$store.darkMode.class()"
   :data-theme="$store.darkMode.theme()">
   <head>
+
+    
+    <script>
+      (function() {
+        
+        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        
+        if (isDark === 'y' || (!isDark && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'forest');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'emerald');
+        }
+      })();
+    </script>
+
+    
+    <style>
+      html {
+        color-scheme: light !important;
+      }
+    </style>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>容器 | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开发｜知识库｜免费资源</title>

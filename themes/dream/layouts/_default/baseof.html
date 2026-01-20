@@ -4,6 +4,31 @@
   :class="$store.darkMode.class()"
   :data-theme="$store.darkMode.theme()">
   <head>
+
+    <!-- 防止主题闪烁的内联脚本 -->
+    <script>
+      (function() {
+        // 立即执行，不等待DOMContentLoaded
+        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // 设置初始data-theme
+        if (isDark === 'y' || (!isDark && prefersDark)) {
+          document.documentElement.setAttribute('data-theme', 'forest');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'emerald');
+        }
+      })();
+    </script>
+
+    <!-- 禁用CSS的@media (prefers-color-scheme: dark)媒体查询的自动应用 -->
+    <style>
+      html {
+        color-scheme: light !important;
+      }
+    </style>
+
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{{ block "title" . -}} {{ T "home" }} {{- end }} | {{ site.Title }}</title>
