@@ -10,6 +10,31 @@
 
     {{ partial "head.html" . }}
 
+    <!-- 防止主题闪烁：在CSS加载之前设置正确的主题 -->
+    <script>
+      (function() {
+        // 立即执行，不等待DOMContentLoaded
+        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
+        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+        // 设置初始主题类和data-theme
+        if (isDark === 'y' || (!isDark && prefersDark)) {
+          document.documentElement.classList.add('dark');
+          document.documentElement.setAttribute('data-theme', 'forest');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'emerald');
+        }
+      })();
+    </script>
+
+    <style>
+      /* 禁用CSS的@media (prefers-color-scheme: dark)媒体查询的自动应用 */
+      :root {
+        color-scheme: light !important;
+      }
+    </style>
+
+
     {{ block "css" . }} {{ end }}
 
     {{ range site.Params.Advanced.customCSS }}
@@ -20,29 +45,6 @@
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3/dist/cdn.min.js" integrity="sha256-PtHu0lJIiSHfZeNj1nFd6wTX+Squ255SGZ/fc8seCtM=" crossorigin="anonymous"></script>
     -->
     <script defer src="/js/cdn.min.js"></script>
-
-    <!-- 防止主题闪烁：在Alpine.js加载之前设置正确的主题类 -->
-    <script>
-      (function() {
-        // 立即执行，不等待DOMContentLoaded
-        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        // 设置初始主题类
-        if (isDark === 'y' || (!isDark && prefersDark)) {
-          document.documentElement.classList.add('dark');
-        }
-
-        // 设置初始data-theme
-        var darkTheme = window.darkTheme || 'forest';
-        var lightTheme = window.lightTheme || 'emerald';
-        if (isDark === 'y' || (!isDark && prefersDark)) {
-          document.documentElement.setAttribute('data-theme', darkTheme);
-        } else {
-          document.documentElement.setAttribute('data-theme', lightTheme);
-        }
-      })();
-    </script>
 
     <!-- 在 baseof.html 的 <head> 中添加以下 CSS -->
     <style>

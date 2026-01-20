@@ -60,15 +60,6 @@ Series | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开�
 
 
 
-     
-
-    
-    <link rel="stylesheet" href="/css/custom.css" />
-    
-
-    
-    <script defer src="/js/cdn.min.js"></script>
-
     
     <script>
       (function() {
@@ -79,18 +70,29 @@ Series | 编程技术｜运维技术｜建站技巧｜后端开发｜前端开�
         
         if (isDark === 'y' || (!isDark && prefersDark)) {
           document.documentElement.classList.add('dark');
-        }
-
-        
-        var darkTheme = window.darkTheme || 'forest';
-        var lightTheme = window.lightTheme || 'emerald';
-        if (isDark === 'y' || (!isDark && prefersDark)) {
-          document.documentElement.setAttribute('data-theme', darkTheme);
+          document.documentElement.setAttribute('data-theme', 'forest');
         } else {
-          document.documentElement.setAttribute('data-theme', lightTheme);
+          document.documentElement.setAttribute('data-theme', 'emerald');
         }
       })();
     </script>
+
+    <style>
+       
+      :root {
+        color-scheme: light !important;
+      }
+    </style>
+
+
+     
+
+    
+    <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    
+    <script defer src="/js/cdn.min.js"></script>
 
     
     <style>
@@ -1235,17 +1237,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default3_hu_18ac16e07816c39c.webp"
+          srcset="/images/default4_hu_e95c37cd6f0c7364.webp"
           type="image/webp"
           width="640"
-          height="421"
+          height="426"
         />
         <img
-          src="/images/default3_hu_28cec4a48c82f5b5.jpg"
-          alt="/images/default3.jpg"
+          src="/images/default4_hu_d8146c9d4ec53771.jpg"
+          alt="/images/default4.jpg"
           loading="lazy"
           width="640"
-          height="421"
+          height="426"
           class="w-full h-auto object-cover"
         />
       </picture>
@@ -1446,17 +1448,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default3_hu_18ac16e07816c39c.webp"
+          srcset="/images/default4_hu_e95c37cd6f0c7364.webp"
           type="image/webp"
           width="640"
-          height="421"
+          height="426"
         />
         <img
-          src="/images/default3_hu_28cec4a48c82f5b5.jpg"
-          alt="/images/default3.jpg"
+          src="/images/default4_hu_d8146c9d4ec53771.jpg"
+          alt="/images/default4.jpg"
           loading="lazy"
           width="640"
-          height="421"
+          height="426"
           class="w-full h-auto object-cover"
         />
       </picture>

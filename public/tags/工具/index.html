@@ -57,15 +57,6 @@
 
 
 
-     
-
-    
-    <link rel="stylesheet" href="/css/custom.css" />
-    
-
-    
-    <script defer src="/js/cdn.min.js"></script>
-
     
     <script>
       (function() {
@@ -76,18 +67,29 @@
         
         if (isDark === 'y' || (!isDark && prefersDark)) {
           document.documentElement.classList.add('dark');
-        }
-
-        
-        var darkTheme = window.darkTheme || 'forest';
-        var lightTheme = window.lightTheme || 'emerald';
-        if (isDark === 'y' || (!isDark && prefersDark)) {
-          document.documentElement.setAttribute('data-theme', darkTheme);
+          document.documentElement.setAttribute('data-theme', 'forest');
         } else {
-          document.documentElement.setAttribute('data-theme', lightTheme);
+          document.documentElement.setAttribute('data-theme', 'emerald');
         }
       })();
     </script>
+
+    <style>
+       
+      :root {
+        color-scheme: light !important;
+      }
+    </style>
+
+
+     
+
+    
+    <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    
+    <script defer src="/js/cdn.min.js"></script>
 
     
     <style>
@@ -1144,17 +1146,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default2_hu_8e2a304948ea57db.webp"
+          srcset="/images/default3_hu_18ac16e07816c39c.webp"
           type="image/webp"
           width="640"
-          height="443"
+          height="421"
         />
         <img
-          src="/images/default2_hu_9203b6d730be0be5.jpg"
-          alt="/images/default2.jpg"
+          src="/images/default3_hu_28cec4a48c82f5b5.jpg"
+          alt="/images/default3.jpg"
           loading="lazy"
           width="640"
-          height="443"
+          height="421"
           class="w-full h-auto object-cover"
         />
       </picture>
@@ -1453,17 +1455,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default1_hu_1bc1d6d231b6a645.webp"
+          srcset="/images/default3_hu_18ac16e07816c39c.webp"
           type="image/webp"
           width="640"
-          height="512"
+          height="421"
         />
         <img
-          src="/images/default1_hu_4ffd7cb470e02bf3.jpg"
-          alt="/images/default1.jpg"
+          src="/images/default3_hu_28cec4a48c82f5b5.jpg"
+          alt="/images/default3.jpg"
           loading="lazy"
           width="640"
-          height="512"
+          height="421"
           class="w-full h-auto object-cover"
         />
       </picture>
@@ -1564,17 +1566,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default2_hu_8e2a304948ea57db.webp"
+          srcset="/images/default1_hu_1bc1d6d231b6a645.webp"
           type="image/webp"
           width="640"
-          height="443"
+          height="512"
         />
         <img
-          src="/images/default2_hu_9203b6d730be0be5.jpg"
-          alt="/images/default2.jpg"
+          src="/images/default1_hu_4ffd7cb470e02bf3.jpg"
+          alt="/images/default1.jpg"
           loading="lazy"
           width="640"
-          height="443"
+          height="512"
           class="w-full h-auto object-cover"
         />
       </picture>

@@ -60,15 +60,6 @@
 
 
 
-     
-
-    
-    <link rel="stylesheet" href="/css/custom.css" />
-    
-
-    
-    <script defer src="/js/cdn.min.js"></script>
-
     
     <script>
       (function() {
@@ -79,18 +70,29 @@
         
         if (isDark === 'y' || (!isDark && prefersDark)) {
           document.documentElement.classList.add('dark');
-        }
-
-        
-        var darkTheme = window.darkTheme || 'forest';
-        var lightTheme = window.lightTheme || 'emerald';
-        if (isDark === 'y' || (!isDark && prefersDark)) {
-          document.documentElement.setAttribute('data-theme', darkTheme);
+          document.documentElement.setAttribute('data-theme', 'forest');
         } else {
-          document.documentElement.setAttribute('data-theme', lightTheme);
+          document.documentElement.setAttribute('data-theme', 'emerald');
         }
       })();
     </script>
+
+    <style>
+       
+      :root {
+        color-scheme: light !important;
+      }
+    </style>
+
+
+     
+
+    
+    <link rel="stylesheet" href="/css/custom.css" />
+    
+
+    
+    <script defer src="/js/cdn.min.js"></script>
 
     
     <style>
