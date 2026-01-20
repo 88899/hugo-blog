@@ -2703,9 +2703,12 @@
     --noise: 0;
   }
 }
+
 @layer base {
+  /* 禁用系统主题偏好，避免闪烁 */
   @media (prefers-color-scheme: dark) {
-    :root {
+    :root:not([data-theme]) {
+      /* 只在没有data-theme属性时才应用深色样式 */
       color-scheme: dark;
       --color-base-100: oklch(20.84% 0.008 17.911);
       --color-base-200: oklch(18.522% 0.007 17.911);
@@ -2738,6 +2741,7 @@
     }
   }
 }
+
 @layer base {
   :root:has(input.theme-controller[value=emerald]:checked),[data-theme=emerald] {
     color-scheme: light;
