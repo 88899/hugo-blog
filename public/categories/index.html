@@ -117,8 +117,10 @@
       top: 100%;
       margin-top: 8px;  
       z-index: 50;  
-      display: none;
     }
+  }
+  [x-cloak] {
+      display: none !important;
   }
 </style>
 
@@ -369,6 +371,7 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
             
             <ul
               class="mobile-dropdown-menu menu w-36 bg-base-100 rounded-box shadow-md overflow-hidden"
+              x-cloak
               x-show="dropdownOpen"
               @click.away="dropdownOpen = false"
               aria-hidden="!dropdownOpen">

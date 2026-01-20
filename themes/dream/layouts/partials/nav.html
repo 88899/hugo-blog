@@ -14,8 +14,10 @@
       top: 100%;
       margin-top: 8px; /* 避免紧贴按钮 */
       z-index: 50; /* 确保层级最高，不被遮挡 */
-      display: none;
     }
+  }
+  [x-cloak] {
+      display: none !important;
   }
 </style>
 
@@ -86,6 +88,7 @@
             <!-- 下拉菜单：绝对定位，避免Safari布局错乱 -->
             <ul
               class="mobile-dropdown-menu menu w-36 bg-base-100 rounded-box shadow-md overflow-hidden"
+              x-cloak
               x-show="dropdownOpen"
               @click.away="dropdownOpen = false"
               aria-hidden="!dropdownOpen">
