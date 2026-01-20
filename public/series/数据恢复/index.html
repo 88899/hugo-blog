@@ -57,31 +57,6 @@
 
 
 
-    
-    <script>
-      (function() {
-        
-        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        
-        if (isDark === 'y' || (!isDark && prefersDark)) {
-          document.documentElement.classList.add('dark');
-          document.documentElement.setAttribute('data-theme', 'forest');
-        } else {
-          document.documentElement.setAttribute('data-theme', 'emerald');
-        }
-      })();
-    </script>
-
-    <style>
-       
-      :root {
-        color-scheme: light !important;
-      }
-    </style>
-
-
      
 
     
@@ -758,17 +733,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default1_hu_1bc1d6d231b6a645.webp"
+          srcset="/images/default4_hu_e95c37cd6f0c7364.webp"
           type="image/webp"
           width="640"
-          height="512"
+          height="426"
         />
         <img
-          src="/images/default1_hu_4ffd7cb470e02bf3.jpg"
-          alt="/images/default1.jpg"
+          src="/images/default4_hu_d8146c9d4ec53771.jpg"
+          alt="/images/default4.jpg"
           loading="lazy"
           width="640"
-          height="512"
+          height="426"
           class="w-full h-auto object-cover"
         />
       </picture>

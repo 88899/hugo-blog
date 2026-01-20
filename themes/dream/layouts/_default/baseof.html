@@ -10,31 +10,6 @@
 
     {{ partial "head.html" . }}
 
-    <!-- 防止主题闪烁：在CSS加载之前设置正确的主题 -->
-    <script>
-      (function() {
-        // 立即执行，不等待DOMContentLoaded
-        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        // 设置初始主题类和data-theme
-        if (isDark === 'y' || (!isDark && prefersDark)) {
-          document.documentElement.classList.add('dark');
-          document.documentElement.setAttribute('data-theme', 'forest');
-        } else {
-          document.documentElement.setAttribute('data-theme', 'emerald');
-        }
-      })();
-    </script>
-
-    <style>
-      /* 禁用CSS的@media (prefers-color-scheme: dark)媒体查询的自动应用 */
-      :root {
-        color-scheme: light !important;
-      }
-    </style>
-
-
     {{ block "css" . }} {{ end }}
 
     {{ range site.Params.Advanced.customCSS }}

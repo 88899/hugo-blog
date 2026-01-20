@@ -71,31 +71,6 @@
 
 
     
-    <script>
-      (function() {
-        
-        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
-        var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-        
-        if (isDark === 'y' || (!isDark && prefersDark)) {
-          document.documentElement.classList.add('dark');
-          document.documentElement.setAttribute('data-theme', 'forest');
-        } else {
-          document.documentElement.setAttribute('data-theme', 'emerald');
-        }
-      })();
-    </script>
-
-    <style>
-       
-      :root {
-        color-scheme: light !important;
-      }
-    </style>
-
-
-    
 
 
 <link rel="stylesheet" data-custom-syntax-highlighting />
