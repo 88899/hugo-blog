@@ -2,24 +2,30 @@
 <html lang="zh-Hans"
   x-data
   :class="$store.darkMode.class()"
-  :data-theme="$store.darkMode.theme()">
+  :data-theme="$store.darkMode.theme()" data-theme="emerald">
   <head>
 
     
     <script>
       (function() {
         
-        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
+        try {
+          var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
 
-        
-        if (!isDark) {
-          localStorage.setItem('hugo-theme-dream-is-dark', 'n');
-          isDark = 'n';
-        私
-        
-        if (isDark === 'y') {
-          document.documentElement.setAttribute('data-theme', 'forest');
-        } else {
+          
+          if (!isDark) {
+            localStorage.setItem('hugo-theme-dream-is-dark', 'n');
+            isDark = 'n';
+          }
+
+          
+          if (isDark === 'y') {
+            document.documentElement.setAttribute('data-theme', 'forest');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'emerald');
+          }
+        } catch (e) {
+          
           document.documentElement.setAttribute('data-theme', 'emerald');
         }
       })();

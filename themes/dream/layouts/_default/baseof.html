@@ -2,24 +2,30 @@
 <html lang="{{ site.LanguageCode }}"
   x-data
   :class="$store.darkMode.class()"
-  :data-theme="$store.darkMode.theme()">
+  :data-theme="$store.darkMode.theme()" data-theme="emerald">
   <head>
 
     <!-- 防止主题闪烁的内联脚本 -->
     <script>
       (function() {
         // 立即执行，不等待DOMContentLoaded
-        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
+        try {
+          var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
 
-        // 如果没有设置，默认使用亮色主题
-        if (!isDark) {
-          localStorage.setItem('hugo-theme-dream-is-dark', 'n');
-          isDark = 'n';
-        私
-        // 设置初始data-theme
-        if (isDark === 'y') {
-          document.documentElement.setAttribute('data-theme', 'forest');
-        } else {
+          // 如果没有设置，默认使用亮色主题
+          if (!isDark) {
+            localStorage.setItem('hugo-theme-dream-is-dark', 'n');
+            isDark = 'n';
+          }
+
+          // 设置初始data-theme
+          if (isDark === 'y') {
+            document.documentElement.setAttribute('data-theme', 'forest');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'emerald');
+          }
+        } catch (e) {
+          // localStorage不可用时（如隐私模式），直接设置亮色主题
           document.documentElement.setAttribute('data-theme', 'emerald');
         }
       })();

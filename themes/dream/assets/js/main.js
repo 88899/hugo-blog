@@ -6,15 +6,19 @@ document.addEventListener('alpine:init', function () {
       var _this = this;
 
       var checkAndSetTheme = function() {
-        var isDark = window.localStorage.getItem('hugo-theme-dream-is-dark');
+        try {
+          var isDark = window.localStorage.getItem('hugo-theme-dream-is-dark');
 
-        // 如果没有设置，默认使用亮色
-        if (!isDark) {
-          isDark = 'n';
-          window.localStorage.setItem('hugo-theme-dream-is-dark', 'n');
-        }
+          // 如果没有设置，默认使用亮色
+          if (!isDark) {
+            isDark = 'n';
+            window.localStorage.setItem('hugo-theme-dream-is-dark', 'n');
+          }
 
           _this.on = isDark;
+        } catch (e) {
+            document.documentElement.setAttribute('data-theme', 'emerald');
+        }
       };
       checkAndSetTheme();
 

@@ -2,24 +2,30 @@
 <html lang="zh-Hans"
   x-data
   :class="$store.darkMode.class()"
-  :data-theme="$store.darkMode.theme()">
+  :data-theme="$store.darkMode.theme()" data-theme="emerald">
   <head>
 
     
     <script>
       (function() {
         
-        var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
+        try {
+          var isDark = localStorage.getItem('hugo-theme-dream-is-dark');
 
-        
-        if (!isDark) {
-          localStorage.setItem('hugo-theme-dream-is-dark', 'n');
-          isDark = 'n';
-        私
-        
-        if (isDark === 'y') {
-          document.documentElement.setAttribute('data-theme', 'forest');
-        } else {
+          
+          if (!isDark) {
+            localStorage.setItem('hugo-theme-dream-is-dark', 'n');
+            isDark = 'n';
+          }
+
+          
+          if (isDark === 'y') {
+            document.documentElement.setAttribute('data-theme', 'forest');
+          } else {
+            document.documentElement.setAttribute('data-theme', 'emerald');
+          }
+        } catch (e) {
+          
           document.documentElement.setAttribute('data-theme', 'emerald');
         }
       })();
@@ -1207,17 +1213,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default4_hu_e95c37cd6f0c7364.webp"
+          srcset="/images/default1_hu_1bc1d6d231b6a645.webp"
           type="image/webp"
           width="640"
-          height="426"
+          height="512"
         />
         <img
-          src="/images/default4_hu_d8146c9d4ec53771.jpg"
-          alt="/images/default4.jpg"
+          src="/images/default1_hu_4ffd7cb470e02bf3.jpg"
+          alt="/images/default1.jpg"
           loading="lazy"
           width="640"
-          height="426"
+          height="512"
           class="w-full h-auto object-cover"
         />
       </picture>
@@ -1418,17 +1424,17 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
       
       <picture>
         <source
-          srcset="/images/default4_hu_e95c37cd6f0c7364.webp"
+          srcset="/images/default2_hu_8e2a304948ea57db.webp"
           type="image/webp"
           width="640"
-          height="426"
+          height="443"
         />
         <img
-          src="/images/default4_hu_d8146c9d4ec53771.jpg"
-          alt="/images/default4.jpg"
+          src="/images/default2_hu_9203b6d730be0be5.jpg"
+          alt="/images/default2.jpg"
           loading="lazy"
           width="640"
-          height="426"
+          height="443"
           class="w-full h-auto object-cover"
         />
       </picture>
