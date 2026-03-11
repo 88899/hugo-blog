@@ -73,21 +73,80 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollToTopBtn = document.getElementById('scrollToTop');
   const scrollToBottomBtn = document.getElementById('scrollToBottom');
 
-  const handleScroll = () => {
-    scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
-    const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
-    scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+  if (!scrollToTopBtn || !scrollToBottomBtn) {
+    return;
+  }
+
+  let scrollHandler, clickTopHandler, clickBottomHandler, resizeHandler;
+  // WeChat兼容：缓存DOM查询结果
+  let documentHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+  let windowHeight = window.innerHeight;
+
+  const initScrollButtons = () => {
+    scrollHandler = () => {
+      try {
+        scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
+        const isNearBottom = (windowHeight + window.pageYOffset) >= documentHeight - 100;
+        scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+      } catch (e) {
+        console.warn('Scroll buttons handler failed:', e);
+      }
+    };
+
+    clickTopHandler = () => {
+      try {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (e) {
+        window.scrollTo(0, 0); // 降级处理
+      }
+    };
+    
+    clickBottomHandler = () => {
+      try {
+        window.scrollTo({
+          top: documentHeight,
+          behavior: 'smooth'
+        });
+      } catch (e) {
+        window.scrollTo(0, documentHeight); // 降级处理
+      }
+    };
+
+    // WeChat兼容：缓存文档高度变化
+    resizeHandler = () => {
+      documentHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      windowHeight = window.innerHeight;
+    };
+
+    window.addEventListener('scroll', scrollHandler, { passive: true });
+    window.addEventListener('resize', resizeHandler, { passive: true });
+    scrollToTopBtn.addEventListener('click', clickTopHandler);
+    scrollToBottomBtn.addEventListener('click', clickBottomHandler);
+    scrollHandler();
   };
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-  const scrollToBottom = () => window.scrollTo({
-    top: document.documentElement.scrollHeight || document.body.scrollHeight,
-    behavior: 'smooth'
-  });
+  // 简化清理机制
+  const cleanup = () => {
+    if (scrollHandler) {
+      window.removeEventListener('scroll', scrollHandler);
+    }
+    if (resizeHandler) {
+      window.removeEventListener('resize', resizeHandler);
+    }
+    if (clickTopHandler) {
+      scrollToTopBtn.removeEventListener('click', clickTopHandler);
+    }
+    if (clickBottomHandler) {
+      scrollToBottomBtn.removeEventListener('click', clickBottomHandler);
+    }
+  };
 
-  window.addEventListener('scroll', handleScroll);
-  scrollToTopBtn.addEventListener('click', scrollToTop);
-  scrollToBottomBtn.addEventListener('click', scrollToBottom);
-  handleScroll();
+  // 初始化
+  initScrollButtons();
+
+  // 注册到全局清理系统
+  if (window.registerCleanup) {
+    window.registerCleanup(cleanup);
+  }
 });
 </script>

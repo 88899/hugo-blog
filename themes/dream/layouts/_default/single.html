@@ -126,7 +126,7 @@
 
   <div
     x-data="tocHighlighter()"
-    @scroll.window="debouncedScroll"
+    x-init="init()"
     class="hidden lg:flex lg:flex-col lg:items-end lg:self-start"
   >
     {{ if site.Params.showTableOfContents }}
@@ -173,12 +173,21 @@
   {{ if fileExists "layouts/partials/medium-zoom.html" }}
     {{ partialCached "medium-zoom.html" . }}
   {{ else }}
-    <script type="module">
-      import mediumZoom from 'https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/+esm';
-      mediumZoom('#dream-single-post-content img', {
-        background: 'oklch(var(--b1))',
-        margin: 24,
-      })
+    <!-- WeChat兼容：使用UMD版本替代ES6模块 -->
+    <script src="https://cdn.jsdelivr.net/npm/medium-zoom@1.1.0/dist/medium-zoom.min.js"></script>
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        try {
+          if (typeof mediumZoom !== 'undefined') {
+            mediumZoom('#dream-single-post-content img', {
+              background: 'oklch(var(--b1))',
+              margin: 24,
+            });
+          }
+        } catch (e) {
+          console.warn('Medium Zoom initialization failed:', e);
+        }
+      });
     </script>
   {{ end }}
 {{ end }}

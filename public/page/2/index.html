@@ -32,6 +32,45 @@
     </script>
 
     
+    <script>
+      (function() {
+        
+        window.dreamCleanupFunctions = window.dreamCleanupFunctions || [];
+        
+        
+        window.registerCleanup = function(fn) {
+          if (typeof fn === 'function') {
+            window.dreamCleanupFunctions.push(fn);
+          }
+        };
+        
+        
+        window.executeCleanup = function() {
+          try {
+            window.dreamCleanupFunctions.forEach(function(fn) {
+              try {
+                fn();
+              } catch (e) {
+                console.warn('Cleanup function failed:', e);
+              }
+            });
+            window.dreamCleanupFunctions = [];
+          } catch (e) {
+            console.warn('Global cleanup failed:', e);
+          }
+        };
+        
+        
+        window.addEventListener('beforeunload', window.executeCleanup, { passive: true });
+        document.addEventListener('visibilitychange', function() {
+          if (document.hidden) {
+            window.executeCleanup();
+          }
+        }, { passive: true });
+      })();
+    </script>
+
+    
     <style>
       html {
         color-scheme: light !important;
@@ -160,18 +199,44 @@
   
   <nav x-data="{
     isSticky: false,
-    dropdownOpen: false // 控制移动端菜单的唯一状态
+    dropdownOpen: false, // 控制移动端菜单的唯一状态
+    scrollHandler: null,
+    keyHandler: null,
+    init() {
+      // WeChat兼容：创建绑定的处理函数，便于清理
+      this.scrollHandler = function() {
+        try {
+          this.isSticky = window.scrollY > 30;
+        } catch (e) {
+          console.warn('Navigation scroll handler failed:', e);
+        }
+      }.bind(this);
+      
+      this.keyHandler = function(e) {
+        if (e.key === 'Escape') this.dropdownOpen = false;
+      }.bind(this);
+      
+      // 添加事件监听器
+      window.addEventListener('scroll', this.scrollHandler, { passive: true });
+      window.addEventListener('keydown', this.keyHandler);
+      
+      // 简化清理机制
+      const cleanup = () => {
+        if (this.scrollHandler) {
+          window.removeEventListener('scroll', this.scrollHandler);
+        }
+        if (this.keyHandler) {
+          window.removeEventListener('keydown', this.keyHandler);
+        }
+      };
+      
+      // 注册到全局清理系统
+      if (window.registerCleanup) {
+        window.registerCleanup(cleanup);
+      }
+    }
   }"
-    x-init="
-      // 滚动监听（原生轻量，无防抖不影响性能）
-      window.addEventListener('scroll', () => {
-        isSticky = window.scrollY > 30;
-      });
-      // Safari专属：ESC键关闭菜单
-      window.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape') dropdownOpen = false;
-      });
-    "
+    x-init="init()"
     class="sticky top-0 z-30 mt-4 lg:mt-8 py-4"
     :class="{ 'bg-base-100 shadow-lg dark:border-b dark:border-base-content/30': isSticky }">
     
@@ -405,7 +470,7 @@ html.dark .category-tag:hover, html.dark .category-tag.active {
               x-cloak
               x-show="dropdownOpen"
               @click.away="dropdownOpen = false"
-              aria-hidden="!dropdownOpen">
+              :inert="!dropdownOpen">
               
               
                 
@@ -1873,29 +1938,88 @@ document.addEventListener('DOMContentLoaded', () => {
   const scrollToTopBtn = document.getElementById('scrollToTop');
   const scrollToBottomBtn = document.getElementById('scrollToBottom');
 
-  const handleScroll = () => {
-    scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
-    const isNearBottom = (window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100;
-    scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+  if (!scrollToTopBtn || !scrollToBottomBtn) {
+    return;
+  }
+
+  let scrollHandler, clickTopHandler, clickBottomHandler, resizeHandler;
+  
+  let documentHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+  let windowHeight = window.innerHeight;
+
+  const initScrollButtons = () => {
+    scrollHandler = () => {
+      try {
+        scrollToTopBtn.classList.toggle('visible', window.pageYOffset > 200);
+        const isNearBottom = (windowHeight + window.pageYOffset) >= documentHeight - 100;
+        scrollToBottomBtn.classList.toggle('visible', !isNearBottom);
+      } catch (e) {
+        console.warn('Scroll buttons handler failed:', e);
+      }
+    };
+
+    clickTopHandler = () => {
+      try {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      } catch (e) {
+        window.scrollTo(0, 0); 
+      }
+    };
+    
+    clickBottomHandler = () => {
+      try {
+        window.scrollTo({
+          top: documentHeight,
+          behavior: 'smooth'
+        });
+      } catch (e) {
+        window.scrollTo(0, documentHeight); 
+      }
+    };
+
+    
+    resizeHandler = () => {
+      documentHeight = document.documentElement.scrollHeight || document.body.scrollHeight;
+      windowHeight = window.innerHeight;
+    };
+
+    window.addEventListener('scroll', scrollHandler, { passive: true });
+    window.addEventListener('resize', resizeHandler, { passive: true });
+    scrollToTopBtn.addEventListener('click', clickTopHandler);
+    scrollToBottomBtn.addEventListener('click', clickBottomHandler);
+    scrollHandler();
   };
 
-  const scrollToTop = () => window.scrollTo({ top: 0, behavior: 'smooth' });
-  const scrollToBottom = () => window.scrollTo({
-    top: document.documentElement.scrollHeight || document.body.scrollHeight,
-    behavior: 'smooth'
-  });
+  
+  const cleanup = () => {
+    if (scrollHandler) {
+      window.removeEventListener('scroll', scrollHandler);
+    }
+    if (resizeHandler) {
+      window.removeEventListener('resize', resizeHandler);
+    }
+    if (clickTopHandler) {
+      scrollToTopBtn.removeEventListener('click', clickTopHandler);
+    }
+    if (clickBottomHandler) {
+      scrollToBottomBtn.removeEventListener('click', clickBottomHandler);
+    }
+  };
 
-  window.addEventListener('scroll', handleScroll);
-  scrollToTopBtn.addEventListener('click', scrollToTop);
-  scrollToBottomBtn.addEventListener('click', scrollToBottom);
-  handleScroll();
+  
+  initScrollButtons();
+
+  
+  if (window.registerCleanup) {
+    window.registerCleanup(cleanup);
+  }
 });
 </script>
 
     
      
 
-    <script type="module" src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.esm.js" integrity="sha256-/IFmi82bIhdYWctu0UddSlJqpnzWm7Vh2C4CM32wF/k=" crossorigin="anonymous"></script>
-    <script nomodule src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js" integrity="sha256-mr7eJMX3VC3F7G32mk4oWp1C6a2tlMYxUdptfT7uKI8=" crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/ionicons@7.4.0/dist/ionicons/ionicons.js" integrity="sha256-mr7eJMX3VC3F7G32mk4oWp1C6a2tlMYxUdptfT7uKI8=" crossorigin="anonymous"></script>
   </body>
 </html>
