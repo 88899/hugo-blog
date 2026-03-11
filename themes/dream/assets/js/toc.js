@@ -16,6 +16,7 @@ function tocHighlighter() {
     // WeChat兼容：缓存DOM查询结果
     tocElement: null,
     windowHeight: 0,
+    resizeHandler: null,
     
     init: function init() {
       // 缓存TOC元素
@@ -39,14 +40,14 @@ function tocHighlighter() {
       // 创建绑定的滚动处理函数，便于清理
       this.scrollHandler = this.debouncedScroll;
       
-      // 添加滚动监听器
-      window.addEventListener('scroll', this.scrollHandler, { passive: true });
-      
-      // WeChat兼容：添加窗口大小变化监听
-      const resizeHandler = () => {
+      // WeChat兼容：创建绑定的resize处理函数，便于清理
+      this.resizeHandler = () => {
         this.windowHeight = window.innerHeight;
       };
-      window.addEventListener('resize', resizeHandler, { passive: true });
+      
+      // 添加事件监听器
+      window.addEventListener('scroll', this.scrollHandler, { passive: true });
+      window.addEventListener('resize', this.resizeHandler, { passive: true });
       
       // 简化清理机制
       const cleanup = () => {
@@ -66,6 +67,11 @@ function tocHighlighter() {
       if (this.scrollHandler) {
         window.removeEventListener('scroll', this.scrollHandler);
         this.scrollHandler = null;
+      }
+      // 清理resize监听器
+      if (this.resizeHandler) {
+        window.removeEventListener('resize', this.resizeHandler);
+        this.resizeHandler = null;
       }
       // 清理防抖定时器
       if (this.debouncedScroll && this.debouncedScroll.cancel) {
