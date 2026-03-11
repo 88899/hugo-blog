@@ -25,8 +25,10 @@
 </style>
 {{ end }}
 
+<!--20260311注释-->
+<!--
 {{ partialCached "commentSystemHeads.html" . }}
-
+-->
 {{ end }}
 
 {{ define "main" }}
@@ -108,14 +110,17 @@
       {{ end }}
 
       <!-- 评论-->
+       <!--20260311注释-->
+      <!--
        {{ if or site.Config.Services.Disqus.Shortname site.Params.utterancesRepo site.Params.valine site.Params.waline site.Params.twikoo.enabled }}
       <div class="divider"></div>
 
+      
       <section class="space-y-4">
         {{ partialCached "commentSystems.html" . .RelPermalink }}
       </section>
       {{ end }}
-
+    -->
     </article>
   </div>
 
